@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE CSS Demo</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded datastar from CDN fallback');
+    }
+  </script>
+  
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+</head>
+<body class="grid:hero-full gap:sm p:sm"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+  
+  <header class="card flex:spread-row align:center p:md" style="grid-column: 1 / -1;">
+    <h1 class="text:lg" style="font-weight: 600;">CUBE CSS</h1>
+    <nav class="flex:cluster gap:xs">
+      <button sz="sm">Home</button>
+      <button var="gho" sz="sm">Docs</button>
+      <button var="gho" sz="sm">GitHub</button>
+    </nav>
+  </header>
+
+  <nav class="card flex:stack gap:sm p:md">
+    <h2 class="text:md">Navigation</h2>
+    <button sz="sm">Dashboard</button>
+    <button var="gho" sz="sm">Components</button>
+    <button var="gho" sz="sm">Settings</button>
+  </nav>
+
+  <main class="card flex:stack gap:lg p:lg">
+    <h2 class="text:xl" style="font-weight: 600;">Component Showcase</h2>
+    
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Buttons</h3>
+      <div class="flex:cluster gap:sm">
+        <button>Primary</button>
+        <button var="sec">Secondary</button>
+        <button var="out">Outline</button>
+        <button var="gho">Ghost</button>
+        <button var="wrn">Warning</button>
+        <button var="dgr">Danger</button>
+      </div>
+      <div class="flex:cluster gap:sm">
+        <a class="btn" href="#">Link as Button</a>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Button Sizes</h3>
+      <div class="flex:cluster align:center gap:sm">
+        <button sz="sm">Small</button>
+        <button>Default</button>
+        <button sz="lg">Large</button>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Button States</h3>
+      <div class="flex:cluster gap:md">
+        <button st="lod">Loading</button>
+        <button st="dis">Disabled</button>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Input Groups</h3>
+      <div class="flex:cluster gap:lg align:start">
+        <div class="input-group">
+          <span class="feedback"></span>
+          <label>Username</label>
+          <input type="text" placeholder="Enter username" />
+        </div>
+        <div class="input-group">
+          <span class="feedback">Looks good!</span>
+          <label>Email</label>
+          <input type="email" placeholder="email@example.com" st="suc" />
+        </div>
+        <div class="input-group">
+          <span class="feedback">Passwords don't match</span>
+          <label>Password</label>
+          <input type="password" placeholder="Enter password" st="err" />
+        </div>
+        <div class="input-group">
+          <span class="feedback">Password is weak</span>
+          <label>Confirm</label>
+          <input type="password" placeholder="Confirm password" st="wrn" />
+        </div>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Pills</h3>
+      <div class="flex:cluster gap:sm">
+        <span class="pill">Primary</span>
+        <span class="pill" var="sec">Secondary</span>
+        <span class="pill" var="wrn">Warning</span>
+        <span class="pill" var="dgr">Danger</span>
+        <span class="pill" var="inf">Info</span>
+        <span class="pill" var="suc">Success</span>
+        <span class="pill" var="out">Outline</span>
+      </div>
+      <div class="flex:cluster gap:sm">
+        <span class="pill">Removable <span class="close">×</span></span>
+        <span class="pill" var="inf">Tag <span class="close">×</span></span>
+        <span class="pill" var="suc">Done <span class="close">×</span></span>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:md">Cards</h3>
+      <div class="flex:cluster gap:sm">
+        <div class="card" style="width: 140px;">
+          <p class="text:sm">Default</p>
+        </div>
+        <div class="card" var="pri" style="width: 140px;">
+          <p class="text:sm">Primary</p>
+        </div>
+        <div class="card" var="sec" style="width: 140px;">
+          <p class="text:sm">Secondary</p>
+        </div>
+        <div class="card" var="wrn" style="width: 140px;">
+          <p class="text:sm">Warning</p>
+        </div>
+        <div class="card" var="dgr" style="width: 140px;">
+          <p class="text:sm">Danger</p>
+        </div>
+        <div class="card" var="out" style="width: 140px;">
+          <p class="text:sm">Outline</p>
+        </div>
+        <div class="card" var="gho" style="width: 140px;">
+          <p class="text:sm">Ghost</p>
+        </div>
+        <div class="card" var="glass" style="width: 140px;">
+          <p class="text:sm">Glass</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="card flex:stack gap:md p:md">
+    <h2 class="text:md">Settings</h2>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Theme</h3>
+      <div class="flex:cluster gap:xs">
+        <button sz="sm"
+          data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
+          data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Mode</h3>
+      <div class="flex:cluster gap:xs">
+        <button sz="sm"
+          data-attr:var="$prst_mode === 'light' ? false : 'gho'"
+          data-on:click="$prst_mode = 'light'">Light</button>
+        <button sz="sm"
+          data-attr:var="$prst_mode === 'system' ? false : 'gho'"
+          data-on:click="$prst_mode = 'system'">System</button>
+        <button sz="sm"
+          data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
+          data-on:click="$prst_mode = 'dark'">Dark</button>
+      </div>
+    </section>
+  </aside>
+
+  <footer class="card flex:cluster justify:center gap:md p:md" style="grid-column: 1 / -1;">
+    <span class="text:sm">CUBE CSS Design System</span>
+    <span class="pill" var="out">v0.1</span>
+  </footer>
+
+</body>
+</html>

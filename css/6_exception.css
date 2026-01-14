@@ -1,0 +1,160 @@
+@layer exception {
+  :where(html) {
+  /* === BUTTON VARIANTS === */
+  :is(button, .btn, .icon-btn) {
+    &[var="sec"] {
+      background: var(--color-sec);
+      color: var(--color-sec-text);
+    }
+    &[var="out"] {
+      background: transparent;
+      border: 1px solid var(--border-muted);
+      color: inherit;
+    }
+    &[var="gho"] {
+      background: transparent;
+      color: inherit;
+    }
+    &[var="wrn"] {
+      background: var(--color-wrn);
+      color: var(--color-wrn-text);
+    }
+    &[var="dgr"] {
+      background: var(--color-dgr);
+      color: var(--color-dgr-text);
+    }
+  }
+
+  /* === BUTTON SIZES === */
+  :is(button, .btn, .icon-btn) {
+    &[sz="sm"] { height: var(--btn-height-sm); padding-inline: var(--space-sm); font-size: var(--text-sm); }
+    &[sz="lg"] { height: var(--btn-height-lg); padding-inline: var(--space-lg); font-size: var(--text-lg); }
+  }
+
+  /* === BUTTON STATES === */
+  :is(button, .btn, .icon-btn) {
+    &[st="lod"] { opacity: 0.7; cursor: wait; }
+    &[st="dis"] { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+  }
+
+  /* === PILL VARIANTS === */
+  .pill {
+    &[var="sec"] {
+      background: color-mix(in oklch, var(--color-sec), transparent 85%);
+      color: light-dark(
+        color-mix(in oklch, var(--color-sec), var(--gry-9) 30%),
+        color-mix(in oklch, var(--color-sec), var(--gry-1) 20%)
+      );
+      border-color: color-mix(in oklch, var(--color-sec), transparent 70%);
+    }
+    &[var="wrn"] {
+      background: color-mix(in oklch, var(--color-wrn), transparent 80%);
+      color: light-dark(
+        color-mix(in oklch, var(--color-wrn), var(--gry-9) 50%),
+        color-mix(in oklch, var(--color-wrn), var(--gry-9) 30%)
+      );
+      border-color: color-mix(in oklch, var(--color-wrn), transparent 60%);
+    }
+    &[var="dgr"] {
+      background: color-mix(in oklch, var(--color-dgr), transparent 85%);
+      color: light-dark(
+        color-mix(in oklch, var(--color-dgr), var(--gry-9) 30%),
+        color-mix(in oklch, var(--color-dgr), var(--gry-1) 20%)
+      );
+      border-color: color-mix(in oklch, var(--color-dgr), transparent 70%);
+    }
+    &[var="inf"] {
+      background: color-mix(in oklch, var(--color-inf), transparent 85%);
+      color: light-dark(
+        color-mix(in oklch, var(--color-inf), var(--gry-9) 30%),
+        color-mix(in oklch, var(--color-inf), var(--gry-1) 20%)
+      );
+      border-color: color-mix(in oklch, var(--color-inf), transparent 70%);
+    }
+    &[var="suc"] {
+      background: color-mix(in oklch, var(--color-suc), transparent 85%);
+      color: light-dark(
+        color-mix(in oklch, var(--color-suc), var(--gry-9) 30%),
+        color-mix(in oklch, var(--color-suc), var(--gry-1) 20%)
+      );
+      border-color: color-mix(in oklch, var(--color-suc), transparent 70%);
+    }
+    &[var="out"] {
+      background: transparent;
+      color: var(--text-color);
+      border-color: var(--border-muted);
+    }
+  }
+
+  /* === CARD VARIANTS === */
+  .card {
+    &[var="pri"] {
+      background: var(--color-pri);
+      color: var(--color-pri-text);
+      border-color: transparent;
+    }
+    &[var="sec"] {
+      background: var(--color-sec);
+      color: var(--color-sec-text);
+      border-color: transparent;
+    }
+    &[var="wrn"] {
+      background: var(--color-wrn);
+      color: var(--color-wrn-text);
+      border-color: transparent;
+    }
+    &[var="dgr"] {
+      background: var(--color-dgr);
+      color: var(--color-dgr-text);
+      border-color: transparent;
+    }
+    &[var="out"] {
+      background: transparent;
+      box-shadow: none;
+      border-color: var(--border-muted);
+    }
+    &[var="gho"] {
+      background: transparent;
+      box-shadow: none;
+      border-color: transparent;
+    }
+    &[var="glass"] {
+      background: light-dark(
+        color-mix(in oklch, white, transparent 20%),
+        color-mix(in oklch, var(--gry-8), transparent 40%)
+      );
+      backdrop-filter: blur(12px);
+      border-color: light-dark(
+        color-mix(in oklch, white, transparent 50%),
+        color-mix(in oklch, var(--gry-6), transparent 70%)
+      );
+      box-shadow:
+        0 1px 2px 0 rgb(0 0 0 / 0.05),
+        inset 0 1px 0 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.05));
+    }
+  }
+
+  /* === INPUT VALIDATION STATES === */
+  input:is([type="text"], [type="email"], [type="password"], [type="search"], [type="tel"], [type="url"], [type="number"]),
+  input:not([type]),
+  textarea {
+    &[st="err"] {
+      border-color: var(--color-err);
+      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-err), transparent 85%); }
+    }
+    &[st="suc"] {
+      border-color: var(--color-suc);
+      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-suc), transparent 85%); }
+    }
+    &[st="wrn"] {
+      border-color: var(--color-wrn);
+      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-wrn), transparent 85%); }
+    }
+    &[st="inf"] {
+      border-color: var(--color-inf);
+      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-inf), transparent 85%); }
+    }
+  }
+
+}
+}
