@@ -57,7 +57,7 @@
         
         <div class="flex:stack gap:md">
           <!-- Flex Cluster -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:cluster gap:sm</span>
               <span class="pill" var="out">Wraps horizontally</span>
@@ -72,7 +72,7 @@
           </div>
 
           <!-- Flex Stack -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:stack gap:xs align:center</span>
               <span class="pill" var="out">Vertical stack</span>
@@ -85,7 +85,7 @@
           </div>
 
           <!-- Flex Split Row -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:split-row gap:md</span>
               <span class="pill" var="out">Binary split</span>
@@ -97,7 +97,7 @@
           </div>
 
           <!-- Flex Split Column -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:split-col gap:sm</span>
               <span class="pill" var="out">Binary split vertical</span>
@@ -109,7 +109,7 @@
           </div>
 
           <!-- Flex Spread Column -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:spread-column gap:sm justify:between</span>
               <span class="pill" var="out">Space between</span>
@@ -122,7 +122,7 @@
           </div>
 
           <!-- Flex Flank Start -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-start gap:md</span>
               <span class="pill" var="out">Sidebar left</span>
@@ -134,7 +134,7 @@
           </div>
 
           <!-- Flex Flank End -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-end gap:md</span>
               <span class="pill" var="out">Sidebar right</span>
@@ -146,7 +146,7 @@
           </div>
 
           <!-- Flex Flank with custom properties -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-start with --flank-size: 200px</span>
               <span class="pill" var="out">Fixed sidebar</span>
@@ -165,7 +165,7 @@
         
         <div class="flex:stack gap:md">
           <!-- Grid LCR -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:lcr gap:md</span>
               <span class="pill" var="out">True center</span>
@@ -178,7 +178,7 @@
           </div>
 
           <!-- Grid TMB -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:tmb gap:sm</span>
               <span class="pill" var="out">True middle</span>
@@ -191,7 +191,7 @@
           </div>
 
           <!-- Grid Auto-Fit -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:auto-fit gap:sm</span>
               <span class="pill" var="out">Responsive columns</span>
@@ -206,7 +206,7 @@
           </div>
 
           <!-- Grid Hero -->
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:hero gap:xs</span>
               <span class="pill" var="out">3x3 layout</span>
@@ -227,21 +227,21 @@
         <p class="text:sm text-muted">Maintain aspect ratios with <code>frame:*</code> classes.</p>
         
         <div class="flex:cluster gap:md">
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <span class="text:sm">frame:square</span>
             <div class="frame:square">
               <div class="card" style="background: var(--surface-raised);">Square</div>
             </div>
           </div>
 
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <span class="text:sm">frame:landscape</span>
             <div class="frame:landscape">
               <div class="card" style="background: var(--surface-raised);">16:9</div>
             </div>
           </div>
 
-          <div class="card flex:stack gap:xs p:sm">
+          <div class="card flex:stack gap:xs p:sm" var="res">
             <span class="text:sm">frame:portrait</span>
             <div class="frame:portrait">
               <div class="card" style="background: var(--surface-raised);">9:16</div>
@@ -254,7 +254,7 @@
         <h3 class="text:md">Utility Combinations</h3>
         <p class="text:sm text-muted">Mix utilities for custom layouts, e.g., <code>wrap gap:lg align:center justify:around</code>.</p>
         
-        <div class="card flex:stack gap:xs p:sm">
+        <div class="card flex:stack gap:xs p:sm" var="res">
           <div class="flex:spread-row align:center">
             <span class="text:sm">wrap gap:lg align:center justify:around</span>
             <span class="pill" var="out">Custom flex</span>
