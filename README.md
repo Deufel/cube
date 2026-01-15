@@ -32,12 +32,16 @@ Layout primitives use `type:variant` syntax.
 |-------|----------|
 | `flex:cluster` | Horizontal flex, wraps |
 | `flex:stack` | Vertical flex |
-| `flex:split-row` | Horizontal, children grow equally (`flex: 1`) |
-| `flex:split-column` | Vertical, children grow equally |
-| `flex:spread-row` | Horizontal, `justify-content: space-between` |
-| `flex:spread-column` | Vertical, `justify-content: space-between` |
-| `flex:flank-start` | Push children to start |
-| `flex:flank-end` | Push children to end |
+| `flex:split` / `flex:split-row` | Binary layout (2 children) — pushes items to opposite edges |
+| `flex:split-col` | Binary layout, vertical — pushes items to top/bottom |
+| `flex:spread-row` | Distribute *n* items horizontally with `space-between` |
+| `flex:spread-column` | Distribute *n* items vertically with `space-between` |
+| `flex:flank-start` | 2-child: first flanks at start, second fills (wraps at 50%) |
+| `flex:flank-end` | 2-child: last flanks at end, first fills (wraps at 50%) |
+
+**Flank custom properties:**
+- `--flank-size`: Target size for the flanking element (default: `auto`)
+- `--content-percentage`: Min width before wrapping (default: `50%`)
 
 ```html
 <div class="flex:cluster gap:md">...</div>
@@ -50,11 +54,10 @@ Layout primitives use `type:variant` syntax.
 
 | Class | Behavior |
 |-------|----------|
-| `grid:lcr` | 3-column: left / center / right (`auto 1fr auto`) |
-| `grid:tmb` | 3-row: top / middle / bottom (`auto 1fr auto` rows) |
+| `grid:lcr` | 3-column: left / center / right — true centering (`1fr auto 1fr`) |
+| `grid:tmb` | 3-row: top / middle / bottom — true centering (`1fr auto 1fr` rows) |
 | `grid:pancake` | Header / main / footer stack (`auto 1fr auto` rows) |
-| `grid:hero-nested` | 3×3 grid (`auto 1fr auto / auto 1fr auto`) |
-| `grid:hero-full` | 3×3 grid + `min-height: 100svh`, viewport fitting |
+| `grid:hero` | 3×3 grid for full-page layouts (use with `body.fullscreen > div.grid:hero`) |
 | `grid:auto-fit` | Responsive columns, uses `--grid-min` |
 | `grid:auto-fill` | Like auto-fit but keeps empty tracks |
 

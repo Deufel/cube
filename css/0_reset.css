@@ -1,5 +1,5 @@
 @layer reset {
-  *,{ box-sizing: border-box;} 
+  * { box-sizing: border-box; } 
   *, *::before, *::after {scrollbar-width: thin}
   :root {interpolate-size: allow-keywords; }
   html { -moz-text-size-adjust: none; -webkit-text-size-adjust: none; text-size-adjust: none; }

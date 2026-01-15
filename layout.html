@@ -88,12 +88,23 @@
           <div class="card flex:stack gap:xs p:sm">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:split-row gap:md</span>
-              <span class="pill" var="out">Equal grow</span>
+              <span class="pill" var="out">Binary split</span>
             </div>
             <div class="flex:split-row gap:md">
-              <div class="card">Left</div>
-              <div class="card">Center</div>
-              <div class="card">Right</div>
+              <div class="card">Left item</div>
+              <div class="card">Right item</div>
+            </div>
+          </div>
+
+          <!-- Flex Split Column -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:split-col gap:sm</span>
+              <span class="pill" var="out">Binary split vertical</span>
+            </div>
+            <div class="flex:split-col gap:sm" style="height: 150px;">
+              <div class="card">Top item</div>
+              <div class="card">Bottom item</div>
             </div>
           </div>
 
@@ -110,16 +121,39 @@
             </div>
           </div>
 
+          <!-- Flex Flank Start -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:flank-start gap:md</span>
+              <span class="pill" var="out">Sidebar left</span>
+            </div>
+            <div class="flex:flank-start gap:md">
+              <div class="card p:sm">Sidebar</div>
+              <div class="card p:sm">Main content fills remaining space (wraps when &lt;50%)</div>
+            </div>
+          </div>
+
           <!-- Flex Flank End -->
           <div class="card flex:stack gap:xs p:sm">
             <div class="flex:spread-row align:center">
-              <span class="text:sm">flex:flank-end gap:xs align:end</span>
-              <span class="pill" var="out">Push to end</span>
+              <span class="text:sm">flex:flank-end gap:md</span>
+              <span class="pill" var="out">Sidebar right</span>
             </div>
-            <div class="flex:flank-end gap:xs align:end">
-              <div class="card" style="height: 40px;">Item 1</div>
-              <div class="card" style="height: 60px;">Item 2</div>
-              <div class="card" style="height: 80px;">Item 3</div>
+            <div class="flex:flank-end gap:md">
+              <div class="card p:sm">Main content fills remaining space (wraps when &lt;50%)</div>
+              <div class="card p:sm">Sidebar</div>
+            </div>
+          </div>
+
+          <!-- Flex Flank with custom properties -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:flank-start with --flank-size: 200px</span>
+              <span class="pill" var="out">Fixed sidebar</span>
+            </div>
+            <div class="flex:flank-start gap:md" style="--flank-size: 200px;">
+              <div class="card p:sm">200px sidebar</div>
+              <div class="card p:sm">Main content</div>
             </div>
           </div>
         </div>
@@ -134,12 +168,12 @@
           <div class="card flex:stack gap:xs p:sm">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:lcr gap:md</span>
-              <span class="pill" var="out">Left-Center-Right</span>
+              <span class="pill" var="out">True center</span>
             </div>
             <div class="grid:lcr gap:md">
-              <div class="card">Left</div>
-              <div class="card">Center (grows)</div>
-              <div class="card">Right</div>
+              <div class="card">Short</div>
+              <div class="card">Center (always centered)</div>
+              <div class="card">Much longer right side content</div>
             </div>
           </div>
 
@@ -147,12 +181,12 @@
           <div class="card flex:stack gap:xs p:sm">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:tmb gap:sm</span>
-              <span class="pill" var="out">Top-Middle-Bottom</span>
+              <span class="pill" var="out">True middle</span>
             </div>
             <div class="grid:tmb gap:sm" style="height: 200px;">
-              <div class="card">Top</div>
-              <div class="card">Middle (grows)</div>
-              <div class="card">Bottom</div>
+              <div class="card">Short top</div>
+              <div class="card">Middle (always centered)</div>
+              <div class="card">Taller bottom section<br>with more content</div>
             </div>
           </div>
 
