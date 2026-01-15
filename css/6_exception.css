@@ -26,9 +26,15 @@
   }
 
   /* === BUTTON SIZES === */
-  :is(button, .btn, .icon-btn) {
+  :is(button, .btn) {
     &[sz="sm"] { height: var(--btn-height-sm); padding-inline: var(--space-sm); font-size: var(--text-sm); }
     &[sz="lg"] { height: var(--btn-height-lg); padding-inline: var(--space-lg); font-size: var(--text-lg); }
+  }
+
+  /* === ICON BUTTON SIZES === */
+  .icon-btn {
+    &[sz="sm"] { --_icon-btn-size: 36px; --_icon-size: 18px; &:has(span) { --_icon-size: 14px; } }
+    &[sz="lg"] { --_icon-btn-size: 64px; --_icon-size: 28px; &:has(span) { --_icon-size: 24px; } }
   }
 
   /* === BUTTON STATES === */
