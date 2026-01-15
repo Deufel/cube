@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +26,8 @@
 </head>
 <body class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
-  data-signals:prst_theme="'./css/2_theme-default.css'"
-  data-signals:prst_mode="'system'">
+  data-signals:prst_theme__ifmissing="'./css/2_theme-default.css'"
+  data-signals:prst_mode__ifmissing="'system'">
     
  <div class="grid:hero gap:xs"> 
     <header class="card flex:spread-row align:center p:xs" style="grid-column: 1 / -1;">
@@ -43,9 +43,9 @@
     </header>
 
     <nav class="scroll-y card flex:stack ">
-      <button sz="sm">Dashboard</button>
-      <button var="gho" sz="sm">Components</button>
-      <button var="gho" sz="sm">Settings</button>
+      <a class="btn" href="/index.html"  var="gho" sz="sm">Home</a>
+      <a class="btn" href="./index.html"  var="pri" sz="sm">Components</a>
+      <a class="btn" href="layout.html" var="gho" sz="sm">Layout</a>
     </nav>
 
     <main class="scroll-y card flex:stack gap:lg p:lg">

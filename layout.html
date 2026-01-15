@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE CSS Layout Demo</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded datastar from CDN fallback');
+    }
+  </script>
+  
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme__ifmissing="'./css/2_theme-default.css'"
+  data-signals:prst_mode__ifmissing="'system'">
+    
+  <div class="grid:hero gap:xs"> 
+    <header class="card flex:spread-row align:center p:xs" style="grid-column: 1 / -1;">
+      <div class="nowrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15.5 9L7 14v20l8.5 5l8.5 5l8.5-5l8.5-5V14l-8.5-5L24 4zM24 4v20m17 10L24 24M7 34l17-10m0 20V34m17-20l-8 5M7 14l8 5"/></svg>
+        <h1>Cube CSS</h1>
+      </div>
+      <nav class="flex:cluster gap:xs">
+        <button sz="sm">Home</button>
+        <button var="gho" sz="sm">Docs</button>
+        <button var="gho" sz="sm">GitHub</button>
+      </nav>
+    </header>
+
+    <nav class="scroll-y card flex:stack ">
+      <a class="btn" href="index.html"  var="gho" sz="sm">Home</a>
+      <a class="btn" href="index.html"  var="gho" sz="sm">Components</a>
+      <a class="btn" href="layout.html" var="pri" sz="sm">Layout</a>
+    </nav>
+
+    <main class="scroll-y card flex:stack gap:lg p:lg">
+      <h2 class="text:xl" style="font-weight: 600;">Layout Showcase</h2>
+      
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Flex Layouts</h3>
+        <p class="text:sm text-muted">Composition classes like <code>flex:cluster</code>, <code>flex:stack</code>, etc., combined with utilities like <code>gap:*</code>, <code>align:*</code>, and <code>justify:*</code>.</p>
+        
+        <div class="flex:stack gap:md">
+          <!-- Flex Cluster -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:cluster gap:sm</span>
+              <span class="pill" var="out">Wraps horizontally</span>
+            </div>
+            <div class="flex:cluster gap:sm">
+              <div class="card" style="width: 100px;">Item 1</div>
+              <div class="card" style="width: 100px;">Item 2</div>
+              <div class="card" style="width: 100px;">Item 3</div>
+              <div class="card" style="width: 100px;">Item 4</div>
+              <div class="card" style="width: 100px;">Item 5</div>
+            </div>
+          </div>
+
+          <!-- Flex Stack -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:stack gap:xs align:center</span>
+              <span class="pill" var="out">Vertical stack</span>
+            </div>
+            <div class="flex:stack gap:xs align:center" style="height: 150px;">
+              <div class="card" style="width: 80%;">Top</div>
+              <div class="card" style="width: 60%;">Middle</div>
+              <div class="card" style="width: 40%;">Bottom</div>
+            </div>
+          </div>
+
+          <!-- Flex Split Row -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:split-row gap:md</span>
+              <span class="pill" var="out">Equal grow</span>
+            </div>
+            <div class="flex:split-row gap:md">
+              <div class="card">Left</div>
+              <div class="card">Center</div>
+              <div class="card">Right</div>
+            </div>
+          </div>
+
+          <!-- Flex Spread Column -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:spread-column gap:sm justify:between</span>
+              <span class="pill" var="out">Space between</span>
+            </div>
+            <div class="flex:spread-column gap:sm justify:between" style="height: 150px;">
+              <div class="card">Top</div>
+              <div class="card">Middle</div>
+              <div class="card">Bottom</div>
+            </div>
+          </div>
+
+          <!-- Flex Flank End -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">flex:flank-end gap:xs align:end</span>
+              <span class="pill" var="out">Push to end</span>
+            </div>
+            <div class="flex:flank-end gap:xs align:end">
+              <div class="card" style="height: 40px;">Item 1</div>
+              <div class="card" style="height: 60px;">Item 2</div>
+              <div class="card" style="height: 80px;">Item 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Grid Layouts</h3>
+        <p class="text:sm text-muted">Composition classes like <code>grid:lcr</code>, <code>grid:auto-fit</code>, etc., with utilities like <code>gap:*</code>.</p>
+        
+        <div class="flex:stack gap:md">
+          <!-- Grid LCR -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">grid:lcr gap:md</span>
+              <span class="pill" var="out">Left-Center-Right</span>
+            </div>
+            <div class="grid:lcr gap:md">
+              <div class="card">Left</div>
+              <div class="card">Center (grows)</div>
+              <div class="card">Right</div>
+            </div>
+          </div>
+
+          <!-- Grid TMB -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">grid:tmb gap:sm</span>
+              <span class="pill" var="out">Top-Middle-Bottom</span>
+            </div>
+            <div class="grid:tmb gap:sm" style="height: 200px;">
+              <div class="card">Top</div>
+              <div class="card">Middle (grows)</div>
+              <div class="card">Bottom</div>
+            </div>
+          </div>
+
+          <!-- Grid Auto-Fit -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">grid:auto-fit gap:sm</span>
+              <span class="pill" var="out">Responsive columns</span>
+            </div>
+            <div class="grid:auto-fit gap:sm" style="--grid-min: 150px;">
+              <div class="card">Item 1</div>
+              <div class="card">Item 2</div>
+              <div class="card">Item 3</div>
+              <div class="card">Item 4</div>
+              <div class="card">Item 5</div>
+            </div>
+          </div>
+
+          <!-- Grid Hero -->
+          <div class="card flex:stack gap:xs p:sm">
+            <div class="flex:spread-row align:center">
+              <span class="text:sm">grid:hero gap:xs</span>
+              <span class="pill" var="out">3x3 layout</span>
+            </div>
+            <div class="grid:hero gap:xs" style="height: 200px;">
+              <div class="card" style="grid-area: 1 / 1 / 2 / -1;">Header</div>
+              <div class="card" style="grid-area: 2 / 1 / -1 / 2;">Left</div>
+              <div class="card" style="grid-area: 2 / 2 / -1 / 3;">Main</div>
+              <div class="card" style="grid-area: 2 / 3 / -1 / -1;">Right</div>
+              <div class="card" style="grid-area: -2 / 1 / -1 / -1;">Footer</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Frame (Aspect Ratio)</h3>
+        <p class="text:sm text-muted">Maintain aspect ratios with <code>frame:*</code> classes.</p>
+        
+        <div class="flex:cluster gap:md">
+          <div class="card flex:stack gap:xs p:sm">
+            <span class="text:sm">frame:square</span>
+            <div class="frame:square">
+              <div class="card" style="background: var(--surface-raised);">Square</div>
+            </div>
+          </div>
+
+          <div class="card flex:stack gap:xs p:sm">
+            <span class="text:sm">frame:landscape</span>
+            <div class="frame:landscape">
+              <div class="card" style="background: var(--surface-raised);">16:9</div>
+            </div>
+          </div>
+
+          <div class="card flex:stack gap:xs p:sm">
+            <span class="text:sm">frame:portrait</span>
+            <div class="frame:portrait">
+              <div class="card" style="background: var(--surface-raised);">9:16</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Utility Combinations</h3>
+        <p class="text:sm text-muted">Mix utilities for custom layouts, e.g., <code>wrap gap:lg align:center justify:around</code>.</p>
+        
+        <div class="card flex:stack gap:xs p:sm">
+          <div class="flex:spread-row align:center">
+            <span class="text:sm">wrap gap:lg align:center justify:around</span>
+            <span class="pill" var="out">Custom flex</span>
+          </div>
+          <div class="wrap gap:lg align:center justify:around">
+            <div class="card" style="height: 60px; width: 100px;">Item 1</div>
+            <div class="card" style="height: 80px; width: 120px;">Item 2</div>
+            <div class="card" style="height: 70px; width: 110px;">Item 3</div>
+            <div class="card" style="height: 90px; width: 130px;">Item 4</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class=" scroll-y card flex:stack gap:md p:md">
+      <h2 class="text:md">Settings</h2>
+
+      <section class="flex:stack gap:sm">
+        <h3 class="text:sm">Theme</h3>
+        <div class="flex:cluster gap:xs">
+          <button sz="sm"
+            data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
+            data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
+          <button sz="sm"
+            data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
+            data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
+        </div>
+      </section>
+
+      <section class="flex:stack gap:sm">
+        <h3 class="text:sm">Mode</h3>
+        <div class="flex:cluster gap:xs">
+          <button sz="sm"
+            data-attr:var="$prst_mode === 'light' ? false : 'gho'"
+            data-on:click="$prst_mode = 'light'">Light</button>
+          <button sz="sm"
+            data-attr:var="$prst_mode === 'system' ? false : 'gho'"
+            data-on:click="$prst_mode = 'system'">System</button>
+          <button sz="sm"
+            data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
+            data-on:click="$prst_mode = 'dark'">Dark</button>
+        </div>
+      </section>
+    </aside>
+
+    <footer class="card flex:cluster gap:md justify:center" style="grid-column: 1 / -1;">
+      <span class="">CUBE CSS Design System</span>
+      <span class="pill" var="out">v0.1</span>
+    </footer>
+  </div>
+</body>
+</html>
