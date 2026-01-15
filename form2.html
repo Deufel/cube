@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Form with Container Queries</title>
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  
+  <style>
+    /* Grid-based form with container queries */
+    .form-grid {
+      container-type: inline-size;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--space-md);
+    }
+
+    /* Size classes - default (narrow) */
+    .input-group[w="full"] { grid-column: span 12; }
+    .input-group[w="lg"]   { grid-column: span 12; }
+    .input-group[w="md"]   { grid-column: span 12; }
+    .input-group[w="sm"]   { grid-column: span 12; }
+
+    /* Medium container: 400px+ */
+    @container (min-width: 400px) {
+      .input-group[w="lg"] { grid-column: span 8; }
+      .input-group[w="md"] { grid-column: span 6; }
+      .input-group[w="sm"] { grid-column: span 6; }
+    }
+
+    /* Large container: 680px+ */
+    @container (min-width: 680px) {
+      .input-group[w="lg"] { grid-column: span 6; }
+      .input-group[w="md"] { grid-column: span 4; }
+      .input-group[w="sm"] { grid-column: span 4; }
+    }
+
+    /* Demo: resize containers */
+    .demo-container {
+      border: 2px dashed var(--gry-6);
+      padding: var(--space-md);
+      margin-bottom: var(--space-lg);
+      resize: horizontal;
+      overflow: auto;
+    }
+    .demo-label {
+      color: var(--gry-5);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-sm);
+    }
+  </style>
+</head>
+<body class="p:lg flex:stack gap:lg">
+
+  <h2>Grid Form + Container Queries Demo</h2>
+  <p class="text:sm" style="color: var(--gry-4);">Drag the corner to resize and watch the form adapt.</p>
+
+  <div class="demo-container" style="width: 700px;">
+    <form class="form-grid">
+      <!-- Full width email -->
+      <label class="input-group" w="full">Email Address<input type="email" placeholder="email@example.com"></label>
+      
+      <!-- 3 small: name fields -->
+      <label class="input-group" w="sm">First Name<input type="text" placeholder="John"></label>
+      <label class="input-group" w="sm">Middle<input type="text" placeholder="M"></label>
+      <label class="input-group" w="sm">Last Name<input type="text" placeholder="Doe"></label>
+      
+      <!-- Large + Medium: address -->
+      <label class="input-group" w="lg">Street Address<input type="text" placeholder="123 Main St"></label>
+      <label class="input-group" w="md">Apt/Suite<input type="text" placeholder="Apt 4B"></label>
+      
+      <!-- 3 medium: city/state/zip -->
+      <label class="input-group" w="md">City<input type="text" placeholder="New York"></label>
+      <label class="input-group" w="md">State<input type="text" placeholder="NY"></label>
+      <label class="input-group" w="md">Zip Code<input type="text" placeholder="10001"></label>
+      
+      <!-- 2 medium: phone/dob -->
+      <label class="input-group" w="md">Phone<input type="tel" placeholder="(555) 123-4567"></label>
+      <label class="input-group" w="md">Date of Birth<input type="date"></label>
+      
+      <!-- Full width notes -->
+      <label class="input-group" w="full">Notes<textarea placeholder="Additional information..." rows="3"></textarea></label>
+      
+      <button type="submit" class="btn" style="grid-column: span 12;">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

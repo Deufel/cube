@@ -194,6 +194,61 @@ Components use class + attribute API.
 </div>
 ```
 
+### Form
+
+Forms use a 4-column grid layout. Use the `w` attribute on `.input-group` to set column span.
+
+| Attribute | Span | Width |
+|-----------|------|-------|
+| `w="1"` | 1 column | 25% |
+| `w="2"` | 2 columns | 50% |
+| `w="3"` | 3 columns | 75% |
+| `w="4"` | 4 columns | 100% |
+
+```html
+<form class="form">
+  <!-- Full width -->
+  <label class="input-group" w="4">
+    Email <span class="feedback">Looks good!</span>
+    <input type="email" placeholder="email@example.com" st="suc" />
+  </label>
+  
+  <!-- Two equal columns -->
+  <label class="input-group" w="2">
+    First Name
+    <input type="text" placeholder="John" />
+  </label>
+  <label class="input-group" w="2">
+    Last Name
+    <input type="text" placeholder="Doe" />
+  </label>
+  
+  <!-- Asymmetric: 75% + 25% -->
+  <label class="input-group" w="3">
+    Street Address
+    <input type="text" placeholder="123 Main St" />
+  </label>
+  <label class="input-group" w="1">
+    Apt
+    <input type="text" placeholder="#" />
+  </label>
+  
+  <!-- Full width button -->
+  <button w="4">Submit</button>
+</form>
+```
+
+**Input states** — use `st` attribute on inputs to show feedback colors:
+
+| State | Attribute |
+|-------|-----------|
+| Success | `st="suc"` |
+| Error | `st="err"` |
+| Warning | `st="wrn"` |
+| Info | `st="inf"` |
+
+The `.feedback` span inside `.input-group` will automatically color based on the input's `st` attribute.
+
 ### Icon Button
 
 ```html

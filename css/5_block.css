@@ -28,11 +28,17 @@
 
   /* === FORM === */
   .form {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-md);
-    container-type: inline-size;
   }
+
+  /* Form column spans */
+  .form .input-group[w="1"] { grid-column: span 1; }
+  .form .input-group[w="2"] { grid-column: span 2; }
+  .form .input-group[w="3"] { grid-column: span 3; }
+  .form .input-group[w="4"] { grid-column: span 4; }
+  .form button[w="4"] { grid-column: span 4; }
 
   /* === INPUT GROUP === */
   label.input-group {

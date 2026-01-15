@@ -85,40 +85,72 @@
 
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Form Layout</h3>
-        <form class="form">
-          <!-- Full width -->
-          <label class="input-group" style="width: 100cqi;">
-            Email <span class="feedback">Looks good!</span>
-            <input type="email" placeholder="email@example.com" st="suc" />
-          </label>
-          <!-- Two equal columns -->
-          <label class="input-group" style="width: calc(50cqi - var(--space-md) / 2);">
-            First Name <span class="feedback"></span>
-            <input type="text" placeholder="Enter first name" />
-          </label>
-          <label class="input-group" style="width: calc(50cqi - var(--space-md) / 2);">
-            Last Name <span class="feedback"></span>
-            <input type="text" placeholder="Enter last name" />
-          </label>
-          <!-- Two equal columns -->
-          <label class="input-group" style="width: calc(50cqi - var(--space-md) / 2);">
-            Password <span class="feedback">Passwords don't match</span>
-            <input type="password" placeholder="Enter password" st="err" />
-          </label>
-          <label class="input-group" style="width: calc(50cqi - var(--space-md) / 2);">
-            Confirm <span class="feedback">Password is weak</span>
-            <input type="password" placeholder="Confirm password" st="wrn" />
-          </label>
-          <!-- Asymmetric columns -->
-          <label class="input-group" style="width: calc(75cqi - var(--space-md) / 2);">
-            Card No. <span class="feedback"></span>
-            <input type="password" placeholder="#### #### #### ####" />
-          </label>
-          <label class="input-group" style="width: calc(25cqi - var(--space-md) / 2);">
-            Code<span class="feedback">Invalid</span>
-            <input type="password" placeholder="###" st="err" />
-          </label>
-        </form>
+        <p class="text:xs" style="color: var(--gry-4);">4-column grid: w="1" (25%), w="2" (50%), w="3" (75%), w="4" (100%) — resize to test</p>
+        <div style="resize: horizontal; overflow: auto; border: 1px dashed var(--gry-6); padding: var(--space-md); min-width: 250px; max-width: 100%;">
+          <form class="form">
+            <!-- Full width email -->
+            <label class="input-group" w="4">
+              Email <span class="feedback">Looks good!</span>
+              <input type="email" value="mike@example.com" st="suc" />
+            </label>
+            
+            <!-- 2 + 2: Names -->
+            <label class="input-group" w="2">
+              First Name
+              <input type="text" value="Mike" />
+            </label>
+            <label class="input-group" w="2">
+              Last Name
+              <input type="text" value="Johnson" />
+            </label>
+            
+            <!-- 3 + 1: Address -->
+            <label class="input-group" w="3">
+              Street Address
+              <input type="text" value="123 Main Street" />
+            </label>
+            <label class="input-group" w="1">
+              Apt
+              <input type="text" value="4B" />
+            </label>
+            
+            <!-- 2 + 1 + 1: City/State/Zip -->
+            <label class="input-group" w="2">
+              City
+              <input type="text" value="New York" />
+            </label>
+            <label class="input-group" w="1">
+              State
+              <input type="text" value="NY" />
+            </label>
+            <label class="input-group" w="1">
+              Zip <span class="feedback">Invalid</span>
+              <input type="text" value="1000" st="err" />
+            </label>
+            
+            <!-- 1 + 1 + 2: Mixed sizes -->
+            <label class="input-group" w="1">
+              Code
+              <input type="text" value="ABC" />
+            </label>
+            <label class="input-group" w="1">
+              PIN <span class="feedback">Weak</span>
+              <input type="text" value="1234" st="wrn" />
+            </label>
+            <label class="input-group" w="2">
+              Phone
+              <input type="tel" value="(555) 123-4567" />
+            </label>
+            
+            <!-- Full width notes -->
+            <label class="input-group" w="4">
+              Notes
+              <textarea rows="2">Additional delivery instructions...</textarea>
+            </label>
+            
+            <button type="submit" w="4">Submit</button>
+          </form>
+        </div>
       </section>
 
       <section class="flex:stack gap:sm">
