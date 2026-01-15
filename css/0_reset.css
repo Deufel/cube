@@ -8,8 +8,8 @@
   body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin-block-end: 0; }
   ul[role='list'], ol[role='list'] { list-style: none; }
   body { min-height: 100svh; line-height: 1.5; -webkit-font-smoothing: antialiased; }
-  h1, h2, h3, h4, button, input, label { line-height: 1.1; }
-  h1, h2, h3, h4 { text-box: trim-both cap alphabetic; text-wrap: balance; }
+  button, input, label { line-height: 1.1; }
+  h1, h2, h3, h4, h5, h6 { text-box: trim-both cap alphabetic; text-wrap: balance; margin: 0;  }
   p, li, figcaption { text-wrap: pretty; }
   a:not([class]) { text-decoration-skip-ink: auto; color: currentColor; }
   img, picture { max-width: 100%; display: block; }

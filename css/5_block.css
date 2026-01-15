@@ -26,22 +26,34 @@
   }
 
 
-  /* === INPUT GROUP === */
-  .input-group {
+  /* === FORM === */
+  .form {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    container-type: inline-size;
+  }
 
-    & label {
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--text-color);
-    }
+  /* === INPUT GROUP === */
+  label.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-color);
 
     & .feedback {
       font-size: var(--text-xs);
-      min-height: 1.25rem;
+      font-weight: 400;
       color: transparent;
+    }
+
+    & input,
+    & textarea {
+      width: 100%;
+      margin-block-start: var(--space-xs);
     }
 
     &:has(input[st="err"]) .feedback { color: var(--color-err); }
@@ -58,7 +70,7 @@
     padding-inline: var(--space-sm);
     font-size: var(--text-md);
     line-height: 1;
-    background: var(--surface-card);
+    background: var(--surface-input);
     color: var(--text-color);
     border: 1px solid var(--border-muted);
     border-radius: var(--radius-btn);
@@ -121,7 +133,7 @@
 
   /* === CARD === */
   .card {
-    padding: var(--space-md);
+    padding: var(--space-sm);
     border-radius: var(--radius-card);
     background: var(--surface-card);
     color: var(--text-color);

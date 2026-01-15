@@ -43,17 +43,18 @@
     --surface-card: light-dark(white, var(--gry-8));
     --surface-raised: light-dark(var(--gry-0), var(--gry-7));
     --surface-inset: light-dark(var(--gry-2), var(--gry-9));
+    --surface-input: light-dark(white, var(--gry-9));
 
     /* === COLORS (muted with gray for premium feel) === */
     --color-pri: light-dark(
       color-mix(in oklch, var(--ind-7), var(--gry-7) 15%),
-      color-mix(in oklch, var(--ind-5), var(--gry-3) 10%)
+      color-mix(in oklch, var(--ind-7), var(--gry-5) 10%)
     );
     --color-pri-text: white;
 
     --color-sec: light-dark(
       color-mix(in oklch, var(--gry-6), var(--gry-7) 30%),
-      color-mix(in oklch, var(--gry-4), var(--gry-3) 20%)
+      color-mix(in oklch, var(--org-7), var(--gry-3) 20%)
     );
     --color-sec-text: light-dark(white, var(--gry-9));
 
@@ -83,8 +84,8 @@
     --color-err: var(--color-dgr);
 
     /* === TEXT === */
-    --text-color: light-dark(var(--gry-8), var(--gry-2));
-    --text-muted: light-dark(var(--gry-6), var(--gry-5));
+    --text-color: light-dark(var(--gry-9), var(--gry-1));
+    --text-muted: light-dark(var(--gry-7), var(--gry-3));
     --text-xs: 0.75rem;
     --text-sm: 0.8125rem;
     --text-md: 0.9375rem;

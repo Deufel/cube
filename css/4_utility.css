@@ -22,8 +22,8 @@
   [class*="gap:xl"] { gap: var(--space-xl); }
 
   /* === WRAP === */
-  [class*="wrap"] { flex-wrap: wrap; }
-  [class*="nowrap"] { flex-wrap: nowrap; }
+  [class*="wrap"]   {display: flex; flex-wrap: wrap; }
+  [class*="nowrap"] {display: flex; flex-wrap: nowrap; }
 
   /* === PADDING === */
   [class*="p:xs"] { padding: var(--space-xs); }
@@ -45,4 +45,17 @@
   [class*="text:md"] { font-size: var(--text-md); }
   [class*="text:lg"] { font-size: var(--text-lg); }
   [class*="text:xl"] { font-size: var(--text-xl); }
+
+  /* === SCROLL UTILITIES === */
+  [class*="scroll-y"]  { overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-y: none; }
+  [class*="scroll-x"]  { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: none; }
+  [class*="scroll-xy"] { overflow:   auto; -webkit-overflow-scrolling: touch; overscroll-behavior:   none; }
+  [class*="scroll-no"] { overscroll-behavior: none; }
+
+  /* Width using ch */
+  .w\:sm   { width: 16ch; }
+  .w\:md   { width: 24ch; }
+  .w\:lg   { width: 32ch; }
+  .w\:xl   { width: 40ch; }
+
 }
