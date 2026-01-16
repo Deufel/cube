@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Debug</title>
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+  <style>
+    /* TEST: Using *= (contains) instead of = (exact) */
+    .test-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--radius-btn);
+      font-weight: 500;
+      cursor: pointer;
+      background: var(--gry-5);
+      color: white;
+      border: none;
+    }
+
+    /* Contains selector - matches "pri" AND "pri:out" */
+    .test-btn[var*="pri"] {
+      background: var(--color-pri);
+      color: var(--color-pri-text);
+    }
+    .test-btn[var*="sec"] {
+      background: var(--color-sec);
+      color: var(--color-sec-text);
+    }
+    .test-btn[var*="wrn"] {
+      background: var(--color-wrn);
+      color: var(--gry-9);
+    }
+    .test-btn[var*="dgr"] {
+      background: var(--color-dgr);
+      color: white;
+    }
+
+    /* :out suffix overrides background and adds border */
+    .test-btn[var*=":out"] {
+      background: transparent;
+      border: 1.5px solid currentColor;
+    }
+  </style>
+</head>
+<body class="p:lg flex:stack gap:lg">
+  
+  <h2>Problem: Current Implementation (exact match)</h2>
+  <p class="text:sm text-muted">Using <code>[var="pri"]</code> - doesn't match "pri:out"</p>
+  <div class="flex:cluster gap:sm">
+    <button var="pri">var="pri" ✓</button>
+    <button var="pri:out">var="pri:out" ✗</button>
+    <button var="sec">var="sec" ✓</button>
+    <button var="sec:out">var="sec:out" ✗</button>
+  </div>
+
+  <h2>Solution: Test Buttons (contains match)</h2>
+  <p class="text:sm text-muted">Using <code>[var*="pri"]</code> - matches both "pri" and "pri:out"</p>
+  <div class="flex:cluster gap:sm">
+    <button class="test-btn" var="pri">var="pri" ✓</button>
+    <button class="test-btn" var="pri:out">var="pri:out" ✓</button>
+    <button class="test-btn" var="sec">var="sec" ✓</button>
+    <button class="test-btn" var="sec:out">var="sec:out" ✓</button>
+    <button class="test-btn" var="wrn">var="wrn" ✓</button>
+    <button class="test-btn" var="wrn:out">var="wrn:out" ✓</button>
+    <button class="test-btn" var="dgr">var="dgr" ✓</button>
+    <button class="test-btn" var="dgr:out">var="dgr:out" ✓</button>
+  </div>
+
+  <h2>Fix Required</h2>
+  <p>In <code>6_exception.css</code>, change:</p>
+  <pre style="background: var(--surface-inset); padding: var(--space-sm); border-radius: var(--radius-sm);">
+/* FROM */
+&[var="sec"] { ... }
+&[var="wrn"] { ... }
+
+/* TO */
+&[var*="sec"] { ... }
+&[var*="wrn"] { ... }
+  </pre>
+
+</body>
+</html>

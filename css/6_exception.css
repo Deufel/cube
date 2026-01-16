@@ -1,28 +1,38 @@
 @layer exception {
   :where(html) {
   /* === BUTTON VARIANTS === */
-  :is(button, .btn, .icon-btn) {
-    &[var="sec"] {
-      background: var(--color-sec);
+:is(button, .btn, .icon-btn) {
+    &[var*="pri"] {
+      --_btn-color: var(--color-pri);
+      background: var(--_btn-color);
+      color: var(--color-pri-text);
+    }
+    &[var*="sec"] {
+      --_btn-color: var(--color-sec);
+      background: var(--_btn-color);
       color: var(--color-sec-text);
+    }
+    &[var*="gho"] {
+      background: transparent;
+      color: inherit;
+    }
+    &[var*="wrn"] {
+      --_btn-color: var(--color-wrn);
+      background: var(--_btn-color);
+      color: var(--color-wrn-text);
+    }
+    &[var*="dgr"] {
+      --_btn-color: var(--color-dgr);
+      background: var(--_btn-color);
+      color: var(--color-dgr-text);
     }
     /* :out suffix - works with any variant e.g. var="pri:out", var="sec:out" */
     &[var*=":out"] {
       background: transparent;
+      color: var(--_btn-color);
       border: 1.5px solid currentColor;
     }
-    &[var="gho"] {
-      background: transparent;
-      color: inherit;
-    }
-    &[var="wrn"] {
-      background: var(--color-wrn);
-      color: var(--color-wrn-text);
-    }
-    &[var="dgr"] {
-      background: var(--color-dgr);
-      color: var(--color-dgr-text);
-    }
+  }
   }
 
   /* === BUTTON SIZES === */
