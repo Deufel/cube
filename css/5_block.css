@@ -152,8 +152,8 @@
     --_icon-btn-size: 48px;
     --_icon-size: 24px;
 
+    aspect-ratio: 1;
     width: var(--_icon-btn-size);
-    height: var(--_icon-btn-size);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -161,7 +161,6 @@
     gap: var(--space-3xs);
     border: none;
     border-radius: var(--radius-btn);
-    corner-shape: squircle;
     cursor: pointer;
     background: transparent;
     color: var(--text-color);
