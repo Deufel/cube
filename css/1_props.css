@@ -53,6 +53,8 @@
     --yel-0: #fff9db; --yel-1: #fff3bf; --yel-2: #ffec99; --yel-3: #ffe066; --yel-4: #ffd43b; --yel-5: #fcc419; --yel-6: #fab005; --yel-7: #f59f00; --yel-8: #f08c00; --yel-9: #e67700;
     --org-0: #fff4e6; --org-1: #ffe8cc; --org-2: #ffd8a8; --org-3: #ffc078; --org-4: #ffa94d; --org-5: #ff922b; --org-6: #fd7e14; --org-7: #f76707; --org-8: #e8590c; --org-9: #d9480f;
     --size-000: -.5rem; --size-00: -.25rem; --size-1: .25rem; --size-2: .5rem; --size-3: 1rem; --size-4: 1.25rem; --size-5: 1.5rem; --size-6: 1.75rem; --size-7: 2rem; --size-8: 3rem; --size-9: 4rem;
+    --size-px-1: 4px; --size-px-2: 8px; --size-px-3: 16px; --size-px-4: 20px; --size-px-5: 24px; --size-px-6: 28px; --size-px-7: 32px; --size-px-8: 40px; --size-px-9: 48px; --size-px-10: 64px; --size-px-11: 80px;
+    --glass-bg-1: rgba(255, 255, 255, 0.1); --glass-border-1: rgba(255, 255, 255, 0.2);
     --content-1: 25ch; --content-2: 45ch; --content-3: 75ch;
     --border-size-1: 1px; --border-size-2: 2px; --border-size-3: 5px;
     --radius-1: 2px; --radius-2: 5px; --radius-3: 1rem; --radius-4: 2rem; --radius-5: 4rem;

@@ -251,9 +251,40 @@ The `.feedback` span inside `.input-group` will automatically color based on the
 
 ### Icon Button
 
+Icon buttons support size, variant, color, and shape attributes.
+
+| Attribute | Purpose | Values |
+|-----------|---------|--------|
+| `sz` | Size | `sm` (32px), default (40px), `lg` (48px) |
+| `var` | Variant | `pri`, `sec`, `out`, `gho`, `gra`, `gla` |
+| `col` | Color | `suc`, `wrn`, `dgr` |
+| `shape` | Shape | `round` (pill/circle) |
+
 ```html
-<button class="icon-btn" sz="md" var="gho">
+<!-- Sizes -->
+<button class="icon-btn" sz="sm"><svg>...</svg></button>
+<button class="icon-btn"><svg>...</svg></button>
+<button class="icon-btn" sz="lg"><svg>...</svg></button>
+
+<!-- Variants -->
+<button class="icon-btn" var="pri"><svg>...</svg></button>
+<button class="icon-btn" var="sec"><svg>...</svg></button>
+<button class="icon-btn" var="out"><svg>...</svg></button>
+<button class="icon-btn" var="gho"><svg>...</svg></button>
+<button class="icon-btn" var="gra"><svg>...</svg></button>
+<button class="icon-btn" var="gla"><svg>...</svg></button>
+
+<!-- Colors -->
+<button class="icon-btn" var="out" col="suc"><svg>...</svg></button>
+<button class="icon-btn" var="pri" col="dgr"><svg>...</svg></button>
+
+<!-- Shape -->
+<button class="icon-btn" var="pri" shape="round"><svg>...</svg></button>
+
+<!-- With label -->
+<button class="icon-btn" sz="lg">
   <svg>...</svg>
+  <span>Label</span>
 </button>
 ```
 

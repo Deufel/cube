@@ -149,8 +149,9 @@
 
   /* === ICON BUTTON === */
   .icon-btn {
-    --_icon-btn-size: 48px;
-    --_icon-size: 24px;
+    --_icon-btn-size: var(--icon-btn-size-md);
+    --_icon-size: var(--icon-size-md);
+    --_icon-btn-color: var(--color-pri);
 
     aspect-ratio: 1;
     width: var(--_icon-btn-size);
@@ -159,34 +160,48 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-3xs);
-    border: none;
+    border: 1.5px solid transparent;
     border-radius: var(--radius-btn);
     cursor: pointer;
     background: transparent;
     color: var(--text-color);
-    transition: box-shadow 0.15s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 
     & svg {
       width: var(--_icon-size);
       height: var(--_icon-size);
       flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     & span {
       font-size: 0.625rem;
       line-height: 1;
+      font-weight: 500;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* When label present: shrink icon slightly */
     &:has(span) {
-      --_icon-size: 20px;
+      --_icon-size: var(--icon-size-sm);
     }
 
     &:hover {
-      box-shadow: inset 0 0 0 100vmax color-mix(in oklch, var(--gry-9), transparent 90%);
+      border-color: var(--_icon-btn-color);
+      color: var(--_icon-btn-color);
+      background: color-mix(in oklch, var(--_icon-btn-color), transparent 95%);
+      box-shadow: 0 4px 12px color-mix(in oklch, var(--_icon-btn-color), transparent 70%);
     }
+
+    &:hover svg,
+    &:hover span {
+      transform: scale(1.1);
+    }
+
     &:active {
-      box-shadow: inset 0 0 0 100vmax color-mix(in oklch, var(--gry-9), transparent 80%);
+      background: color-mix(in oklch, var(--_icon-btn-color), transparent 90%);
+      transform: scale(0.95);
     }
   }
 }

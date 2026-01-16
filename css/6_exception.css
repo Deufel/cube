@@ -33,8 +33,53 @@
 
   /* === ICON BUTTON SIZES === */
   .icon-btn {
-    &[sz="sm"] { --_icon-btn-size: 36px; --_icon-size: 18px; &:has(span) { --_icon-size: 14px; } }
-    &[sz="lg"] { --_icon-btn-size: 64px; --_icon-size: 28px; &:has(span) { --_icon-size: 24px; } }
+    &[sz="sm"] { --_icon-btn-size: var(--icon-btn-size-sm); --_icon-size: var(--icon-size-sm); }
+    &[sz="lg"] { --_icon-btn-size: var(--icon-btn-size-lg); --_icon-size: var(--icon-size-lg); }
+  }
+
+  /* === ICON BUTTON VARIANTS === */
+  .icon-btn {
+    &[var="pri"] {
+      background: var(--_icon-btn-color);
+      color: var(--color-pri-text);
+      border-color: var(--_icon-btn-color);
+    }
+    &[var="sec"] {
+      background: color-mix(in oklch, var(--_icon-btn-color), transparent 90%);
+      color: var(--_icon-btn-color);
+      border-color: transparent;
+    }
+    &[var="out"] {
+      border-color: var(--gry-5);
+      background: transparent;
+    }
+    &[var="gho"] {
+      background: transparent;
+      border-color: transparent;
+    }
+    &[var="gra"] {
+      background: linear-gradient(135deg, var(--color-pri), var(--color-suc));
+      color: white;
+      border-color: transparent;
+    }
+    &[var="gla"] {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--blur-md));
+      border-color: var(--glass-border);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  /* === ICON BUTTON COLORS === */
+  .icon-btn {
+    &[col="suc"] { --_icon-btn-color: var(--color-suc); }
+    &[col="wrn"] { --_icon-btn-color: var(--color-wrn); }
+    &[col="dgr"] { --_icon-btn-color: var(--color-dgr); }
+  }
+
+  /* === ICON BUTTON SHAPE === */
+  .icon-btn {
+    &[shape="round"] { border-radius: var(--radius-full); }
   }
 
   /* === BUTTON STATES === */
