@@ -42,8 +42,11 @@
     --surface-page: light-dark(var(--gry-1), var(--gry-9));
     --surface-card: light-dark(white, var(--gry-8));
     --surface-raised: light-dark(var(--gry-0), var(--gry-7));
-    --surface-inset: light-dark(var(--gry-2), var(--gry-9));
-    --surface-input: light-dark(white, var(--gry-9));
+    --surface-inset: light-dark(var(--gry-2), var(--gry-8));
+    --surface-input: light-dark(
+      color-mix(in oklch, var(--ind-0), var(--gry-0) 85%),
+      color-mix(in oklch, var(--ind-9), var(--gry-8) 85%)
+    );
 
     /* === COLORS (muted with gray for premium feel) === */
     --color-pri: light-dark(
@@ -53,10 +56,10 @@
     --color-pri-text: white;
 
     --color-sec: light-dark(
-      color-mix(in oklch, var(--gry-6), var(--gry-7) 30%),
-      color-mix(in oklch, var(--org-7), var(--gry-3) 20%)
+      color-mix(in oklch, var(--tel-6), var(--gry-6) 15%),
+      color-mix(in oklch, var(--tel-5), var(--gry-5) 10%)
     );
-    --color-sec-text: light-dark(white, var(--gry-9));
+    --color-sec-text: white;
 
     --color-wrn: light-dark(
       color-mix(in oklch, var(--yel-5), var(--gry-5) 20%),

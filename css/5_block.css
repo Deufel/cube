@@ -60,7 +60,9 @@
     & textarea {
       width: 100%;
       margin-block-start: var(--space-xs);
+      border-color: var(--surface-input);
     }
+
 
     &:has(input[st="err"]) .feedback { color: var(--color-err); }
     &:has(input[st="suc"]) .feedback { color: var(--color-suc); }
@@ -72,6 +74,7 @@
   input:where([type="text"], [type="email"], [type="password"], [type="search"], [type="tel"], [type="url"], [type="number"]),
   input:not([type]),
   textarea {
+    caret-color: var(--color-pri);
     height: var(--btn-height-md);
     padding-inline: var(--space-sm);
     font-size: var(--text-md);
@@ -100,7 +103,7 @@
   }
 
   /* === PILL === */
-  .pill {
+  .tag {
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
@@ -110,12 +113,15 @@
     font-weight: 500;
     line-height: 1;
     border-radius: var(--radius-round);
-    background: color-mix(in oklch, var(--color-pri), transparent 85%);
-    color: light-dark(
-      color-mix(in oklch, var(--color-pri), var(--gry-9) 30%),
-      color-mix(in oklch, var(--color-pri), var(--gry-1) 20%)
+    background: light-dark(
+      color-mix(in oklch, var(--color-pri), var(--gry-0) 92%),
+      color-mix(in oklch, var(--color-pri), var(--gry-8) 90%)
     );
-    border: 1px solid color-mix(in oklch, var(--color-pri), transparent 70%);
+    color: light-dark(var(--gry-7), var(--gry-2));
+    border: 1px solid light-dark(
+      color-mix(in oklch, var(--color-pri), transparent 80%),
+      color-mix(in oklch, var(--color-pri), transparent 70%)
+    );
 
     & .close {
       display: inline-flex;

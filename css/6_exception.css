@@ -6,10 +6,10 @@
       background: var(--color-sec);
       color: var(--color-sec-text);
     }
-    &[var="out"] {
+    /* :out suffix - works with any variant e.g. var="pri:out", var="sec:out" */
+    &[var*=":out"] {
       background: transparent;
-      border: 1px solid var(--border-muted);
-      color: inherit;
+      border: 1.5px solid currentColor;
     }
     &[var="gho"] {
       background: transparent;
@@ -88,52 +88,63 @@
     &[st="dis"] { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
   }
 
-  /* === PILL VARIANTS === */
-  .pill {
-    &[var="sec"] {
-      background: color-mix(in oklch, var(--color-sec), transparent 85%);
-      color: light-dark(
-        color-mix(in oklch, var(--color-sec), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-sec), var(--gry-1) 20%)
-      );
-      border-color: color-mix(in oklch, var(--color-sec), transparent 70%);
-    }
-    &[var="wrn"] {
-      background: color-mix(in oklch, var(--color-wrn), transparent 80%);
-      color: light-dark(
-        color-mix(in oklch, var(--color-wrn), var(--gry-9) 50%),
-        color-mix(in oklch, var(--color-wrn), var(--gry-9) 30%)
-      );
-      border-color: color-mix(in oklch, var(--color-wrn), transparent 60%);
-    }
-    &[var="dgr"] {
-      background: color-mix(in oklch, var(--color-dgr), transparent 85%);
-      color: light-dark(
-        color-mix(in oklch, var(--color-dgr), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-dgr), var(--gry-1) 20%)
-      );
-      border-color: color-mix(in oklch, var(--color-dgr), transparent 70%);
-    }
+  /* === TAG VARIANTS === */
+  .tag {
     &[var="inf"] {
-      background: color-mix(in oklch, var(--color-inf), transparent 85%);
-      color: light-dark(
-        color-mix(in oklch, var(--color-inf), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-inf), var(--gry-1) 20%)
+      background: light-dark(
+        color-mix(in oklch, var(--blu-5), var(--gry-0) 85%),
+        color-mix(in oklch, var(--blu-7), var(--gry-8) 80%)
       );
-      border-color: color-mix(in oklch, var(--color-inf), transparent 70%);
+      color: light-dark(
+        color-mix(in oklch, var(--blu-7), var(--gry-9) 30%),
+        color-mix(in oklch, var(--blu-3), var(--gry-1) 20%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--blu-5), transparent 60%),
+        color-mix(in oklch, var(--blu-6), transparent 50%)
+      );
     }
     &[var="suc"] {
-      background: color-mix(in oklch, var(--color-suc), transparent 85%);
-      color: light-dark(
-        color-mix(in oklch, var(--color-suc), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-suc), var(--gry-1) 20%)
+      background: light-dark(
+        color-mix(in oklch, var(--grn-5), var(--gry-0) 85%),
+        color-mix(in oklch, var(--grn-7), var(--gry-8) 80%)
       );
-      border-color: color-mix(in oklch, var(--color-suc), transparent 70%);
+      color: light-dark(
+        color-mix(in oklch, var(--grn-8), var(--gry-9) 30%),
+        color-mix(in oklch, var(--grn-3), var(--gry-1) 20%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--grn-5), transparent 60%),
+        color-mix(in oklch, var(--grn-6), transparent 50%)
+      );
     }
-    &[var="out"] {
-      background: transparent;
-      color: var(--text-color);
-      border-color: var(--border-muted);
+    &[var="wrn"] {
+      background: light-dark(
+        color-mix(in oklch, var(--yel-7), var(--gry-0) 70%),
+        color-mix(in oklch, var(--yel-7), var(--gry-8) 65%)
+      );
+      color: light-dark(
+        color-mix(in oklch, var(--yel-9), var(--gry-9) 40%),
+        color-mix(in oklch, var(--yel-2), var(--gry-1) 30%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--yel-5), transparent 50%),
+        color-mix(in oklch, var(--yel-6), transparent 40%)
+      );
+    }
+    &[var="dgr"] {
+      background: light-dark(
+        color-mix(in oklch, var(--red-7), var(--gry-0) 70%),
+        color-mix(in oklch, var(--red-7), var(--gry-8) 65%)
+      );
+      color: light-dark(
+        color-mix(in oklch, var(--red-7), var(--gry-9) 30%),
+        color-mix(in oklch, var(--red-3), var(--gry-1) 20%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--red-5), transparent 60%),
+        color-mix(in oklch, var(--red-6), transparent 50%)
+      );
     }
   }
 

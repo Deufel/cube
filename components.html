@@ -60,15 +60,21 @@
     <main class="scroll-y card flex:stack gap:lg p:lg">
       <h2 class="text:xl" style="font-weight: 600;">Component Showcase</h2>
       
-      <section class="flex:stack gap:sm">
+<section class="flex:stack gap:sm">
         <h3 class="text:md">Buttons</h3>
         <div class="flex:cluster gap:sm">
           <button>Primary</button>
           <button var="sec">Secondary</button>
-          <button var="out">Outline</button>
           <button var="gho">Ghost</button>
           <button var="wrn">Warning</button>
           <button var="dgr">Danger</button>
+        </div>
+        <h4 class="text:sm">Outline Variants (:out suffix)</h4>
+        <div class="flex:cluster gap:sm">
+          <button var="pri:out">Primary</button>
+          <button var="sec:out">Secondary</button>
+          <button var="wrn:out">Warning</button>
+          <button var="dgr:out">Danger</button>
         </div>
         <div class="flex:cluster gap:sm">
           <a class="btn" href="#">Link as Button</a>
@@ -237,20 +243,18 @@
       </section>
 
       <section class="flex:stack gap:sm">
-        <h3 class="text:md">Pills</h3>
+        <h3 class="text:md">Tags</h3>
         <div class="flex:cluster gap:sm">
-          <span class="pill">Primary</span>
-          <span class="pill" var="sec">Secondary</span>
-          <span class="pill" var="wrn">Warning</span>
-          <span class="pill" var="dgr">Danger</span>
-          <span class="pill" var="inf">Info</span>
-          <span class="pill" var="suc">Success</span>
-          <span class="pill" var="out">Outline</span>
+          <span class="tag">Default</span>
+          <span class="tag" var="inf">Info</span>
+          <span class="tag" var="suc">Success</span>
+          <span class="tag" var="wrn">Warning</span>
+          <span class="tag" var="dgr">Danger</span>
         </div>
         <div class="flex:cluster gap:sm">
-          <span class="pill">Removable <span class="close">×</span></span>
-          <span class="pill" var="inf">Tag <span class="close">×</span></span>
-          <span class="pill" var="suc">Done <span class="close">×</span></span>
+          <span class="tag">Removable <span class="close">×</span></span>
+          <span class="tag" var="inf">Info <span class="close">×</span></span>
+          <span class="tag" var="suc">Done <span class="close">×</span></span>
         </div>
       </section>
 

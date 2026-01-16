@@ -167,14 +167,24 @@ Components use class + attribute API.
 
 ### Button
 
+| Attribute | Purpose | Values |
+|-----------|---------|--------|
+| `var` | Variant | `pri`, `sec`, `gho`, `wrn`, `dgr` |
+| `sz` | Size | `sm`, `md` (default), `lg` |
+| `st` | State | `lod` (loading), `dis` (disabled) |
+
+Append `:out` to any variant for an outline version.
+
 ```html
-<button class="btn" var="pri" sz="md">Primary</button>
-<button class="btn" var="sec" sz="lg">Secondary</button>
-<button class="btn" var="out" sz="sm">Outline</button>
-<button class="btn" var="gho" sz="md">Ghost</button>
-<button class="btn" var="pri" st="lod">Loading...</button>
-<button class="btn" var="pri" st="dis" disabled>Disabled</button>
+<button var="pri">Primary</button>
+<button var="sec">Secondary</button>
+<button var="pri:out">Primary Outline</button>
+<button var="sec:out">Secondary Outline</button>
+<button var="gho">Ghost</button>
+<button var="wrn">Warning</button>
+<button var="dgr:out">Danger Outline</button>
 ```
+
 
 ### Badge
 
@@ -183,6 +193,28 @@ Components use class + attribute API.
 <span class="badge" var="suc">Success</span>
 <span class="badge" var="err">Error</span>
 <span class="badge" var="wrn">Warning</span>
+```
+
+### Tag
+
+Rounded status indicators with semantic color variants.
+
+| Attribute | Purpose | Values |
+|-----------|---------|--------|
+| `var` | Variant | `inf` (info), `suc` (success), `wrn` (warning), `dgr` (danger) |
+
+```html
+<!-- Default (glass with primary tint) -->
+<span class="tag">Default</span>
+
+<!-- Semantic variants -->
+<span class="tag" var="inf">Info</span>
+<span class="tag" var="suc">Success</span>
+<span class="tag" var="wrn">Warning</span>
+<span class="tag" var="dgr">Danger</span>
+
+<!-- With close button -->
+<span class="tag" var="suc">Done <span class="close">×</span></span>
 ```
 
 ### Card
