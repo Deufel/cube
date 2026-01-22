@@ -47,7 +47,7 @@
     &.lg { --_icon-btn-size: var(--icon-btn-size-lg); --_icon-size: var(--icon-size-lg); }
   }
 
-  /* === ICON BUTTON VARIANTS === */
+  /* === ICON BUTTON VARIANTS (specific overrides) === */
   .icon-btn {
     &.pri {
       background: var(--_icon-btn-color);
@@ -63,10 +63,10 @@
       border-color: var(--gry-5);
       background: transparent;
     }
-    &.gho {
-      background: transparent;
-      border-color: transparent;
-    }
+  }
+
+  /* === SHARED STYLE VARIANTS (gra, gla) === */
+  :is(button, .btn, .icon-btn) {
     &.gra {
       background: linear-gradient(135deg, var(--color-pri), var(--color-suc));
       color: white;
