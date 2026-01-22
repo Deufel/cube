@@ -157,70 +157,69 @@ Single-purpose modifiers that compose with layouts.
 
 Components use class + attribute API.
 
-### Attribute API
+### Class API
 
-| Attribute | Purpose | Values |
-|-----------|---------|--------|
-| `var` | Variant | `pri`, `sec`, `out`, `gho` |
-| `sz` | Size | `xs`, `sm`, `md`, `lg`, `xl` |
-| `st` | State | `def`, `lod`, `dis`, `err`, `suc`, `wrn`, `inf` |
+| Class | Purpose | Values |
+|-------|---------|--------|
+| variant | Variant | `pri`, `sec`, `out`, `gho` |
+| size | Size | `xs`, `sm`, `md`, `lg`, `xl` |
+| state | State | `err`, `suc`, `wrn`, `inf` |
+
+**Note:** Use `disabled` attribute for disabled state, `aria-busy="true"` for loading state.
 
 ### Button
 
-| Attribute | Purpose | Values |
-|-----------|---------|--------|
-| `var` | Variant | `pri`, `sec`, `gho`, `wrn`, `dgr` |
-| `sz` | Size | `sm`, `md` (default), `lg` |
-| `st` | State | `lod` (loading), `dis` (disabled) |
-
+| Class | Purpose | Values |
+|-------|---------|--------|
+| variant | Variant | `pri`, `sec`, `gho`, `wrn`, `dgr` |
+| size | Size | `sm`, `md` (default), `lg` |
 Append `:out` to any variant for an outline version.
 
 ```html
-<button var="pri">Primary</button>
-<button var="sec">Secondary</button>
-<button var="pri:out">Primary Outline</button>
-<button var="sec:out">Secondary Outline</button>
-<button var="gho">Ghost</button>
-<button var="wrn">Warning</button>
-<button var="dgr:out">Danger Outline</button>
+<button class="pri">Primary</button>
+<button class="sec">Secondary</button>
+<button class="pri out">Primary Outline</button>
+<button class="sec out">Secondary Outline</button>
+<button class="gho">Ghost</button>
+<button class="wrn">Warning</button>
+<button class="dgr out">Danger Outline</button>
 ```
 
 
 ### Badge
 
 ```html
-<span class="badge" var="pri">Primary</span>
-<span class="badge" var="suc">Success</span>
-<span class="badge" var="err">Error</span>
-<span class="badge" var="wrn">Warning</span>
+<span class="badge" class="pri">Primary</span>
+<span class="badge" class="suc">Success</span>
+<span class="badge" class="err">Error</span>
+<span class="badge" class="wrn">Warning</span>
 ```
 
 ### Tag
 
 Rounded status indicators with semantic color variants.
 
-| Attribute | Purpose | Values |
-|-----------|---------|--------|
-| `var` | Variant | `inf` (info), `suc` (success), `wrn` (warning), `dgr` (danger) |
-
+| Class | Purpose | Values |
+|-------|---------|--------|
+| variant | Variant | `inf` (info), `suc` (success), `wrn` (warning), `dgr` (danger) |
 ```html
 <!-- Default (glass with primary tint) -->
 <span class="tag">Default</span>
 
 <!-- Semantic variants -->
-<span class="tag" var="inf">Info</span>
-<span class="tag" var="suc">Success</span>
-<span class="tag" var="wrn">Warning</span>
-<span class="tag" var="dgr">Danger</span>
+<span class="tag inf">Info</span>
+<span class="tag suc">Success</span>
+<span class="tag wrn">Warning</span>
+<span class="tag dgr">Danger</span>
 
 <!-- With close button -->
-<span class="tag" var="suc">Done <span class="close">×</span></span>
+<span class="tag suc">Done <span class="close">×</span></span>
 ```
 
 ### Card
 
 ```html
-<div class="card" var="pri">
+<div class="card pri">
   <h3>Title</h3>
   <p>Content</p>
 </div>
@@ -228,93 +227,93 @@ Rounded status indicators with semantic color variants.
 
 ### Form
 
-Forms use a 4-column grid layout. Use the `w` attribute on `.input-group` to set column span.
+Forms use a 4-column grid layout. Use width classes on `.input-group` to set column span.
 
-| Attribute | Span | Width |
-|-----------|------|-------|
-| `w="1"` | 1 column | 25% |
-| `w="2"` | 2 columns | 50% |
-| `w="3"` | 3 columns | 75% |
-| `w="4"` | 4 columns | 100% |
+| Class | Span | Width |
+|-------|------|-------|
+| `w-1` | 1 column | 25% |
+| `w-2` | 2 columns | 50% |
+| `w-3` | 3 columns | 75% |
+| `w-4` | 4 columns | 100% |
 
 ```html
 <form class="form">
   <!-- Full width -->
-  <label class="input-group" w="4">
+  <label class="input-group w-4">
     Email <span class="feedback">Looks good!</span>
-    <input type="email" placeholder="email@example.com" st="suc" />
+    <input type="email" placeholder="email@example.com" class="suc" />
   </label>
   
   <!-- Two equal columns -->
-  <label class="input-group" w="2">
+  <label class="input-group w-2">
     First Name
     <input type="text" placeholder="John" />
   </label>
-  <label class="input-group" w="2">
+  <label class="input-group w-2">
     Last Name
     <input type="text" placeholder="Doe" />
   </label>
   
   <!-- Asymmetric: 75% + 25% -->
-  <label class="input-group" w="3">
+  <label class="input-group w-3">
     Street Address
     <input type="text" placeholder="123 Main St" />
   </label>
-  <label class="input-group" w="1">
+  <label class="input-group w-1">
     Apt
     <input type="text" placeholder="#" />
   </label>
   
   <!-- Full width button -->
-  <button w="4">Submit</button>
+  <button class="w-4">Submit</button>
 </form>
 ```
 
 **Input states** — use `st` attribute on inputs to show feedback colors:
 
-| State | Attribute |
-|-------|-----------|
-| Success | `st="suc"` |
-| Error | `st="err"` |
-| Warning | `st="wrn"` |
-| Info | `st="inf"` |
+| State | Class |
+|-------|-------|
+| Success | `class="suc"` |
+| Error | `class="err"` |
+| Warning | `class="wrn"` |
+| Info | `class="inf"` |
 
-The `.feedback` span inside `.input-group` will automatically color based on the input's `st` attribute.
+The `.feedback` span inside `.input-group` will automatically color based on the inputns state class.
 
 ### Icon Button
 
-Icon buttons support size, variant, color, and shape attributes.
+Icon buttons support size, variant, color, and shape classes.
 
-| Attribute | Purpose | Values |
-|-----------|---------|--------|
-| `sz` | Size | `sm` (32px), default (40px), `lg` (48px) |
-| `var` | Variant | `pri`, `sec`, `out`, `gho`, `gra`, `gla` |
-| `col` | Color | `suc`, `wrn`, `dgr` |
-| `shape` | Shape | `round` (pill/circle) |
+| Class | Purpose | Values |
+|-------|---------|--------|
+| size | Size | `sm` (32px), default (40px), `lg` (48px) |
+| variant | Variant | `pri`, `sec`, `out`, `gho`, `gra`, `gla` |
+| color | Color | `suc`, `wrn`, `dgr` |
+| shape | Shape | `round` (pill/circle) |
 
 ```html
 <!-- Sizes -->
-<button class="icon-btn" sz="sm"><svg>...</svg></button>
+<button class="icon-btn" class="sm"><svg>...</svg></button>
 <button class="icon-btn"><svg>...</svg></button>
-<button class="icon-btn" sz="lg"><svg>...</svg></button>
+<button class="icon-btn" class="lg"><svg>...</svg></button>
 
 <!-- Variants -->
-<button class="icon-btn" var="pri"><svg>...</svg></button>
-<button class="icon-btn" var="sec"><svg>...</svg></button>
-<button class="icon-btn" var="out"><svg>...</svg></button>
-<button class="icon-btn" var="gho"><svg>...</svg></button>
-<button class="icon-btn" var="gra"><svg>...</svg></button>
-<button class="icon-btn" var="gla"><svg>...</svg></button>
+<button class="icon-btn" class="pri"><svg>...</svg></button>
+<button class="icon-btn" class="sec"><svg>...</svg></button>
+<button class="icon-btn" class="out"><svg>...</svg></button>
+<button class="icon-btn" class="gho"><svg>...</svg></button>
+<button class="icon-btn" class="gra"><svg>...</svg></button>
+<button class="icon-btn" class="gla"><svg>...</svg></button>
 
 <!-- Colors -->
-<button class="icon-btn" var="out" col="suc"><svg>...</svg></button>
-<button class="icon-btn" var="pri" col="dgr"><svg>...</svg></button>
+<button class="icon-btn" class="out" class="suc"><svg>...</svg></button>
+<button class="icon-btn" class="pri" class="dgr"><svg>...</svg></button>
 
 <!-- Shape -->
-<button class="icon-btn" var="pri" shape="round"><svg>...</svg></button>
+<button class="icon-btn" class="pri" class="round"><svg>...</svg></button>
 
 <!-- With label -->
-<button class="icon-btn" sz="lg">
+<button class="icon-btn" class="lg">
   <svg>...</svg>
   <span>Label</span>
 </button>

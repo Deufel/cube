@@ -57,23 +57,23 @@
   <h2>Problem: Current Implementation (exact match)</h2>
   <p class="text:sm text-muted">Using <code>[var="pri"]</code> - doesn't match "pri:out"</p>
   <div class="flex:cluster gap:sm">
-    <button var="pri">var="pri" ✓</button>
-    <button var="pri:out">var="pri:out" ✗</button>
-    <button var="sec">var="sec" ✓</button>
-    <button var="sec:out">var="sec:out" ✗</button>
+    <button class="pri">var="pri" ✓</button>
+    <button class="pri out">var="pri:out" ✗</button>
+    <button class="sec">var="sec" ✓</button>
+    <button class="sec out">var="sec:out" ✗</button>
   </div>
 
   <h2>Solution: Test Buttons (contains match)</h2>
   <p class="text:sm text-muted">Using <code>[var*="pri"]</code> - matches both "pri" and "pri:out"</p>
   <div class="flex:cluster gap:sm">
-    <button class="test-btn" var="pri">var="pri" ✓</button>
-    <button class="test-btn" var="pri:out">var="pri:out" ✓</button>
-    <button class="test-btn" var="sec">var="sec" ✓</button>
-    <button class="test-btn" var="sec:out">var="sec:out" ✓</button>
-    <button class="test-btn" var="wrn">var="wrn" ✓</button>
-    <button class="test-btn" var="wrn:out">var="wrn:out" ✓</button>
-    <button class="test-btn" var="dgr">var="dgr" ✓</button>
-    <button class="test-btn" var="dgr:out">var="dgr:out" ✓</button>
+    <button class="test-btn" class="pri">var="pri" ✓</button>
+    <button class="test-btn" class="pri out">var="pri:out" ✓</button>
+    <button class="test-btn" class="sec">var="sec" ✓</button>
+    <button class="test-btn" class="sec out">var="sec:out" ✓</button>
+    <button class="test-btn" class="wrn">var="wrn" ✓</button>
+    <button class="test-btn" class="wrn out">var="wrn:out" ✓</button>
+    <button class="test-btn" class="dgr">var="dgr" ✓</button>
+    <button class="test-btn" class="dgr out">var="dgr:out" ✓</button>
   </div>
 
   <h2>Fix Required</h2>

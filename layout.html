@@ -36,17 +36,17 @@
         <h1>Cube CSS</h1>
       </div>
       <nav class="flex:cluster gap:xs">
-        <button sz="sm">Home</button>
-        <button var="gho" sz="sm">Docs</button>
-        <button var="gho" sz="sm">GitHub</button>
+        <button class="sm">Home</button>
+        <button class="gho sm">Docs</button>
+        <button class="gho sm">GitHub</button>
       </nav>
     </header>
 
     <nav class="scroll-y card flex:stack ">
-      <a class="btn" href="index.html" var="gho" sz="sm">Home</a>
-      <a class="btn" href="components.html" var="gho" sz="sm">Components</a>
-      <a class="btn" href="demos.html" var="gho" sz="sm">Demos</a>
-      <a class="btn" href="layout.html" var="pri" sz="sm">Layout</a>
+      <a class="btn" href="index.html" class="gho sm">Home</a>
+      <a class="btn" href="components.html" class="gho sm">Components</a>
+      <a class="btn" href="demos.html" class="gho sm">Demos</a>
+      <a class="btn" href="layout.html" class="pri sm">Layout</a>
     </nav>
 
     <main class="scroll-y card flex:stack gap:lg p:lg">
@@ -58,10 +58,10 @@
         
         <div class="flex:stack gap:md">
           <!-- Flex Cluster -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:cluster gap:sm</span>
-              <span class="pill" var="out">Wraps horizontally</span>
+              <span class="pill out">Wraps horizontally</span>
             </div>
             <div class="flex:cluster gap:sm">
               <div class="card" style="width: 100px;">Item 1</div>
@@ -73,10 +73,10 @@
           </div>
 
           <!-- Flex Stack -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:stack gap:xs align:center</span>
-              <span class="pill" var="out">Vertical stack</span>
+              <span class="pill out">Vertical stack</span>
             </div>
             <div class="flex:stack gap:xs align:center" style="height: 150px;">
               <div class="card" style="width: 80%;">Top</div>
@@ -86,10 +86,10 @@
           </div>
 
           <!-- Flex Split Row -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:split-row gap:md</span>
-              <span class="pill" var="out">Binary split</span>
+              <span class="pill out">Binary split</span>
             </div>
             <div class="flex:split-row gap:md">
               <div class="card">Left item</div>
@@ -98,10 +98,10 @@
           </div>
 
           <!-- Flex Split Column -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:split-col gap:sm</span>
-              <span class="pill" var="out">Binary split vertical</span>
+              <span class="pill out">Binary split vertical</span>
             </div>
             <div class="flex:split-col gap:sm" style="height: 150px;">
               <div class="card">Top item</div>
@@ -110,10 +110,10 @@
           </div>
 
           <!-- Flex Spread Column -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:spread-column gap:sm justify:between</span>
-              <span class="pill" var="out">Space between</span>
+              <span class="pill out">Space between</span>
             </div>
             <div class="flex:spread-column gap:sm justify:between" style="height: 150px;">
               <div class="card">Top</div>
@@ -123,10 +123,10 @@
           </div>
 
           <!-- Flex Flank Start -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-start gap:md</span>
-              <span class="pill" var="out">Sidebar left</span>
+              <span class="pill out">Sidebar left</span>
             </div>
             <div class="flex:flank-start gap:md">
               <div class="card p:sm">Sidebar</div>
@@ -135,10 +135,10 @@
           </div>
 
           <!-- Flex Flank End -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-end gap:md</span>
-              <span class="pill" var="out">Sidebar right</span>
+              <span class="pill out">Sidebar right</span>
             </div>
             <div class="flex:flank-end gap:md">
               <div class="card p:sm">Main content fills remaining space (wraps when &lt;50%)</div>
@@ -147,10 +147,10 @@
           </div>
 
           <!-- Flex Flank with custom properties -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">flex:flank-start with --flank-size: 200px</span>
-              <span class="pill" var="out">Fixed sidebar</span>
+              <span class="pill out">Fixed sidebar</span>
             </div>
             <div class="flex:flank-start gap:md" style="--flank-size: 200px;">
               <div class="card p:sm">200px sidebar</div>
@@ -166,10 +166,10 @@
         
         <div class="flex:stack gap:md">
           <!-- Grid LCR -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:lcr gap:md</span>
-              <span class="pill" var="out">True center</span>
+              <span class="pill out">True center</span>
             </div>
             <div class="grid:lcr gap:md">
               <div class="card">Short</div>
@@ -179,10 +179,10 @@
           </div>
 
           <!-- Grid TMB -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:tmb gap:sm</span>
-              <span class="pill" var="out">True middle</span>
+              <span class="pill out">True middle</span>
             </div>
             <div class="grid:tmb gap:sm" style="height: 200px;">
               <div class="card">Short top</div>
@@ -192,10 +192,10 @@
           </div>
 
           <!-- Grid Auto-Fit -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:auto-fit gap:sm</span>
-              <span class="pill" var="out">Responsive columns</span>
+              <span class="pill out">Responsive columns</span>
             </div>
             <div class="grid:auto-fit gap:sm" style="--grid-min: 150px;">
               <div class="card">Item 1</div>
@@ -207,10 +207,10 @@
           </div>
 
           <!-- Grid Hero -->
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <div class="flex:spread-row align:center">
               <span class="text:sm">grid:hero gap:xs</span>
-              <span class="pill" var="out">3x3 layout</span>
+              <span class="pill out">3x3 layout</span>
             </div>
             <div class="grid:hero gap:xs" style="height: 200px;">
               <div class="card" style="grid-area: 1 / 1 / 2 / -1;">Header</div>
@@ -228,21 +228,21 @@
         <p class="text:sm text-muted">Maintain aspect ratios with <code>frame:*</code> classes.</p>
         
         <div class="flex:cluster gap:md">
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <span class="text:sm">frame:square</span>
             <div class="frame:square">
               <div class="card" style="background: var(--surface-raised);">Square</div>
             </div>
           </div>
 
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <span class="text:sm">frame:landscape</span>
             <div class="frame:landscape">
               <div class="card" style="background: var(--surface-raised);">16:9</div>
             </div>
           </div>
 
-          <div class="card flex:stack gap:xs p:sm" var="res">
+          <div class="card flex:stack gap:xs p:sm res">
             <span class="text:sm">frame:portrait</span>
             <div class="frame:portrait">
               <div class="card" style="background: var(--surface-raised);">9:16</div>
@@ -255,10 +255,10 @@
         <h3 class="text:md">Utility Combinations</h3>
         <p class="text:sm text-muted">Mix utilities for custom layouts, e.g., <code>wrap gap:lg align:center justify:around</code>.</p>
         
-        <div class="card flex:stack gap:xs p:sm" var="res">
+        <div class="card flex:stack gap:xs p:sm res">
           <div class="flex:spread-row align:center">
             <span class="text:sm">wrap gap:lg align:center justify:around</span>
-            <span class="pill" var="out">Custom flex</span>
+            <span class="pill out">Custom flex</span>
           </div>
           <div class="wrap gap:lg align:center justify:around">
             <div class="card" style="height: 60px; width: 100px;">Item 1</div>
@@ -276,11 +276,11 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:sm">Theme</h3>
         <div class="flex:cluster gap:xs">
-          <button sz="sm"
-            data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
+          <button class="sm"
+            data-attr:class="$prst_theme === './css/2_theme-default.css' ? 'sm' : 'gho sm'"
             data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-          <button sz="sm"
-            data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
+          <button class="sm"
+            data-attr:class="$prst_theme === './css/2_theme-cyber.css' ? 'sm' : 'gho sm'"
             data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
         </div>
       </section>
@@ -288,14 +288,14 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:sm">Mode</h3>
         <div class="flex:cluster gap:xs">
-          <button sz="sm"
-            data-attr:var="$prst_mode === 'light' ? false : 'gho'"
+          <button class="sm"
+            data-attr:class="$prst_mode === 'light' ? 'sm' : 'gho sm'"
             data-on:click="$prst_mode = 'light'">Light</button>
-          <button sz="sm"
-            data-attr:var="$prst_mode === 'system' ? false : 'gho'"
+          <button class="sm"
+            data-attr:class="$prst_mode === 'system' ? 'sm' : 'gho sm'"
             data-on:click="$prst_mode = 'system'">System</button>
-          <button sz="sm"
-            data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
+          <button class="sm"
+            data-attr:class="$prst_mode === 'dark' ? 'sm' : 'gho sm'"
             data-on:click="$prst_mode = 'dark'">Dark</button>
         </div>
       </section>
@@ -303,7 +303,7 @@
 
     <footer class="card flex:cluster gap:md justify:center" style="grid-column: 1 / -1;">
       <span class="">CUBE CSS Design System</span>
-      <span class="pill" var="out">v0.1</span>
+      <span class="pill out">v0.1</span>
     </footer>
   </div>
 </body>

@@ -34,11 +34,11 @@
   }
 
   /* Form column spans */
-  .form .input-group[w="1"] { grid-column: span 1; }
-  .form .input-group[w="2"] { grid-column: span 2; }
-  .form .input-group[w="3"] { grid-column: span 3; }
-  .form .input-group[w="4"] { grid-column: span 4; }
-  .form button[w="4"] { grid-column: span 4; }
+  .form .input-group.w-1 { grid-column: span 1; }
+  .form .input-group.w-2 { grid-column: span 2; }
+  .form .input-group.w-3 { grid-column: span 3; }
+  .form .input-group.w-4 { grid-column: span 4; }
+  .form button.w-4 { grid-column: span 4; }
 
   /* === INPUT GROUP === */
   label.input-group {
@@ -64,10 +64,10 @@
     }
 
 
-    &:has(input[st="err"]) .feedback { color: var(--color-err); }
-    &:has(input[st="suc"]) .feedback { color: var(--color-suc); }
-    &:has(input[st="wrn"]) .feedback { color: var(--color-wrn); }
-    &:has(input[st="inf"]) .feedback { color: var(--color-inf); }
+    &:has(input.err) .feedback { color: var(--color-err); }
+    &:has(input.suc) .feedback { color: var(--color-suc); }
+    &:has(input.wrn) .feedback { color: var(--color-wrn); }
+    &:has(input.inf) .feedback { color: var(--color-inf); }
   }
 
   /* === INPUT === */

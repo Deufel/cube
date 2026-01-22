@@ -36,17 +36,17 @@
         <h1>Cube CSS</h1>
       </div>
       <nav class="flex:cluster gap:xs">
-        <a class="btn" href="index.html" sz="sm">Home</a>
-        <button var="gho" sz="sm">Docs</button>
-        <button var="gho" sz="sm">GitHub</button>
+        <a class="btn" href="index.html" class="sm">Home</a>
+        <button class="gho" class="sm">Docs</button>
+        <button class="gho" class="sm">GitHub</button>
       </nav>
     </header>
 
     <nav class="scroll-y card flex:stack ">
-      <a class="btn" href="index.html" var="gho" sz="sm">Home</a>
-      <a class="btn" href="components.html" var="gho" sz="sm">Components</a>
-      <a class="btn" href="demos.html" var="pri" sz="sm">Demos</a>
-      <a class="btn" href="layout.html" var="gho" sz="sm">Layout</a>
+      <a class="btn" href="index.html" class="gho" class="sm">Home</a>
+      <a class="btn" href="components.html" class="gho" class="sm">Components</a>
+      <a class="btn" href="demos.html" class="pri" class="sm">Demos</a>
+      <a class="btn" href="layout.html" class="gho" class="sm">Layout</a>
     </nav>
 
     <main class="scroll-y card flex:stack gap:lg p:lg">
@@ -94,10 +94,10 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:sm">Theme</h3>
         <div class="flex:cluster gap:xs">
-          <button sz="sm"
+          <button class="sm"
             data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
             data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-          <button sz="sm"
+          <button class="sm"
             data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
             data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
         </div>
@@ -106,13 +106,13 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:sm">Mode</h3>
         <div class="flex:cluster gap:xs">
-          <button sz="sm"
+          <button class="sm"
             data-attr:var="$prst_mode === 'light' ? false : 'gho'"
             data-on:click="$prst_mode = 'light'">Light</button>
-          <button sz="sm"
+          <button class="sm"
             data-attr:var="$prst_mode === 'system' ? false : 'gho'"
             data-on:click="$prst_mode = 'system'">System</button>
-          <button sz="sm"
+          <button class="sm"
             data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
             data-on:click="$prst_mode = 'dark'">Dark</button>
         </div>
@@ -121,7 +121,7 @@
 
     <footer class="card flex:cluster gap:md justify:center" style="grid-column: 1 / -1;">
       <span class="">CUBE CSS Design System</span>
-      <span class="pill" var="out">v0.1</span>
+      <span class="pill" class="out">v0.1</span>
     </footer>
   </div>
 </body>
