@@ -400,7 +400,6 @@ With Datastar persistence:
 
 ## Rules
 
-- Do **not** use `!important` — this breaks layer cascade
-- Keep `data-*` attributes for Datastar only
-- Keep `var`, `sz`, `st` attributes for styling
+- Avoid `!important` — unnecessary with proper CUBE usage; if needed, add an `important` layer
+- Reserve `data-*` attributes for Datastar only
 

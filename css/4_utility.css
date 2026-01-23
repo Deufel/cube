@@ -58,6 +58,9 @@
   .w\:lg   { width: 32ch; }
   .w\:xl   { width: 40ch; }
 
+  /* === PILL === */
+  .pill { padding: var(--space-xs) var(--space-sm); border-radius: 999px; background: var(--surface-hover); }
+
   /* === RESPONSIVE VISIBILITY === */
   @media (width > 768px) { .mobile { display: none !important; } }
   @media (width <= 768px) { .desktop { display: none !important; } }

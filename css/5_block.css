@@ -42,6 +42,61 @@
     margin: 0;
   }
 
+  /* === NAV ITEM === */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: var(--surface-hover, rgba(0, 0, 0, 0.05));
+    }
+  }
+
+  .nav-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-icon .badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    background: var(--color-dgr, #dc3545);
+    color: white;
+    border-radius: 999px;
+  }
+
+  .nav-item .tag {
+    margin-inline-start: auto;
+  }
+
+  /* Narrow variant */
+  .narrow .nav-item {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-3xs);
+    padding: var(--space-sm);
+    font-size: var(--text-xs);
+
+    & .tag { display: none; }
+  }
+
   /* === TOOLTIP === */
   .tooltip {
     position: fixed;
