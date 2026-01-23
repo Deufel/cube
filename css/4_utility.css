@@ -58,4 +58,8 @@
   .w\:lg   { width: 32ch; }
   .w\:xl   { width: 40ch; }
 
+  /* === RESPONSIVE VISIBILITY === */
+  @media (width > 768px) { .mobile { display: none !important; } }
+  @media (width <= 768px) { .desktop { display: none !important; } }
+
 }

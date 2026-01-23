@@ -31,28 +31,11 @@
   data-signals:prst_mode="'system'">
     
  <div class="grid:hero gap:xs"> 
-    <header class="card flex:spread-row align:center p:xs" style="grid-column: 1 / -1;">
-      <div class="nowrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15.5 9L7 14v20l8.5 5l8.5 5l8.5-5l8.5-5V14l-8.5-5L24 4zM24 4v20m17 10L24 24M7 34l17-10m0 20V34m17-20l-8 5M7 14l8 5"/></svg>
-        <h1>Cube CSS</h1>
-      </div>
-      <nav class="flex:cluster gap:xs">
-        <button class="sm">Home</button>
-        <button class="gho" class="sm">Docs</button>
-        <button class="gho" class="sm">GitHub</button>
-      </nav>
-    </header>
-
-    <nav class="scroll-y card flex:stack ">
-      <a class="btn" href="index.html" >Home</a>
-      <a class="btn" href="components.html" >Components</a>
-      <a class="btn" href="demos.html" >Demos</a>
-      <a class="btn" href="layout.html">Layout</a>
-      <a class="btn" href="colors.html">Colors</a>
-      <a class="btn" href="drawers.html">Drawers</a>
-    </nav>
-
-    <main id="readme-content" class="scroll-y card flex:stack gap:lg p:lg">
+    <!-- Header with hamburger (mobile) -->
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer" data-init="@get('./partials/nav.html')"></div>
+    <main id="readme-content" style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
       <p>Loading README...</p>
     </main>
     <script>
@@ -66,7 +49,7 @@
         });
     </script>
 
-    <aside class=" scroll-y card flex:stack gap:md p:md">
+    <aside style="grid-area: 2/3/3/4;" class="scroll-y card flex:stack gap:md p:md">
       <h2 class="text:md">Settings</h2>
 
       <section class="flex:stack gap:sm">
@@ -97,7 +80,7 @@
       </section>
     </aside>
 
-    <footer class="card flex:cluster gap:md justify:center" style="grid-column: 1 / -1;">
+    <footer style="grid-area: 3/2/4/4;" class="card flex:cluster gap:md justify:center">
       <span class="">CUBE CSS Design System</span>
       <span class="pill" class="out">v0.1</span>
     </footer>
