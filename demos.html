@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CUBE CSS Demos</title>
+  <title>Demos - Cube CSS</title>
   
   <script type="module">
     try {
@@ -11,10 +11,10 @@
       console.log('Loaded local datastar-pro.js');
     } catch {
       await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
-      console.log('Loaded datastar from CDN fallback');
+      console.log('Loaded CDN datastar');
     }
   </script>
-  
+
   <style>@layer reset, props, theme, composition, utility, block, exception;</style>
   <link rel="stylesheet" href="./css/0_reset.css">
   <link rel="stylesheet" href="./css/1_props.css">
@@ -29,27 +29,12 @@
   data-signals:prst_theme="'./css/2_theme-default.css'"
   data-signals:prst_mode="'system'">
     
- <div class="grid:hero gap:xs"> 
-    <header class="card flex:spread-row align:center p:xs" style="grid-column: 1 / -1;">
-      <div class="nowrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15.5 9L7 14v20l8.5 5l8.5 5l8.5-5l8.5-5V14l-8.5-5L24 4zM24 4v20m17 10L24 24M7 34l17-10m0 20V34m17-20l-8 5M7 14l8 5"/></svg>
-        <h1>Cube CSS</h1>
-      </div>
-      <nav class="flex:cluster gap:xs">
-        <a class="btn" href="index.html" class="sm">Home</a>
-        <button class="gho" class="sm">Docs</button>
-        <button class="gho" class="sm">GitHub</button>
-      </nav>
-    </header>
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
 
-    <nav class="scroll-y card flex:stack ">
-      <a class="btn" href="index.html" class="gho" class="sm">Home</a>
-      <a class="btn" href="components.html" class="gho" class="sm">Components</a>
-      <a class="btn" href="demos.html" class="pri" class="sm">Demos</a>
-      <a class="btn" href="layout.html" class="gho" class="sm">Layout</a>
-    </nav>
-
-    <main class="scroll-y card flex:stack gap:lg p:lg">
+    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
       <h2 class="text:xl" style="font-weight: 600;">Demos</h2>
       
       <section class="flex:stack gap:sm">
@@ -88,41 +73,9 @@
       </section>
     </main>
 
-    <aside class=" scroll-y card flex:stack gap:md p:md">
-      <h2 class="text:md">Settings</h2>
-
-      <section class="flex:stack gap:sm">
-        <h3 class="text:sm">Theme</h3>
-        <div class="flex:cluster gap:xs">
-          <button class="sm"
-            data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
-            data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-          <button class="sm"
-            data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
-            data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
-        </div>
-      </section>
-
-      <section class="flex:stack gap:sm">
-        <h3 class="text:sm">Mode</h3>
-        <div class="flex:cluster gap:xs">
-          <button class="sm"
-            data-attr:var="$prst_mode === 'light' ? false : 'gho'"
-            data-on:click="$prst_mode = 'light'">Light</button>
-          <button class="sm"
-            data-attr:var="$prst_mode === 'system' ? false : 'gho'"
-            data-on:click="$prst_mode = 'system'">System</button>
-          <button class="sm"
-            data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
-            data-on:click="$prst_mode = 'dark'">Dark</button>
-        </div>
-      </section>
-    </aside>
-
-    <footer class="card flex:cluster gap:md justify:center" style="grid-column: 1 / -1;">
-      <span class="">CUBE CSS Design System</span>
-      <span class="pill" class="out">v0.1</span>
-    </footer>
+    <div id="aside" data-init="@get('./partials/aside.html')"></div>
+    <div id="aside-drawer"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
   </div>
 </body>
 </html>
