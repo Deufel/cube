@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip Demos - popover + data-effect</title>
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+  <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
+  <style>
+    /* === TOOLTIP BASE === */
+    .tooltip {
+      position: fixed;
+      inset: auto;  /* Reset default popover inset */
+      position-area: block-start;
+      position-try-order: most-width;
+      position-try-fallbacks: 
+        flip-inline,
+        flip-block,
+        flip-block flip-inline;
+      margin-block-end: 8px;
+      
+      padding: 0.5rem 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: var(--radius-md, 6px);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.1));
+      font-size: var(--text-sm, 0.875rem);
+      max-width: 300px;
+    }
+    
+    .tooltip[popover]::backdrop {
+      background: transparent;
+    }
+
+    /* === MENU STYLES === */
+    .menu {
+      position: fixed;
+      inset: auto;  /* Reset default popover inset */
+      position-area: block-end;
+      position-try-order: most-width;
+      position-try-fallbacks: 
+        flip-block,
+        flip-inline,
+        flip-block flip-inline;
+      margin-block-start: 4px;
+      
+      padding: 0.25rem 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: var(--radius-md, 6px);
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-card, 0 2px 8px rgba(0,0,0,0.1));
+      min-width: 150px;
+    }
+    
+    .menu[popover]::backdrop {
+      background: transparent;
+    }
+    
+    .menu-item {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: var(--text-sm, 0.875rem);
+    }
+    
+    .menu-item:hover {
+      background: var(--gry-2, #f5f5f5);
+    }
+
+    /* === DEMO LAYOUT === */
+    .demo-section {
+      padding: 2rem;
+      border: 1px solid var(--gry-3, #ddd);
+      border-radius: var(--radius-lg, 8px);
+      margin-block-end: 1.5rem;
+    }
+    .demo-section h2 {
+      margin-block-end: 0.5rem;
+      font-size: var(--text-lg, 1.125rem);
+    }
+    .demo-section p {
+      margin-block-end: 1rem;
+      color: var(--gry-7, #666);
+    }
+    .demo-section code {
+      background: var(--gry-2, #f0f0f0);
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    .anchor-link {
+      color: var(--color-pri, blue);
+      text-decoration: underline dotted;
+      cursor: help;
+    }
+  </style>
+</head>
+<body class="p:lg">
+  <h1>Tooltip Demos - popover="manual" + data-effect</h1>
+  <p class="m-b:lg">All demos use <code>popover="manual"</code> with <code>data-effect</code> for top-layer rendering.</p>
+
+  <!-- ============================================ -->
+  <!-- DEMO 1: Basic Hover Tooltip -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-show1="false">
+    <h2>Demo 1: Basic Hover Tooltip</h2>
+    <p>Hover to show, leaves on mouseout. Simple baseline.</p>
+    
+    <button id="btn1" 
+            style="anchor-name: --btn1"
+            data-on:mouseenter="$show1 = true"
+            data-on:mouseleave="$show1 = false"
+            aria-describedby="tip1">
+      Hover Me
+    </button>
+
+    <div id="tip1" 
+         class="tooltip" 
+         style="position-anchor: --btn1;"
+         popover="manual"
+         role="tooltip"
+         data-effect="$show1 ? el.showPopover() : el.hidePopover()">
+      Basic tooltip. Disappears when mouse leaves button.
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 2: Hover-Persistent Tooltip -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-show2="false">
+    <h2>Demo 2: Hover-Persistent Tooltip</h2>
+    <p>Stays open while hovering either trigger OR tooltip. Debounce prevents flicker.</p>
+    
+    <button id="btn2" 
+            style="anchor-name: --btn2"
+            data-on:mouseenter="$show2 = true"
+            data-on:mouseleave__debounce.150ms="$show2 = false"
+            aria-describedby="tip2">
+      Hover Me
+    </button>
+
+    <div id="tip2" 
+         class="tooltip" 
+         style="position-anchor: --btn2;"
+         popover="manual"
+         role="tooltip"
+         data-effect="$show2 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$show2 = true"
+         data-on:mouseleave__debounce.150ms="$show2 = false">
+      <strong>Hover-persistent!</strong><br>
+      Move your mouse here — I stay open.<br>
+      Useful for tooltips with links or selectable text.
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 3: Click-Persistent (click-away to close) -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-show3="false">
+    <h2>Demo 3: Click-Persistent (Click-Away to Close)</h2>
+    <p>Click to open, click outside to close. Good for mobile/touch.</p>
+    
+    <button id="btn3" 
+            style="anchor-name: --btn3"
+            data-on:click="$show3 = !$show3"
+            aria-describedby="tip3"
+            data-attr:aria-expanded="$show3">
+      Click Me
+    </button>
+
+    <div id="tip3" 
+         class="tooltip" 
+         style="position-anchor: --btn3;"
+         popover="manual"
+         role="tooltip"
+         data-effect="$show3 ? el.showPopover() : el.hidePopover()"
+         data-on:click__outside="$show3 = false">
+      <strong>Persistent tooltip</strong><br>
+      I stay open until you click outside.<br>
+      Great for info panels or touch devices.
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 4: Dropdown Menu -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-menu4="false">
+    <h2>Demo 4: Dropdown Menu</h2>
+    <p>Click to toggle menu. Click outside or select item to close.</p>
+    
+    <button id="btn4" 
+            style="anchor-name: --btn4"
+            data-on:click="$menu4 = !$menu4"
+            data-attr:aria-expanded="$menu4"
+            aria-haspopup="menu">
+      Options ▾
+    </button>
+
+    <div id="menu4" 
+         class="menu" 
+         style="position-anchor: --btn4;"
+         popover="manual"
+         role="menu"
+         data-effect="$menu4 ? el.showPopover() : el.hidePopover()"
+         data-on:click__outside="$menu4 = false">
+      <button class="menu-item" role="menuitem" data-on:click="$menu4 = false; alert('Edit clicked')">✏️ Edit</button>
+      <button class="menu-item" role="menuitem" data-on:click="$menu4 = false; alert('Duplicate clicked')">📋 Duplicate</button>
+      <button class="menu-item" role="menuitem" data-on:click="$menu4 = false; alert('Delete clicked')">🗑️ Delete</button>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 5: Hover Menu (with hover-persist) -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-menu5="false">
+    <h2>Demo 5: Hover Menu</h2>
+    <p>Opens on hover, stays open while hovering menu. Classic dropdown behavior.</p>
+    
+    <button id="btn5" 
+            style="anchor-name: --btn5"
+            data-on:mouseenter="$menu5 = true"
+            data-on:mouseleave__debounce.200ms="$menu5 = false"
+            data-attr:aria-expanded="$menu5"
+            aria-haspopup="menu">
+      Hover for Menu
+    </button>
+
+    <div id="menu5" 
+         class="menu" 
+         style="position-anchor: --btn5;"
+         popover="manual"
+         role="menu"
+         data-effect="$menu5 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$menu5 = true"
+         data-on:mouseleave__debounce.200ms="$menu5 = false">
+      <button class="menu-item" role="menuitem" data-on:click="$menu5 = false">🏠 Home</button>
+      <button class="menu-item" role="menuitem" data-on:click="$menu5 = false">📁 Projects</button>
+      <button class="menu-item" role="menuitem" data-on:click="$menu5 = false">⚙️ Settings</button>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 6: Multiple Inline Hints -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-h1="false" data-signals-h2="false" data-signals-h3="false">
+    <h2>Demo 6: Multiple Inline Hints (Hover-Persistent)</h2>
+    <p>Multiple anchored hints within flowing text.</p>
+    
+    <p style="max-width: 60ch; line-height: 1.8;">
+      Our <a class="anchor-link" 
+             style="anchor-name: --h1" 
+             tabindex="0"
+             data-on:mouseenter="$h1 = true"
+             data-on:mouseleave__debounce.150ms="$h1 = false">CEO</a> 
+      announced that the 
+      <a class="anchor-link" 
+         style="anchor-name: --h2" 
+         tabindex="0"
+         data-on:mouseenter="$h2 = true"
+         data-on:mouseleave__debounce.150ms="$h2 = false">quarterly results</a> 
+      exceeded expectations, leading to increased 
+      <a class="anchor-link" 
+         style="anchor-name: --h3" 
+         tabindex="0"
+         data-on:mouseenter="$h3 = true"
+         data-on:mouseleave__debounce.150ms="$h3 = false">dividends</a> 
+      for shareholders.
+    </p>
+
+    <div class="tooltip" 
+         style="position-anchor: --h1;" 
+         popover="manual"
+         data-effect="$h1 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$h1 = true" 
+         data-on:mouseleave__debounce.150ms="$h1 = false">
+      <strong>Jane Smith</strong><br>Chief Executive Officer since 2019
+    </div>
+    
+    <div class="tooltip" 
+         style="position-anchor: --h2;" 
+         popover="manual"
+         data-effect="$h2 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$h2 = true" 
+         data-on:mouseleave__debounce.150ms="$h2 = false">
+      <strong>Q4 2025:</strong> Revenue $4.2B (+12% YoY)
+    </div>
+    
+    <div class="tooltip" 
+         style="position-anchor: --h3;" 
+         popover="manual"
+         data-effect="$h3 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$h3 = true" 
+         data-on:mouseleave__debounce.150ms="$h3 = false">
+      <strong>Dividend:</strong> $0.85/share (up from $0.72)
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DEMO 7: Hybrid (Hover + Click-to-Pin) -->
+  <!-- ============================================ -->
+  <section class="demo-section" data-signals-show7="false" data-signals-pinned7="false">
+    <h2>Demo 7: Hybrid (Hover + Click-to-Pin)</h2>
+    <p>Hover to preview, click to pin open. Click outside to unpin.</p>
+    
+    <button id="btn7" 
+            style="anchor-name: --btn7"
+            data-on:mouseenter="$show7 = true"
+            data-on:mouseleave__debounce.150ms="$show7 = $pinned7"
+            data-on:click="$pinned7 = !$pinned7; $show7 = $pinned7"
+            data-attr:aria-expanded="$show7">
+      Hover or Click
+    </button>
+
+    <div id="tip7" 
+         class="tooltip" 
+         style="position-anchor: --btn7;"
+         popover="manual"
+         data-effect="$show7 ? el.showPopover() : el.hidePopover()"
+         data-on:mouseenter="$show7 = true"
+         data-on:mouseleave__debounce.150ms="$show7 = $pinned7"
+         data-on:click__outside="$pinned7 = false; $show7 = false">
+      <strong>Hybrid tooltip</strong><br>
+      Hover to preview. Click button to pin.<br>
+      <em data-show="$pinned7">📌 Currently pinned!</em>
+      <em data-show="!$pinned7">Click button to pin me.</em>
+    </div>
+  </section>
+
+</body>
+</html>

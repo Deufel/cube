@@ -1,4 +1,70 @@
 @layer block {
+  /* === DRAWER === */
+  [class*="drawer:"] {
+    position: fixed;
+    background: var(--surface-card, white);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    
+    /* Reset dialog/popover defaults */
+    inset: auto;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    
+    /* Transitions */
+    opacity: 0;
+    transition: 
+      display 0.3s allow-discrete,
+      opacity 0.3s,
+      transform 0.3s,
+      overlay 0.3s allow-discrete;
+  }
+
+  .drawer-content {
+    padding: var(--space-lg, 2rem);
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md, 1.5rem);
+    padding-bottom: var(--space-sm, 1rem);
+    border-bottom: 2px solid var(--color-pri, #667eea);
+  }
+
+  .drawer-header h3 {
+    margin: 0;
+  }
+
+  /* === TOOLTIP === */
+  .tooltip {
+    position: fixed;
+    inset: auto;
+    position-anchor: var(--tooltip-anchor);
+    top: anchor(bottom);
+    left: anchor(center);
+    translate: -50% var(--space-xs);
+    
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-sm);
+    background: var(--gry-9);
+    color: var(--gry-1);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+    
+    &:popover-open { display: block; }
+  }
+
+  .tooltip-implicit {
+    position-anchor: implicit;
+  }
+
   /* === BUTTON === */
   button, .btn {
     display: inline-flex;

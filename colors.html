@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Palette Debug</title>
+  <title>Color Palette Debug v2</title>
   <style>@layer reset, props, theme, composition, utility, block, exception;</style>
   <link rel="stylesheet" href="css/0_reset.css">
   <link rel="stylesheet" href="css/1_props.css">
@@ -13,237 +13,288 @@
   <link rel="stylesheet" href="css/5_block.css">
   <link rel="stylesheet" href="css/6_exception.css">
   <style>
-    .swatch { width: 48px; height: 48px; border-radius: var(--radius-sm); }
-    .swatch-sm { width: 32px; height: 32px; border-radius: var(--radius-sm); }
-    .palette-row { display: flex; gap: var(--space-xs); align-items: center; }
-    .label { width: 3rem; font-weight: 500; font-size: var(--text-sm); }
+    .swatch { width: 48px; height: 48px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+    .swatch-sm { width: 32px; height: 32px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+    .surface-box { padding: var(--space-md); border-radius: var(--radius-md); min-height: 60px; border: 1px solid var(--border-subtle); }
+    .gradient-box { width: 100%; height: 48px; border-radius: var(--radius-sm); }
+    .panel { flex: 1; padding: var(--space-lg); min-width: 320px; }
+    .color-row { display: flex; gap: var(--space-xs); align-items: center; }
+    .label { font-size: var(--text-sm); min-width: 120px; }
   </style>
 </head>
-<body class="p:lg flex:stack gap:lg">
+<body class="p:md">
+  <h1 class="text:xl p:sm">Color System Debug</h1>
 
-  <h1 class="text:xl">Color Palette Debug</h1>
+  <div class="flex:flank-start gap:lg" style="flex-wrap: wrap;">
+    
+    <!-- LIGHT MODE PANEL -->
+    <div class="panel card" data-mode="light" style="background: var(--surface-page); color: var(--text-color);">
+      <h2 class="text:lg p:sm">Light Mode</h2>
 
-  <!-- Current Theme Semantic Colors -->
-  <section class="flex:stack gap:sm">
-    <h2 class="text:lg">Theme Semantic Colors</h2>
-    <div class="flex:cluster gap:md">
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--color-pri);"></div>
-        <span class="text:xs">--color-pri</span>
-      </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--color-sec);"></div>
-        <span class="text:xs">--color-sec</span>
-      </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--color-suc);"></div>
-        <span class="text:xs">--color-suc</span>
-      </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--color-wrn);"></div>
-        <span class="text:xs">--color-wrn</span>
-      </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--color-dgr);"></div>
-        <span class="text:xs">--color-dgr</span>
-      </div>
+      <!-- Text Colors -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Text</h3>
+        <div class="color-row">
+          <span class="label">--text-color</span>
+          <div class="swatch-sm" style="background: var(--text-color);"></div>
+          <span style="color: var(--text-color);">Sample text</span>
+        </div>
+        <div class="color-row">
+          <span class="label">--text-muted</span>
+          <div class="swatch-sm" style="background: var(--text-muted);"></div>
+          <span style="color: var(--text-muted);">Muted text</span>
+        </div>
+      </section>
+
+      <!-- Surfaces -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Surfaces</h3>
+        <div class="flex:stack gap:xs">
+          <div class="surface-box" style="background: var(--surface-page);">--surface-page</div>
+          <div class="surface-box" style="background: var(--surface-card);">--surface-card</div>
+          <div class="surface-box" style="background: var(--surface-raised);">--surface-raised</div>
+          <div class="surface-box" style="background: var(--surface-inset);">--surface-inset</div>
+          <div class="surface-box" style="background: var(--surface-input);">--surface-input</div>
+        </div>
+      </section>
+
+      <!-- Borders -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Borders</h3>
+        <div class="color-row">
+          <span class="label">--border-subtle</span>
+          <div class="swatch-sm" style="background: var(--border-subtle);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--border-muted</span>
+          <div class="swatch-sm" style="background: var(--border-muted);"></div>
+        </div>
+      </section>
+
+      <!-- Semantic Colors -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Semantic Colors</h3>
+        <div class="color-row">
+          <span class="label">--color-pri</span>
+          <div class="swatch" style="background: var(--color-pri);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-sec</span>
+          <div class="swatch" style="background: var(--color-sec);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-suc</span>
+          <div class="swatch" style="background: var(--color-suc);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-wrn</span>
+          <div class="swatch" style="background: var(--color-wrn);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-dgr</span>
+          <div class="swatch" style="background: var(--color-dgr);"></div>
+        </div>
+      </section>
+
+      <!-- Gradients -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Gradients</h3>
+        <div class="flex:stack gap:xs">
+          <span class="text:sm">pri → sec</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-pri), var(--color-sec));"></div>
+          <span class="text:sm">pri → suc</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-pri), var(--color-suc));"></div>
+          <span class="text:sm">sec → suc</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-sec), var(--color-suc));"></div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <!-- Props Color Palettes -->
-  <section class="flex:stack gap:md">
+    <!-- DARK MODE PANEL -->
+    <div class="panel card" data-mode="dark" style="background: var(--surface-page); color: var(--text-color);">
+      <h2 class="text:lg p:sm">Dark Mode</h2>
+
+      <!-- Text Colors -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Text</h3>
+        <div class="color-row">
+          <span class="label">--text-color</span>
+          <div class="swatch-sm" style="background: var(--text-color);"></div>
+          <span style="color: var(--text-color);">Sample text</span>
+        </div>
+        <div class="color-row">
+          <span class="label">--text-muted</span>
+          <div class="swatch-sm" style="background: var(--text-muted);"></div>
+          <span style="color: var(--text-muted);">Muted text</span>
+        </div>
+      </section>
+
+      <!-- Surfaces -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Surfaces</h3>
+        <div class="flex:stack gap:xs">
+          <div class="surface-box" style="background: var(--surface-page);">--surface-page</div>
+          <div class="surface-box" style="background: var(--surface-card);">--surface-card</div>
+          <div class="surface-box" style="background: var(--surface-raised);">--surface-raised</div>
+          <div class="surface-box" style="background: var(--surface-inset);">--surface-inset</div>
+          <div class="surface-box" style="background: var(--surface-input);">--surface-input</div>
+        </div>
+      </section>
+
+      <!-- Borders -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Borders</h3>
+        <div class="color-row">
+          <span class="label">--border-subtle</span>
+          <div class="swatch-sm" style="background: var(--border-subtle);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--border-muted</span>
+          <div class="swatch-sm" style="background: var(--border-muted);"></div>
+        </div>
+      </section>
+
+      <!-- Semantic Colors -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Semantic Colors</h3>
+        <div class="color-row">
+          <span class="label">--color-pri</span>
+          <div class="swatch" style="background: var(--color-pri);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-sec</span>
+          <div class="swatch" style="background: var(--color-sec);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-suc</span>
+          <div class="swatch" style="background: var(--color-suc);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-wrn</span>
+          <div class="swatch" style="background: var(--color-wrn);"></div>
+        </div>
+        <div class="color-row">
+          <span class="label">--color-dgr</span>
+          <div class="swatch" style="background: var(--color-dgr);"></div>
+        </div>
+      </section>
+
+      <!-- Gradients -->
+      <section class="flex:stack gap:sm p:sm">
+        <h3 class="text:md">Gradients</h3>
+        <div class="flex:stack gap:xs">
+          <span class="text:sm">pri → sec</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-pri), var(--color-sec));"></div>
+          <span class="text:sm">pri → suc</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-pri), var(--color-suc));"></div>
+          <span class="text:sm">sec → suc</span>
+          <div class="gradient-box" style="background: linear-gradient(135deg, var(--color-sec), var(--color-suc));"></div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- Full Color Palettes -->
+  <section class="flex:stack gap:md p:md">
     <h2 class="text:lg">Props Color Palettes (0-9)</h2>
     
-    <div class="palette-row"><span class="label">gry</span>
-      <div class="swatch-sm" style="background: var(--gry-0);"></div>
-      <div class="swatch-sm" style="background: var(--gry-1);"></div>
-      <div class="swatch-sm" style="background: var(--gry-2);"></div>
-      <div class="swatch-sm" style="background: var(--gry-3);"></div>
-      <div class="swatch-sm" style="background: var(--gry-4);"></div>
-      <div class="swatch-sm" style="background: var(--gry-5);"></div>
-      <div class="swatch-sm" style="background: var(--gry-6);"></div>
-      <div class="swatch-sm" style="background: var(--gry-7);"></div>
-      <div class="swatch-sm" style="background: var(--gry-8);"></div>
-      <div class="swatch-sm" style="background: var(--gry-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">red</span>
-      <div class="swatch-sm" style="background: var(--red-0);"></div>
-      <div class="swatch-sm" style="background: var(--red-1);"></div>
-      <div class="swatch-sm" style="background: var(--red-2);"></div>
-      <div class="swatch-sm" style="background: var(--red-3);"></div>
-      <div class="swatch-sm" style="background: var(--red-4);"></div>
-      <div class="swatch-sm" style="background: var(--red-5);"></div>
-      <div class="swatch-sm" style="background: var(--red-6);"></div>
-      <div class="swatch-sm" style="background: var(--red-7);"></div>
-      <div class="swatch-sm" style="background: var(--red-8);"></div>
-      <div class="swatch-sm" style="background: var(--red-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">pnk</span>
-      <div class="swatch-sm" style="background: var(--pnk-0);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-1);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-2);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-3);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-4);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-5);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-6);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-7);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-8);"></div>
-      <div class="swatch-sm" style="background: var(--pnk-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">grp</span>
-      <div class="swatch-sm" style="background: var(--grp-0);"></div>
-      <div class="swatch-sm" style="background: var(--grp-1);"></div>
-      <div class="swatch-sm" style="background: var(--grp-2);"></div>
-      <div class="swatch-sm" style="background: var(--grp-3);"></div>
-      <div class="swatch-sm" style="background: var(--grp-4);"></div>
-      <div class="swatch-sm" style="background: var(--grp-5);"></div>
-      <div class="swatch-sm" style="background: var(--grp-6);"></div>
-      <div class="swatch-sm" style="background: var(--grp-7);"></div>
-      <div class="swatch-sm" style="background: var(--grp-8);"></div>
-      <div class="swatch-sm" style="background: var(--grp-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">vio</span>
-      <div class="swatch-sm" style="background: var(--vio-0);"></div>
-      <div class="swatch-sm" style="background: var(--vio-1);"></div>
-      <div class="swatch-sm" style="background: var(--vio-2);"></div>
-      <div class="swatch-sm" style="background: var(--vio-3);"></div>
-      <div class="swatch-sm" style="background: var(--vio-4);"></div>
-      <div class="swatch-sm" style="background: var(--vio-5);"></div>
-      <div class="swatch-sm" style="background: var(--vio-6);"></div>
-      <div class="swatch-sm" style="background: var(--vio-7);"></div>
-      <div class="swatch-sm" style="background: var(--vio-8);"></div>
-      <div class="swatch-sm" style="background: var(--vio-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">ind</span>
-      <div class="swatch-sm" style="background: var(--ind-0);"></div>
-      <div class="swatch-sm" style="background: var(--ind-1);"></div>
-      <div class="swatch-sm" style="background: var(--ind-2);"></div>
-      <div class="swatch-sm" style="background: var(--ind-3);"></div>
-      <div class="swatch-sm" style="background: var(--ind-4);"></div>
-      <div class="swatch-sm" style="background: var(--ind-5);"></div>
-      <div class="swatch-sm" style="background: var(--ind-6);"></div>
-      <div class="swatch-sm" style="background: var(--ind-7);"></div>
-      <div class="swatch-sm" style="background: var(--ind-8);"></div>
-      <div class="swatch-sm" style="background: var(--ind-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">blu</span>
-      <div class="swatch-sm" style="background: var(--blu-0);"></div>
-      <div class="swatch-sm" style="background: var(--blu-1);"></div>
-      <div class="swatch-sm" style="background: var(--blu-2);"></div>
-      <div class="swatch-sm" style="background: var(--blu-3);"></div>
-      <div class="swatch-sm" style="background: var(--blu-4);"></div>
-      <div class="swatch-sm" style="background: var(--blu-5);"></div>
-      <div class="swatch-sm" style="background: var(--blu-6);"></div>
-      <div class="swatch-sm" style="background: var(--blu-7);"></div>
-      <div class="swatch-sm" style="background: var(--blu-8);"></div>
-      <div class="swatch-sm" style="background: var(--blu-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">cyn</span>
-      <div class="swatch-sm" style="background: var(--cyn-0);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-1);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-2);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-3);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-4);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-5);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-6);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-7);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-8);"></div>
-      <div class="swatch-sm" style="background: var(--cyn-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">tel</span>
-      <div class="swatch-sm" style="background: var(--tel-0);"></div>
-      <div class="swatch-sm" style="background: var(--tel-1);"></div>
-      <div class="swatch-sm" style="background: var(--tel-2);"></div>
-      <div class="swatch-sm" style="background: var(--tel-3);"></div>
-      <div class="swatch-sm" style="background: var(--tel-4);"></div>
-      <div class="swatch-sm" style="background: var(--tel-5);"></div>
-      <div class="swatch-sm" style="background: var(--tel-6);"></div>
-      <div class="swatch-sm" style="background: var(--tel-7);"></div>
-      <div class="swatch-sm" style="background: var(--tel-8);"></div>
-      <div class="swatch-sm" style="background: var(--tel-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">grn</span>
-      <div class="swatch-sm" style="background: var(--grn-0);"></div>
-      <div class="swatch-sm" style="background: var(--grn-1);"></div>
-      <div class="swatch-sm" style="background: var(--grn-2);"></div>
-      <div class="swatch-sm" style="background: var(--grn-3);"></div>
-      <div class="swatch-sm" style="background: var(--grn-4);"></div>
-      <div class="swatch-sm" style="background: var(--grn-5);"></div>
-      <div class="swatch-sm" style="background: var(--grn-6);"></div>
-      <div class="swatch-sm" style="background: var(--grn-7);"></div>
-      <div class="swatch-sm" style="background: var(--grn-8);"></div>
-      <div class="swatch-sm" style="background: var(--grn-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">lim</span>
-      <div class="swatch-sm" style="background: var(--lim-0);"></div>
-      <div class="swatch-sm" style="background: var(--lim-1);"></div>
-      <div class="swatch-sm" style="background: var(--lim-2);"></div>
-      <div class="swatch-sm" style="background: var(--lim-3);"></div>
-      <div class="swatch-sm" style="background: var(--lim-4);"></div>
-      <div class="swatch-sm" style="background: var(--lim-5);"></div>
-      <div class="swatch-sm" style="background: var(--lim-6);"></div>
-      <div class="swatch-sm" style="background: var(--lim-7);"></div>
-      <div class="swatch-sm" style="background: var(--lim-8);"></div>
-      <div class="swatch-sm" style="background: var(--lim-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">yel</span>
-      <div class="swatch-sm" style="background: var(--yel-0);"></div>
-      <div class="swatch-sm" style="background: var(--yel-1);"></div>
-      <div class="swatch-sm" style="background: var(--yel-2);"></div>
-      <div class="swatch-sm" style="background: var(--yel-3);"></div>
-      <div class="swatch-sm" style="background: var(--yel-4);"></div>
-      <div class="swatch-sm" style="background: var(--yel-5);"></div>
-      <div class="swatch-sm" style="background: var(--yel-6);"></div>
-      <div class="swatch-sm" style="background: var(--yel-7);"></div>
-      <div class="swatch-sm" style="background: var(--yel-8);"></div>
-      <div class="swatch-sm" style="background: var(--yel-9);"></div>
-    </div>
-
-    <div class="palette-row"><span class="label">org</span>
-      <div class="swatch-sm" style="background: var(--org-0);"></div>
-      <div class="swatch-sm" style="background: var(--org-1);"></div>
-      <div class="swatch-sm" style="background: var(--org-2);"></div>
-      <div class="swatch-sm" style="background: var(--org-3);"></div>
-      <div class="swatch-sm" style="background: var(--org-4);"></div>
-      <div class="swatch-sm" style="background: var(--org-5);"></div>
-      <div class="swatch-sm" style="background: var(--org-6);"></div>
-      <div class="swatch-sm" style="background: var(--org-7);"></div>
-      <div class="swatch-sm" style="background: var(--org-8);"></div>
-      <div class="swatch-sm" style="background: var(--org-9);"></div>
-    </div>
-  </section>
-
-  <!-- Proposed Semantic Mapping -->
-  <section class="flex:stack gap:sm">
-    <h2 class="text:lg">Proposed Semantic Mapping</h2>
-    <p class="text:sm">err → red, val → grn, wrn → yel, inf → blu</p>
-    <div class="flex:cluster gap:md">
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--red-6);"></div>
-        <span class="text:xs">err (red-6)</span>
+    <div class="flex:stack gap:sm">
+      <div class="flex:cluster gap:xs align:center"><span class="label">gry</span>
+        <div class="swatch-sm" style="background: var(--gry-0);" title="0"></div>
+        <div class="swatch-sm" style="background: var(--gry-1);" title="1"></div>
+        <div class="swatch-sm" style="background: var(--gry-2);" title="2"></div>
+        <div class="swatch-sm" style="background: var(--gry-3);" title="3"></div>
+        <div class="swatch-sm" style="background: var(--gry-4);" title="4"></div>
+        <div class="swatch-sm" style="background: var(--gry-5);" title="5"></div>
+        <div class="swatch-sm" style="background: var(--gry-6);" title="6"></div>
+        <div class="swatch-sm" style="background: var(--gry-7);" title="7"></div>
+        <div class="swatch-sm" style="background: var(--gry-8);" title="8"></div>
+        <div class="swatch-sm" style="background: var(--gry-9);" title="9"></div>
       </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--grn-6);"></div>
-        <span class="text:xs">val (grn-6)</span>
+      <div class="flex:cluster gap:xs align:center"><span class="label">red</span>
+        <div class="swatch-sm" style="background: var(--red-0);"></div>
+        <div class="swatch-sm" style="background: var(--red-1);"></div>
+        <div class="swatch-sm" style="background: var(--red-2);"></div>
+        <div class="swatch-sm" style="background: var(--red-3);"></div>
+        <div class="swatch-sm" style="background: var(--red-4);"></div>
+        <div class="swatch-sm" style="background: var(--red-5);"></div>
+        <div class="swatch-sm" style="background: var(--red-6);"></div>
+        <div class="swatch-sm" style="background: var(--red-7);"></div>
+        <div class="swatch-sm" style="background: var(--red-8);"></div>
+        <div class="swatch-sm" style="background: var(--red-9);"></div>
       </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--yel-6);"></div>
-        <span class="text:xs">wrn (yel-6)</span>
+      <div class="flex:cluster gap:xs align:center"><span class="label">org</span>
+        <div class="swatch-sm" style="background: var(--org-0);"></div>
+        <div class="swatch-sm" style="background: var(--org-1);"></div>
+        <div class="swatch-sm" style="background: var(--org-2);"></div>
+        <div class="swatch-sm" style="background: var(--org-3);"></div>
+        <div class="swatch-sm" style="background: var(--org-4);"></div>
+        <div class="swatch-sm" style="background: var(--org-5);"></div>
+        <div class="swatch-sm" style="background: var(--org-6);"></div>
+        <div class="swatch-sm" style="background: var(--org-7);"></div>
+        <div class="swatch-sm" style="background: var(--org-8);"></div>
+        <div class="swatch-sm" style="background: var(--org-9);"></div>
       </div>
-      <div class="flex:stack gap:xs align:center">
-        <div class="swatch" style="background: var(--blu-6);"></div>
-        <span class="text:xs">inf (blu-6)</span>
+      <div class="flex:cluster gap:xs align:center"><span class="label">yel</span>
+        <div class="swatch-sm" style="background: var(--yel-0);"></div>
+        <div class="swatch-sm" style="background: var(--yel-1);"></div>
+        <div class="swatch-sm" style="background: var(--yel-2);"></div>
+        <div class="swatch-sm" style="background: var(--yel-3);"></div>
+        <div class="swatch-sm" style="background: var(--yel-4);"></div>
+        <div class="swatch-sm" style="background: var(--yel-5);"></div>
+        <div class="swatch-sm" style="background: var(--yel-6);"></div>
+        <div class="swatch-sm" style="background: var(--yel-7);"></div>
+        <div class="swatch-sm" style="background: var(--yel-8);"></div>
+        <div class="swatch-sm" style="background: var(--yel-9);"></div>
+      </div>
+      <div class="flex:cluster gap:xs align:center"><span class="label">grn</span>
+        <div class="swatch-sm" style="background: var(--grn-0);"></div>
+        <div class="swatch-sm" style="background: var(--grn-1);"></div>
+        <div class="swatch-sm" style="background: var(--grn-2);"></div>
+        <div class="swatch-sm" style="background: var(--grn-3);"></div>
+        <div class="swatch-sm" style="background: var(--grn-4);"></div>
+        <div class="swatch-sm" style="background: var(--grn-5);"></div>
+        <div class="swatch-sm" style="background: var(--grn-6);"></div>
+        <div class="swatch-sm" style="background: var(--grn-7);"></div>
+        <div class="swatch-sm" style="background: var(--grn-8);"></div>
+        <div class="swatch-sm" style="background: var(--grn-9);"></div>
+      </div>
+      <div class="flex:cluster gap:xs align:center"><span class="label">blu</span>
+        <div class="swatch-sm" style="background: var(--blu-0);"></div>
+        <div class="swatch-sm" style="background: var(--blu-1);"></div>
+        <div class="swatch-sm" style="background: var(--blu-2);"></div>
+        <div class="swatch-sm" style="background: var(--blu-3);"></div>
+        <div class="swatch-sm" style="background: var(--blu-4);"></div>
+        <div class="swatch-sm" style="background: var(--blu-5);"></div>
+        <div class="swatch-sm" style="background: var(--blu-6);"></div>
+        <div class="swatch-sm" style="background: var(--blu-7);"></div>
+        <div class="swatch-sm" style="background: var(--blu-8);"></div>
+        <div class="swatch-sm" style="background: var(--blu-9);"></div>
+      </div>
+      <div class="flex:cluster gap:xs align:center"><span class="label">ind</span>
+        <div class="swatch-sm" style="background: var(--ind-0);"></div>
+        <div class="swatch-sm" style="background: var(--ind-1);"></div>
+        <div class="swatch-sm" style="background: var(--ind-2);"></div>
+        <div class="swatch-sm" style="background: var(--ind-3);"></div>
+        <div class="swatch-sm" style="background: var(--ind-4);"></div>
+        <div class="swatch-sm" style="background: var(--ind-5);"></div>
+        <div class="swatch-sm" style="background: var(--ind-6);"></div>
+        <div class="swatch-sm" style="background: var(--ind-7);"></div>
+        <div class="swatch-sm" style="background: var(--ind-8);"></div>
+        <div class="swatch-sm" style="background: var(--ind-9);"></div>
+      </div>
+      <div class="flex:cluster gap:xs align:center"><span class="label">vio</span>
+        <div class="swatch-sm" style="background: var(--vio-0);"></div>
+        <div class="swatch-sm" style="background: var(--vio-1);"></div>
+        <div class="swatch-sm" style="background: var(--vio-2);"></div>
+        <div class="swatch-sm" style="background: var(--vio-3);"></div>
+        <div class="swatch-sm" style="background: var(--vio-4);"></div>
+        <div class="swatch-sm" style="background: var(--vio-5);"></div>
+        <div class="swatch-sm" style="background: var(--vio-6);"></div>
+        <div class="swatch-sm" style="background: var(--vio-7);"></div>
+        <div class="swatch-sm" style="background: var(--vio-8);"></div>
+        <div class="swatch-sm" style="background: var(--vio-9);"></div>
       </div>
     </div>
   </section>

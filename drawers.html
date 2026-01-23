@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawer Demo - CUBE CSS</title>
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+  <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
+  <style>
+    body {
+      padding: var(--space-xl);
+      background: var(--gry-2);
+    }
+    h1 { margin-bottom: var(--space-lg); }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-md);
+    }
+    .demo-card {
+      background: var(--gry-0);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+    .demo-card h2 {
+      margin: 0 0 var(--space-sm);
+      font-size: var(--text-lg);
+    }
+    .demo-card p {
+      color: var(--gry-6);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-md);
+    }
+  </style>
+</head>
+<body>
+  <h1>Drawer Components</h1>
+  
+  <div class="demo-grid">
+    <!-- Left Drawer (Dialog) -->
+    <div class="demo-card">
+      <h2>Left Drawer</h2>
+      <p>Dialog-based drawer with backdrop, slides from left</p>
+      <button class="btn pri" onclick="document.getElementById('drawer-left').showModal()">
+        Open Left
+      </button>
+    </div>
+    
+    <!-- Right Drawer (Dialog) -->
+    <div class="demo-card">
+      <h2>Right Drawer</h2>
+      <p>Dialog-based drawer with backdrop, slides from right</p>
+      <button class="btn pri" onclick="document.getElementById('drawer-right').showModal()">
+        Open Right
+      </button>
+    </div>
+    
+    <!-- Top Drawer (Popover) -->
+    <div class="demo-card">
+      <h2>Top Drawer</h2>
+      <p>Popover-based drawer, slides from top</p>
+      <button class="btn pri" popovertarget="drawer-top">
+        Open Top
+      </button>
+    </div>
+    
+    <!-- Bottom Drawer (Popover) -->
+    <div class="demo-card">
+      <h2>Bottom Drawer</h2>
+      <p>Popover-based drawer, slides from bottom</p>
+      <button class="btn pri" popovertarget="drawer-bottom">
+        Open Bottom
+      </button>
+    </div>
+  </div>
+
+  <!-- Left Drawer -->
+  <dialog id="drawer-left" class="drawer:left">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Left Drawer</h3>
+        <button class="btn gho sm" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <p>This is a left-side drawer using <code>&lt;dialog&gt;</code>.</p>
+      <ul>
+        <li>Has modal backdrop</li>
+        <li>Traps focus</li>
+        <li>Closes on Escape key</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <!-- Right Drawer -->
+  <dialog id="drawer-right" class="drawer:right">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Right Drawer</h3>
+        <button class="btn gho sm" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <p>This is a right-side drawer using <code>&lt;dialog&gt;</code>.</p>
+      <ul>
+        <li>Has modal backdrop</li>
+        <li>Traps focus</li>
+        <li>Closes on Escape key</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <!-- Top Drawer -->
+  <div popover id="drawer-top" class="drawer:top">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Top Drawer</h3>
+        <button class="btn gho sm" popovertarget="drawer-top">✕</button>
+      </div>
+      <p>This is a top drawer using <code>popover</code>.</p>
+      <p>No backdrop, light dismiss (click outside to close).</p>
+    </div>
+  </div>
+
+  <!-- Bottom Drawer -->
+  <div popover id="drawer-bottom" class="drawer:bottom">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Bottom Drawer</h3>
+        <button class="btn gho sm" popovertarget="drawer-bottom">✕</button>
+      </div>
+      <p>This is a bottom drawer using <code>popover</code>.</p>
+      <p>No backdrop, light dismiss (click outside to close).</p>
+    </div>
+  </div>
+
+  <script>
+    // Close dialogs when clicking backdrop
+    document.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+    });
+  </script>
+</body>
+</html>

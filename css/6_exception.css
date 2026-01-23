@@ -1,4 +1,122 @@
 @layer exception {
+  /* === DRAWER DIRECTIONS === */
+  
+  /* Left drawer */
+  [class*="drawer:left"] {
+    top: 0;
+    left: 0;
+    width: var(--drawer-width);
+    max-width: var(--drawer-maxwidth);
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+  
+  [class*="drawer:left"][open],
+  [class*="drawer:left"]:popover-open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  @starting-style {
+    [class*="drawer:left"][open],
+    [class*="drawer:left"]:popover-open {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Right drawer */
+  [class*="drawer:right"] {
+    top: 0;
+    right: 0;
+    width: var(--drawer-width);
+    max-width: var(--drawer-maxwidth);
+    height: 100vh;
+    transform: translateX(100%);
+  }
+  
+  [class*="drawer:right"][open],
+  [class*="drawer:right"]:popover-open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  @starting-style {
+    [class*="drawer:right"][open],
+    [class*="drawer:right"]:popover-open {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  /* Top drawer */
+  [class*="drawer:top"] {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: var(--drawer-height);
+    max-height: var(--drawer-maxheight);
+    transform: translateY(-100%);
+  }
+  
+  [class*="drawer:top"][open],
+  [class*="drawer:top"]:popover-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @starting-style {
+    [class*="drawer:top"][open],
+    [class*="drawer:top"]:popover-open {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Bottom drawer */
+  [class*="drawer:bottom"] {
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: var(--drawer-height);
+    max-height: var(--drawer-maxheight);
+    transform: translateY(100%);
+  }
+  
+  [class*="drawer:bottom"][open],
+  [class*="drawer:bottom"]:popover-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @starting-style {
+    [class*="drawer:bottom"][open],
+    [class*="drawer:bottom"]:popover-open {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  /* === DRAWER BACKDROP (dialog only) === */
+  dialog[class*="drawer:"]::backdrop {
+    background: var(--drawer-backdrop);
+    transition: 
+      opacity 0.3s, 
+      overlay 0.3s allow-discrete, 
+      display 0.3s allow-discrete;
+    opacity: 0;
+  }
+  
+  dialog[class*="drawer:"][open]::backdrop {
+    opacity: 1;
+  }
+  
+  @starting-style {
+    dialog[class*="drawer:"][open]::backdrop {
+      opacity: 0;
+    }
+  }
+
   :where(html) {
   /* === BUTTON VARIANTS === */
 :is(button, .btn, .icon-btn) {
