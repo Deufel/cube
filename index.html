@@ -34,7 +34,7 @@
     <!-- Header with hamburger (mobile) -->
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
-    <div id="nav-drawer" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
     <main id="readme-content" style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
       <p>Loading README...</p>
     </main>
@@ -49,36 +49,8 @@
         });
     </script>
 
-    <aside style="grid-area: 2/3/3/4;" class="scroll-y card flex:stack gap:md p:md">
-      <h2 class="text:md">Settings</h2>
-
-      <section class="flex:stack gap:sm">
-        <h3 class="text:sm">Theme</h3>
-        <div class="flex:cluster gap:xs">
-          <button class="sm"
-            data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
-            data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-          <button class="sm"
-            data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
-            data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
-        </div>
-      </section>
-
-      <section class="flex:stack gap:sm">
-        <h3 class="text:sm">Mode</h3>
-        <div class="flex:cluster gap:xs">
-          <button class="sm"
-            data-attr:var="$prst_mode === 'light' ? false : 'gho'"
-            data-on:click="$prst_mode = 'light'">Light</button>
-          <button class="sm"
-            data-attr:var="$prst_mode === 'system' ? false : 'gho'"
-            data-on:click="$prst_mode = 'system'">System</button>
-          <button class="sm"
-            data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
-            data-on:click="$prst_mode = 'dark'">Dark</button>
-        </div>
-      </section>
-    </aside>
+    <div id="aside" data-init="@get('./partials/aside.html')"></div>
+    <div id="aside-drawer"></div>
 
     <footer style="grid-area: 3/2/4/4;" class="card flex:cluster gap:md justify:center">
       <span class="">CUBE CSS Design System</span>
