@@ -319,6 +319,61 @@ Icon buttons support size, variant, color, and shape classes.
 </button>
 ```
 
+### Drawer
+
+Viewport-anchored slide-out panels. Works with `<dialog>` (modal, backdrop) or `<div popover>` (lighter).
+
+| Class | Direction | Size |
+|-------|-----------|------|
+| `drawer:left` | Left edge | `--drawer-width` |
+| `drawer:right` | Right edge | `--drawer-width` |
+| `drawer:top` | Top edge | `--drawer-height` |
+| `drawer:bottom` | Bottom edge | `--drawer-height` |
+
+**Props:**
+| Token | Default |
+|-------|---------|
+| `--drawer-width` | `clamp(280px, 75vw, 360px)` |
+| `--drawer-maxwidth` | `85vw` |
+| `--drawer-height` | `clamp(200px, 40vh, 350px)` |
+| `--drawer-maxheight` | `60vh` |
+| `--drawer-backdrop` | `rgba(0, 0, 0, 0.5)` |
+
+**Internal structure:**
+- `.drawer-content` — scrollable content area with padding
+- `.drawer-header` — flex split header with close button
+
+```html
+<!-- Dialog drawer (modal, has backdrop) -->
+<dialog class="drawer:left" id="nav-drawer" popover="manual">
+  <div class="drawer-content">
+    <div class="drawer-header">
+      <h3>Navigation</h3>
+      <button class="close-btn" popovertarget="nav-drawer">Close</button>
+    </div>
+    <!-- content -->
+  </div>
+</dialog>
+
+<!-- Popover drawer (no backdrop) -->
+<div class="drawer:bottom" popover>
+  <div class="drawer-content">...</div>
+</div>
+```
+
+**Trigger:** Use `popovertarget` attribute on buttons.
+
+```html
+<button popovertarget="nav-drawer">Open Menu</button>
+```
+
+**Responsive pattern:** Pair with `.desktop` / `.mobile` utilities to show inline nav on desktop, drawer on mobile.
+
+```html
+<nav id="nav" class="desktop" style="grid-area: 2/1/4/2;">...</nav>
+<dialog id="nav-drawer" class="drawer:left mobile" popover="manual">...</dialog>
+```
+
 ---
 
 ## Exception Layer
