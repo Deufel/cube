@@ -191,10 +191,29 @@
       border-color: transparent;
     }
     &.gla {
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--blur-md));
-      border-color: var(--glass-border);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      background: light-dark(
+        color-mix(in oklch, white, transparent 20%),
+        color-mix(in oklch, var(--gry-8), transparent 40%)
+      );
+      color: light-dark(var(--gry-8), var(--gry-2));
+      backdrop-filter: blur(12px);
+      border-color: light-dark(
+        color-mix(in oklch, var(--gry-5), transparent 70%),
+        color-mix(in oklch, var(--gry-6), transparent 70%)
+      );
+      box-shadow: inset 0 1px 0 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.15));
+      transition: box-shadow 0.15s ease;
+
+      &:hover {
+        box-shadow: 
+          0 4px 16px 0 color-mix(in oklch, var(--color-pri), transparent 60%),
+          inset 0 1px 0 0 light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.1));
+      }
+
+      &:active {
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.02),
+          inset 0 2px 0 0 light-dark(rgb(255 255 255 / 0.8), rgb(255 255 255 / 0.15));
+      }
     }
   }
 
@@ -285,36 +304,26 @@
   /* === CARD VARIANTS === */
   .card {
     &.pri {
-      background: var(--color-pri);
-      color: var(--color-pri-text);
-      border-color: transparent;
+      background: light-dark(
+        color-mix(in oklch, var(--color-pri), var(--gry-0) 94%),
+        color-mix(in oklch, var(--color-pri), var(--gry-9) 92%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--color-pri), transparent 85%),
+        color-mix(in oklch, var(--color-pri), transparent 80%)
+      );
     }
     &.sec {
-      background: var(--color-sec);
-      color: var(--color-sec-text);
-      border-color: transparent;
+      background: light-dark(
+        color-mix(in oklch, var(--color-sec), var(--gry-0) 94%),
+        color-mix(in oklch, var(--color-sec), var(--gry-9) 92%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--color-sec), transparent 85%),
+        color-mix(in oklch, var(--color-sec), transparent 80%)
+      );
     }
-    &.wrn {
-      background: var(--color-wrn);
-      color: var(--color-wrn-text);
-      border-color: transparent;
-    }
-    &.dgr {
-      background: var(--color-dgr);
-      color: var(--color-dgr-text);
-      border-color: transparent;
-    }
-    &.out {
-      background: transparent;
-      box-shadow: none;
-      border-color: var(--border-muted);
-    }
-    &.gho {
-      background: transparent;
-      box-shadow: none;
-      border-color: transparent;
-    }
-    &.glass {
+    &.gla {
       background: light-dark(
         color-mix(in oklch, white, transparent 20%),
         color-mix(in oklch, var(--gry-8), transparent 40%)
@@ -327,6 +336,30 @@
       box-shadow:
         0 1px 2px 0 rgb(0 0 0 / 0.05),
         inset 0 1px 0 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.05));
+    }
+  }
+
+  /* === CARD ALERT VARIANTS === */
+  [class*="card:alert"] {
+    &.inf { 
+      background: light-dark(color-mix(in oklch, var(--color-inf), var(--gry-0) 95%), color-mix(in oklch, var(--color-inf), var(--gry-9) 95%));
+      border-color: var(--color-inf); 
+      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-inf), transparent 80%); 
+    }
+    &.suc { 
+      background: light-dark(color-mix(in oklch, var(--color-suc), var(--gry-0) 95%), color-mix(in oklch, var(--color-suc), var(--gry-9) 95%));
+      border-color: var(--color-suc); 
+      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-suc), transparent 80%); 
+    }
+    &.wrn { 
+      background: light-dark(color-mix(in oklch, var(--color-wrn), var(--gry-0) 95%), color-mix(in oklch, var(--color-wrn), var(--gry-9) 95%));
+      border-color: var(--color-wrn); 
+      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-wrn), transparent 80%); 
+    }
+    &.dgr { 
+      background: light-dark(color-mix(in oklch, var(--color-dgr), var(--gry-0) 95%), color-mix(in oklch, var(--color-dgr), var(--gry-9) 95%));
+      border-color: var(--color-dgr); 
+      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-dgr), transparent 80%); 
     }
     &.res {
       resize: horizontal;

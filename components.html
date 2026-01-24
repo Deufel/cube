@@ -251,27 +251,31 @@
           <div class="card sec" style="width: 140px;">
             <p class="text:sm">Secondary</p>
           </div>
-          <div class="card wrn" style="width: 140px;">
-            <p class="text:sm">Warning</p>
-          </div>
-          <div class="card dgr" style="width: 140px;">
-            <p class="text:sm">Danger</p>
-          </div>
-          <div class="card out" style="width: 140px;">
-            <p class="text:sm">Outline</p>
-          </div>
-          <div class="card gho" style="width: 140px;">
-            <p class="text:sm">Ghost</p>
-          </div>
-          <div class="card glass" style="width: 140px;">
+          <div class="card gla" style="width: 140px;">
             <p class="text:sm">Glass</p>
           </div>
         </div>
+
+        <h3 class="text:md">Alert Cards</h3>
+        <div class="flex:stack gap:sm" style="max-width: 400px;">
+          <div class="card:alert inf">
+            <p class="text:sm"><strong>Info:</strong> This is an informational message.</p>
+          </div>
+          <div class="card:alert suc">
+            <p class="text:sm"><strong>Success:</strong> Operation completed successfully.</p>
+          </div>
+          <div class="card:alert wrn">
+            <p class="text:sm"><strong>Warning:</strong> Please review before continuing.</p>
+          </div>
+          <div class="card:alert dgr">
+            <p class="text:sm"><strong>Danger:</strong> This action cannot be undone.</p>
+          </div>
+        </div>
+      </section>
       </section>
     </main>
 
-    <div id="aside" data-init="@get('./partials/aside.html')"></div>
-    <div id="aside-drawer"></div>
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
     <div id="footer" data-init="@get('./partials/footer.html')"></div>
   </div>
 </body>

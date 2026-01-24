@@ -1,35 +1,4 @@
-<aside id="aside" class="scroll-y card flex:stack gap:md p:md desktop" style="grid-area: 2/3/3/4;">
-  <h2 class="text:md">Settings</h2>
-
-  <section class="flex:stack gap:sm">
-    <h3 class="text:sm">Theme</h3>
-    <div class="flex:cluster gap:xs">
-      <button class="sm"
-        data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
-        data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-      <button class="sm"
-        data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
-        data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
-    </div>
-  </section>
-
-  <section class="flex:stack gap:sm">
-    <h3 class="text:sm">Mode</h3>
-    <div class="flex:cluster gap:xs">
-      <button class="sm"
-        data-attr:var="$prst_mode === 'light' ? false : 'gho'"
-        data-on:click="$prst_mode = 'light'">Light</button>
-      <button class="sm"
-        data-attr:var="$prst_mode === 'system' ? false : 'gho'"
-        data-on:click="$prst_mode = 'system'">System</button>
-      <button class="sm"
-        data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
-        data-on:click="$prst_mode = 'dark'">Dark</button>
-    </div>
-  </section>
-</aside>
-
-<dialog id="aside-drawer" class="drawer:right mobile" popover="manual">
+<dialog id="aside-drawer" class="drawer:right" popover="manual">
   <div class="drawer-content flex:stack gap:md">
     <div class="drawer-header">
       <h3>Settings</h3>

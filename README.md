@@ -243,11 +243,32 @@ Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.
 
 ### Card
 
+Container with subtle primary-tinted background. Use for content grouping.
+
+| Modifier | Values |
+|----------|--------|
+| variant | `pri`, `sec`, `gla` |
+
 ```html
-<div class="card pri">
-  <h3>Title</h3>
-  <p>Content</p>
-</div>
+<div class="card">Default (primary tint)</div>
+<div class="card pri">Primary</div>
+<div class="card sec">Secondary</div>
+<div class="card gla">Glass (blur)</div>
+```
+
+### Alert Card
+
+Status messages with colored border and glow. Use `card:alert` + color modifier.
+
+| Modifier | Values |
+|----------|--------|
+| color | `inf`, `suc`, `wrn`, `dgr` |
+
+```html
+<div class="card:alert inf">Info message</div>
+<div class="card:alert suc">Success message</div>
+<div class="card:alert wrn">Warning message</div>
+<div class="card:alert dgr">Danger message</div>
 ```
 
 ### Form
