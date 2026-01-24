@@ -57,6 +57,11 @@
     &:hover {
       background: var(--surface-hover, rgba(0, 0, 0, 0.05));
     }
+
+    /* Tag pushed to the right */
+    & .tag {
+      margin-inline-start: auto;
+    }
   }
 
   .nav-icon {
@@ -66,24 +71,34 @@
     justify-content: center;
   }
 
-  .nav-icon .badge {
+  .nav-item .tag {
+    margin-inline-start: auto;
+  }
+
+  /* === BADGE === */
+  .badge {
     position: absolute;
     top: -4px;
     right: -4px;
-    min-width: 16px;
-    height: 16px;
-    padding: 0 4px;
-    font-size: 10px;
+    min-width: 1rem;
+    height: 1rem;
+    padding-inline: 0.25rem;
+    font-size: var(--text-xs);
     font-weight: 600;
-    line-height: 16px;
-    text-align: center;
-    background: var(--color-dgr, #dc3545);
-    color: white;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 999px;
+    background: var(--color-dgr);
+    color: var(--color-dgr-text, white);
   }
 
-  .nav-item .tag {
-    margin-inline-start: auto;
+  /* Empty badge = dot indicator */
+  .badge:empty {
+    min-width: 10px;
+    height: 10px;
+    padding: 0;
   }
 
   /* Narrow variant */
