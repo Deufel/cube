@@ -75,19 +75,28 @@
     margin-inline-start: auto;
   }
 
+  /* === INLINE CONTROLS (shared base) === */
+  button, .btn, .tag, .badge, kbd {
+    text-box: trim-both cap alphabetic;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+
   /* === BADGE === */
   .badge {
     position: absolute;
     top: -4px;
     right: -4px;
-    min-width: 1rem;
-    height: 1rem;
-    padding-inline: 0.25rem;
+    padding: 0.3em;
+    min-width: 1.2em;
     font-size: var(--text-xs);
     font-weight: 600;
-    line-height: 1;
-    display: grid;
-    place-content: center;
     border-radius: 999px;
     background: var(--color-dgr);
     color: var(--color-dgr-text, white);
@@ -136,18 +145,10 @@
 
   /* === BUTTON === */
   button, .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
     height: var(--btn-height-md);
     padding-inline: var(--space-md);
     font-size: var(--text-md);
-    font-weight: 500;
-    line-height: 1;
-    border: none;
     border-radius: var(--radius-btn);
-    cursor: pointer;
     background: var(--color-pri);
     color: var(--color-pri-text);
     transition: box-shadow 0.15s ease;
@@ -237,16 +238,21 @@
     padding: var(--space-sm);
   }
 
-  /* === PILL === */
+  /* === KBD === */
+  kbd {
+    padding: 0.2em 0.4em;
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    border-radius: var(--radius-sm);
+    background: var(--surface-hover);
+    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+  }
+
+  /* === TAG === */
   .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
     height: 1.625rem;
     padding-inline: var(--space-sm);
     font-size: var(--text-xs);
-    font-weight: 500;
-    line-height: 1;
     border-radius: var(--radius-round);
     background: light-dark(
       color-mix(in oklch, var(--color-pri), var(--gry-0) 92%),
