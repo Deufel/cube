@@ -46,11 +46,11 @@
     --surface-input: light-dark(white, #1e221e);
 
     /* === COLORS (Cyberpunk: neon yellow primary, teal secondary) === */
-    --color-pri: light-dark(var(--ind-6), var(--yel-4));
-    --color-pri-text: light-dark(white, var(--gry-9));
+    --color-pri: var(--yel-4);
+    --color-pri-text: var(--gry-9);
 
-    --color-sec: light-dark(var(--gry-6), var(--gry-6));
-    --color-sec-text: light-dark(white, var(--gry-1));
+    --color-sec: light-dark(var(--red-6), var(--red-5));
+    --color-sec-text: white;
 
     --color-wrn: light-dark(var(--yel-5), var(--yel-5));
     --color-wrn-text: var(--gry-9);
@@ -58,7 +58,7 @@
     --color-dgr: light-dark(var(--red-6), var(--red-5));
     --color-dgr-text: white;
 
-    --color-inf: light-dark(var(--blu-6), var(--cya-5));
+    --color-inf: light-dark(var(--blu-6), var(--cyn-5));
     --color-inf-text: light-dark(white, var(--gry-9));
 
     /* === FEEDBACK COLORS === */
@@ -78,6 +78,12 @@
     --btn-height-sm: 1.875rem;
     --btn-height-md: 2.375rem;
     --btn-height-lg: 2.875rem;
+
+        /* === GLASS === */
+    --glass-bg: var(--glass-bg-1);
+    --glass-border: var(--glass-border-1);
+    --blur-sm: var(--size-px-2);
+    --blur-md: var(--size-px-3);
   }
 
   [data-mode="light"] { color-scheme: light; }

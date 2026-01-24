@@ -100,15 +100,7 @@
     --btn-height-md: 2.375rem;
     --btn-height-lg: 2.875rem;
 
-    /* === ICON BUTTON === */
-    --icon-btn-size-sm: var(--size-px-7);
-    --icon-btn-size-md: var(--size-px-8);
-    --icon-btn-size-lg: var(--size-px-9);
-    --icon-size-sm: var(--size-px-4);
-    --icon-size-md: var(--size-px-5);
-    --icon-size-lg: var(--size-px-6);
-
-    /* === GLASS === */
+        /* === GLASS === */
     --glass-bg: var(--glass-bg-1);
     --glass-border: var(--glass-border-1);
     --blur-sm: var(--size-px-2);

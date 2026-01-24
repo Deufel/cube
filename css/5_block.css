@@ -314,60 +314,27 @@
 
   /* === ICON BUTTON === */
   .icon-btn {
-    --_icon-btn-size: var(--icon-btn-size-md);
-    --_icon-size: var(--icon-size-md);
-    --_icon-btn-color: var(--color-pri);
-
     aspect-ratio: 1;
-    width: var(--_icon-btn-size);
+    width: var(--size-px-8);
     display: inline-flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3xs);
     border: 1.5px solid transparent;
     border-radius: var(--radius-btn);
     cursor: pointer;
     background: transparent;
     color: var(--text-color);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.2s ease;
 
-    & svg {
-      width: var(--_icon-size);
-      height: var(--_icon-size);
-      flex-shrink: 0;
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    & span {
-      font-size: 0.625rem;
-      line-height: 1;
-      font-weight: 500;
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    &:has(span) {
-      --_icon-size: var(--icon-size-sm);
-    }
+    & svg { width: var(--size-px-5); height: var(--size-px-5); flex-shrink: 0; }
 
     &:hover {
-      border-color: var(--_icon-btn-color);
-      color: var(--_icon-btn-color);
-      background: color-mix(in oklch, var(--_icon-btn-color), transparent 95%);
-      box-shadow: 0 4px 12px color-mix(in oklch, var(--_icon-btn-color), transparent 70%);
+      border-color: var(--color-pri);
+      color: var(--color-pri);
+      background: color-mix(in oklch, var(--color-pri), transparent 95%);
     }
 
-    &:hover svg,
-    &:hover span {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      background: color-mix(in oklch, var(--_icon-btn-color), transparent 90%);
-      transform: scale(0.95);
-    }
+    &:active { transform: scale(0.95); }
   }
 }
 

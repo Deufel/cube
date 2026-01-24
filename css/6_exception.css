@@ -159,32 +159,9 @@
     &.lg { height: var(--btn-height-lg); padding-inline: var(--space-lg); font-size: var(--text-lg); }
   }
 
-  /* === ICON BUTTON SIZES === */
-  .icon-btn {
-    &.sm { --_icon-btn-size: var(--icon-btn-size-sm); --_icon-size: var(--icon-size-sm); }
-    &.lg { --_icon-btn-size: var(--icon-btn-size-lg); --_icon-size: var(--icon-size-lg); }
-  }
-
-  /* === ICON BUTTON VARIANTS (specific overrides) === */
-  .icon-btn {
-    &.pri {
-      background: var(--_icon-btn-color);
-      color: var(--color-pri-text);
-      border-color: var(--_icon-btn-color);
-    }
-    &.sec {
-      background: color-mix(in oklch, var(--_icon-btn-color), transparent 90%);
-      color: var(--_icon-btn-color);
-      border-color: transparent;
-    }
-    &.out {
-      border-color: var(--gry-5);
-      background: transparent;
-    }
-  }
 
   /* === SHARED STYLE VARIANTS (gra, gla) === */
-  :is(button, .btn, .icon-btn) {
+  :is(button, .btn) {
     &.gra {
       background: linear-gradient(135deg, var(--color-pri), var(--color-suc));
       color: white;
@@ -217,17 +194,6 @@
     }
   }
 
-  /* === ICON BUTTON COLORS === */
-  .icon-btn {
-    &.suc { --_icon-btn-color: var(--color-suc); }
-    &.wrn { --_icon-btn-color: var(--color-wrn); }
-    &.dgr { --_icon-btn-color: var(--color-dgr); }
-  }
-
-  /* === ICON BUTTON SHAPE === */
-  .icon-btn {
-    &.round { border-radius: var(--radius-full); }
-  }
 
   /* === BUTTON STATES === */
   :is(button, .btn, .icon-btn) {
