@@ -217,6 +217,12 @@
   }
 
   /* === TAG VARIANTS === */
+  .badge {
+    &.suc { background: var(--color-suc); color: var(--color-suc-text, white); }
+    &.wrn { background: var(--color-wrn); color: var(--color-wrn-text, white); }
+    &.dgr { background: var(--color-dgr); color: var(--color-dgr-text, white); }
+  }
+
   .tag {
     &.inf {
       background: light-dark(

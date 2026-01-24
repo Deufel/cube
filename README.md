@@ -167,54 +167,79 @@ Components use class + attribute API.
 
 **Note:** Use `disabled` attribute for disabled state, `aria-busy="true"` for loading state.
 
+### Inline Controls (Shared Base)
+
+`button`, `.btn`, `.tag`, `.badge`, `kbd` share: `text-box: trim-both cap alphabetic`, `line-height: 1`, `inline-flex` centering, `gap: var(--space-xs)`.
+
 ### Button
 
-| Class | Purpose | Values |
-|-------|---------|--------|
-| variant | Variant | `pri`, `sec`, `gho`, `wrn`, `dgr` |
-| size | Size | `sm`, `md` (default), `lg` |
-Append `:out` to any variant for an outline version.
+Interactive element for actions. Use `<button>` or `.btn` on anchors.
+
+| Modifier | Values |
+|----------|--------|
+| variant | `pri`, `sec`, `gho`, `gra`, `gla`, `wrn`, `dgr`, `suc` |
+| modifier | `out` (outline version of any variant) |
+| size | `sm`, `lg` (default: md) |
 
 ```html
+<button>Default</button>
 <button class="pri">Primary</button>
-<button class="sec">Secondary</button>
-<button class="pri out">Primary Outline</button>
-<button class="sec out">Secondary Outline</button>
 <button class="gho">Ghost</button>
-<button class="wrn">Warning</button>
 <button class="dgr out">Danger Outline</button>
-```
-
-
-### Badge
-
-```html
-<span class="badge" class="pri">Primary</span>
-<span class="badge" class="suc">Success</span>
-<span class="badge" class="err">Error</span>
-<span class="badge" class="wrn">Warning</span>
+<button class="sm">Small</button>
 ```
 
 ### Tag
 
-Rounded status indicators with semantic color variants.
+Non-interactive label for status/categories. No pointer cursor.
 
-| Class | Purpose | Values |
-|-------|---------|--------|
-| variant | Variant | `inf` (info), `suc` (success), `wrn` (warning), `dgr` (danger) |
+| Modifier | Values |
+|----------|--------|
+| color | `inf`, `suc`, `wrn`, `dgr` |
+
 ```html
-<!-- Default (glass with primary tint) -->
 <span class="tag">Default</span>
-
-<!-- Semantic variants -->
 <span class="tag inf">Info</span>
 <span class="tag suc">Success</span>
 <span class="tag wrn">Warning</span>
 <span class="tag dgr">Danger</span>
 
-<!-- With close button -->
-<span class="tag suc">Done <span class="close">×</span></span>
+<!-- Removable (button inside gets pointer) -->
+<span class="tag suc">Done <button class="close">×</button></span>
 ```
+
+### Badge
+
+Notification count or status dot. Requires `position: relative` parent. Default: info blue.
+
+| Modifier | Values |
+|----------|--------|
+| color | `suc`, `wrn`, `dgr` (default: inf) |
+
+```html
+<!-- Count badge -->
+<span style="position: relative;">
+  <svg>...</svg>
+  <span class="badge">3</span>
+</span>
+
+<!-- Dot indicator (empty) -->
+<span class="badge"></span>
+
+<!-- Color variants -->
+<span class="badge suc">✓</span>
+<span class="badge wrn">!</span>
+<span class="badge dgr">9</span>
+```
+
+### Kbd
+
+Keyboard input indicator. Monospace font, subtle background.
+
+```html
+Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.
+```
+
 
 ### Card
 

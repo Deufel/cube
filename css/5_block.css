@@ -85,6 +85,9 @@
     gap: var(--space-xs);
     font-weight: 500;
     border: none;
+  }
+
+  button, .btn {
     cursor: pointer;
   }
 
@@ -93,13 +96,13 @@
     position: absolute;
     top: -4px;
     right: -4px;
-    padding: 0.3em;
-    min-width: 1.2em;
+    padding: 0.25rem;
+    min-width: var(--size-3);
     font-size: var(--text-xs);
     font-weight: 600;
     border-radius: 999px;
-    background: var(--color-dgr);
-    color: var(--color-dgr-text, white);
+    background: var(--color-inf);
+    color: var(--color-inf-text, white);
   }
 
   /* Empty badge = dot indicator */
@@ -250,7 +253,7 @@
 
   /* === TAG === */
   .tag {
-    height: 1.625rem;
+    height: var(--size-5);
     padding-inline: var(--space-sm);
     font-size: var(--text-xs);
     border-radius: var(--radius-round);
