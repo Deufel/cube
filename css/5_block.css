@@ -4,6 +4,7 @@
     border: none;
     background: var(--color-hr);
     block-size: 1px;
+    inline-size: 100%;
     margin-block: var(--space-md);
   }
 
@@ -14,7 +15,7 @@
     gap: var(--space-md);
     margin-block: var(--space-md);
     
-    & hr { margin-block: 0; }
+    & hr { margin-block: 0; inline-size: 100%; }
     
     & span {
       color: var(--text-muted);

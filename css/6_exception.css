@@ -364,5 +364,14 @@
     }
   }
 
+  /* === VERTICAL DIVIDERS === */
+  hr[class*="vert"] {
+    inline-size: 1px;
+    block-size: auto;
+    align-self: stretch;
+    margin-block: 0;
+    margin-inline: var(--space-md);
+  }
+
 }
 }

@@ -46,7 +46,7 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Basic Horizontal Rule</h3>
         <p class="text:sm">Simple <code>&lt;hr&gt;</code> element styled with theme color.</p>
-        <div class="card">
+        <div class="card sec">
           <p>Content above the divider</p>
           <hr>
           <p>Content below the divider</p>
@@ -57,7 +57,7 @@
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Divider with Text</h3>
         <p class="text:sm">Use <code>.divider:text</code> to add centered text between two rules.</p>
-        <div class="card">
+        <div class="card glass">
           <button class="btn pri" style="width: 100%;">Sign in with Email</button>
           <div class="divider:text">
             <hr><span>OR</span><hr>
@@ -91,6 +91,24 @@
           <div class="card"><h4>Item 4</h4><p>Description</p></div>
         </div>
       </section>
+
+      <!-- Vertical Dividers -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Vertical Dividers</h3>
+        <p class="text:sm">Add <code>.vert</code> class for vertical orientation.</p>
+        <div class="card flex:cluster gap:lg align:stretch" style="height: 150px;">
+          <div class="flex:stack justify:center">
+            <h4>Section A</h4>
+            <p class="text:sm">Left content</p>
+          </div>
+          <hr class="vert">
+          <div class="flex:stack justify:center">
+            <h4>Section B</h4>
+            <p class="text:sm">Right content</p>
+          </div>
+        </div>
+        
+        </section>
 
       <!-- Form Section Divider -->
       <section class="flex:stack gap:sm">
@@ -140,6 +158,10 @@
               <td style="padding: var(--space-xs);"><code>.divider:text</code></td>
               <td style="padding: var(--space-xs);">Grid container for hr + text + hr pattern</td>
             </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.vert</code></td>
+              <td style="padding: var(--space-xs);">Modifier for vertical orientation (parent needs defined height)</td>
+            </tr>
           </tbody>
         </table>
 
@@ -169,7 +191,10 @@
 &lt;/div&gt;
 
 &lt;!-- Full-width in grid --&gt;
-&lt;hr style="grid-column: 1 / -1;"&gt;</code></pre>
+&lt;hr style="grid-column: 1 / -1;"&gt;
+
+&lt;!-- Vertical rule --&gt;
+&lt;hr class="vert"&gt;</code></pre>
       </section>
     </main>
 
