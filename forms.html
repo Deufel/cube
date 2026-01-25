@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+  
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
+      <h2 class="text:xl" style="font-weight: 600;">Forms</h2>
+      
+      <!-- Form Layout -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Form Layout</h3>
+        <p class="text:sm">4-column grid system: <code>w-1</code> (25%), <code>w-2</code> (50%), <code>w-3</code> (75%), <code>w-4</code> (100%)</p>
+        <div style="resize: horizontal; overflow: auto; border: 1px dashed var(--gry-6); padding: var(--space-md); min-width: 250px; max-width: 100%;">
+<form class="form">
+            <!-- Full width email -->
+            <label class="input-group w-4">
+              Email <span class="feedback">Looks good!</span>
+              <input type="email" value="mike@example.com" class="suc" enterkeyhint="next" />
+            </label>
+            
+            <!-- 2 + 2: Names -->
+            <label class="input-group w-2">
+              First Name
+              <input type="text" value="Mike" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-2">
+              Last Name
+              <input type="text" value="Johnson" enterkeyhint="next" />
+            </label>
+            
+            <!-- 3 + 1: Address -->
+            <label class="input-group w-3">
+              Street Address
+              <input type="text" value="123 Main Street" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-1">
+              Apt
+              <input type="text" value="4B" enterkeyhint="next" />
+            </label>
+            
+            <!-- 2 + 1 + 1: City/State/Zip -->
+            <label class="input-group w-2">
+              City
+              <input type="text" value="New York" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-1">
+              State
+              <input type="text" value="NY" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-1">
+              Zip <span class="feedback">Invalid</span>
+              <input type="text" inputmode="tel" value="1000" class="err" enterkeyhint="next" />
+            </label>
+            
+            <!-- 1 + 1 + 2: Mixed sizes -->
+            <label class="input-group w-1">
+              Code
+              <input type="text" value="ABC" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-1">
+              PIN <span class="feedback">Weak</span>
+              <input type="text" inputmode="tel" value="1234" class="wrn" enterkeyhint="next" />
+            </label>
+            <label class="input-group w-2">
+              Phone
+              <input type="tel" inputmode="tel" value="(555) 123-4567" enterkeyhint="next" />
+            </label>
+            
+            <!-- Full width notes -->
+            <label class="input-group w-4">
+              Notes
+              <textarea rows="2" enterkeyhint="done">Additional delivery instructions...</textarea>
+            </label>
+            
+            <button type="submit" class="w-4">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Form Tips -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Form Tips</h3>
+        <div class="card">
+          <h3>Mobile Keyboard Hints</h3>
+          <p>Use <code>enterkeyhint</code> to control the Enter key label on mobile keyboards:</p>
+          <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
+            <li><code>enterkeyhint="next"</code> — shows "Next" for multi-field forms</li>
+            <li><code>enterkeyhint="done"</code> — shows "Done" for the last field</li>
+            <li><code>enterkeyhint="search"</code>, <code>go</code>, <code>send</code> — context-specific</li>
+          </ul>
+          <p style="margin-top: var(--space-sm);">Use <code>inputmode</code> to show the right keyboard without validation quirks of <code>type="number"</code>:</p>
+          <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
+            <li><code>inputmode="tel"</code> — phone-style number pad (great for ZIP, PIN, phone)</li>
+            <li><code>inputmode="numeric"</code> — number pad</li>
+            <li><code>inputmode="decimal"</code> — number pad with decimal point</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- API Reference -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">API Reference</h3>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Class</th>
+              <th style="text-align: left; padding: var(--space-xs);">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.form</code></td>
+              <td style="padding: var(--space-xs);">4-column grid container for form layout</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.input-group</code></td>
+              <td style="padding: var(--space-xs);">Wrapper for label + input with flex column layout</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.w-1</code> to <code>.w-4</code></td>
+              <td style="padding: var(--space-xs);">Width classes: 1-4 columns (25%-100%)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.feedback</code></td>
+              <td style="padding: var(--space-xs);">Inline validation message (shown with input state)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.suc</code> / <code>.wrn</code> / <code>.err</code></td>
+              <td style="padding: var(--space-xs);">Input validation states</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+        <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;form class="form"&gt;
+  &lt;label class="input-group w-4"&gt;
+    Email &lt;span class="feedback"&gt;Looks good!&lt;/span&gt;
+    &lt;input type="email" class="suc" /&gt;
+  &lt;/label&gt;
+  
+  &lt;label class="input-group w-2"&gt;
+    First Name
+    &lt;input type="text" /&gt;
+  &lt;/label&gt;
+  &lt;label class="input-group w-2"&gt;
+    Last Name
+    &lt;input type="text" /&gt;
+  &lt;/label&gt;
+  
+  &lt;button type="submit" class="w-4"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
