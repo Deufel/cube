@@ -51,73 +51,73 @@
             <!-- Full width email -->
             <label class="input-group w-4">
               Email <span class="feedback">Looks good!</span>
-              <input type="email" value="mike@example.com" class="suc" enterkeyhint="next" 
+<input type="email" placeholder="mike@example.com" class="suc" enterkeyhint="next" 
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 2 + 2: Names -->
             <label class="input-group w-2">
               First Name
-              <input type="text" value="Mike" enterkeyhint="next"
+<input type="text" placeholder="First" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
               Last Name
-              <input type="text" value="Johnson" enterkeyhint="next"
+<input type="text" placeholder="Last" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 3 + 1: Address -->
             <label class="input-group w-3">
               Street Address
-              <input type="text" value="123 Main Street" enterkeyhint="next"
+<input type="text" placeholder="123 Main Street" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-1">
               Apt
-              <input type="text" value="4B" enterkeyhint="next"
+<input type="text" placeholder="4B" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 2 + 1 + 1: City/State/Zip -->
             <label class="input-group w-2">
               City
-              <input type="text" value="New York" enterkeyhint="next"
+<input type="text" placeholder="New York" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-1">
               State
-              <input type="text" value="NY" enterkeyhint="next"
+<input type="text" placeholder="NY" maxlength="2" pattern="[A-Za-z]{2}" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-1">
               Zip <span class="feedback">Invalid</span>
-<input type="text" inputmode="decimal" value="1000" class="err" enterkeyhint="next"
+<input type="text" placeholder="12345" maxlength="6" pattern="[0-9]{1,6}" class="err" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 1 + 1 + 2: Mixed sizes -->
             <label class="input-group w-1">
               Code
-              <input type="text" value="ABC" enterkeyhint="next"
+<input type="text" placeholder="ABC" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-1">
               PIN <span class="feedback">Weak</span>
-<input type="text" inputmode="decimal" value="1234" class="wrn" enterkeyhint="next"
+<input type="text" placeholder="1234" maxlength="4" pattern="[0-9]{4}" class="wrn" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
               Phone
-<input type="tel" inputmode="decimal" value="(555) 123-4567" enterkeyhint="next"
+<input type="tel" placeholder="5551234567" maxlength="10" pattern="[0-9]{10}" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- Full width notes -->
             <label class="input-group w-4">
               Notes
-              <textarea rows="2" enterkeyhint="done"
-                data-on:keydown="if(evt.key==='Enter'&&!evt.shiftKey){evt.preventDefault();el.closest('form').querySelector('[type=submit]')?.focus()}">Additional delivery instructions...</textarea>
+<textarea rows="2" placeholder="Additional delivery instructions..." enterkeyhint="done"
+                data-on:keydown="if(evt.key==='Enter'&&!evt.shiftKey){evt.preventDefault();el.closest('form').querySelector('[type=submit]')?.focus()}"></textarea>
             </label>
             
             <button type="submit" class="w-4">Submit</button>
