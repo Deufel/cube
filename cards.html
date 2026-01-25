@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+  
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
+      <h2 class="text:xl" style="font-weight: 600;">Cards</h2>
+      
+<!-- Basic Cards -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Cards</h3>
+        <p class="text:sm">Container with padding, border, shadow. Use <code>.pri</code>, <code>.sec</code>, or <code>.gla</code> for variants.</p>
+        <div class="grid:auto-fit gap:md" style="--grid-min: 200px;">
+          <div class="card">
+            <h3>Default</h3>
+            <p>Subtle primary tint background.</p>
+          </div>
+          <div class="card pri">
+            <h3>Primary</h3>
+            <p>Stronger primary color tint.</p>
+          </div>
+          <div class="card sec">
+            <h3>Secondary</h3>
+            <p>Uses secondary color tint.</p>
+          </div>
+          <div class="card gla">
+            <h3>Glass</h3>
+            <p>Frosted glass with backdrop blur.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alert Cards -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Alert Cards</h3>
+        <p class="text:sm">Alert cards with right-aligned action buttons (Apple design pattern). Defaults to info color.</p>
+        <div class="flex:stack gap:md" style="max-width: 400px;">
+          <div class="card:alert">
+            <h3>Information</h3>
+            <p>This is an informational alert.</p>
+<button class="btn pri out sm">OK</button>
+          </div>
+          <div class="card:alert">
+            <h3>Confirm Action</h3>
+            <p>Are you sure you want to proceed?</p>
+            <div class="flex:cluster gap:xs">
+<button class="btn sec out sm">Cancel</button>
+              <button class="btn pri out sm">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- API Reference -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">API Reference</h3>
+        
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Classes</h4>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Class</th>
+              <th style="text-align: left; padding: var(--space-xs);">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.card</code></td>
+              <td style="padding: var(--space-xs);">Base card container</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.card:alert</code></td>
+              <td style="padding: var(--space-xs);">Alert variant with info color and right-aligned action buttons</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Nested Elements</h4>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Element</th>
+              <th style="text-align: left; padding: var(--space-xs);">Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>h3</code></td>
+              <td style="padding: var(--space-xs);">Styled as title (no top margin, small bottom margin)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>p</code></td>
+              <td style="padding: var(--space-xs);">No block margin for tighter spacing</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>.btn</code></td>
+              <td style="padding: var(--space-xs);">Auto-aligns to right via margin-inline-start (alert only)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+        <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Basic card --&gt;
+&lt;div class="card"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Alert with single action --&gt;
+&lt;div class="card:alert"&gt;
+  &lt;h3&gt;Alert Title&lt;/h3&gt;
+  &lt;p&gt;Alert message&lt;/p&gt;
+&lt;button class="btn pri out sm"&gt;OK&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Alert with multiple actions --&gt;
+&lt;div class="card:alert"&gt;
+  &lt;h3&gt;Alert Title&lt;/h3&gt;
+  &lt;p&gt;Alert message&lt;/p&gt;
+  &lt;div class="flex:cluster gap:xs"&gt;
+&lt;button class="btn sec out sm"&gt;Cancel&lt;/button&gt;
+    &lt;button class="btn pri out sm"&gt;Confirm&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+  </div>
+</body>
+</html>

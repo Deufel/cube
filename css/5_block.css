@@ -59,7 +59,7 @@
     }
 
     /* Tag pushed to the right */
-    & .tag {
+    & .tag:not(.token) {
       margin-inline-start: auto;
     }
   }
@@ -71,12 +71,12 @@
     justify-content: center;
   }
 
-  .nav-item .tag {
+  .nav-item .tag:not(.token) {
     margin-inline-start: auto;
   }
 
   /* === INLINE CONTROLS (shared base) === */
-  button, .btn, .tag, .badge, kbd {
+  button, .btn, .tag:not(.token), .badge, kbd {
     text-box: trim-both cap alphabetic;
     line-height: 1;
     display: inline-flex;
@@ -120,7 +120,7 @@
     padding: var(--space-sm);
     font-size: var(--text-xs);
 
-    & .tag { display: none; }
+    & .tag:not(.token) { display: none; }
   }
 
   /* === TOOLTIP === */
@@ -252,7 +252,7 @@
   }
 
   /* === TAG === */
-  .tag {
+  .tag:not(.token) {
     height: var(--size-5);
     padding-inline: var(--space-sm);
     font-size: var(--text-xs);
@@ -301,15 +301,29 @@
       color-mix(in oklch, var(--color-pri), transparent 88%)
     );
     box-shadow: var(--shadow-card);
+
+    & h3 { margin: 0 0 var(--space-xs) 0; font-size: var(--text-md); font-weight: 600; }
+    & p { margin-block: 0; }
   }
 
   /* === CARD ALERT === */
-  [class*="card:alert"] {
+[class*="card:alert"] {
     padding: var(--space-sm);
     border-radius: var(--radius-card);
-    background: light-dark(var(--gry-1), var(--gry-8));
+    background: light-dark(
+      color-mix(in oklch, var(--color-inf), var(--gry-0) 95%),
+      color-mix(in oklch, var(--color-inf), var(--gry-9) 95%)
+    );
     color: var(--text-color);
-    border: 1px solid;
+    border: 1px solid var(--color-inf);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+
+    & h3 { margin: 0; font-size: var(--text-md); font-weight: 600; flex: 1 1 100%; }
+    & p { margin-block: 0; flex: 1 1 100%; }
+    & > :last-child:not(h3):not(p) { margin-inline-start: auto; }
   }
 
   /* === ICON BUTTON === */

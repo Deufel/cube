@@ -328,41 +328,10 @@ The `.feedback` span inside `.input-group` will automatically color based on the
 
 ### Icon Button
 
-Icon buttons support size, variant, color, and shape classes.
-
-| Class | Purpose | Values |
-|-------|---------|--------|
-| size | Size | `sm` (32px), default (40px), `lg` (48px) |
-| variant | Variant | `pri`, `sec`, `out`, `gho`, `gra`, `gla` |
-| color | Color | `suc`, `wrn`, `dgr` |
-| shape | Shape | `round` (pill/circle) |
+Square icon-only button with hover effects.
 
 ```html
-<!-- Sizes -->
-<button class="icon-btn" class="sm"><svg>...</svg></button>
 <button class="icon-btn"><svg>...</svg></button>
-<button class="icon-btn" class="lg"><svg>...</svg></button>
-
-<!-- Variants -->
-<button class="icon-btn" class="pri"><svg>...</svg></button>
-<button class="icon-btn" class="sec"><svg>...</svg></button>
-<button class="icon-btn" class="out"><svg>...</svg></button>
-<button class="icon-btn" class="gho"><svg>...</svg></button>
-<button class="icon-btn" class="gra"><svg>...</svg></button>
-<button class="icon-btn" class="gla"><svg>...</svg></button>
-
-<!-- Colors -->
-<button class="icon-btn" class="out" class="suc"><svg>...</svg></button>
-<button class="icon-btn" class="pri" class="dgr"><svg>...</svg></button>
-
-<!-- Shape -->
-<button class="icon-btn" class="pri" class="round"><svg>...</svg></button>
-
-<!-- With label -->
-<button class="icon-btn" class="lg">
-  <svg>...</svg>
-  <span>Label</span>
-</button>
 ```
 
 ### Drawer
