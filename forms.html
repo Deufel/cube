@@ -42,28 +42,39 @@
     <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
       <h2 class="text:xl" style="font-weight: 600;">Forms</h2>
       
+<!-- Design Choices -->
+      <div class="card sec">
+        <h3>Design Choices</h3>
+        <p><strong>4-column grid.</strong> Enough flexibility for complex layouts. Collapses gracefully on small screens. No 12-column edge-case headaches.</p>
+        <p><strong>Feedback above input.</strong> The <code>.feedback</code> span sits in the label row. Adding or removing text won't shift the form layout.</p>
+        <p><strong>No :user-valid/:user-invalid.</strong> This form pairs with Datastar for server-side validation. Classes (<code>.suc</code>, <code>.err</code>, <code>.wrn</code>) reflect backend state. Frontend and backend stay decoupled.</p>
+        <p><strong>Pattern and maxlength only.</strong> These prevent obvious mistakes before submission. Everything else validates server-side.</p>
+        <p><strong>Standard keyboard preferred.</strong> Numeric keypads lack an Enter key. We keep the full keyboard so <code>enterkeyhint</code> works and users can tab through fields naturally.</p>
+        <p><strong>Semantic &lt;form&gt; element.</strong> Even with Datastar handling submission, the form element provides accessibility wins, autofill support, and Enter-to-submit behavior worth keeping.</p>
+      </div>
+
       <!-- Form Layout -->
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Form Layout</h3>
         <p class="text:sm">4-column grid system: <code>w-1</code> (25%), <code>w-2</code> (50%), <code>w-3</code> (75%), <code>w-4</code> (100%)</p>
-        <div style="resize: horizontal; overflow: auto; border: 1px dashed var(--gry-6); padding: var(--space-md); min-width: 250px; max-width: 100%;">
+        <div class="card gla" style="resize: horizontal; overflow: auto; min-width: 250px; max-width: 100%;">
 <form class="form">
             <!-- Full width email -->
             <label class="input-group w-4">
               Email <span class="feedback">Looks good!</span>
-<input type="email" placeholder="mike@example.com" class="suc" enterkeyhint="next" 
+<input type="email" placeholder="mike@example.com" class="suc" required enterkeyhint="next" 
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 2 + 2: Names -->
             <label class="input-group w-2">
-              First Name
-<input type="text" placeholder="First" enterkeyhint="next"
+              First Name <span class="feedback"></span>
+              <input type="text" placeholder="First" required enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
-              Last Name
-<input type="text" placeholder="Last" enterkeyhint="next"
+              Last Name <span class="feedback"></span>
+              <input type="text" placeholder="Last" required enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -92,7 +103,7 @@
             </label>
             <label class="input-group w-1">
               Zip <span class="feedback">Invalid</span>
-<input type="text" placeholder="12345" maxlength="6" pattern="[0-9]{1,6}" class="err" enterkeyhint="next"
+              <input type="text" placeholder="12345" maxlength="6" pattern="[0-9]{1,6}" class="err" required enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -104,7 +115,7 @@
             </label>
             <label class="input-group w-1">
               PIN <span class="feedback">Weak</span>
-<input type="text" placeholder="1234" maxlength="4" pattern="[0-9]{4}" class="wrn" enterkeyhint="next"
+              <input type="text" placeholder="1234" maxlength="4" pattern="[0-9]{4}" class="wrn" required enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
@@ -159,7 +170,7 @@
             <li><code>autocomplete="street-address"</code> — address</li>
           </ul>
           <p style="margin-top: var(--space-sm);"><strong>Enter key navigation (Datastar):</strong> Prevent form submit and move to next field:</p>
-          <pre style="font-size: var(--text-xs); overflow-x: auto; margin-top: var(--space-xs);"><code class="language-html">&lt;input type="text" enterkeyhint="next"
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto; margin-top: var(--space-xs);"><code class="language-html">&lt;input type="text" enterkeyhint="next"
   data-on:keydown="if(evt.key==='Enter'){
     evt.preventDefault();
     el.closest('.input-group')

@@ -65,6 +65,12 @@
     --color-suc: light-dark(var(--grn-6), var(--grn-5));
     --color-err: var(--color-dgr);
 
+    /* === HR === */
+    --color-hr: light-dark(
+      color-mix(in oklch, var(--color-pri), var(--gry-4) 70%),
+      color-mix(in oklch, var(--color-pri), var(--gry-6) 70%)
+    );
+
     /* === TEXT === */
     --text-color: light-dark(var(--gry-9), var(--gry-2));
     --text-muted: light-dark(var(--gry-6), var(--gry-5));

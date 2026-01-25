@@ -328,10 +328,11 @@ The `.feedback` span inside `.input-group` will automatically color based on the
 
 ### Icon Button
 
-Square icon-only button with hover effects.
+Square icon-only button with hover effects. Add `sm` for smaller size.
 
 ```html
 <button class="icon-btn"><svg>...</svg></button>
+<button class="icon-btn sm"><svg>...</svg></button>
 ```
 
 ### Drawer

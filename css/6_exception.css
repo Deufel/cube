@@ -160,6 +160,12 @@
   }
 
 
+  /* === ICON BUTTON SIZE === */
+  .icon-btn {
+    &.sm { width: var(--size-px-7); }
+    &.sm svg { width: var(--size-px-4); height: var(--size-px-4); }
+  }
+
   /* === SHARED STYLE VARIANTS (gra, gla) === */
   :is(button, .btn) {
     &.gra {
