@@ -116,7 +116,8 @@
             <!-- Full width notes -->
             <label class="input-group w-4">
               Notes
-              <textarea rows="2" enterkeyhint="done">Additional delivery instructions...</textarea>
+              <textarea rows="2" enterkeyhint="done"
+                data-on:keydown="if(evt.key==='Enter'&&!evt.shiftKey){evt.preventDefault();el.closest('form').querySelector('[type=submit]')?.focus()}">Additional delivery instructions...</textarea>
             </label>
             
             <button type="submit" class="w-4">Submit</button>
@@ -149,7 +150,16 @@
       .nextElementSibling
       ?.querySelector('input,textarea')
       ?.focus()
-  }" /&gt;</code></pre>
+  }" /&gt;
+
+&lt;!-- Last field: focus submit button (Shift+Enter for newline) --&gt;
+&lt;textarea enterkeyhint="done"
+  data-on:keydown="if(evt.key==='Enter' &amp;&amp; !evt.shiftKey){
+    evt.preventDefault();
+    el.closest('form')
+      .querySelector('[type=submit]')
+      ?.focus()
+  }"&gt;&lt;/textarea&gt;</code></pre>
         </div>
       </section>
 
