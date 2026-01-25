@@ -367,13 +367,13 @@
   }
 
   /* === ICON BUTTON === */
-  .icon-btn {
+  [class~="icon-btn"], [class*="icon-btn:"] {
     aspect-ratio: 1;
     width: var(--size-px-8);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid transparent;
+    border: none;
     border-radius: var(--radius-btn);
     cursor: pointer;
     background: transparent;
@@ -382,10 +382,11 @@
 
     & svg { width: var(--size-px-5); height: var(--size-px-5); flex-shrink: 0; }
 
-    &:hover {
-      border-color: var(--color-pri);
-      color: var(--color-pri);
-      background: color-mix(in oklch, var(--color-pri), transparent 95%);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-pri);
+        background: color-mix(in oklch, var(--color-pri), transparent 95%);
+      }
     }
 
     &:active { transform: scale(0.95); }

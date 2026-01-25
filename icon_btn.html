@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Button - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+</head>
+<body class="fullscreen scroll-no"
+      data-signals-prst_mode="'system'"
+      data-signals-prst_theme="'css/2_theme-default.css'"
+      data-persist="{include: /^prst_/}">
+  
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+        
+        <header class="flex:stack gap:xs">
+          <h1 class="text:lg">Icon Button</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Square buttons for icon-only actions.</p>
+        </header>
+
+        <!-- Base -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Base</h3>
+          <p class="text:sm">Default icon button with <code>icon-btn</code>.</p>
+          <div class="flex:cluster gap:sm align:center">
+            <button class="icon-btn" aria-label="Settings">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-6.5-4.5 4.5m-4.5 4.5L3 17m13.5 0-4.5-4.5M7.5 7.5 3 3"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <button class="icon-btn" aria-label="Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- Mute Variant -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Mute Variant</h3>
+          <p class="text:sm">Subtle color using <code>icon-btn:mute</code>.</p>
+          <div class="flex:cluster gap:sm align:center">
+            <button class="icon-btn:mute" aria-label="Settings">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-6.5-4.5 4.5m-4.5 4.5L3 17m13.5 0-4.5-4.5M7.5 7.5 3 3"/></svg>
+            </button>
+            <button class="icon-btn:mute" aria-label="Close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <button class="icon-btn:mute" aria-label="Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- Sizes -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Sizes</h3>
+          <p class="text:sm">Append <code>-sm</code> to any variant for smaller size.</p>
+          <div class="flex:cluster gap:sm align:center">
+            <button class="icon-btn" aria-label="Default">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+            <button class="icon-btn:mute-sm" aria-label="Small mute">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- States -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">States</h3>
+          <p class="text:sm">Disabled state.</p>
+          <div class="flex:cluster gap:sm align:center">
+            <button class="icon-btn" disabled aria-label="Disabled">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+            <button class="icon-btn:mute" disabled aria-label="Disabled mute">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- API Reference -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">API Reference</h3>
+          
+          <h4 class="text:sm">Selectors</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>icon-btn</code></td>
+                <td style="padding: var(--space-xs);">Base icon button</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>icon-btn:mute</code></td>
+                <td style="padding: var(--space-xs);">Muted color variant</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Modifiers</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>-sm</code></td>
+                <td style="padding: var(--space-xs);">Small size (append to variant)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">States</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Attribute</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>disabled</code></td>
+                <td style="padding: var(--space-xs);">Disabled state</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
+&lt;button class="icon-btn" aria-label="Menu"&gt;...&lt;/button&gt;
+
+&lt;!-- Muted variant --&gt;
+&lt;button class="icon-btn:mute" aria-label="Settings"&gt;...&lt;/button&gt;
+
+&lt;!-- Muted + Small --&gt;
+&lt;button class="icon-btn:mute-sm" aria-label="Close"&gt;...&lt;/button&gt;</code></pre>
+        </section>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+
+  </div>
+</body>
+</html>
