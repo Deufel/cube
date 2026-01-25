@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+  
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
+      <h2 class="text:xl" style="font-weight: 600;">Button</h2>
+      
+      <!-- Base Button -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Base</h3>
+        <p class="text:sm">Default <code>btn</code> with neutral surface.</p>
+        <div class="flex:cluster gap:sm">
+          <button class="btn">Default</button>
+        </div>
+      </section>
+
+      <!-- Variants -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Variants</h3>
+        <p class="text:sm">Color variants using <code>btn:variant</code> pattern.</p>
+        <div class="flex:cluster gap:sm">
+          <button class="btn:pri">Primary</button>
+          <button class="btn:sec">Secondary</button>
+          <button class="btn:wrn">Warning</button>
+          <button class="btn:dgr">Danger</button>
+        </div>
+      </section>
+
+      <!-- Outline Modifier -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Outline Modifier</h3>
+        <p class="text:sm">Add <code>out</code> class for outline style. Works with any variant.</p>
+        <div class="flex:cluster gap:sm">
+          <button class="btn:pri out">Primary</button>
+          <button class="btn:sec out">Secondary</button>
+          <button class="btn:wrn out">Warning</button>
+          <button class="btn:dgr out">Danger</button>
+        </div>
+      </section>
+
+      <!-- Sizes -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Sizes</h3>
+        <p class="text:sm">Append <code>-sm</code> or <code>-lg</code> to variant.</p>
+        <div class="flex:cluster gap:sm align:center">
+          <button class="btn:pri-sm">Small</button>
+          <button class="btn:pri">Default</button>
+          <button class="btn:pri-lg">Large</button>
+        </div>
+        <div class="flex:cluster gap:sm align:center">
+          <button class="btn:sec-sm out">Small Outline</button>
+          <button class="btn:sec out">Default Outline</button>
+          <button class="btn:sec-lg out">Large Outline</button>
+        </div>
+      </section>
+
+      <!-- States -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">States</h3>
+        <p class="text:sm">Disabled and loading states.</p>
+        <div class="flex:cluster gap:sm">
+          <button class="btn:pri" disabled>Disabled</button>
+          <button class="btn:pri" aria-busy="true">Loading...</button>
+        </div>
+      </section>
+
+      <!-- With Icons -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">With Icons</h3>
+        <p class="text:sm">Buttons have built-in flex gap for icon + text.</p>
+        <div class="flex:cluster gap:sm">
+          <button class="btn:pri">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Continue
+          </button>
+          <button class="btn:sec out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Download
+          </button>
+        </div>
+      </section>
+
+      <!-- API Reference -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">API Reference</h3>
+        
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Selectors</h4>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Class</th>
+              <th style="text-align: left; padding: var(--space-xs);">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>btn</code></td>
+              <td style="padding: var(--space-xs);">Base button, neutral surface</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>btn:pri</code></td>
+              <td style="padding: var(--space-xs);">Primary color</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>btn:sec</code></td>
+              <td style="padding: var(--space-xs);">Secondary color</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>btn:wrn</code></td>
+              <td style="padding: var(--space-xs);">Warning color</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>btn:dgr</code></td>
+              <td style="padding: var(--space-xs);">Danger color</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Modifiers</h4>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
+              <th style="text-align: left; padding: var(--space-xs);">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>-sm</code></td>
+              <td style="padding: var(--space-xs);">Small size (append to variant)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>-lg</code></td>
+              <td style="padding: var(--space-xs);">Large size (append to variant)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>out</code></td>
+              <td style="padding: var(--space-xs);">Outline style (separate class)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">States</h4>
+        <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <th style="text-align: left; padding: var(--space-xs);">Attribute</th>
+              <th style="text-align: left; padding: var(--space-xs);">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>disabled</code></td>
+              <td style="padding: var(--space-xs);">Disabled state</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface-border);">
+              <td style="padding: var(--space-xs);"><code>aria-busy="true"</code></td>
+              <td style="padding: var(--space-xs);">Loading state</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+        <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
+&lt;button class="btn"&gt;Default&lt;/button&gt;
+
+&lt;!-- Variant --&gt;
+&lt;button class="btn:pri"&gt;Primary&lt;/button&gt;
+
+&lt;!-- Variant + Size --&gt;
+&lt;button class="btn:pri-sm"&gt;Small Primary&lt;/button&gt;
+
+&lt;!-- Variant + Outline --&gt;
+&lt;button class="btn:dgr out"&gt;Danger Outline&lt;/button&gt;
+
+&lt;!-- Variant + Size + Outline --&gt;
+&lt;button class="btn:sec-lg out"&gt;Large Secondary Outline&lt;/button&gt;</code></pre>
+      </section>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+  </div>
+</body>
+</html>

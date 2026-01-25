@@ -47,6 +47,7 @@
       color-mix(in oklch, var(--ind-0), var(--gry-0) 85%),
       color-mix(in oklch, var(--ind-9), var(--gry-8) 85%)
     );
+    --surface-btn: light-dark(var(--gry-2), var(--gry-7));
 
     /* === COLORS (muted with gray for premium feel) === */
     --color-pri: light-dark(
