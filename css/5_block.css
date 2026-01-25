@@ -182,10 +182,12 @@
     color: var(--text-color);
     transition: box-shadow 0.15s ease;
 
-    &:hover {
-      box-shadow: 
-        inset 0 0 0 100vmax color-mix(in oklch, var(--gry-9), transparent 85%),
-        0 4px 16px 0 color-mix(in oklch, var(--_btn-color, transparent), transparent 60%);
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 
+          inset 0 0 0 100vmax color-mix(in oklch, var(--gry-9), transparent 85%),
+          0 4px 16px 0 color-mix(in oklch, var(--_btn-color, transparent), transparent 60%);
+      }
     }
     &:active {
       box-shadow: 
