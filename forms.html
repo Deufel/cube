@@ -92,7 +92,7 @@
             </label>
             <label class="input-group w-1">
               Zip <span class="feedback">Invalid</span>
-              <input type="text" inputmode="tel" value="1000" class="err" enterkeyhint="next"
+<input type="text" inputmode="numeric" value="1000" class="err" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -104,12 +104,12 @@
             </label>
             <label class="input-group w-1">
               PIN <span class="feedback">Weak</span>
-              <input type="text" inputmode="tel" value="1234" class="wrn" enterkeyhint="next"
+<input type="text" inputmode="numeric" value="1234" class="wrn" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
               Phone
-              <input type="tel" inputmode="tel" value="(555) 123-4567" enterkeyhint="next"
+<input type="tel" inputmode="numeric" value="(555) 123-4567" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -208,6 +208,9 @@
       </section>
 
     </main>
+    <div id="aside" data-init="@get('./partials/aside.html')"></div>
+    <div id="aside-drawer"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
   </div>
 </body>
 </html>
