@@ -85,7 +85,7 @@
     }
 
     /* Tag pushed to the right */
-    & .tag:not(.token) {
+    & :is([class~="chip"], [class*="chip:"]) {
       margin-inline-start: auto;
     }
   }
@@ -97,12 +97,12 @@
     justify-content: center;
   }
 
-  .nav-item .tag:not(.token) {
+  .nav-item :is([class~="chip"], [class*="chip:"]) {
     margin-inline-start: auto;
   }
 
   /* === INLINE CONTROLS (shared base) === */
-  button, [class~="btn"], [class*="btn:"], .tag:not(.token), .badge, kbd {
+  button, [class~="btn"], [class*="btn:"], [class~="chip"], [class*="chip:"], .badge, kbd {
     text-box: trim-both cap alphabetic;
     line-height: 1;
     display: inline-flex;
@@ -146,7 +146,7 @@
     padding: var(--space-sm);
     font-size: var(--text-xs);
 
-    & .tag:not(.token) { display: none; }
+    & :is([class~="chip"], [class*="chip:"]) { display: none; }
   }
 
   /* === TOOLTIP === */
@@ -292,7 +292,7 @@
   }
 
   /* === TAG === */
-  .tag:not(.token) {
+  [class~="chip"], [class*="chip:"] {
     height: var(--size-5);
     padding-inline: var(--space-sm);
     font-size: var(--text-xs);
@@ -320,9 +320,11 @@
       opacity: 0.6;
       transition: opacity 0.15s ease, background 0.15s ease;
 
-      &:hover {
-        opacity: 1;
-        background: color-mix(in oklch, currentColor, transparent 85%);
+      @media (hover: hover) {
+        &:hover {
+          opacity: 1;
+          background: color-mix(in oklch, currentColor, transparent 85%);
+        }
       }
     }
   }

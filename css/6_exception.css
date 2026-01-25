@@ -163,6 +163,11 @@
       padding-inline: var(--space-sm);
       font-size: var(--text-sm);
     }
+    &:is([class*="chip:"]) {
+      height: var(--size-4);
+      padding-inline: var(--space-xs);
+      font-size: var(--text-xxs, 0.65rem);
+    }
   }
   [class$="-lg"], [class*="-lg "] {
     &:is([class*="btn:"]) {
@@ -199,69 +204,77 @@
     &:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
   }
 
-  /* === TAG VARIANTS === */
+  /* === BADGE VARIANTS === */
   .badge {
     &.suc { background: var(--color-suc); color: var(--color-suc-text, white); }
     &.wrn { background: var(--color-wrn); color: var(--color-wrn-text, white); }
     &.dgr { background: var(--color-dgr); color: var(--color-dgr-text, white); }
   }
 
-  .tag {
-    &.inf {
-      background: light-dark(
-        color-mix(in oklch, var(--blu-5), var(--gry-0) 85%),
-        color-mix(in oklch, var(--blu-7), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--blu-7), var(--gry-9) 30%),
-        color-mix(in oklch, var(--blu-3), var(--gry-1) 20%)
-      );
-      border-color: light-dark(
-        color-mix(in oklch, var(--blu-5), transparent 60%),
-        color-mix(in oklch, var(--blu-6), transparent 50%)
-      );
-    }
-    &.suc {
-      background: light-dark(
-        color-mix(in oklch, var(--grn-5), var(--gry-0) 85%),
-        color-mix(in oklch, var(--grn-7), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--grn-8), var(--gry-9) 30%),
-        color-mix(in oklch, var(--grn-3), var(--gry-1) 20%)
-      );
-      border-color: light-dark(
-        color-mix(in oklch, var(--grn-5), transparent 60%),
-        color-mix(in oklch, var(--grn-6), transparent 50%)
-      );
-    }
-    &.wrn {
-      background: light-dark(
-        color-mix(in oklch, var(--yel-7), var(--gry-0) 70%),
-        color-mix(in oklch, var(--yel-7), var(--gry-8) 65%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--yel-9), var(--gry-9) 40%),
-        color-mix(in oklch, var(--yel-2), var(--gry-1) 30%)
-      );
-      border-color: light-dark(
-        color-mix(in oklch, var(--yel-5), transparent 50%),
-        color-mix(in oklch, var(--yel-6), transparent 40%)
-      );
-    }
-    &.dgr {
-      background: light-dark(
-        color-mix(in oklch, var(--red-7), var(--gry-0) 70%),
-        color-mix(in oklch, var(--red-7), var(--gry-8) 65%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--red-7), var(--gry-9) 30%),
-        color-mix(in oklch, var(--red-3), var(--gry-1) 20%)
-      );
-      border-color: light-dark(
-        color-mix(in oklch, var(--red-5), transparent 60%),
-        color-mix(in oklch, var(--red-6), transparent 50%)
-      );
+  /* === CHIP VARIANTS === */
+  [class~="chip:inf"], [class*="chip:inf-"] {
+    background: light-dark(
+      color-mix(in oklch, var(--blu-5), var(--gry-0) 85%),
+      color-mix(in oklch, var(--blu-7), var(--gry-8) 80%)
+    );
+    color: light-dark(
+      color-mix(in oklch, var(--blu-7), var(--gry-9) 30%),
+      color-mix(in oklch, var(--blu-3), var(--gry-1) 20%)
+    );
+    border-color: light-dark(
+      color-mix(in oklch, var(--blu-5), transparent 60%),
+      color-mix(in oklch, var(--blu-6), transparent 50%)
+    );
+  }
+  [class~="chip:suc"], [class*="chip:suc-"] {
+    background: light-dark(
+      color-mix(in oklch, var(--grn-5), var(--gry-0) 85%),
+      color-mix(in oklch, var(--grn-7), var(--gry-8) 80%)
+    );
+    color: light-dark(
+      color-mix(in oklch, var(--grn-8), var(--gry-9) 30%),
+      color-mix(in oklch, var(--grn-3), var(--gry-1) 20%)
+    );
+    border-color: light-dark(
+      color-mix(in oklch, var(--grn-5), transparent 60%),
+      color-mix(in oklch, var(--grn-6), transparent 50%)
+    );
+  }
+  [class~="chip:wrn"], [class*="chip:wrn-"] {
+    background: light-dark(
+      color-mix(in oklch, var(--yel-7), var(--gry-0) 70%),
+      color-mix(in oklch, var(--yel-7), var(--gry-8) 65%)
+    );
+    color: light-dark(
+      color-mix(in oklch, var(--yel-9), var(--gry-9) 40%),
+      color-mix(in oklch, var(--yel-2), var(--gry-1) 30%)
+    );
+    border-color: light-dark(
+      color-mix(in oklch, var(--yel-5), transparent 50%),
+      color-mix(in oklch, var(--yel-6), transparent 40%)
+    );
+  }
+  [class~="chip:dgr"], [class*="chip:dgr-"] {
+    background: light-dark(
+      color-mix(in oklch, var(--red-7), var(--gry-0) 70%),
+      color-mix(in oklch, var(--red-7), var(--gry-8) 65%)
+    );
+    color: light-dark(
+      color-mix(in oklch, var(--red-7), var(--gry-9) 30%),
+      color-mix(in oklch, var(--red-3), var(--gry-1) 20%)
+    );
+    border-color: light-dark(
+      color-mix(in oklch, var(--red-5), transparent 60%),
+      color-mix(in oklch, var(--red-6), transparent 50%)
+    );
+  }
+
+  /* === TAG SIZES === */
+  [class$="-sm"], [class*="-sm "] {
+    &:is([class*="tag:"]) {
+      height: var(--size-4);
+      padding-inline: var(--space-xs);
+      font-size: var(--text-xxs, 0.65rem);
     }
   }
 
