@@ -92,7 +92,7 @@
             </label>
             <label class="input-group w-1">
               Zip <span class="feedback">Invalid</span>
-<input type="text" inputmode="numeric" value="1000" class="err" enterkeyhint="next"
+<input type="text" inputmode="decimal" value="1000" class="err" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -104,12 +104,12 @@
             </label>
             <label class="input-group w-1">
               PIN <span class="feedback">Weak</span>
-<input type="text" inputmode="numeric" value="1234" class="wrn" enterkeyhint="next"
+<input type="text" inputmode="decimal" value="1234" class="wrn" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             <label class="input-group w-2">
               Phone
-<input type="tel" inputmode="numeric" value="(555) 123-4567" enterkeyhint="next"
+<input type="tel" inputmode="decimal" value="(555) 123-4567" enterkeyhint="next"
                 data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
@@ -139,8 +139,24 @@
           <p style="margin-top: var(--space-sm);">Use <code>inputmode</code> to show the right keyboard without validation quirks of <code>type="number"</code>:</p>
           <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
             <li><code>inputmode="tel"</code> — phone-style number pad (great for ZIP, PIN, phone)</li>
-            <li><code>inputmode="numeric"</code> — number pad</li>
+<li><code>inputmode="decimal"</code> — number pad with decimal (includes Enter key)</li>
             <li><code>inputmode="decimal"</code> — number pad with decimal point</li>
+          </ul>
+          <p style="margin-top: var(--space-sm);"><strong>Validation attributes:</strong></p>
+          <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
+            <li><code>required</code> — field must be filled</li>
+            <li><code>maxlength="100"</code> — limits character input</li>
+            <li><code>minlength="5"</code> — minimum characters required</li>
+            <li><code>pattern="[A-Za-z]{3}"</code> — regex validation</li>
+            <li><code>min="0"</code> / <code>max="100"</code> — for number inputs</li>
+          </ul>
+          <p style="margin-top: var(--space-sm);"><strong>Autofill hints:</strong></p>
+          <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
+            <li><code>autocomplete="email"</code> — email address</li>
+            <li><code>autocomplete="tel"</code> — phone number</li>
+            <li><code>autocomplete="postal-code"</code> — ZIP/postal code</li>
+            <li><code>autocomplete="given-name"</code> / <code>"family-name"</code> — names</li>
+            <li><code>autocomplete="street-address"</code> — address</li>
           </ul>
           <p style="margin-top: var(--space-sm);"><strong>Enter key navigation (Datastar):</strong> Prevent form submit and move to next field:</p>
           <pre style="font-size: var(--text-xs); overflow-x: auto; margin-top: var(--space-xs);"><code class="language-html">&lt;input type="text" enterkeyhint="next"
