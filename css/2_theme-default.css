@@ -5,122 +5,75 @@
     font-family: var(--font-humanist);
     letter-spacing: -0.01em;
 
-    /* === SHADOW === */
+    /* === SHADOW (cool muted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
-    --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.15), 0 4px 12px -4px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 2px 8px -2px rgb(40 50 50 / 0.18), 0 4px 12px -4px rgb(40 50 50 / 0.12);
     --shadow-card:
-      0 1px 2px 0 rgb(0 0 0 / 0.03),
-      0 1px 6px -1px rgb(0 0 0 / 0.02),
-      0 2px 4px 0 rgb(0 0 0 / 0.02);
+      0 1px 2px 0 rgb(40 50 50 / 0.05),
+      0 1px 6px -1px rgb(40 50 50 / 0.04),
+      0 2px 4px 0 rgb(40 50 50 / 0.04);
     --shadow-card-hover:
-      0 2px 4px 0 rgb(0 0 0 / 0.04),
-      0 4px 12px -2px rgb(0 0 0 / 0.03),
-      0 6px 8px 0 rgb(0 0 0 / 0.02);
+      0 2px 4px 0 rgb(40 50 50 / 0.06),
+      0 4px 12px -2px rgb(40 50 50 / 0.05),
+      0 6px 8px 0 rgb(40 50 50 / 0.04);
 
     /* === SPACING === */
     --space-xs: var(--size-1);
     --space-sm: var(--size-2);
     --space-md: var(--size-3);
-    --space-lg: var(--size-4);
-    --space-xl: var(--size-5);
-
-    /* === LAYOUT === */
-    --grid-gap: var(--space-sm);
+    --space-lg: var(--size-5);
+    --space-xl: var(--size-7);
 
     /* === RADIUS === */
-    --radius-sm: var(--radius-2);
-    --radius-md: var(--radius-3);
-    --radius-lg: var(--radius-4);
-    --radius-btn: var(--radius-2);
-    --radius-card: var(--radius-3);
+    --radius-sm: var(--radius-1);
+    --radius-md: var(--radius-2);
+    --radius-lg: var(--radius-3);
+    --radius-btn: var(--radius-1);
+    --radius-card: var(--radius-2);
 
-    /* === BORDERS === */
-    --border-subtle: light-dark(var(--gry-2), var(--gry-7));
-    --border-muted: light-dark(var(--gry-3), var(--gry-6));
+    /* === SURFACES (cool misty tones) === */
+    --surface-1: light-dark(#e8ecea, #1a1f1d);
+    --surface-2: light-dark(#f0f3f1, #222826);
+    --surface-3: light-dark(#f8faf9, #2a312e);
+    --surface-border: light-dark(#c8d0cc, #3a4440);
+    --surface-hover: light-dark(#dfe5e2, #2f3835);
+    --_surface-base: var(--surface-1);
 
-    /* === SURFACES (well system: deeper nesting = darker) === */
-    --surface-1: light-dark(var(--gry-2), var(--gry-9));  /* deepest well */
-    --surface-2: light-dark(var(--gry-1), var(--gry-8));  /* mid well */
-    --surface-3: light-dark(white, var(--gry-7));         /* content surface (lightest) */
-    --surface-border: light-dark(var(--gry-3), var(--gry-6));
-    --surface-hover: light-dark(var(--gry-2), var(--gry-7));
-    --_surface-base: var(--surface-1);  /* set by card variants */
+    --surface-page: light-dark(#f0f3f1, #1a1f1d);
+    --surface-card: light-dark(#f8faf9, #2a312e);
+    --surface-raised: light-dark(#ffffff, #343d39);
+    --surface-inset: light-dark(#e4e9e6, #161a18);
+    --surface-input: light-dark(#fcfdfc, #232a27);
+    --surface-btn: light-dark(#e0e6e3, #3a4440);
 
-    /* === LEGACY SURFACES (migrate to well system) === */
-    --surface-page: light-dark(var(--gry-1), var(--gry-9));
-    --surface-card: light-dark(white, var(--gry-8));
-    --surface-raised: light-dark(var(--gry-0), var(--gry-7));
-    --surface-inset: light-dark(var(--gry-2), var(--gry-8));
-    --surface-input: light-dark(
-      color-mix(in oklch, var(--ind-0), var(--gry-0) 85%),
-      color-mix(in oklch, var(--ind-9), var(--gry-8) 85%)
-    );
-    --surface-btn: light-dark(var(--gry-2), var(--gry-7));
+    /* === COLORS (evergreen: forest green + misty blue) === */
+    --color-pri: oklch(45% 0.08 160);
+    --color-sec: oklch(55% 0.05 230);
+    --color-pri-text: light-dark(oklch(35% 0.1 160), oklch(75% 0.1 160));
+    --color-sec-text: light-dark(oklch(40% 0.06 230), oklch(70% 0.06 230));
 
-    /* === COLORS (muted with gray for premium feel) === */
-    --color-pri: light-dark(
-      color-mix(in oklch, var(--ind-7), var(--gry-7) 15%),
-      color-mix(in oklch, var(--ind-7), var(--gry-5) 10%)
-    );
-    --color-pri-text: white;
+    --color-wrn: var(--yel-6);
+    --color-dgr: var(--red-6);
+    --color-inf: oklch(55% 0.06 230);
+    --color-suc: oklch(50% 0.1 155);
+    --color-err: var(--red-7);
 
-    --color-sec: light-dark(
-      color-mix(in oklch, var(--tel-6), var(--gry-6) 15%),
-      color-mix(in oklch, var(--tel-5), var(--gry-5) 10%)
-    );
-    --color-sec-text: white;
-
-    --color-wrn: light-dark(
-      color-mix(in oklch, var(--yel-5), var(--gry-5) 20%),
-      color-mix(in oklch, var(--yel-6), var(--gry-6) 15%)
-    );
-    --color-wrn-text: var(--gry-9);
-
-    --color-dgr: light-dark(
-      color-mix(in oklch, var(--red-6), var(--gry-7) 15%),
-      color-mix(in oklch, var(--red-5), var(--gry-5) 10%)
-    );
-    --color-dgr-text: white;
-
-    --color-inf: light-dark(
-      color-mix(in oklch, var(--blu-6), var(--gry-6) 15%),
-      color-mix(in oklch, var(--blu-5), var(--gry-4) 10%)
-    );
-    --color-inf-text: white;
-
-    /* === FEEDBACK COLORS === */
-    --color-suc: light-dark(
-      color-mix(in oklch, var(--grn-7), var(--gry-7) 15%),
-      color-mix(in oklch, var(--grn-5), var(--gry-4) 10%)
-    );
-    --color-err: var(--color-dgr);
-
-    /* === HR === */
-    --color-hr: light-dark(
-      color-mix(in oklch, var(--color-pri), var(--gry-4) 70%),
-      color-mix(in oklch, var(--color-pri), var(--gry-6) 70%)
-    );
+    --color-hr: light-dark(#c8d0cc, #3a4440);
 
     /* === TEXT === */
-    --text-color: light-dark(var(--gry-9), var(--gry-1));
-    --text-muted: light-dark(var(--gry-7), var(--gry-3));
-    --text-xs: 0.75rem;
-    --text-sm: 0.8125rem;
-    --text-md: 0.9375rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.375rem;
+    --text-color: light-dark(#2a332f, #e0e6e3);
+    --text-muted: light-dark(#5a6b64, #9aa8a2);
+    --text-xs: var(--font-size-0);
+    --text-sm: var(--font-size-1);
+    --text-md: var(--font-size-2);
+    --text-lg: var(--font-size-3);
+    --text-xl: var(--font-size-5);
 
     /* === BUTTON === */
-    --btn-height-sm: 1.875rem;
-    --btn-height-md: 2.375rem;
-    --btn-height-lg: 2.875rem;
-
-        /* === GLASS === */
-    --glass-bg: var(--glass-bg-1);
-    --glass-border: var(--glass-border-1);
-    --blur-sm: var(--size-px-2);
-    --blur-md: var(--size-px-3);
+    --btn-height: 2.25rem;
+    --btn-height-sm: 1.75rem;
+    --btn-height-lg: 2.75rem;
   }
 
   [data-mode="light"] { color-scheme: light; }
