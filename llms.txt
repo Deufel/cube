@@ -1,0 +1,210 @@
+# CUBE CSS Design System
+
+> A minimal CSS design system using CSS Layers, inspired by CUBE CSS methodology
+
+## Overview
+
+CUBE CSS is a layered CSS design system that uses `@layer` for specificity control instead of BEM naming or `!important`. It separates raw design tokens from semantic themes, allowing easy theme swapping. Designed for use with Datastar (reserves `data-*` attributes for framework integration).
+
+## Layer Architecture
+
+```css
+@layer reset, props, theme, composition, utility, block, exception;
+```
+
+| Layer | File | Purpose |
+|-------|------|---------|
+| reset | 0_reset.css | Minimal normalize |
+| props | 1_props.css | Raw design tokens (colors, sizes, shadows, fonts) |
+| theme | 2_theme-*.css | Semantic mapping, swappable themes |
+| composition | 3_composition.css | Layout primitives |
+| utility | 4_utility.css | Single-purpose modifiers |
+| block | 5_block.css | Components |
+| exception | 6_exception.css | Variants, sizes, states |
+
+## Class Naming Convention
+
+### Layout Classes (Composition + Utility)
+Pattern: `composition:variant` + utility modifiers
+
+```html
+<div class="flex:stack gap:md align:center">...</div>
+<div class="grid:hero gap:xs">...</div>
+<div class="flex:cluster gap:sm wrap">...</div>
+```
+
+### Component Classes (Block + Exception)
+Pattern: `block:variant-exception` + modifier classes
+
+```html
+<button class="btn:pri">Primary</button>
+<button class="btn:dgr-sm">Small Danger</button>
+<button class="btn:pri out">Primary Outline</button>
+<span class="chip:inf-sm">Info Small</span>
+```
+
+## Components
+
+### Buttons
+- Base: `btn:pri`, `btn:sec`, `btn:wrn`, `btn:dgr`
+- Sizes: `-sm`, `-lg` suffix (e.g., `btn:pri-sm`)
+- Modifiers: `out` (outline style)
+
+### Icon Buttons
+- Base: `icon-btn`, `icon-btn:mute`
+- Sizes: `-sm` suffix
+
+### Chips/Tags
+- Base: `chip`, `chip:inf`, `chip:suc`, `chip:wrn`, `chip:dgr`
+- Sizes: `-sm` suffix
+
+### Badges
+- Base: `badge`, `badge:suc`, `badge:wrn`, `badge:dgr`
+- Dot variant: `-dot` suffix
+
+### Cards
+- Base: `.card`
+- Variants: `.pri`, `.sec`, `.gla` (glass)
+- Alert cards: `card:alert` with `.inf`, `.suc`, `.wrn`, `.dgr`
+
+### Tabs
+- Container: `tabs`, `tabs:pri`, `tabs:sec`
+- Items: `tab`, `tab:active`
+- Modifiers: `-sm` (small), `full` (full-width)
+
+### Popups
+- Base: `popup`, `popup:menu`
+- Items: `.popup-item`
+
+### Drawers
+- Directions: `drawer:left`, `drawer:right`, `drawer:top`, `drawer:bottom`
+- Use with `<dialog popover="manual">`
+
+### Forms
+- Container: `.form` (4-column grid)
+- Input groups: `label.input-group`
+- Column spans: `.w-1`, `.w-2`, `.w-3`, `.w-4`
+- Validation states: `.err`, `.suc`, `.wrn`, `.inf`
+
+## Layout Primitives
+
+### Flex
+- `flex:stack` - vertical stack
+- `flex:cluster` - wrapping horizontal
+- `flex:split` - space-between with alignment
+- `flex:flank` - sidebar + content layout
+- `flex:spread-row`, `flex:spread-column`
+
+### Grid
+- `grid:hero` - holy grail layout (header/nav/main/aside/footer)
+- `grid:lcr` - left-center-right
+- `grid:tmb` - top-middle-bottom
+- `grid:pancake` - auto/1fr/auto rows
+- `grid:auto-fit`, `grid:auto-fill` - responsive grids
+
+### Utility Classes
+- Gap: `gap:xs`, `gap:sm`, `gap:md`, `gap:lg`, `gap:xl`
+- Padding: `p:xs`, `p:sm`, `p:md`, `p:lg`
+- Alignment: `align:center`, `justify:center`
+- Scroll: `scroll-y`, `scroll-no`
+- Fullscreen: `fullscreen`
+
+## Design Tokens
+
+### Colors (OKLCH scale 0-9)
+- Gray: `--gry-0` to `--gry-9`
+- Red: `--red-0` to `--red-9`
+- Blue: `--blu-0` to `--blu-9`
+- Green: `--grn-0` to `--grn-9`
+- Yellow: `--yel-0` to `--yel-9`
+- Plus: pink, grape, violet, indigo, cyan, teal, lime, orange
+
+### Semantic Colors (theme layer)
+- `--color-pri`, `--color-sec` - brand colors
+- `--color-inf`, `--color-suc`, `--color-wrn`, `--color-dgr` - status colors
+
+### Spacing (t-shirt sizes)
+- `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
+
+### Surfaces
+- `--surface-page`, `--surface-card`, `--surface-raised`
+- `--surface-inset`, `--surface-input`, `--surface-btn`
+
+### Typography
+- Sizes: `--text-xs` through `--text-3xl`
+- Fonts: Various system font stacks (humanist, monospace, etc.)
+
+## Theme Swapping
+
+Themes are single CSS files. Switch by changing the stylesheet link:
+
+```html
+<link rel="stylesheet" href="./css/2_theme-default.css">
+<link rel="stylesheet" href="./css/2_theme-sahara.css">
+<link rel="stylesheet" href="./css/2_theme-tokyo.css">
+<link rel="stylesheet" href="./css/2_theme-cyber.css">
+```
+
+With Datastar:
+```html
+<link rel="stylesheet" data-attr:href="$prst_theme">
+```
+
+## Page Layout Pattern
+
+Default holy grail structure using hero grid:
+
+```html
+<body class="fullscreen scroll-no">
+  <div class="grid:hero gap:xs">
+    <header>...</header>
+    <nav class="desktop">...</nav>
+    <main class="scroll-y">...</main>
+    <aside>...</aside>
+    <footer>...</footer>
+  </div>
+</body>
+```
+
+- Nav/aside use `<dialog popover>` drawers on mobile
+- No z-index tracking needed (popover uses top-layer)
+- 4-column forms work without media queries
+
+## Datastar Integration
+
+- Theme/mode switching via signals and `data-attr`
+- Partial loading: `data-init="@get('./partials/nav.html')"`
+- Signal persistence: `data-persist`
+- `data-*` reserved for Datastar (exceptions use class selectors)
+
+## Available Themes
+
+- `2_theme-default.css` - Cool gray-green forest/mist palette
+- `2_theme-sahara.css` - Warm desert tones
+- `2_theme-tokyo.css` - Urban/tech aesthetic
+- `2_theme-cyber.css` - Cyberpunk colors
+
+## Documentation Pages
+
+- index.html - Readme/overview
+- colors.html - Color palette reference
+- layout.html - Composition and utility classes
+- button.html - Button component
+- icon_btn.html - Icon button
+- chips.html - Chip/tag component
+- badge.html - Badge component
+- tabs.html - Tab component
+- cards.html - Card component
+- surface.html - Surface styles
+- popup.html - Popup/dropdown
+- hr.html - Dividers
+- forms.html - Form layout and inputs
+- demos.html - Full page demos
+
+## Key Principles
+
+1. **Layered cascade** - `@layer` eliminates specificity wars
+2. **Static props, semantic themes** - Swap one file to restyle everything
+3. **Exceptions use classes** - Reserves `data-*` for Datastar
+4. **Intrinsic sizing** - Minimal media queries, uses auto-fit/fill
+5. **Light/dark mode** - Uses `light-dark()` CSS function
