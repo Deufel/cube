@@ -1,0 +1,117 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    font-family: var(--font-humanist);
+    letter-spacing: -0.01em;
+
+    /* === SHADOW (warm tinted) === */
+    --shadow-out-md: var(--shadow-2);
+    --shadow-in-md: var(--inner-shadow-2);
+    --shadow-card:
+      0 1px 2px 0 rgb(80 60 40 / 0.04),
+      0 1px 6px -1px rgb(80 60 40 / 0.03),
+      0 2px 4px 0 rgb(80 60 40 / 0.03);
+    --shadow-card-hover:
+      0 2px 4px 0 rgb(80 60 40 / 0.05),
+      0 4px 12px -2px rgb(80 60 40 / 0.04),
+      0 6px 8px 0 rgb(80 60 40 / 0.03);
+
+    /* === SPACING === */
+    --space-xs: var(--size-1);
+    --space-sm: var(--size-2);
+    --space-md: var(--size-3);
+    --space-lg: var(--size-4);
+    --space-xl: var(--size-5);
+
+    /* === LAYOUT === */
+    --grid-gap: var(--space-sm);
+
+    /* === RADIUS (softer) === */
+    --radius-sm: var(--radius-2);
+    --radius-md: var(--radius-3);
+    --radius-lg: var(--radius-4);
+    --radius-btn: var(--radius-2);
+    --radius-card: var(--radius-3);
+
+    /* === BORDERS === */
+    --border-subtle: light-dark(#e8e0d5, #3d3830);
+    --border-muted: light-dark(#d9cfc2, #4a433a);
+
+    /* === SURFACES (warm off-whites / warm dark browns) === */
+    --surface-page: light-dark(#f7f3ee, #1c1915);
+    --surface-card: light-dark(#fffcf7, #262219);
+    --surface-raised: light-dark(#faf6f0, #302b24);
+    --surface-inset: light-dark(#efe9e0, #1a1714);
+    --surface-input: light-dark(#fffdf9, #22201b);
+    --surface-btn: light-dark(#ebe5db, #3a342c);
+    --surface-border: light-dark(#e0d6c8, #3d3830);
+
+    /* === COLORS (earthy: terracotta primary, olive secondary) === */
+    --color-pri: light-dark(
+      color-mix(in oklch, var(--org-6), var(--gry-6) 20%),
+      color-mix(in oklch, var(--org-5), var(--gry-5) 15%)
+    );
+    --color-pri-text: white;
+
+    --color-sec: light-dark(
+      color-mix(in oklch, var(--grn-7), var(--yel-7) 30%),
+      color-mix(in oklch, var(--grn-6), var(--yel-6) 25%)
+    );
+    --color-sec-text: white;
+
+    --color-wrn: light-dark(
+      color-mix(in oklch, var(--yel-5), var(--org-5) 30%),
+      color-mix(in oklch, var(--yel-5), var(--org-5) 25%)
+    );
+    --color-wrn-text: var(--gry-9);
+
+    --color-dgr: light-dark(
+      color-mix(in oklch, var(--red-6), var(--org-6) 20%),
+      color-mix(in oklch, var(--red-5), var(--org-5) 15%)
+    );
+    --color-dgr-text: white;
+
+    --color-inf: light-dark(
+      color-mix(in oklch, var(--blu-6), var(--gry-6) 25%),
+      color-mix(in oklch, var(--blu-5), var(--gry-5) 20%)
+    );
+    --color-inf-text: white;
+
+    /* === FEEDBACK COLORS === */
+    --color-suc: light-dark(
+      color-mix(in oklch, var(--grn-6), var(--yel-6) 20%),
+      color-mix(in oklch, var(--grn-5), var(--yel-5) 15%)
+    );
+    --color-err: var(--color-dgr);
+
+    /* === HR === */
+    --color-hr: light-dark(
+      color-mix(in oklch, var(--color-pri), #d9cfc2 70%),
+      color-mix(in oklch, var(--color-pri), #3d3830 70%)
+    );
+
+    /* === TEXT === */
+    --text-color: light-dark(#3d3530, #e8e0d5);
+    --text-muted: light-dark(#7a6f62, #9a8f82);
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-md: 0.9375rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.375rem;
+
+    /* === BUTTON === */
+    --btn-height-sm: 1.875rem;
+    --btn-height-md: 2.375rem;
+    --btn-height-lg: 2.875rem;
+
+    /* === GLASS === */
+    --glass-bg: var(--glass-bg-1);
+    --glass-border: var(--glass-border-1);
+    --blur-sm: var(--size-px-2);
+    --blur-md: var(--size-px-3);
+  }
+
+  [data-mode="light"] { color-scheme: light; }
+  [data-mode="dark"] { color-scheme: dark; }
+}

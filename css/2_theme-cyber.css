@@ -44,6 +44,7 @@
     --surface-raised: light-dark(var(--gry-0), #2f352f);
     --surface-inset: light-dark(var(--gry-2), #151815);
     --surface-input: light-dark(white, #1e221e);
+    --surface-btn: light-dark(var(--gry-2), #2f352f);
 
     /* === COLORS (Cyberpunk: neon yellow primary, teal secondary) === */
     --color-pri: var(--yel-4);

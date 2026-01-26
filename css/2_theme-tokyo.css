@@ -1,0 +1,100 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+
+    /* === SHADOW (cool/neon tinted) === */
+    --shadow-out-md: var(--shadow-2);
+    --shadow-in-md: var(--inner-shadow-2);
+    --shadow-card: light-dark(
+      0 1px 3px 0 rgb(0 0 0 / 0.06),
+      0 2px 8px 0 rgb(0 0 0 / 0.4)
+    );
+    --shadow-card-hover: light-dark(
+      0 2px 6px 0 rgb(0 0 0 / 0.08),
+      0 4px 16px 0 rgb(0 0 0 / 0.5)
+    );
+
+    /* === SPACING === */
+    --space-xs: var(--size-1);
+    --space-sm: var(--size-2);
+    --space-md: var(--size-3);
+    --space-lg: var(--size-4);
+    --space-xl: var(--size-5);
+
+    /* === LAYOUT === */
+    --grid-gap: var(--space-sm);
+
+    /* === RADIUS (sharp/angular) === */
+    --radius-sm: 0;
+    --radius-md: var(--radius-1);
+    --radius-lg: var(--radius-2);
+    --radius-btn: var(--radius-1);
+    --radius-card: var(--radius-1);
+    --radius-round: var(--radius-2);
+
+    /* === BORDERS === */
+    --border-subtle: light-dark(var(--gry-2), #1a1a2e);
+    --border-muted: light-dark(var(--gry-3), #252542);
+
+    /* === SURFACES (high contrast blacks) === */
+    --surface-page: light-dark(var(--gry-1), #0a0a0f);
+    --surface-card: light-dark(white, #12121a);
+    --surface-raised: light-dark(var(--gry-0), #1a1a28);
+    --surface-inset: light-dark(var(--gry-2), #08080c);
+    --surface-input: light-dark(white, #0e0e14);
+    --surface-btn: light-dark(var(--gry-2), #1e1e2e);
+    --surface-border: light-dark(var(--gry-3), #252542);
+
+    /* === COLORS (neon: magenta primary, cyan secondary) === */
+    --color-pri: light-dark(var(--pnk-6), var(--pnk-5));
+    --color-pri-text: white;
+
+    --color-sec: light-dark(var(--cyn-6), var(--cyn-4));
+    --color-sec-text: light-dark(white, var(--gry-9));
+
+    --color-wrn: light-dark(var(--yel-5), var(--yel-4));
+    --color-wrn-text: var(--gry-9);
+
+    --color-dgr: light-dark(var(--red-6), var(--red-5));
+    --color-dgr-text: white;
+
+    --color-inf: light-dark(var(--blu-6), var(--blu-4));
+    --color-inf-text: white;
+
+    /* === FEEDBACK COLORS === */
+    --color-suc: light-dark(var(--grn-6), var(--grn-4));
+    --color-err: var(--color-dgr);
+
+    /* === HR === */
+    --color-hr: light-dark(
+      color-mix(in oklch, var(--color-pri), var(--gry-4) 70%),
+      color-mix(in oklch, var(--color-pri), #252542 50%)
+    );
+
+    /* === TEXT === */
+    --text-color: light-dark(var(--gry-9), #e4e4ef);
+    --text-muted: light-dark(var(--gry-6), #6a6a8a);
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-md: 0.9375rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.375rem;
+
+    /* === BUTTON === */
+    --btn-height-sm: 1.875rem;
+    --btn-height-md: 2.375rem;
+    --btn-height-lg: 2.875rem;
+
+    /* === GLASS === */
+    --glass-bg: var(--glass-bg-1);
+    --glass-border: var(--glass-border-1);
+    --blur-sm: var(--size-px-2);
+    --blur-md: var(--size-px-3);
+  }
+
+  [data-mode="light"] { color-scheme: light; }
+  [data-mode="dark"] { color-scheme: dark; }
+}
