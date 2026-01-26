@@ -8,72 +8,101 @@
     /* === SHADOW (cool muted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
-    --shadow-md: 0 2px 8px -2px rgb(40 50 50 / 0.18), 0 4px 12px -4px rgb(40 50 50 / 0.12);
+    --shadow-md: 0 2px 8px -2px rgb(40 50 50 / 0.15), 0 4px 12px -4px rgb(40 50 50 / 0.1);
     --shadow-card:
-      0 1px 2px 0 rgb(40 50 50 / 0.05),
-      0 1px 6px -1px rgb(40 50 50 / 0.04),
-      0 2px 4px 0 rgb(40 50 50 / 0.04);
+      0 1px 2px 0 rgb(40 50 50 / 0.04),
+      0 1px 6px -1px rgb(40 50 50 / 0.03),
+      0 2px 4px 0 rgb(40 50 50 / 0.03);
     --shadow-card-hover:
-      0 2px 4px 0 rgb(40 50 50 / 0.06),
-      0 4px 12px -2px rgb(40 50 50 / 0.05),
-      0 6px 8px 0 rgb(40 50 50 / 0.04);
+      0 2px 4px 0 rgb(40 50 50 / 0.05),
+      0 4px 12px -2px rgb(40 50 50 / 0.04),
+      0 6px 8px 0 rgb(40 50 50 / 0.03);
 
-    /* === SPACING === */
+    /* === SPACING (same as sahara) === */
     --space-xs: var(--size-1);
     --space-sm: var(--size-2);
     --space-md: var(--size-3);
-    --space-lg: var(--size-5);
-    --space-xl: var(--size-7);
+    --space-lg: var(--size-4);
+    --space-xl: var(--size-5);
 
-    /* === RADIUS === */
-    --radius-sm: var(--radius-1);
-    --radius-md: var(--radius-2);
-    --radius-lg: var(--radius-3);
-    --radius-btn: var(--radius-1);
-    --radius-card: var(--radius-2);
+    --grid-gap: var(--space-sm);
 
-    /* === SURFACES (cool misty tones) === */
-    --surface-1: light-dark(#e8ecea, #1a1f1d);
-    --surface-2: light-dark(#f0f3f1, #222826);
-    --surface-3: light-dark(#f8faf9, #2a312e);
-    --surface-border: light-dark(#c8d0cc, #3a4440);
-    --surface-hover: light-dark(#dfe5e2, #2f3835);
+    /* === RADIUS (same as sahara) === */
+    --radius-sm: var(--radius-2);
+    --radius-md: var(--radius-3);
+    --radius-lg: var(--radius-4);
+    --radius-btn: var(--radius-2);
+    --radius-card: var(--radius-3);
+
+    /* === SURFACES (cool gray-greens) === */
+    --surface-1: light-dark(#e8ebe8, #1a1d1a);
+    --surface-2: light-dark(#f0f3f0, #1f221f);
+    --surface-3: light-dark(#f8faf8, #262926);
+    --surface-border: light-dark(#c8d0c8, #3a403a);
+    --surface-hover: light-dark(#dfe5df, #2a302a);
     --_surface-base: var(--surface-1);
 
-    --surface-page: light-dark(#f0f3f1, #1a1f1d);
-    --surface-card: light-dark(#f8faf9, #2a312e);
-    --surface-raised: light-dark(#ffffff, #343d39);
-    --surface-inset: light-dark(#e4e9e6, #161a18);
-    --surface-input: light-dark(#fcfdfc, #232a27);
-    --surface-btn: light-dark(#e0e6e3, #3a4440);
+    /* === LEGACY SURFACES === */
+    --surface-page: light-dark(#f0f3f0, #1a1d1a);
+    --surface-card: light-dark(#f8faf8, #262926);
+    --surface-raised: light-dark(#f4f7f4, #2a302a);
+    --surface-inset: light-dark(#e8ebe8, #161916);
+    --surface-input: light-dark(#fcfefc, #1f221f);
+    --surface-btn: light-dark(#dfe5df, #3a403a);
 
-    /* === COLORS (evergreen: forest green + misty blue) === */
+    /* === COLORS (desaturated forest/mist) === */
     --color-pri: oklch(45% 0.08 160);
-    --color-sec: oklch(55% 0.05 230);
-    --color-pri-text: light-dark(oklch(35% 0.1 160), oklch(75% 0.1 160));
-    --color-sec-text: light-dark(oklch(40% 0.06 230), oklch(70% 0.06 230));
-
+    --color-sec: oklch(55% 0.05 220);
+    --color-pri-text: light-dark(oklch(35% 0.08 160), oklch(75% 0.08 160));
+    --color-sec-text: light-dark(oklch(45% 0.05 220), oklch(70% 0.05 220));
     --color-wrn: var(--yel-6);
     --color-dgr: var(--red-6);
-    --color-inf: oklch(55% 0.06 230);
-    --color-suc: oklch(50% 0.1 155);
-    --color-err: var(--red-7);
+    --color-inf: var(--blu-5);
+    --color-suc: var(--grn-5);
+    --color-err: var(--red-6);
 
-    --color-hr: light-dark(#c8d0cc, #3a4440);
+    --color-muted-pri: light-dark(
+      color-mix(in oklch, var(--color-pri), var(--gry-5) 50%),
+      color-mix(in oklch, var(--color-pri), var(--gry-5) 40%)
+    );
+    --color-muted-sec: light-dark(
+      color-mix(in oklch, var(--color-sec), var(--gry-5) 50%),
+      color-mix(in oklch, var(--color-sec), var(--gry-5) 40%)
+    );
 
     /* === TEXT === */
-    --text-color: light-dark(#2a332f, #e0e6e3);
-    --text-muted: light-dark(#5a6b64, #9aa8a2);
-    --text-xs: var(--font-size-0);
-    --text-sm: var(--font-size-1);
-    --text-md: var(--font-size-2);
-    --text-lg: var(--font-size-3);
-    --text-xl: var(--font-size-5);
+    --text-color: light-dark(#2a302a, #e8ebe8);
+    --text-muted: light-dark(#5a665a, #9aa09a);
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+
+    /* === HR === */
+    --color-hr: light-dark(#c8d0c8, #3a403a);
+
+    /* === BORDERS === */
+    --border-subtle: 1px solid light-dark(#d8e0d8, #3a403a);
+    --border-muted: 1px solid light-dark(#c8d0c8, #4a524a);
+
+    /* === GLASS === */
+    --glass-bg: light-dark(
+      rgba(248, 250, 248, 0.8),
+      rgba(38, 41, 38, 0.8)
+    );
+    --glass-border: light-dark(
+      rgba(200, 208, 200, 0.5),
+      rgba(58, 64, 58, 0.5)
+    );
+    --glass-blur: 12px;
 
     /* === BUTTON === */
-    --btn-height: 2.25rem;
-    --btn-height-sm: 1.75rem;
-    --btn-height-lg: 2.75rem;
+    --btn-height-sm: 1.875rem;
+    --btn-height-md: 2.375rem;
+    --btn-height-lg: 2.875rem;
   }
 
   [data-mode="light"] { color-scheme: light; }
