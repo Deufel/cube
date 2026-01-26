@@ -421,13 +421,9 @@
   .card {
     padding: var(--space-sm);
     border-radius: var(--radius-card);
-    background: light-dark(
-      color-mix(in oklch, var(--color-pri), var(--gry-0) 97%),
-      color-mix(in oklch, var(--color-pri), var(--gry-9) 97%)
-    );
+    background: var(--surface-card);
     color: var(--text-color);
-    border: 1px solid light-dark(
-      color-mix(in oklch, var(--color-pri), transparent 92%),
+    border: 1px solid var(--surface-border,
       color-mix(in oklch, var(--color-pri), transparent 88%)
     );
     box-shadow: var(--shadow-card);
