@@ -211,6 +211,38 @@
     &.dgr { background: var(--color-dgr); color: var(--color-dgr-text, white); }
   }
 
+  /* === TABS VARIANTS === */
+  [class~="tabs:pri"], [class*="tabs:pri-"] {
+    --_tabs-color: var(--color-pri);
+  }
+  [class~="tabs:sec"], [class*="tabs:sec-"] {
+    --_tabs-color: var(--color-sec);
+  }
+
+  /* === TABS SIZES === */
+  [class$="-sm"], [class*="-sm "] {
+    &:is([class*="tabs:"]) {
+      padding: 3px;
+      gap: 2px;
+      & [class~="tab"], & [class*="tab:"] {
+        padding: var(--space-xxs, 0.25rem) var(--space-sm);
+        font-size: var(--text-xs);
+      }
+    }
+  }
+
+  /* === TABS FULL WIDTH === */
+  [class$="-full"], [class*="-full "] {
+    &:is([class*="tabs:"]) {
+      display: flex;
+      width: 100%;
+      & [class~="tab"], & [class*="tab:"] {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  }
+
   /* === CHIP VARIANTS === */
   [class~="chip:inf"], [class*="chip:inf-"] {
     background: light-dark(
