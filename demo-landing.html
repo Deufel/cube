@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowStack — Streamline Your Workflow</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link data-attr:href="$prst_theme" rel="stylesheet">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+</head>
+<body class="scroll-y"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'"
+  data-signals:plan="'team'">
+
+  <!-- Nav -->
+  <header class="flex:split p:md" style="position: sticky; top: 0; background: var(--surface-page); z-index: 10; border-bottom: 1px solid var(--surface-border);">
+    <div class="flex:cluster gap:sm align:center">
+      <span style="font-weight: 700; font-size: var(--text-lg);">⚡ FlowStack</span>
+    </div>
+    <nav class="flex:cluster gap:md align:center">
+      <a href="#features" style="color: var(--text-muted); text-decoration: none;">Features</a>
+      <a href="#pricing" style="color: var(--text-muted); text-decoration: none;">Pricing</a>
+      <a href="#" style="color: var(--text-muted); text-decoration: none;">Docs</a>
+      <button class="btn:pri-sm">Get Started</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="flex:stack gap:lg align:center p:lg" style="text-align: center; padding-block: var(--size-9);">
+    <span class="chip:suc">🚀 Now with AI-powered insights</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); max-width: 800px; line-height: 1.1;">
+      Workflow automation that <em>actually</em> works
+    </h1>
+    <p style="font-size: var(--text-lg); color: var(--text-muted); max-width: 600px;">
+      FlowStack helps B2B teams automate repetitive tasks, sync data across tools, and ship faster. No code required.
+    </p>
+    <div class="flex:cluster gap:sm">
+      <button class="btn:pri">Start Free Trial</button>
+      <button class="btn:sec out">Watch Demo</button>
+    </div>
+    <p style="font-size: var(--text-sm); color: var(--text-muted);">
+      Trusted by 2,000+ teams • No credit card required
+    </p>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="flex:cluster gap:lg justify:center p:md" style="opacity: 0.6; filter: grayscale(1);">
+    <span style="font-weight: 600;">Stripe</span>
+    <span style="font-weight: 600;">Notion</span>
+    <span style="font-weight: 600;">Linear</span>
+    <span style="font-weight: 600;">Vercel</span>
+    <span style="font-weight: 600;">Figma</span>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="flex:stack gap:lg p:lg" style="max-width: 1000px; margin-inline: auto; padding-block: var(--size-8);">
+    <div style="text-align: center;">
+      <h2 style="font-size: var(--text-xl);">Everything you need to automate</h2>
+      <p style="color: var(--text-muted);">Powerful features, simple interface</p>
+    </div>
+    
+    <div class="grid:auto-fit gap:md" style="--grid-min: 280px;">
+      <div class="card flex:stack gap:sm">
+        <span style="font-size: 1.5rem;">🔗</span>
+        <h3>200+ Integrations</h3>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Connect your entire stack in minutes. Slack, Salesforce, HubSpot, and more.</p>
+      </div>
+      <div class="card flex:stack gap:sm">
+        <span style="font-size: 1.5rem;">⚡</span>
+        <h3>Real-time Sync</h3>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Data flows instantly between your tools. No more manual exports.</p>
+      </div>
+      <div class="card flex:stack gap:sm">
+        <span style="font-size: 1.5rem;">🤖</span>
+        <h3>AI Workflows</h3>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">Let AI handle the logic. Just describe what you want in plain English.</p>
+      </div>
+      <div class="card flex:stack gap:sm">
+        <span style="font-size: 1.5rem;">📊</span>
+        <h3>Analytics</h3>
+        <p style="color: var(--text-muted); font-size: var(--text-sm);">See what's working. Track runs, errors, and time saved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="flex:stack gap:lg p:lg" style="max-width: 900px; margin-inline: auto; padding-block: var(--size-8);">
+    <div style="text-align: center;">
+      <h2 style="font-size: var(--text-xl);">Simple, transparent pricing</h2>
+      <p style="color: var(--text-muted);">Start free. Upgrade when you're ready.</p>
+    </div>
+
+    <div class="flex:cluster gap:sm justify:center">
+      <div class="tabs:pri" data-signals:billing="'monthly'">
+        <button data-class:tab:active="$billing==='monthly'" data-class:tab="$billing!=='monthly'" data-on:click="$billing='monthly'">Monthly</button>
+        <button data-class:tab:active="$billing==='yearly'" data-class:tab="$billing!=='yearly'" data-on:click="$billing='yearly'">Yearly <span class="chip:suc-sm">-20%</span></button>
+      </div>
+    </div>
+
+    <div class="grid:auto-fit gap:md" style="--grid-min: 250px;">
+      <!-- Starter -->
+      <div class="card flex:stack gap:md" data-class:card:pri="$plan==='starter'">
+        <div>
+          <h3>Starter</h3>
+          <p style="color: var(--text-muted); font-size: var(--text-sm);">For individuals</p>
+        </div>
+        <div>
+          <span style="font-size: var(--text-xl); font-weight: 700;">$0</span>
+          <span style="color: var(--text-muted);">/month</span>
+        </div>
+        <ul class="flex:stack gap:xs" style="font-size: var(--text-sm);">
+          <li>✓ 100 tasks/month</li>
+          <li>✓ 5 integrations</li>
+          <li>✓ Community support</li>
+        </ul>
+        <button class="btn:sec out" data-on:click="$plan='starter'">
+          <span data-show="$plan!=='starter'">Select</span>
+          <span data-show="$plan==='starter'">Current</span>
+        </button>
+      </div>
+
+      <!-- Team -->
+      <div class="card flex:stack gap:md" style="position: relative;" data-class:card:pri="$plan==='team'">
+        <span class="badge:suc">Popular</span>
+        <div>
+          <h3>Team</h3>
+          <p style="color: var(--text-muted); font-size: var(--text-sm);">For growing teams</p>
+        </div>
+        <div>
+          <span style="font-size: var(--text-xl); font-weight: 700;" data-text="$billing==='monthly' ? '$29' : '$23'"></span>
+          <span style="color: var(--text-muted);">/month</span>
+        </div>
+        <ul class="flex:stack gap:xs" style="font-size: var(--text-sm);">
+          <li>✓ Unlimited tasks</li>
+          <li>✓ 50 integrations</li>
+          <li>✓ Priority support</li>
+          <li>✓ Team collaboration</li>
+        </ul>
+        <button class="btn:pri" data-on:click="$plan='team'">
+          <span data-show="$plan!=='team'">Select</span>
+          <span data-show="$plan==='team'">Current</span>
+        </button>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="card flex:stack gap:md" data-class:card:pri="$plan==='enterprise'">
+        <div>
+          <h3>Enterprise</h3>
+          <p style="color: var(--text-muted); font-size: var(--text-sm);">For large organizations</p>
+        </div>
+        <div>
+          <span style="font-size: var(--text-xl); font-weight: 700;">Custom</span>
+        </div>
+        <ul class="flex:stack gap:xs" style="font-size: var(--text-sm);">
+          <li>✓ Everything in Team</li>
+          <li>✓ SSO & SAML</li>
+          <li>✓ Dedicated support</li>
+          <li>✓ Custom SLA</li>
+        </ul>
+        <button class="btn:sec out" data-on:click="$plan='enterprise'">
+          <span data-show="$plan!=='enterprise'">Contact Sales</span>
+          <span data-show="$plan==='enterprise'">Current</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="flex:stack gap:md align:center p:lg" style="text-align: center; padding-block: var(--size-8); background: var(--surface-inset);">
+    <h2 style="font-size: var(--text-lg);">Ready to streamline your workflow?</h2>
+    <p style="color: var(--text-muted);">Join 2,000+ teams already saving 10+ hours per week.</p>
+    <button class="btn:pri">Start Free Trial</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="flex:split p:lg" style="border-top: 1px solid var(--surface-border); font-size: var(--text-sm); color: var(--text-muted);">
+    <span>© 2026 FlowStack. All rights reserved.</span>
+    <div class="flex:cluster gap:md">
+      <a href="#" style="color: var(--text-muted);">Privacy</a>
+      <a href="#" style="color: var(--text-muted);">Terms</a>
+      <a href="#" style="color: var(--text-muted);">Twitter</a>
+    </div>
+  </footer>
+
+</body>
+</html>
