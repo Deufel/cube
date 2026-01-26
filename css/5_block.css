@@ -367,6 +367,63 @@
     box-shadow: 0 2px 8px color-mix(in oklch, var(--_tabs-color), transparent 50%);
   }
 
+  /* === POPUP === */
+  [class~="popup"], [class*="popup:"] {
+    border: 0;
+    padding: var(--space-sm);
+    margin: 0;
+    inset: auto;
+    position: absolute;
+    min-width: 180px;
+    background: var(--surface-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-3);
+    
+    transition: 
+      display 0.2s allow-discrete, 
+      opacity 0.2s, 
+      transform 0.2s,
+      overlay 0.2s allow-discrete;
+    
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+
+  [class~="popup"]:popover-open, [class*="popup:"]:popover-open {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  @starting-style {
+    [class~="popup"]:popover-open, [class*="popup:"]:popover-open {
+      opacity: 0;
+      transform: scale(0.95) translateY(-8px);
+    }
+  }
+
+  [class~="popup-item"] {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--surface-inset);
+      }
+    }
+  }
+
   /* === CARD === */
   .card {
     padding: var(--space-sm);

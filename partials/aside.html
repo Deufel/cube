@@ -7,27 +7,32 @@
 
     <section class="flex:stack gap:sm">
       <h3 class="text:sm">Theme</h3>
-      <div class="flex:cluster gap:xs">
-        <button class="sm"
-          data-attr:var="$prst_theme === './css/2_theme-default.css' ? false : 'gho'"
+      <div class="tabs:pri-sm-full">
+        <button 
+          data-class:tab:active="$prst_theme === './css/2_theme-default.css'"
+          data-class:tab="$prst_theme !== './css/2_theme-default.css'"
           data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
-        <button class="sm"
-          data-attr:var="$prst_theme === './css/2_theme-cyber.css' ? false : 'gho'"
+        <button 
+          data-class:tab:active="$prst_theme === './css/2_theme-cyber.css'"
+          data-class:tab="$prst_theme !== './css/2_theme-cyber.css'"
           data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
       </div>
     </section>
 
     <section class="flex:stack gap:sm">
       <h3 class="text:sm">Mode</h3>
-      <div class="flex:cluster gap:xs">
-        <button class="sm"
-          data-attr:var="$prst_mode === 'light' ? false : 'gho'"
+      <div class="tabs:pri-sm-full">
+        <button 
+          data-class:tab:active="$prst_mode === 'light'"
+          data-class:tab="$prst_mode !== 'light'"
           data-on:click="$prst_mode = 'light'">Light</button>
-        <button class="sm"
-          data-attr:var="$prst_mode === 'system' ? false : 'gho'"
+        <button 
+          data-class:tab:active="$prst_mode === 'system'"
+          data-class:tab="$prst_mode !== 'system'"
           data-on:click="$prst_mode = 'system'">System</button>
-        <button class="sm"
-          data-attr:var="$prst_mode === 'dark' ? false : 'gho'"
+        <button 
+          data-class:tab:active="$prst_mode === 'dark'"
+          data-class:tab="$prst_mode !== 'dark'"
           data-on:click="$prst_mode = 'dark'">Dark</button>
       </div>
     </section>
