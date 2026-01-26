@@ -1,4 +1,7 @@
 @layer exception {
+  /* === SHADOW MODIFIER === */
+  .shadow { box-shadow: var(--shadow-md); }
+
   /* === DRAWER DIRECTIONS === */
   
   /* Left drawer */
@@ -333,20 +336,22 @@
   /* === CARD VARIANTS === */
   .card {
     &.pri {
-      background: light-dark(
+      --_surface-base: light-dark(
         color-mix(in oklch, var(--color-pri), var(--gry-0) 94%),
         color-mix(in oklch, var(--color-pri), var(--gry-9) 92%)
       );
+      background: var(--_surface-base);
       border-color: light-dark(
         color-mix(in oklch, var(--color-pri), transparent 85%),
         color-mix(in oklch, var(--color-pri), transparent 80%)
       );
     }
     &.sec {
-      background: light-dark(
+      --_surface-base: light-dark(
         color-mix(in oklch, var(--color-sec), var(--gry-0) 94%),
         color-mix(in oklch, var(--color-sec), var(--gry-9) 92%)
       );
+      background: var(--_surface-base);
       border-color: light-dark(
         color-mix(in oklch, var(--color-sec), transparent 85%),
         color-mix(in oklch, var(--color-sec), transparent 80%)

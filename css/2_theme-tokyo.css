@@ -8,6 +8,7 @@
     /* === SHADOW (cool/neon tinted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.15), 0 4px 12px -4px rgb(0 0 0 / 0.1);
     --shadow-card: light-dark(
       0 1px 3px 0 rgb(0 0 0 / 0.06),
       0 2px 8px 0 rgb(0 0 0 / 0.4)
@@ -40,13 +41,20 @@
     --border-muted: light-dark(var(--gry-3), #252542);
 
     /* === SURFACES (high contrast blacks) === */
+    --surface-1: light-dark(var(--gry-2), #08080c);
+    --surface-2: light-dark(var(--gry-1), #0a0a0f);
+    --surface-3: light-dark(white, #12121a);
+    --surface-border: light-dark(var(--gry-3), #252542);
+    --surface-hover: light-dark(var(--gry-2), #1a1a28);
+    --_surface-base: var(--surface-1);
+
+    /* === LEGACY SURFACES === */
     --surface-page: light-dark(var(--gry-1), #0a0a0f);
     --surface-card: light-dark(white, #12121a);
     --surface-raised: light-dark(var(--gry-0), #1a1a28);
     --surface-inset: light-dark(var(--gry-2), #08080c);
     --surface-input: light-dark(white, #0e0e14);
     --surface-btn: light-dark(var(--gry-2), #1e1e2e);
-    --surface-border: light-dark(var(--gry-3), #252542);
 
     /* === COLORS (neon: magenta primary, cyan secondary) === */
     --color-pri: light-dark(var(--pnk-6), var(--pnk-5));

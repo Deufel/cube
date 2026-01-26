@@ -8,6 +8,7 @@
     /* === SHADOW (warm tinted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(80 60 40 / 0.15), 0 4px 12px -4px rgb(80 60 40 / 0.1);
     --shadow-card:
       0 1px 2px 0 rgb(80 60 40 / 0.04),
       0 1px 6px -1px rgb(80 60 40 / 0.03),
@@ -39,13 +40,20 @@
     --border-muted: light-dark(#d9cfc2, #4a433a);
 
     /* === SURFACES (warm off-whites / warm dark browns) === */
+    --surface-1: light-dark(#efe9e0, #1a1714);
+    --surface-2: light-dark(#f7f3ee, #1c1915);
+    --surface-3: light-dark(#fffcf7, #262219);
+    --surface-border: light-dark(#e0d6c8, #3d3830);
+    --surface-hover: light-dark(#ebe5db, #302b24);
+    --_surface-base: var(--surface-1);
+
+    /* === LEGACY SURFACES === */
     --surface-page: light-dark(#f7f3ee, #1c1915);
     --surface-card: light-dark(#fffcf7, #262219);
     --surface-raised: light-dark(#faf6f0, #302b24);
     --surface-inset: light-dark(#efe9e0, #1a1714);
     --surface-input: light-dark(#fffdf9, #22201b);
     --surface-btn: light-dark(#ebe5db, #3a342c);
-    --surface-border: light-dark(#e0d6c8, #3d3830);
 
     /* === COLORS (earthy: terracotta primary, olive secondary) === */
     --color-pri: light-dark(

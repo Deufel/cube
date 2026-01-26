@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surface - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+        
+        <header class="flex:stack gap:xs">
+          <h1 class="text:lg">Surface</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Well-based surface system with automatic elevation. Nested surfaces lighten toward content.</p>
+        </header>
+
+        <hr>
+
+        <!-- Concept -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Concept</h3>
+          <p class="text:sm">The surface system uses CSS <code>:has()</code> to detect nesting depth. Deepest containers get the darkest shade; leaf surfaces (containing no other surfaces) get the lightest — making content easiest to read.</p>
+          <p class="text:sm">Card variants (<code>card.pri</code>, <code>card.sec</code>) set <code>--_surface-base</code> which surfaces inherit and lighten from.</p>
+        </section>
+
+        <hr>
+
+        <!-- Basic Usage -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Basic Usage</h3>
+          <p class="text:sm">Surfaces inside a colored card inherit and lighten the card's hue.</p>
+          <div class="flex:stack gap:md">
+            <div class="card pri" style="padding: var(--space-md);">
+              <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.pri</div>
+              <div class="flex:cluster gap:sm">
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                  <span class="text:sm">surface (leaf)</span>
+                </div>
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                  <span class="text:sm">surface (leaf)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Nested Surfaces -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Nested Surfaces</h3>
+          <p class="text:sm">Nesting automatically darkens parent surfaces while keeping leaves lightest.</p>
+          <div class="flex:stack gap:md">
+            <div class="card pri" style="padding: var(--space-md);">
+              <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.pri (sets --_surface-base)</div>
+              <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (parent) — darker</div>
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                  <span class="text:sm">surface (leaf) — lightest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Three Levels -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Three Levels Deep</h3>
+          <p class="text:sm">Maximum supported depth: grandparent → parent → leaf.</p>
+          <div class="flex:stack gap:md">
+            <div class="card sec" style="padding: var(--space-md);">
+              <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.sec</div>
+              <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (grandparent) — darkest</div>
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm); margin-top: var(--space-xs);">
+                  <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (parent) — mid</div>
+                  <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">
+                    <span class="text:sm">surface (leaf) — lightest</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Calendar Example -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Calendar Example</h3>
+          <p class="text:sm">Real-world use case: year → month → day hierarchy.</p>
+          <div class="flex:stack gap:md">
+            <div class="card pri" style="padding: var(--space-md);">
+              <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-sm);">Year (card.pri)</div>
+              <div class="flex:cluster gap:sm">
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm); flex: 1;">
+                  <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-xs);">Month</div>
+                  <div class="flex:cluster gap:xs">
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">1</div>
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">2</div>
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">3</div>
+                  </div>
+                </div>
+                <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm); flex: 1;">
+                  <div class="text:sm" style="color: var(--text-muted); margin-bottom: var(--space-xs);">Month</div>
+                  <div class="flex:cluster gap:xs">
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">1</div>
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">2</div>
+                    <div class="surface shadow" style="padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-sm);">3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Shadow Modifier -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Shadow Modifier</h3>
+          <p class="text:sm">Add <code>.shadow</code> for elevation depth cues.</p>
+          <div class="flex:cluster gap:md">
+            <div class="card pri" style="padding: var(--space-md);">
+              <div class="text:sm" style="margin-bottom: var(--space-xs);">Without shadow</div>
+              <div class="surface" style="padding: var(--space-sm); border-radius: var(--radius-sm);">surface</div>
+            </div>
+            <div class="card pri" style="padding: var(--space-md);">
+              <div class="text:sm" style="margin-bottom: var(--space-xs);">With shadow</div>
+              <div class="surface shadow" style="padding: var(--space-sm); border-radius: var(--radius-sm);">surface shadow</div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- API Reference -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">API Reference</h3>
+          
+          <h4 class="text:sm">Theme Tokens</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Token</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>--surface-1</code></td>
+                <td style="padding: var(--space-xs);">Deepest surface (page level)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>--surface-2</code></td>
+                <td style="padding: var(--space-xs);">Mid elevation</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>--surface-3</code></td>
+                <td style="padding: var(--space-xs);">Content surface (lightest)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>--_surface-base</code></td>
+                <td style="padding: var(--space-xs);">Set by card variants; surfaces lighten from this</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Classes</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>.surface</code></td>
+                <td style="padding: var(--space-xs);">Background from <code>--_surface-base</code>, auto-lightens based on nesting</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>.shadow</code></td>
+                <td style="padding: var(--space-xs);">Adds <code>--shadow-md</code> box-shadow</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Card sets the surface base --&gt;
+&lt;div class="card pri"&gt;
+  &lt;div class="surface shadow"&gt;Leaf surface&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Nested surfaces auto-elevate --&gt;
+&lt;div class="card sec"&gt;
+  &lt;div class="surface"&gt;
+    Parent (darker)
+    &lt;div class="surface"&gt;Leaf (lighter)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Three levels deep --&gt;
+&lt;div class="card pri"&gt;
+  &lt;div class="surface"&gt;
+    Grandparent (darkest)
+    &lt;div class="surface"&gt;
+      Parent (mid)
+      &lt;div class="surface"&gt;Leaf (lightest)&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+
+  </div>
+</body>
+</html>

@@ -8,6 +8,7 @@
     /* === SHADOW === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.15), 0 4px 12px -4px rgb(0 0 0 / 0.1);
     --shadow-card: light-dark(
       0 1px 3px 0 rgb(0 0 0 / 0.08),
       0 0 20px -8px rgb(0 255 200 / 0.15)
@@ -39,6 +40,14 @@
     --border-muted: light-dark(var(--gry-4), var(--gry-6));
 
     /* === SURFACES === */
+    --surface-1: light-dark(var(--gry-2), #151815);
+    --surface-2: light-dark(var(--gry-1), #1a1d1a);
+    --surface-3: light-dark(white, #252a25);
+    --surface-border: light-dark(var(--gry-3), #2f352f);
+    --surface-hover: light-dark(var(--gry-2), #2f352f);
+    --_surface-base: var(--surface-1);
+
+    /* === LEGACY SURFACES === */
     --surface-page: light-dark(var(--gry-1), #1a1d1a);
     --surface-card: light-dark(white, #252a25);
     --surface-raised: light-dark(var(--gry-0), #2f352f);

@@ -8,6 +8,7 @@
     /* === SHADOW === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.15), 0 4px 12px -4px rgb(0 0 0 / 0.1);
     --shadow-card:
       0 1px 2px 0 rgb(0 0 0 / 0.03),
       0 1px 6px -1px rgb(0 0 0 / 0.02),
@@ -38,7 +39,15 @@
     --border-subtle: light-dark(var(--gry-2), var(--gry-7));
     --border-muted: light-dark(var(--gry-3), var(--gry-6));
 
-    /* === SURFACES === */
+    /* === SURFACES (well system: deeper nesting = darker) === */
+    --surface-1: light-dark(var(--gry-2), var(--gry-9));  /* deepest well */
+    --surface-2: light-dark(var(--gry-1), var(--gry-8));  /* mid well */
+    --surface-3: light-dark(white, var(--gry-7));         /* content surface (lightest) */
+    --surface-border: light-dark(var(--gry-3), var(--gry-6));
+    --surface-hover: light-dark(var(--gry-2), var(--gry-7));
+    --_surface-base: var(--surface-1);  /* set by card variants */
+
+    /* === LEGACY SURFACES (migrate to well system) === */
     --surface-page: light-dark(var(--gry-1), var(--gry-9));
     --surface-card: light-dark(white, var(--gry-8));
     --surface-raised: light-dark(var(--gry-0), var(--gry-7));

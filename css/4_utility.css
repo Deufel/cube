@@ -61,6 +61,20 @@
   /* === PILL === */
   .pill { padding: var(--space-xs) var(--space-sm); border-radius: 999px; background: var(--surface-hover); }
 
+/* === SURFACE (well system: auto-lightens toward content) === */
+  .surface:not(:has(.surface)) { 
+    background: color-mix(in oklch, var(--_surface-base), white 30%);
+  }
+  .surface:has(.surface) { 
+    background: color-mix(in oklch, var(--_surface-base), var(--gry-2) 15%);
+  }
+  .surface:has(.surface .surface) { 
+    background: color-mix(in oklch, var(--_surface-base), var(--gry-3) 20%);
+  }
+  }
+  }
+  }
+
   /* === RESPONSIVE VISIBILITY === */
   @media (width > 768px) { .mobile { display: none !important; } }
   @media (width <= 768px) { .desktop { display: none !important; } }
