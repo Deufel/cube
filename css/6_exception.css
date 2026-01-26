@@ -205,10 +205,26 @@
   }
 
   /* === BADGE VARIANTS === */
-  .badge {
-    &.suc { background: var(--color-suc); color: var(--color-suc-text, white); }
-    &.wrn { background: var(--color-wrn); color: var(--color-wrn-text, white); }
-    &.dgr { background: var(--color-dgr); color: var(--color-dgr-text, white); }
+  [class~="badge:suc"], [class*="badge:suc-"] {
+    background: var(--color-suc);
+    color: var(--color-suc-text, white);
+  }
+  [class~="badge:wrn"], [class*="badge:wrn-"] {
+    background: var(--color-wrn);
+    color: var(--color-wrn-text, white);
+  }
+  [class~="badge:dgr"], [class*="badge:dgr-"] {
+    background: var(--color-dgr);
+    color: var(--color-dgr-text, white);
+  }
+
+  /* === BADGE DOT EXCEPTION === */
+  [class$="-dot"], [class*="-dot "] {
+    &:is([class*="badge:"]) {
+      min-width: 10px;
+      height: 10px;
+      padding: 0;
+    }
   }
 
   /* === POPUP VARIANTS === */

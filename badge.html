@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badge - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme" href="./css/2_theme-default.css">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+        
+        <header class="flex:stack gap:xs">
+          <h1 class="text:lg">Badge</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Notification indicator for icons and buttons.</p>
+        </header>
+
+        <hr>
+
+        <!-- Base -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Base</h3>
+          <p class="text:sm">Default badge with info color. Position relative to parent.</p>
+          <div class="flex:cluster gap:lg">
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge">3</span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </button>
+              <span class="badge">12</span>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Variants -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Variants</h3>
+          <p class="text:sm">Color variants using <code>badge:variant</code> pattern.</p>
+          <div class="flex:cluster gap:lg">
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge">3</span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:suc">3</span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:wrn">3</span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:dgr">3</span>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Dot Exception -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Dot Exception</h3>
+          <p class="text:sm">Append <code>-dot</code> for a minimal dot indicator.</p>
+          <div class="flex:cluster gap:lg">
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:suc-dot"></span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:wrn-dot"></span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button class="icon-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </button>
+              <span class="badge:dgr-dot"></span>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- API Reference -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">API Reference</h3>
+          
+          <h4 class="text:sm">Selectors</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>badge</code></td>
+                <td style="padding: var(--space-xs);">Base badge, info color</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>badge:suc</code></td>
+                <td style="padding: var(--space-xs);">Success color</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>badge:wrn</code></td>
+                <td style="padding: var(--space-xs);">Warning color</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>badge:dgr</code></td>
+                <td style="padding: var(--space-xs);">Danger color</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Exceptions</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>-dot</code></td>
+                <td style="padding: var(--space-xs);">Dot indicator (no content)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Parent must have position: relative --&gt;
+&lt;div style="position: relative;"&gt;
+  &lt;button class="icon-btn"&gt;...&lt;/button&gt;
+  &lt;span class="badge"&gt;3&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Color variant --&gt;
+&lt;span class="badge:dgr"&gt;5&lt;/span&gt;
+
+&lt;!-- Dot indicator --&gt;
+&lt;span class="badge:suc-dot"&gt;&lt;/span&gt;</code></pre>
+        </section>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+
+  </div>
+</body>
+</html>

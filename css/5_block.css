@@ -102,7 +102,7 @@
   }
 
   /* === INLINE CONTROLS (shared base) === */
-  button, [class~="btn"], [class*="btn:"], [class~="chip"], [class*="chip:"], .badge, kbd {
+  button, [class~="btn"], [class*="btn:"], [class~="chip"], [class*="chip:"], [class~="badge"], [class*="badge:"], kbd {
     text-box: trim-both cap alphabetic;
     line-height: 1;
     display: inline-flex;
@@ -118,7 +118,7 @@
   }
 
   /* === BADGE === */
-  .badge {
+  [class~="badge"], [class*="badge:"] {
     position: absolute;
     top: -4px;
     right: -4px;
@@ -129,13 +129,6 @@
     border-radius: 999px;
     background: var(--color-inf);
     color: var(--color-inf-text, white);
-  }
-
-  /* Empty badge = dot indicator */
-  .badge:empty {
-    min-width: 10px;
-    height: 10px;
-    padding: 0;
   }
 
   /* Narrow variant */
