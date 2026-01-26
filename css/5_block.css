@@ -333,6 +333,8 @@
   [class~="tabs"], [class*="tabs:"] {
     --_tabs-color: var(--color-pri);
     display: inline-flex;
+    align-self: flex-start;
+    width: fit-content;
     gap: var(--space-xs);
     padding: var(--space-xs);
     background: var(--surface-inset);
@@ -342,7 +344,7 @@
 
   [class~="tab"], [class*="tab:"] {
     padding: var(--space-xs) var(--space-md);
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
     font-weight: 500;
     border: none;
     border-radius: var(--radius-round);
@@ -352,7 +354,7 @@
     transition: all 0.15s ease;
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not([class~="tab:active"]) {
         color: var(--text-color);
         background: color-mix(in oklch, var(--_tabs-color), transparent 92%);
       }
@@ -360,9 +362,9 @@
   }
 
   [class~="tab:active"], [class*="tab:active-"] {
-    background: var(--surface-card);
-    color: var(--text-color);
-    box-shadow: var(--shadow-card);
+    background: var(--_tabs-color);
+    color: white;
+    box-shadow: 0 2px 8px color-mix(in oklch, var(--_tabs-color), transparent 50%);
   }
 
   /* === CARD === */

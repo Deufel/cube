@@ -53,10 +53,10 @@
           <h3 class="text:md">Base</h3>
           <p class="text:sm">Default tabs with primary color.</p>
           <div class="flex:stack gap:md">
-            <div class="tabs:pri">
-              <button class="tab:active">Tab1</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:pri" data-signals:tab1="1">
+              <button data-class:tab:active="$tab1===1" data-class:tab="$tab1!==1" data-on:click="$tab1=1">Tab1</button>
+              <button data-class:tab:active="$tab1===2" data-class:tab="$tab1!==2" data-on:click="$tab1=2">Tab2</button>
+              <button data-class:tab:active="$tab1===3" data-class:tab="$tab1!==3" data-on:click="$tab1=3">Tab3</button>
             </div>
           </div>
         </section>
@@ -68,15 +68,15 @@
           <h3 class="text:md">Variants</h3>
           <p class="text:sm">Color variants using <code>tabs:variant</code> pattern.</p>
           <div class="flex:stack gap:md">
-            <div class="tabs:pri">
-              <button class="tab:active">Tab1</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:pri" data-signals:tab2="1">
+              <button data-class:tab:active="$tab2===1" data-class:tab="$tab2!==1" data-on:click="$tab2=1">Tab1</button>
+              <button data-class:tab:active="$tab2===2" data-class:tab="$tab2!==2" data-on:click="$tab2=2">Tab2</button>
+              <button data-class:tab:active="$tab2===3" data-class:tab="$tab2!==3" data-on:click="$tab2=3">Tab3</button>
             </div>
-            <div class="tabs:sec">
-              <button class="tab:active">Tab1</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:sec" data-signals:tab3="1">
+              <button data-class:tab:active="$tab3===1" data-class:tab="$tab3!==1" data-on:click="$tab3=1">Tab1</button>
+              <button data-class:tab:active="$tab3===2" data-class:tab="$tab3!==2" data-on:click="$tab3=2">Tab2</button>
+              <button data-class:tab:active="$tab3===3" data-class:tab="$tab3!==3" data-on:click="$tab3=3">Tab3</button>
             </div>
           </div>
         </section>
@@ -88,15 +88,15 @@
           <h3 class="text:md">Sizes</h3>
           <p class="text:sm">Append <code>-sm</code> for smaller tabs.</p>
           <div class="flex:stack gap:md">
-            <div class="tabs:pri">
-              <button class="tab:active">Default</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:pri" data-signals:tab4="1">
+              <button data-class:tab:active="$tab4===1" data-class:tab="$tab4!==1" data-on:click="$tab4=1">Default</button>
+              <button data-class:tab:active="$tab4===2" data-class:tab="$tab4!==2" data-on:click="$tab4=2">Tab2</button>
+              <button data-class:tab:active="$tab4===3" data-class:tab="$tab4!==3" data-on:click="$tab4=3">Tab3</button>
             </div>
-            <div class="tabs:pri-sm">
-              <button class="tab:active">Small</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:pri-sm" data-signals:tab5="1">
+              <button data-class:tab:active="$tab5===1" data-class:tab="$tab5!==1" data-on:click="$tab5=1">Small</button>
+              <button data-class:tab:active="$tab5===2" data-class:tab="$tab5!==2" data-on:click="$tab5=2">Tab2</button>
+              <button data-class:tab:active="$tab5===3" data-class:tab="$tab5!==3" data-on:click="$tab5=3">Tab3</button>
             </div>
           </div>
         </section>
@@ -108,15 +108,15 @@
           <h3 class="text:md">Full Width</h3>
           <p class="text:sm">Append <code>-full</code> to stretch tabs.</p>
           <div class="flex:stack gap:md" style="max-width: 400px;">
-            <div class="tabs:pri-full">
-              <button class="tab:active">Tab1</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:pri-full" data-signals:tab6="1">
+              <button data-class:tab:active="$tab6===1" data-class:tab="$tab6!==1" data-on:click="$tab6=1">Tab1</button>
+              <button data-class:tab:active="$tab6===2" data-class:tab="$tab6!==2" data-on:click="$tab6=2">Tab2</button>
+              <button data-class:tab:active="$tab6===3" data-class:tab="$tab6!==3" data-on:click="$tab6=3">Tab3</button>
             </div>
-            <div class="tabs:sec-full">
-              <button class="tab:active">Tab1</button>
-              <button class="tab">Tab2</button>
-              <button class="tab">Tab3</button>
+            <div class="tabs:sec-full" data-signals:tab7="1">
+              <button data-class:tab:active="$tab7===1" data-class:tab="$tab7!==1" data-on:click="$tab7=1">Tab1</button>
+              <button data-class:tab:active="$tab7===2" data-class:tab="$tab7!==2" data-on:click="$tab7=2">Tab2</button>
+              <button data-class:tab:active="$tab7===3" data-class:tab="$tab7!==3" data-on:click="$tab7=3">Tab3</button>
             </div>
           </div>
         </section>
