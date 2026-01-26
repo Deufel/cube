@@ -237,15 +237,13 @@
     }
   }
 
-  /* === TABS FULL WIDTH === */
-  [class$="-full"], [class*="-full "] {
-    &:is([class*="tabs:"]) {
-      display: flex;
-      width: 100%;
-      & [class~="tab"], & [class*="tab:"] {
-        flex: 1;
-        text-align: center;
-      }
+  /* === TABS FULL WIDTH (standalone modifier) === */
+  [class~="full"]:is([class~="tabs"], [class*="tabs:"]) {
+    display: flex;
+    width: 100%;
+    & [class~="tab"], & [class*="tab:"] {
+      flex: 1;
+      text-align: center;
     }
   }
 
