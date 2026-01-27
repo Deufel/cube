@@ -46,8 +46,8 @@
       <div class="card sec">
         <h3>Design Choices</h3>
         <p><strong>4-column grid.</strong> Enough flexibility for complex layouts. Collapses gracefully on small screens. No 12-column edge-case headaches.</p>
-        <p><strong>Feedback above input.</strong> The <code>.feedback</code> span sits in the label row. Adding or removing text won't shift the form layout.</p>
-        <p><strong>No :user-valid/:user-invalid.</strong> This form pairs with Datastar for server-side validation. Classes (<code>.suc</code>, <code>.err</code>, <code>.wrn</code>) reflect backend state. Frontend and backend stay decoupled.</p>
+        <p><strong>Feedback above input.</strong> The feedback <code>&lt;span&gt;</code> sits in the label row. Adding or removing text won't shift the form layout.</p>
+        <p><strong>No :user-valid/:user-invalid.</strong> This form pairs with Datastar for server-side validation. Classes (<code>.suc</code>, <code>.dgr</code>, <code>.wrn</code>) reflect backend state. Frontend and backend stay decoupled.</p>
         <p><strong>Pattern and maxlength only.</strong> These prevent obvious mistakes before submission. Everything else validates server-side.</p>
         <p><strong>Standard keyboard preferred.</strong> Numeric keypads lack an Enter key. We keep the full keyboard so <code>enterkeyhint</code> works and users can tab through fields naturally.</p>
         <p><strong>Semantic &lt;form&gt; element.</strong> Even with Datastar handling submission, the form element provides accessibility wins, autofill support, and Enter-to-submit behavior worth keeping.</p>
@@ -56,76 +56,76 @@
       <!-- Form Layout -->
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Form Layout</h3>
-        <p class="text:sm">4-column grid system: <code>w-1</code> (25%), <code>w-2</code> (50%), <code>w-3</code> (75%), <code>w-4</code> (100%)</p>
+        <p class="text:sm">4-column grid system: <code>field:w1</code> (25%), <code>field:w2</code> (50%), <code>field:w3</code> (75%), <code>field</code> (100%)</p>
         <div class="card gla" style="resize: horizontal; overflow: auto; min-width: 250px; max-width: 100%;">
 <form class="form">
             <!-- Full width email -->
-            <label class="input-group w-4">
-              Email <span class="feedback">Looks good!</span>
-<input type="email" placeholder="mike@example.com" class="suc" required enterkeyhint="next" 
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+            <label class="field">
+              Email <span class="suc">Looks good!</span>
+<input type="email" placeholder="mike@example.com" required enterkeyhint="next" 
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 2 + 2: Names -->
-            <label class="input-group w-2">
-              First Name <span class="feedback"></span>
+            <label class="field:w2">
+              First Name <span></span>
               <input type="text" placeholder="First" required enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-2">
-              Last Name <span class="feedback"></span>
+            <label class="field:w2">
+              Last Name <span></span>
               <input type="text" placeholder="Last" required enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 3 + 1: Address -->
-            <label class="input-group w-3">
+            <label class="field:w3">
               Street Address
 <input type="text" placeholder="123 Main Street" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-1">
+            <label class="field:w1">
               Apt
 <input type="text" placeholder="4B" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 2 + 1 + 1: City/State/Zip -->
-            <label class="input-group w-2">
+            <label class="field:w2">
               City
 <input type="text" placeholder="New York" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-1">
+            <label class="field:w1">
               State
 <input type="text" placeholder="NY" maxlength="2" pattern="[A-Za-z]{2}" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-1">
-              Zip <span class="feedback">Invalid</span>
-              <input type="text" placeholder="12345" maxlength="6" pattern="[0-9]{1,6}" class="err" required enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+            <label class="field:w1">
+              Zip <span class="dgr">Invalid</span>
+              <input type="text" placeholder="12345" maxlength="6" pattern="[0-9]{1,6}" required enterkeyhint="next"
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- 1 + 1 + 2: Mixed sizes -->
-            <label class="input-group w-1">
+            <label class="field:w1">
               Code
 <input type="text" placeholder="ABC" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-1">
-              PIN <span class="feedback">Weak</span>
-              <input type="text" placeholder="1234" maxlength="4" pattern="[0-9]{4}" class="wrn" required enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+            <label class="field:w1">
+              PIN <span class="wrn">Weak</span>
+              <input type="text" placeholder="1234" maxlength="4" pattern="[0-9]{4}" required enterkeyhint="next"
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
-            <label class="input-group w-2">
+            <label class="field:w2">
               Phone
 <input type="tel" placeholder="5551234567" maxlength="10" pattern="[0-9]{10}" enterkeyhint="next"
-                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('.input-group').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
+                data-on:keydown="if(evt.key==='Enter'){evt.preventDefault();el.closest('[class*="field"]').nextElementSibling?.querySelector('input,textarea')?.focus()}" />
             </label>
             
             <!-- Full width notes -->
-            <label class="input-group w-4">
+            <label class="field">
               Notes
 <textarea rows="2" placeholder="Additional delivery instructions..." enterkeyhint="done"
                 data-on:keydown="if(evt.key==='Enter'&&!evt.shiftKey){evt.preventDefault();el.closest('form').querySelector('[type=submit]')?.focus()}"></textarea>
@@ -155,7 +155,7 @@
           </ul>
           <p style="margin-top: var(--space-sm);"><strong>Validation attributes:</strong></p>
           <ul style="margin: var(--space-xs) 0; padding-left: var(--space-md);">
-            <li><code>required</code> — field must be filled</li>
+            <li><code>required</code> —field must be filled</li>
             <li><code>maxlength="100"</code> — limits character input</li>
             <li><code>minlength="5"</code> — minimum characters required</li>
             <li><code>pattern="[A-Za-z]{3}"</code> — regex validation</li>
@@ -173,7 +173,7 @@
           <pre class="card" style="font-size: var(--text-xs); overflow-x: auto; margin-top: var(--space-xs);"><code class="language-html">&lt;input type="text" enterkeyhint="next"
   data-on:keydown="if(evt.key==='Enter'){
     evt.preventDefault();
-    el.closest('.input-group')
+    el.closest('[class*="field"]')
       .nextElementSibling
       ?.querySelector('input,textarea')
       ?.focus()
@@ -206,41 +206,37 @@
               <td style="padding: var(--space-xs);">4-column grid container for form layout</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--surface-border);">
-              <td style="padding: var(--space-xs);"><code>.input-group</code></td>
-              <td style="padding: var(--space-xs);">Wrapper for label + input with flex column layout</td>
+              <td style="padding: var(--space-xs);"><code>field</code>, <code>field:w1</code> to <code>field:w3</code></td>
+              <td style="padding: var(--space-xs);">Field wrapper (default full width, variants for 1-3 columns)</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--surface-border);">
-              <td style="padding: var(--space-xs);"><code>.w-1</code> to <code>.w-4</code></td>
-              <td style="padding: var(--space-xs);">Width classes: 1-4 columns (25%-100%)</td>
+              <td style="padding: var(--space-xs);"><code>&lt;span&gt;</code></td>
+              <td style="padding: var(--space-xs);">Feedback message (inside field label)</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--surface-border);">
-              <td style="padding: var(--space-xs);"><code>.feedback</code></td>
-              <td style="padding: var(--space-xs);">Inline validation message (shown with input state)</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--surface-border);">
-              <td style="padding: var(--space-xs);"><code>.suc</code> / <code>.wrn</code> / <code>.err</code></td>
-              <td style="padding: var(--space-xs);">Input validation states</td>
+              <td style="padding: var(--space-xs);"><code>.suc</code> / <code>.wrn</code> / <code>.dgr</code> / <code>.inf</code></td>
+              <td style="padding: var(--space-xs);">Validation states (on span)</td>
             </tr>
           </tbody>
         </table>
 
         <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
         <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;form class="form"&gt;
-  &lt;label class="input-group w-4"&gt;
-    Email &lt;span class="feedback"&gt;Looks good!&lt;/span&gt;
-    &lt;input type="email" class="suc" /&gt;
+  &lt;label class="field"&gt;
+    Email &lt;span class="suc"&gt;Looks good!&lt;/span&gt;
+    &lt;input type="email" /&gt;
   &lt;/label&gt;
   
-  &lt;label class="input-group w-2"&gt;
+  &lt;label class="field:w2"&gt;
     First Name
     &lt;input type="text" /&gt;
   &lt;/label&gt;
-  &lt;label class="input-group w-2"&gt;
+  &lt;label class="field:w2"&gt;
     Last Name
     &lt;input type="text" /&gt;
   &lt;/label&gt;
   
-  &lt;button type="submit" class="w-4"&gt;Submit&lt;/button&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       </section>
 

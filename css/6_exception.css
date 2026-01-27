@@ -188,7 +188,7 @@
 
   /* === ICON BUTTON SIZES === */
   [class$="-sm"], [class*="-sm "] {
-    &:is([class*="icon-btn:"]) {
+    &:is([class~="icon-btn"], [class*="icon-btn:"], [class*="icon-btn-"]) {
       width: var(--size-px-7);
       & svg { width: var(--size-px-4); height: var(--size-px-4); }
     }
@@ -408,9 +408,9 @@
   input:is([type="text"], [type="email"], [type="password"], [type="search"], [type="tel"], [type="url"], [type="number"]),
   input:not([type]),
   textarea {
-    &.err {
-      border-color: var(--color-err);
-      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-err), transparent 85%); }
+    &.dgr {
+      border-color: var(--color-dgr);
+      &:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-dgr), transparent 85%); }
     }
     &.suc {
       border-color: var(--color-suc);

@@ -106,7 +106,7 @@
         <!-- Full Width -->
         <section class="flex:stack gap:sm">
           <h3 class="text:md">Full Width</h3>
-          <p class="text:sm">Append <code>-full</code> to stretch tabs.</p>
+          <p class="text:sm">Add <code>full</code> class to stretch tabs.</p>
           <div class="flex:stack gap:md" style="max-width: 400px;">
             <div class="tabs:pri full" data-signals:tab6="1">
               <button data-class:tab:active="$tab6===1" data-class:tab="$tab6!==1" data-on:click="$tab6=1">Tab1</button>
@@ -167,6 +167,22 @@
             </tbody>
           </table>
 
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Exceptions</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Exception</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>-sm</code></td>
+                <td style="padding: var(--space-xs);">Small size (e.g. <code>tabs:pri-sm</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+
           <h4 class="text:sm" style="margin-top: var(--space-sm);">Modifiers</h4>
           <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
             <thead>
@@ -177,11 +193,7 @@
             </thead>
             <tbody>
               <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>-sm</code></td>
-                <td style="padding: var(--space-xs);">Small size</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>-full</code></td>
+                <td style="padding: var(--space-xs);"><code>full</code></td>
                 <td style="padding: var(--space-xs);">Full width (tabs stretch)</td>
               </tr>
             </tbody>

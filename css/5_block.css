@@ -198,14 +198,14 @@
   }
 
   /* Form column spans */
-  .form .input-group.w-1 { grid-column: span 1; }
-  .form .input-group.w-2 { grid-column: span 2; }
-  .form .input-group.w-3 { grid-column: span 3; }
-  .form .input-group.w-4 { grid-column: span 4; }
+  .form [class~="field"], .form [class*="field:"] { grid-column: span 4; }
+  .form [class*="field:w1"] { grid-column: span 1; }
+  .form [class*="field:w2"] { grid-column: span 2; }
+  .form [class*="field:w3"] { grid-column: span 3; }
   .form :is(button, [class~="btn"], [class*="btn:"]).w-4 { grid-column: span 4; }
 
-  /* === INPUT GROUP === */
-  label.input-group {
+  /* === FIELD === */
+  label:is([class~="field"], [class*="field:"]) {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -214,17 +214,17 @@
     font-weight: 500;
     color: var(--text-color);
 
-    & .feedback {
+    & span {
       font-size: var(--text-xs);
       font-weight: 400;
       color: transparent;
       &::after { content: ""; }
     }
 
-    &:has(:required) .feedback::after { content: " *"; color: var(--text-color); }
-    &:has(:required.err) .feedback::after { color: var(--color-err); }
-    &:has(:required.wrn) .feedback::after { color: var(--color-wrn); }
-    &:has(:required.suc) .feedback::after { content: " ✓"; color: var(--color-suc); }
+    &:has(:required) span::after { content: " *"; color: var(--text-color); }
+    &:has(:required span.dgr) span::after { color: var(--color-dgr); }
+    &:has(:required span.wrn) span::after { color: var(--color-wrn); }
+    &:has(:required span.suc) span::after { content: " ✓"; color: var(--color-suc); }
 
     & input,
     & textarea {
@@ -236,10 +236,11 @@
 
     & textarea { resize: vertical; }
 
-    &:has(input.err) .feedback { color: var(--color-err); }
-    &:has(input.suc) .feedback { color: var(--color-suc); }
-    &:has(input.wrn) .feedback { color: var(--color-wrn); }
-    &:has(input.inf) .feedback { color: var(--color-inf); }
+    /* Feedback text and input border colors via sibling selector */
+    & span.dgr { color: var(--color-dgr); & ~ :is(input, textarea) { border: 1px solid var(--color-dgr); } }
+    & span.suc { color: var(--color-suc); & ~ :is(input, textarea) { border: 1px solid var(--color-suc); } }
+    & span.wrn { color: var(--color-wrn); & ~ :is(input, textarea) { border: 1px solid var(--color-wrn); } }
+    & span.inf { color: var(--color-inf); & ~ :is(input, textarea) { border: 1px solid var(--color-inf); } }
   }
 
   /* === INPUT === */

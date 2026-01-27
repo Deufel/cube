@@ -70,7 +70,8 @@ Pattern: `block:variant-exception` + modifier classes
 ### Tabs
 - Container: `tabs`, `tabs:pri`, `tabs:sec`
 - Items: `tab`, `tab:active`
-- Modifiers: `-sm` (small), `full` (full-width)
+- Exceptions: `-sm` suffix for small size (e.g., `tabs:pri-sm`)
+- Modifiers: `full` standalone class for full-width (e.g., `tabs:pri full`)
 
 ### Popups
 - Base: `popup`, `popup:menu`
@@ -81,10 +82,20 @@ Pattern: `block:variant-exception` + modifier classes
 - Use with `<dialog popover="manual">`
 
 ### Forms
-- Container: `.form` (4-column grid)
-- Input groups: `label.input-group`
-- Column spans: `.w-1`, `.w-2`, `.w-3`, `.w-4`
-- Validation states: `.err`, `.suc`, `.wrn`, `.inf`
+- Container: `form` (4-column grid)
+- Fields: `field` (default full width), `field:w1`, `field:w2`, `field:w3`
+- Feedback: `<span>` inside label, state shown via class
+- Validation states: `.suc`, `.wrn`, `.dgr`, `.inf` (on span, not input)
+
+```html
+<form class="form">
+  <label class="field">
+    Email <span class="dgr">Already registered</span>
+    <input type="email" required>
+  </label>
+  <label class="field:w2">Name <input type="text"></label>
+</form>
+```
 
 ## Layout Primitives
 
@@ -126,7 +137,44 @@ Pattern: `block:variant-exception` + modifier classes
 ### Spacing (t-shirt sizes)
 - `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
 
-### Surfaces
+### Surfaces (Well-Based Elevation System)
+
+The surface system uses CSS `:has()` to detect nesting depth automatically. Deepest containers get the darkest shade; leaf surfaces (containing no other surfaces) get the lightest — making content easiest to read.
+
+**How it works:**
+1. Card variants (`card.pri`, `card.sec`) set `--_surface-base`
+2. `.surface` elements inherit and auto-lighten based on nesting depth
+3. Maximum depth: grandparent → parent → leaf (3 levels)
+
+**Tokens:**
+- `--surface-1` — Deepest surface (page level)
+- `--surface-2` — Mid elevation
+- `--surface-3` — Content surface (lightest)
+- `--_surface-base` — Set by card variants; surfaces lighten from this
+
+**Classes:**
+- `.surface` — Background from `--_surface-base`, auto-lightens based on nesting
+- `.shadow` — Adds `--shadow-md` box-shadow for depth cues
+
+**Usage:**
+```html
+<!-- Card sets the surface base -->
+<div class="card pri">
+  <div class="surface shadow">Leaf surface</div>
+</div>
+
+<!-- Nested surfaces auto-elevate -->
+<div class="card sec">
+  <div class="surface">
+    Parent (darker)
+    <div class="surface">Leaf (lighter)</div>
+  </div>
+</div>
+```
+
+**Real-world example:** Calendar with year → month → day hierarchy where each level auto-adjusts its shade.
+
+### Other Surface Tokens
 - `--surface-page`, `--surface-card`, `--surface-raised`
 - `--surface-inset`, `--surface-input`, `--surface-btn`
 
