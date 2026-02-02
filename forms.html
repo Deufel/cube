@@ -142,11 +142,11 @@
         <p class="text:sm">Tabs can be used inside forms with the <code>field:w*</code> classes. They auto-match input height and support validation states.</p>
         <div class="card gla" style="resize: horizontal; overflow: auto; min-width: 250px; max-width: 100%;">
           <form class="form">
-            <label class="field:w2">
+<label class="field:w2">
               Type
-              <div class="tabs">
-                <button type="button" class="tab on" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Sampling</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Special</button>
+              <div class="tabs" data-init="$type='sampling'">
+                <button type="button" class="tab" data-on:click="$type='sampling'" data-class:tab:active="$type=='sampling'">Sampling</button>
+                <button type="button" class="tab" data-on:click="$type='special'" data-class:tab:active="$type=='special'">Special</button>
               </div>
             </label>
             <label class="field:w2">
@@ -156,20 +156,35 @@
             
             <label class="field">
               Visibility
-              <div class="tabs">
-                <button type="button" class="tab on" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Draft</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Internal</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Supplier</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Public</button>
+              <div class="tabs" data-init="$visibility='draft'">
+                <button type="button" class="tab" data-on:click="$visibility='draft'" data-class:tab:active="$visibility=='draft'">Draft</button>
+                <button type="button" class="tab" data-on:click="$visibility='internal'" data-class:tab:active="$visibility=='internal'">Internal</button>
+                <button type="button" class="tab" data-on:click="$visibility='supplier'" data-class:tab:active="$visibility=='supplier'">Supplier</button>
+                <button type="button" class="tab" data-on:click="$visibility='public'" data-class:tab:active="$visibility=='public'">Public</button>
               </div>
             </label>
             
-            <label class="field">
-              Status <span class="wrn">Required</span>
-              <div class="tabs wrn">
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Pending</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Active</button>
-                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Complete</button>
+            <label class="field:w4">
+              Status <span class="dgr">Required</span>
+              <div class="tabs" data-init="$form-status='pending'">
+                <button 
+		    type="button" class="tab" 
+		    data-on:click="$form-status='pending'"
+		    data-class:tab:active="$form-status == 'pending' ">
+	            Pending
+		</button>
+                <button 
+		    type="button" class="tab" 
+		    data-on:click="$form-status='approved'"
+		    data-class:tab:active="$form-status == 'approved' ">
+	            Approved 
+		</button>
+                <button 
+		    type="button" class="tab" 
+		    data-on:click="$form-status='completed'"
+		    data-class:tab:active="$form-status == 'completed' ">
+		    Completed	            
+		</button>
               </div>
             </label>
           </form>

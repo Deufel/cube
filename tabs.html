@@ -39,7 +39,7 @@
     <div id="nav-drawer"></div>
 
     <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+      <article class="flex:stack gap:md p:sm" style="max-width: 800px;">
         
         <header class="flex:stack gap:xs">
           <h1 class="text:lg">Tabs</h1>
@@ -49,14 +49,14 @@
         <hr>
 
         <!-- Base -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack gap:xs">
           <h3 class="text:md">Base</h3>
           <p class="text:sm">Default tabs with primary color.</p>
-          <div class="flex:stack gap:md">
-            <div class="tabs:pri" data-signals:tab1="1">
-              <button data-class:tab:active="$tab1===1" data-class:tab="$tab1!==1" data-on:click="$tab1=1">Tab1</button>
-              <button data-class:tab:active="$tab1===2" data-class:tab="$tab1!==2" data-on:click="$tab1=2">Tab2</button>
-              <button data-class:tab:active="$tab1===3" data-class:tab="$tab1!==3" data-on:click="$tab1=3">Tab3</button>
+          <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+            <div class="tabs:pri" data-init="$demo1='tab1'">
+              <button class="tab" data-class:tab:active="$demo1=='tab1'" data-on:click="$demo1='tab1'">Tab1</button>
+              <button class="tab" data-class:tab:active="$demo1=='tab2'" data-on:click="$demo1='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo1=='tab3'" data-on:click="$demo1='tab3'">Tab3</button>
             </div>
           </div>
         </section>
@@ -64,19 +64,19 @@
         <hr>
 
         <!-- Variants -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack gap:xs">
           <h3 class="text:md">Variants</h3>
           <p class="text:sm">Color variants using <code>tabs:variant</code> pattern.</p>
-          <div class="flex:stack gap:md">
-            <div class="tabs:pri" data-signals:tab2="1">
-              <button data-class:tab:active="$tab2===1" data-class:tab="$tab2!==1" data-on:click="$tab2=1">Tab1</button>
-              <button data-class:tab:active="$tab2===2" data-class:tab="$tab2!==2" data-on:click="$tab2=2">Tab2</button>
-              <button data-class:tab:active="$tab2===3" data-class:tab="$tab2!==3" data-on:click="$tab2=3">Tab3</button>
+          <div class="card gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+            <div class="tabs:pri" data-init="$demo2='tab1'">
+              <button class="tab" data-class:tab:active="$demo2=='tab1'" data-on:click="$demo2='tab1'">Tab1</button>
+              <button class="tab" data-class:tab:active="$demo2=='tab2'" data-on:click="$demo2='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo2=='tab3'" data-on:click="$demo2='tab3'">Tab3</button>
             </div>
-            <div class="tabs:sec" data-signals:tab3="1">
-              <button data-class:tab:active="$tab3===1" data-class:tab="$tab3!==1" data-on:click="$tab3=1">Tab1</button>
-              <button data-class:tab:active="$tab3===2" data-class:tab="$tab3!==2" data-on:click="$tab3=2">Tab2</button>
-              <button data-class:tab:active="$tab3===3" data-class:tab="$tab3!==3" data-on:click="$tab3=3">Tab3</button>
+            <div class="tabs:sec" data-init="$demo3='tab1'">
+              <button class="tab" data-class:tab:active="$demo3=='tab1'" data-on:click="$demo3='tab1'">Tab1</button>
+              <button class="tab" data-class:tab:active="$demo3=='tab2'" data-on:click="$demo3='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo3=='tab3'" data-on:click="$demo3='tab3'">Tab3</button>
             </div>
           </div>
         </section>
@@ -84,19 +84,19 @@
         <hr>
 
         <!-- Sizes -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack gap:xs">
           <h3 class="text:md">Sizes</h3>
           <p class="text:sm">Append <code>-sm</code> for smaller tabs.</p>
-          <div class="flex:stack gap:md">
-            <div class="tabs:pri" data-signals:tab4="1">
-              <button data-class:tab:active="$tab4===1" data-class:tab="$tab4!==1" data-on:click="$tab4=1">Default</button>
-              <button data-class:tab:active="$tab4===2" data-class:tab="$tab4!==2" data-on:click="$tab4=2">Tab2</button>
-              <button data-class:tab:active="$tab4===3" data-class:tab="$tab4!==3" data-on:click="$tab4=3">Tab3</button>
+          <div class="card gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+            <div class="tabs:pri" data-init="$demo4='tab1'">
+              <button class="tab" data-class:tab:active="$demo4=='tab1'" data-on:click="$demo4='tab1'">Default</button>
+              <button class="tab" data-class:tab:active="$demo4=='tab2'" data-on:click="$demo4='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo4=='tab3'" data-on:click="$demo4='tab3'">Tab3</button>
             </div>
-            <div class="tabs:pri-sm" data-signals:tab5="1">
-              <button data-class:tab:active="$tab5===1" data-class:tab="$tab5!==1" data-on:click="$tab5=1">Small</button>
-              <button data-class:tab:active="$tab5===2" data-class:tab="$tab5!==2" data-on:click="$tab5=2">Tab2</button>
-              <button data-class:tab:active="$tab5===3" data-class:tab="$tab5!==3" data-on:click="$tab5=3">Tab3</button>
+            <div class="tabs:pri-sm" data-init="$demo5='tab1'">
+              <button class="tab" data-class:tab:active="$demo5=='tab1'" data-on:click="$demo5='tab1'">Small</button>
+              <button class="tab" data-class:tab:active="$demo5=='tab2'" data-on:click="$demo5='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo5=='tab3'" data-on:click="$demo5='tab3'">Tab3</button>
             </div>
           </div>
         </section>
@@ -104,19 +104,19 @@
         <hr>
 
         <!-- Full Width -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack gap:xs">
           <h3 class="text:md">Full Width</h3>
           <p class="text:sm">Add <code>full</code> class to stretch tabs.</p>
-          <div class="flex:stack gap:md" style="max-width: 400px;">
-            <div class="tabs:pri full" data-signals:tab6="1">
-              <button data-class:tab:active="$tab6===1" data-class:tab="$tab6!==1" data-on:click="$tab6=1">Tab1</button>
-              <button data-class:tab:active="$tab6===2" data-class:tab="$tab6!==2" data-on:click="$tab6=2">Tab2</button>
-              <button data-class:tab:active="$tab6===3" data-class:tab="$tab6!==3" data-on:click="$tab6=3">Tab3</button>
+          <div class="card gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px; max-width: 400px;">
+            <div class="tabs:pri full" data-init="$demo6='tab1'">
+              <button class="tab" data-class:tab:active="$demo6=='tab1'" data-on:click="$demo6='tab1'">Tab1</button>
+              <button class="tab" data-class:tab:active="$demo6=='tab2'" data-on:click="$demo6='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo6=='tab3'" data-on:click="$demo6='tab3'">Tab3</button>
             </div>
-            <div class="tabs:sec full" data-signals:tab7="1">
-              <button data-class:tab:active="$tab7===1" data-class:tab="$tab7!==1" data-on:click="$tab7=1">Tab1</button>
-              <button data-class:tab:active="$tab7===2" data-class:tab="$tab7!==2" data-on:click="$tab7=2">Tab2</button>
-              <button data-class:tab:active="$tab7===3" data-class:tab="$tab7!==3" data-on:click="$tab7=3">Tab3</button>
+            <div class="tabs:sec full" data-init="$demo7='tab1'">
+              <button class="tab" data-class:tab:active="$demo7=='tab1'" data-on:click="$demo7='tab1'">Tab1</button>
+              <button class="tab" data-class:tab:active="$demo7=='tab2'" data-on:click="$demo7='tab2'">Tab2</button>
+              <button class="tab" data-class:tab:active="$demo7=='tab3'" data-on:click="$demo7='tab3'">Tab3</button>
             </div>
           </div>
         </section>
@@ -124,7 +124,7 @@
         <hr>
 
         <!-- API Reference -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack gap:xs">
           <h3 class="text:md">API Reference</h3>
           
           <h4 class="text:sm">Container</h4>
@@ -200,24 +200,23 @@
           </table>
 
           <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Primary tabs --&gt;
-&lt;div class="tabs:pri"&gt;
-  &lt;button class="tab:active"&gt;Tab1&lt;/button&gt;
-  &lt;button class="tab"&gt;Tab2&lt;/button&gt;
-  &lt;button class="tab"&gt;Tab3&lt;/button&gt;
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Primary tabs with Datastar signals --&gt;
+&lt;div class="tabs:pri" data-init="$mytab='first'"&gt;
+  &lt;button class="tab" 
+    data-class:tab:active="$mytab=='first'" 
+    data-on:click="$mytab='first'"&gt;First&lt;/button&gt;
+  &lt;button class="tab" 
+    data-class:tab:active="$mytab=='second'" 
+    data-on:click="$mytab='second'"&gt;Second&lt;/button&gt;
+  &lt;button class="tab" 
+    data-class:tab:active="$mytab=='third'" 
+    data-on:click="$mytab='third'"&gt;Third&lt;/button&gt;
 &lt;/div&gt;
 
-&lt;!-- Small secondary tabs --&gt;
-&lt;div class="tabs:sec-sm"&gt;
-  &lt;button class="tab:active"&gt;Tab1&lt;/button&gt;
-  &lt;button class="tab"&gt;Tab2&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;!-- Full width --&gt;
-&lt;div class="tabs:pri full"&gt;
-  &lt;button class="tab:active"&gt;Tab1&lt;/button&gt;
-  &lt;button class="tab"&gt;Tab2&lt;/button&gt;
-  &lt;button class="tab"&gt;Tab3&lt;/button&gt;
+&lt;!-- Full width secondary tabs --&gt;
+&lt;div class="tabs:sec full" data-init="$status='active'"&gt;
+  &lt;button class="tab" data-class:tab:active="$status=='active'" data-on:click="$status='active'"&gt;Active&lt;/button&gt;
+  &lt;button class="tab" data-class:tab:active="$status=='archived'" data-on:click="$status='archived'"&gt;Archived&lt;/button&gt;
 &lt;/div&gt;</code></pre>
         </section>
 
