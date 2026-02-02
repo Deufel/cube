@@ -115,10 +115,11 @@ Validation states (`.err`, `.suc`, `.wrn`, `.inf`) can be applied to the tabs co
 - Use with `<dialog popover="manual">`
 
 ### Forms
-- Container: `form` (4-column grid)
+- Container: `.form` (4-column grid)
 - Fields: `field` (default full width), `field:w1`, `field:w2`, `field:w3`
-- Feedback: `<span>` inside label, state shown via class
-- Validation states: `.suc`, `.wrn`, `.dgr`, `.inf` (on span, not input)
+- Use `<label class="field">` for inputs, `<div class="field">` for tabs (avoids click propagation)
+- Feedback: `<span>` inside field, validation via span class
+- Validation states: `.suc`, `.wrn`, `.dgr` (on span)
 
 ```html
 <form class="form">
@@ -126,7 +127,13 @@ Validation states (`.err`, `.suc`, `.wrn`, `.inf`) can be applied to the tabs co
     Email <span class="dgr">Already registered</span>
     <input type="email" required>
   </label>
-  <label class="field:w2">Name <input type="text"></label>
+  <div class="field:w2">
+    Status <span class="wrn">Required</span>
+    <div class="tabs" data-init="$status='pending'">
+      <button class="tab" data-class:tab:active="$status=='pending'" data-on:click="$status='pending'">Pending</button>
+      <button class="tab" data-class:tab:active="$status=='active'" data-on:click="$status='active'">Active</button>
+    </div>
+  </div>
 </form>
 ```
 

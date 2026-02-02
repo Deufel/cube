@@ -225,8 +225,8 @@
       }
     }
     
-    /* Validation states via span in label (matches input pattern) */
-    label:is([class~="field"], [class*="field:"]):has(:is([class~="tabs"], [class*="tabs:"])) {
+    /* Validation states via span in field (matches input pattern) */
+    :is(label, div):is([class~="field"], [class*="field:"]):has(:is([class~="tabs"], [class*="tabs:"])) {
       &:has(span.dgr) :is([class~="tabs"], [class*="tabs:"]) { border-color: var(--color-dgr); }
       &:has(span.wrn) :is([class~="tabs"], [class*="tabs:"]) { border-color: var(--color-wrn); }
       &:has(span.suc) :is([class~="tabs"], [class*="tabs:"]) { border-color: var(--color-suc); }
@@ -243,13 +243,14 @@
   
 
   /* === FIELD === */
-  label:is([class~="field"], [class*="field:"]) {
+  :is(label, div):is([class~="field"], [class*="field:"]) {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: var(--space-xs);
     font-size: var(--text-sm);
     font-weight: 500;
+    line-height: 1.1;
     color: var(--text-color);
 
     & span {
@@ -290,7 +291,7 @@
     padding-inline: var(--space-sm);
     font-size: var(--text-md);
     line-height: 1;
-    background: var(--surface-input);
+    background: var(--surface-inset);
     color: var(--text-color);
     border: 1px solid var(--border-muted);
     border-radius: var(--radius-btn);

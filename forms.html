@@ -104,6 +104,14 @@
                     <textarea rows="2" placeholder="Additional details..."></textarea>
                   </label>
                   
+                  <div class="field">
+                    Terms and Conditions <span class="wrn"><a href="#">View terms</a></span>
+                    <div class="tabs" data-init="$agree='no'">
+                      <button type="button" class="tab" data-on:click="$agree='no'" data-class:tab:active="$agree=='no'">I do not agree</button>
+                      <button type="button" class="tab" data-on:click="$agree='yes'" data-class:tab:active="$agree=='yes'">I agree</button>
+                    </div>
+                  </div>
+                  
                   <button type="submit" class="w-4">Submit</button>
                 </form>
               </div>
@@ -114,36 +122,33 @@
               <p class="text:xs" style="color: var(--text-muted);">Tabs auto-match input height and support validation states.</p>
               <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 250px;">
                 <form class="form">
-                  <label class="field:w2">
+                  <div class="field:w2">
                     Type
                     <div class="tabs" data-init="$type='sampling'">
                       <button type="button" class="tab" data-on:click="$type='sampling'" data-class:tab:active="$type=='sampling'">Sampling</button>
                       <button type="button" class="tab" data-on:click="$type='special'" data-class:tab:active="$type=='special'">Special</button>
                     </div>
-                  </label>
+                  </div>
                   <label class="field:w2">
                     Title
                     <input type="text" placeholder="Event name..." />
                   </label>
                   
-                  <label class="field">
-                    Visibility
+                  <div class="field:w2">
+                    Visibility <span class="suc">Valid</span>
                     <div class="tabs" data-init="$visibility='draft'">
                       <button type="button" class="tab" data-on:click="$visibility='draft'" data-class:tab:active="$visibility=='draft'">Draft</button>
-                      <button type="button" class="tab" data-on:click="$visibility='internal'" data-class:tab:active="$visibility=='internal'">Internal</button>
-                      <button type="button" class="tab" data-on:click="$visibility='supplier'" data-class:tab:active="$visibility=='supplier'">Supplier</button>
                       <button type="button" class="tab" data-on:click="$visibility='public'" data-class:tab:active="$visibility=='public'">Public</button>
                     </div>
-                  </label>
+                  </div>
                   
-                  <label class="field">
-                    Status <span class="wrn">Required</span>
-                    <div class="tabs wrn" data-init="$status='pending'">
+                  <div class="field:w2">
+                    Status <span class="dgr">Required</span>
+                    <div class="tabs" data-init="$status='pending'">
                       <button type="button" class="tab" data-on:click="$status='pending'" data-class:tab:active="$status=='pending'">Pending</button>
-                      <button type="button" class="tab" data-on:click="$status='active'" data-class:tab:active="$status=='active'">Active</button>
                       <button type="button" class="tab" data-on:click="$status='complete'" data-class:tab:active="$status=='complete'">Complete</button>
                     </div>
-                  </label>
+                  </div>
                 </form>
               </div>
             </section>
@@ -166,6 +171,26 @@
                   <tr style="border-bottom: 1px solid var(--surface-border);">
                     <td style="padding: var(--space-xs);"><code>.form</code></td>
                     <td style="padding: var(--space-xs);">4-column grid container</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4 class="text:xs">Field Elements</h4>
+              <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--surface-border);">
+                    <th style="text-align: left; padding: var(--space-xs);">Element</th>
+                    <th style="text-align: left; padding: var(--space-xs);">Use for</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--surface-border);">
+                    <td style="padding: var(--space-xs);"><code>&lt;label class="field"&gt;</code></td>
+                    <td style="padding: var(--space-xs);">Inputs, textareas</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--surface-border);">
+                    <td style="padding: var(--space-xs);"><code>&lt;div class="field"&gt;</code></td>
+                    <td style="padding: var(--space-xs);">Tabs (avoids click propagation)</td>
                   </tr>
                 </tbody>
               </table>
@@ -253,18 +278,18 @@
   &lt;button type="submit" class="w-4"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
 
-&lt;!-- Tabs in form field --&gt;
-&lt;label class="field:w2"&gt;
-  Type
-  &lt;div class="tabs" data-init="$type='a'"&gt;
+&lt;!-- Tabs in form field (use div, not label) --&gt;
+&lt;div class="field:w2"&gt;
+  Status &lt;span class="wrn"&gt;Required&lt;/span&gt;
+  &lt;div class="tabs" data-init="$status='pending'"&gt;
     &lt;button type="button" class="tab" 
-      data-on:click="$type='a'" 
-      data-class:tab:active="$type=='a'"&gt;Option A&lt;/button&gt;
+      data-on:click="$status='pending'" 
+      data-class:tab:active="$status=='pending'"&gt;Pending&lt;/button&gt;
     &lt;button type="button" class="tab" 
-      data-on:click="$type='b'" 
-      data-class:tab:active="$type=='b'"&gt;Option B&lt;/button&gt;
+      data-on:click="$status='active'" 
+      data-class:tab:active="$status=='active'"&gt;Active&lt;/button&gt;
   &lt;/div&gt;
-&lt;/label&gt;</code></pre>
+&lt;/div&gt;</code></pre>
         </article>
 
         <hr>
