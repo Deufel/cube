@@ -1,4 +1,9 @@
 @layer utility {
+  /* === WIDTH === */
+  .width-sm { max-width: 900px; margin-inline: auto; }
+  .width-md { max-width: 1200px; margin-inline: auto; }
+  .width-lg { max-width: 100%; }
+
   /* === ALIGNMENT === */
   [class*="align:start"] { align-items: flex-start; }
   [class*="align:end"] { align-items: flex-end; }

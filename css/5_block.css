@@ -5,7 +5,7 @@
     background: var(--color-hr);
     block-size: 1px;
     inline-size: 100%;
-    margin-block: var(--space-md);
+    margin: 0;
   }
 
   [class*="divider:text"] {

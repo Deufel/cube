@@ -44,5 +44,23 @@
           data-on:click="$prst_mode = 'dark'">Dark</button>
       </div>
     </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Width</h3>
+      <div class="tabs:pri-sm full">
+        <button 
+          data-class:tab:active="$prst_width === 'width-sm'"
+          data-class:tab="$prst_width !== 'width-sm'"
+          data-on:click="$prst_width = 'width-sm'">Small</button>
+        <button 
+          data-class:tab:active="$prst_width === 'width-md'"
+          data-class:tab="$prst_width !== 'width-md'"
+          data-on:click="$prst_width = 'width-md'">Medium</button>
+        <button 
+          data-class:tab:active="$prst_width === 'width-lg'"
+          data-class:tab="$prst_width !== 'width-lg'"
+          data-on:click="$prst_width = 'width-lg'">Large</button>
+      </div>
+    </section>
   </div>
 </dialog>
