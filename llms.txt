@@ -73,6 +73,39 @@ Pattern: `block:variant-exception` + modifier classes
 - Exceptions: `-sm` suffix for small size (e.g., `tabs:pri-sm`)
 - Modifiers: `full` standalone class for full-width (e.g., `tabs:pri full`)
 
+**Datastar Active State (Recommended):**
+Use signals for reactive tab switching instead of manual class toggling:
+
+```html
+<div class="tabs:pri" data-init="$mytab='first'">
+  <button class="tab" 
+    data-class:tab:active="$mytab=='first'" 
+    data-on:click="$mytab='first'">First</button>
+  <button class="tab" 
+    data-class:tab:active="$mytab=='second'" 
+    data-on:click="$mytab='second'">Second</button>
+</div>
+```
+
+- `data-init` sets the default active tab signal
+- `data-class:tab:active` reactively applies the active class
+- `data-on:click` updates the signal on click
+
+**Tabs in Forms:**
+Tabs work inside `.form` with `field:w*` classes, matching input height automatically:
+
+```html
+<label class="field:w2">
+  Status
+  <div class="tabs" data-init="$status='draft'">
+    <button type="button" class="tab" data-class:tab:active="$status=='draft'" data-on:click="$status='draft'">Draft</button>
+    <button type="button" class="tab" data-class:tab:active="$status=='published'" data-on:click="$status='published'">Published</button>
+  </div>
+</label>
+```
+
+Validation states (`.err`, `.suc`, `.wrn`, `.inf`) can be applied to the tabs container.
+
 ### Popups
 - Base: `popup`, `popup:menu`
 - Items: `.popup-item`
@@ -97,28 +130,91 @@ Pattern: `block:variant-exception` + modifier classes
 </form>
 ```
 
-## Layout Primitives
+## Layout Compositions
+
+Structural primitives — the "what" of layout. Use without utilities in demos; add utilities to tune.
 
 ### Flex
-- `flex:stack` - vertical stack
-- `flex:cluster` - wrapping horizontal
-- `flex:split` - space-between with alignment
-- `flex:flank` - sidebar + content layout
-- `flex:spread-row`, `flex:spread-column`
+| Class | Purpose |
+|-------|---------|
+| `flex:stack` | Vertical column |
+| `flex:cluster` | Wrapping horizontal row |
+| `flex:split` | Space-between with center alignment |
+| `flex:split-col` | Vertical split |
+| `flex:flank-start` | First child sidebar, second fills |
+| `flex:flank-end` | First child fills, last child sidebar |
+| `flex:spread-row` | Horizontal space-between |
+| `flex:spread-column` | Vertical space-between |
+
+**Custom Properties:**
+- `--flank-size` — sidebar width (default: auto)
+- `--content-percentage` — min content width (default: 50%)
 
 ### Grid
-- `grid:hero` - holy grail layout (header/nav/main/aside/footer)
-- `grid:lcr` - left-center-right
-- `grid:tmb` - top-middle-bottom
-- `grid:pancake` - auto/1fr/auto rows
-- `grid:auto-fit`, `grid:auto-fill` - responsive grids
+| Class | Purpose |
+|-------|---------|
+| `grid:hero` | Holy grail (header/nav/main/aside/footer) |
+| `grid:lcr` | Left-center-right columns |
+| `grid:tmb` | Top-middle-bottom rows |
+| `grid:pancake` | auto/1fr/auto rows |
+| `grid:auto-fit` | Responsive, collapses empty tracks |
+| `grid:auto-fill` | Responsive, keeps empty tracks |
 
-### Utility Classes
-- Gap: `gap:xs`, `gap:sm`, `gap:md`, `gap:lg`, `gap:xl`
-- Padding: `p:xs`, `p:sm`, `p:md`, `p:lg`
-- Alignment: `align:center`, `justify:center`
-- Scroll: `scroll-y`, `scroll-no`
-- Fullscreen: `fullscreen`
+**Custom Properties:**
+- `--grid-min` — minimum column width for auto-fit/fill (default: 250px)
+
+### Frame (Aspect Ratio)
+| Class | Ratio |
+|-------|-------|
+| `frame` | 1:1 (square) |
+| `frame:landscape` | 16:9 |
+| `frame:portrait` | 9:16 |
+
+### Fullscreen
+- `fullscreen` — 100svh, no margin/padding, hidden overflow
+
+## Layout Utilities
+
+Modifiers for compositions — the "how" of tuning layouts. Use sparingly at the composition level, not on every element. Blocks define their own spacing.
+
+### Gap (spacing between children)
+`gap:xs`, `gap:sm`, `gap:md`, `gap:lg`, `gap:xl`
+
+### Alignment (cross-axis)
+`align:start`, `align:end`, `align:center`, `align:stretch`, `align:baseline`
+
+### Justify (main-axis)
+`justify:start`, `justify:end`, `justify:center`, `justify:between`, `justify:around`, `justify:evenly`
+
+### Padding
+`p:xs`, `p:sm`, `p:md`, `p:lg`, `p:xl`
+
+> Use for layout containers before blocks are added. Blocks have their own padding.
+
+### Margin
+`m:xs`, `m:sm`, `m:md`, `m:lg`, `m:xl`
+
+> Use sparingly — prefer gap for spacing between siblings.
+
+### Scroll
+`scroll-y`, `scroll-x`, `scroll-xy`, `scroll-no`
+
+### Wrap
+`wrap`, `nowrap`
+
+### Width Constraints
+| Class | Max-width |
+|-------|-----------|
+| `width-sm` | 900px (centered) |
+| `width-md` | 1200px (centered) |
+| `width-lg` | 100% |
+
+### Text Size
+`text:xs`, `text:sm`, `text:md`, `text:lg`, `text:xl`
+
+### Responsive Visibility
+- `.desktop` — hidden on ≤768px
+- `.mobile` — hidden on >768px
 
 ## Design Tokens
 
@@ -139,22 +235,22 @@ Pattern: `block:variant-exception` + modifier classes
 
 ### Surfaces (Well-Based Elevation System)
 
-The surface system uses CSS `:has()` to detect nesting depth automatically. Deepest containers get the darkest shade; leaf surfaces (containing no other surfaces) get the lightest — making content easiest to read.
+The surface system uses CSS `:has()` to detect nesting depth automatically. Deepest containers get the darkest shade; leaf surfaces (containing no other surfaces) get the lightest shade making content easiest to read.
 
 **How it works:**
 1. Card variants (`card.pri`, `card.sec`) set `--_surface-base`
 2. `.surface` elements inherit and auto-lighten based on nesting depth
-3. Maximum depth: grandparent → parent → leaf (3 levels)
+3. Maximum depth: 3 levels 
 
 **Tokens:**
-- `--surface-1` — Deepest surface (page level)
-- `--surface-2` — Mid elevation
-- `--surface-3` — Content surface (lightest)
-- `--_surface-base` — Set by card variants; surfaces lighten from this
+- `--surface-1` Deepest surface (page level)
+- `--surface-2` Mid elevation
+- `--surface-3` Content surface (lightest)
+- `--_surface-base` Set by card variants; surfaces lighten from this
 
 **Classes:**
-- `.surface` — Background from `--_surface-base`, auto-lightens based on nesting
-- `.shadow` — Adds `--shadow-md` box-shadow for depth cues
+- `.surface` Background from `--_surface-base`, auto-lightens based on nesting
+- `.shadow` Adds `--shadow-md` box-shadow for depth cues
 
 **Usage:**
 ```html
@@ -172,7 +268,7 @@ The surface system uses CSS `:has()` to detect nesting depth automatically. Deep
 </div>
 ```
 
-**Real-world example:** Calendar with year → month → day hierarchy where each level auto-adjusts its shade.
+**Real-world example:** Calendar with year > month > day hierarchy where each level auto-adjusts its shade.
 
 ### Other Surface Tokens
 - `--surface-page`, `--surface-card`, `--surface-raised`
@@ -236,7 +332,8 @@ Default holy grail structure using hero grid:
 
 - index.html - Readme/overview
 - colors.html - Color palette reference
-- layout.html - Composition and utility classes
+- layout.html - Layout compositions (flex, grid, frame)
+- layout_utility.html - Layout utilities (gap, align, justify, padding)
 - button.html - Button component
 - icon_btn.html - Icon button
 - chips.html - Chip/tag component
@@ -245,6 +342,7 @@ Default holy grail structure using hero grid:
 - cards.html - Card component
 - surface.html - Surface styles
 - popup.html - Popup/dropdown
+- dialogs.html - Dialogs and drawers
 - hr.html - Dividers
 - forms.html - Form layout and inputs
 - demos.html - Full page demos

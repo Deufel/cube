@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Utilities - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="./css/0_reset.css">
+  <link rel="stylesheet" href="./css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme">
+  <link rel="stylesheet" href="./css/3_composition.css">
+  <link rel="stylesheet" href="./css/4_utility.css">
+  <link rel="stylesheet" href="./css/5_block.css">
+  <link rel="stylesheet" href="./css/6_exception.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'"
+  data-signals:prst_width="'width-md'"
+  data-class:width-sm="$prst_width === 'width-sm'"
+  data-class:width-md="$prst_width === 'width-md'"
+  data-class:width-lg="$prst_width === 'width-lg'">
+    
+  <div class="grid:hero">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
+        
+        <header class="flex:stack">
+          <h1 class="text:lg">Layout Utilities</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Single-purpose classes from <code>4_utility.css</code> that modify compositions. Use <code>gap:*</code> for spacing, <code>align:*</code> and <code>justify:*</code> for positioning, and <code>p:*</code> for padding.</p>
+        </header>
+
+        <hr>
+
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
+          
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            
+            <!-- Gap -->
+            <section class="flex:stack">
+              <h3 class="text:md">Gap Utilities</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Control spacing between children without margins.</p>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                <div class="flex:stack gap:md">
+                  
+                  <div><code>flex:cluster gap:xs</code></div>
+                  <div class="flex:cluster gap:xs">
+                    <div class="card">A</div><div class="card">B</div><div class="card">C</div>
+                  </div>
+                  
+                  <div><code>flex:cluster gap:md</code></div>
+                  <div class="flex:cluster gap:md">
+                    <div class="card">A</div><div class="card">B</div><div class="card">C</div>
+                  </div>
+                  
+                  <div><code>flex:cluster gap:xl</code></div>
+                  <div class="flex:cluster gap:xl">
+                    <div class="card">A</div><div class="card">B</div><div class="card">C</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            <!-- Alignment -->
+            <section class="flex:stack">
+              <h3 class="text:md">Alignment Utilities</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Cross-axis alignment with <code>align:*</code>.</p>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                <div class="flex:stack gap:md">
+                  
+                  <div><code>flex:cluster align:start</code></div>
+                  <div class="flex:cluster align:start gap:sm" style="height: 80px; background: var(--surface-inset);">
+                    <div class="card" style="height: 60px;">Tall</div><div class="card" style="height: 32px;">Short</div>
+                  </div>
+                  
+                  <div><code>flex:cluster align:center</code></div>
+                  <div class="flex:cluster align:center gap:sm" style="height: 80px; background: var(--surface-inset);">
+                    <div class="card" style="height: 60px;">Tall</div><div class="card" style="height: 32px;">Short</div>
+                  </div>
+                  
+                  <div><code>flex:cluster align:end</code></div>
+                  <div class="flex:cluster align:end gap:sm" style="height: 80px; background: var(--surface-inset);">
+                    <div class="card" style="height: 60px;">Tall</div><div class="card" style="height: 32px;">Short</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            <!-- Justify -->
+            <section class="flex:stack">
+              <h3 class="text:md">Justify Utilities</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Main-axis distribution with <code>justify:*</code>.</p>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                <div class="flex:stack gap:md">
+                  
+                  <div><code>flex:cluster justify:start</code></div>
+                  <div class="flex:cluster justify:start gap:sm" style="background: var(--surface-inset);">
+                    <div class="card">A</div><div class="card">B</div>
+                  </div>
+                  
+                  <div><code>flex:cluster justify:center</code></div>
+                  <div class="flex:cluster justify:center gap:sm" style="background: var(--surface-inset);">
+                    <div class="card">A</div><div class="card">B</div>
+                  </div>
+                  
+                  <div><code>flex:cluster justify:end</code></div>
+                  <div class="flex:cluster justify:end gap:sm" style="background: var(--surface-inset);">
+                    <div class="card">A</div><div class="card">B</div>
+                  </div>
+                  
+                  <div><code>flex:cluster justify:between</code></div>
+                  <div class="flex:cluster justify:between" style="background: var(--surface-inset);">
+                    <div class="card">A</div><div class="card">B</div><div class="card">C</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            <!-- Padding -->
+            <section class="flex:stack">
+              <h3 class="text:md">Padding Utilities</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Inner spacing with <code>p:*</code>.</p>
+              <div class="card gla p:sm flex:cluster gap:md" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                
+                <div class="flex:stack gap:xs">
+                  <code>p:xs</code>
+                  <div class="p:xs" style="background: var(--surface-inset);">Content</div>
+                </div>
+                
+                <div class="flex:stack gap:xs">
+                  <code>p:sm</code>
+                  <div class="p:sm" style="background: var(--surface-inset);">Content</div>
+                </div>
+                
+                <div class="flex:stack gap:xs">
+                  <code>p:md</code>
+                  <div class="p:md" style="background: var(--surface-inset);">Content</div>
+                </div>
+                
+                <div class="flex:stack gap:xs">
+                  <code>p:lg</code>
+                  <div class="p:lg" style="background: var(--surface-inset);">Content</div>
+                </div>
+                
+              </div>
+            </section>
+
+            <!-- Margin -->
+            <section class="flex:stack">
+              <h3 class="text:md">Margin Utilities</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Outer spacing with <code>m:*</code>.</p>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                <div class="flex:stack gap:md">
+                  
+                  <div><code>m:xs</code> (small outer spacing)</div>
+                  <div style="background: var(--surface-inset);">
+                    <div class="card m:xs">Content</div>
+                  </div>
+                  
+                  <div><code>m:md</code> (medium outer spacing)</div>
+                  <div style="background: var(--surface-inset);">
+                    <div class="card m:md">Content</div>
+                  </div>
+                  
+                  <div><code>m:lg</code> (large outer spacing)</div>
+                  <div style="background: var(--surface-inset);">
+                    <div class="card m:lg">Content</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+            <!-- Combined Example -->
+            <section class="flex:stack">
+              <h3 class="text:md">Combined Example</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Real-world pattern: card grid with centered content.</p>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+                <div class="grid:auto-fit gap:md" style="--grid-min: 120px;">
+                  <div class="card flex:stack gap:xs p:md align:center justify:center" style="height: 100px;">
+                    <span>🎯</span>
+                    <span class="text:sm">Centered</span>
+                  </div>
+                  <div class="card flex:stack gap:xs p:md align:center justify:center" style="height: 100px;">
+                    <span>📦</span>
+                    <span class="text:sm">Card</span>
+                  </div>
+                  <div class="card flex:stack gap:xs p:md align:center justify:center" style="height: 100px;">
+                    <span>✨</span>
+                    <span class="text:sm">Content</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </article>
+
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm p:sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Gap</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gap:xs</code></td>
+                  <td style="padding: var(--space-xs);">--space-xs</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gap:sm</code></td>
+                  <td style="padding: var(--space-xs);">--space-sm</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gap:md</code></td>
+                  <td style="padding: var(--space-xs);">--space-md</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gap:lg</code></td>
+                  <td style="padding: var(--space-xs);">--space-lg</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gap:xl</code></td>
+                  <td style="padding: var(--space-xs);">--space-xl</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Align</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>align:start</code></td>
+                  <td style="padding: var(--space-xs);">flex-start</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>align:center</code></td>
+                  <td style="padding: var(--space-xs);">center</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>align:end</code></td>
+                  <td style="padding: var(--space-xs);">flex-end</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>align:stretch</code></td>
+                  <td style="padding: var(--space-xs);">stretch</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>align:baseline</code></td>
+                  <td style="padding: var(--space-xs);">baseline</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Justify</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>justify:start</code></td>
+                  <td style="padding: var(--space-xs);">flex-start</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>justify:center</code></td>
+                  <td style="padding: var(--space-xs);">center</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>justify:end</code></td>
+                  <td style="padding: var(--space-xs);">flex-end</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>justify:between</code></td>
+                  <td style="padding: var(--space-xs);">space-between</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Padding</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>p:xs</code></td>
+                  <td style="padding: var(--space-xs);">--space-xs</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>p:sm</code></td>
+                  <td style="padding: var(--space-xs);">--space-sm</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>p:md</code></td>
+                  <td style="padding: var(--space-xs);">--space-md</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>p:lg</code></td>
+                  <td style="padding: var(--space-xs);">--space-lg</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Margin</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>m:xs</code></td>
+                  <td style="padding: var(--space-xs);">--space-xs</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>m:sm</code></td>
+                  <td style="padding: var(--space-xs);">--space-sm</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>m:md</code></td>
+                  <td style="padding: var(--space-xs);">--space-md</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>m:lg</code></td>
+                  <td style="padding: var(--space-xs);">--space-lg</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
+
+        <hr>
+
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Composition + Utilities --&gt;
+&lt;div class="flex:stack gap:md p:lg"&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;...&lt;/main&gt;
+&lt;/div&gt;
+
+&lt;!-- Centered card content --&gt;
+&lt;div class="card flex:stack gap:sm p:md align:center justify:center"&gt;
+  &lt;span&gt;Icon&lt;/span&gt;
+  &lt;span&gt;Label&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive grid with gap --&gt;
+&lt;div class="grid:auto-fit gap:lg" style="--grid-min: 200px;"&gt;
+  &lt;div class="card p:md"&gt;Card 1&lt;/div&gt;
+  &lt;div class="card p:md"&gt;Card 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Header with items pushed apart --&gt;
+&lt;header class="flex:cluster justify:between align:center gap:md p:sm"&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;nav&gt;Links&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+        </article>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+  </div>
+</body>
+</html>

@@ -76,10 +76,7 @@
   .surface:has(.surface .surface) { 
     background: color-mix(in oklch, var(--_surface-base), var(--gry-3) 20%);
   }
-  }
-  }
-  }
-
+  
   /* === RESPONSIVE VISIBILITY === */
   @media (width > 768px) { .mobile { display: none !important; } }
   @media (width <= 768px) { .desktop { display: none !important; } }
