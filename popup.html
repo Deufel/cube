@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="./css/4_utility.css">
   <link rel="stylesheet" href="./css/5_block.css">
   <link rel="stylesheet" href="./css/6_exception.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
 </head>
 <body class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
@@ -38,112 +41,116 @@
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
     <div id="nav-drawer"></div>
 
-    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+<main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
         
-        <header class="flex:stack gap:xs">
+        <header class="flex:stack">
           <h1 class="text:lg">Popup</h1>
-          <p class="text:sm" style="color: var(--text-muted);">Anchor-positioned popover with animations. Uses CSS Anchor Positioning + Popover API.</p>
+          <p class="text:sm" style="color: var(--text-muted);">Anchor-positioned popover with animations.</p>
         </header>
 
         <hr>
 
-        <!-- Base -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Base Menu</h3>
-          <p class="text:sm">Click to open an anchored popup menu.</p>
-          <div class="flex:cluster gap:md">
-            <button class="btn:pri" popovertarget="demo-menu" style="anchor-name: --demo-btn">Open Menu</button>
-            
-            <div id="demo-menu" class="popup:menu" popover style="position-anchor: --demo-btn; top: anchor(bottom); left: anchor(left);">
-              <button class="popup-item">Home</button>
-              <button class="popup-item">Settings</button>
-              <button class="popup-item">Notifications</button>
-              <hr style="margin: var(--space-xs) 0;">
-              <button class="popup-item">Logout</button>
-            </div>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- Position Variants -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Positioning</h3>
-          <p class="text:sm">Anchor positioning is set via inline styles. Common patterns:</p>
-          <div class="flex:cluster gap:md">
-            <button class="btn:sec" popovertarget="menu-below" style="anchor-name: --btn-below">Below Left</button>
-            <div id="menu-below" class="popup:menu" popover style="position-anchor: --btn-below; top: anchor(bottom); left: anchor(left);">
-              <button class="popup-item">Item 1</button>
-              <button class="popup-item">Item 2</button>
-            </div>
-
-            <button class="btn:sec" popovertarget="menu-above" style="anchor-name: --btn-above">Above Left</button>
-            <div id="menu-above" class="popup:menu" popover style="position-anchor: --btn-above; bottom: anchor(top); left: anchor(left);">
-              <button class="popup-item">Item 1</button>
-              <button class="popup-item">Item 2</button>
-            </div>
-
-            <button class="btn:sec" popovertarget="menu-right" style="anchor-name: --btn-right">Below Right</button>
-            <div id="menu-right" class="popup:menu" popover style="position-anchor: --btn-right; top: anchor(bottom); right: anchor(right);">
-              <button class="popup-item">Item 1</button>
-              <button class="popup-item">Item 2</button>
-            </div>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- API Reference -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">API Reference</h3>
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
           
-          <h4 class="text:sm">Selectors</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Class</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>popup</code></td>
-                <td style="padding: var(--space-xs);">Base popup container</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>popup:menu</code></td>
-                <td style="padding: var(--space-xs);">Menu variant (grid layout)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>popup-item</code></td>
-                <td style="padding: var(--space-xs);">Menu item with hover state</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Base Menu</h3>
+              <div class="card gla p:sm flex:cluster gap:md" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="btn:pri" popovertarget="demo-menu" style="anchor-name: --demo-btn">Open Menu</button>
+                <div id="demo-menu" class="popup:menu" popover style="position-anchor: --demo-btn; top: anchor(bottom); left: anchor(left);">
+                  <button class="popup-item">Home</button>
+                  <button class="popup-item">Settings</button>
+                  <button class="popup-item">Notifications</button>
+                  <hr style="margin: var(--space-xs) 0;">
+                  <button class="popup-item">Logout</button>
+                </div>
+              </div>
+            </section>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Required Attributes</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Element</th>
-                <th style="text-align: left; padding: var(--space-xs);">Attribute</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);">Trigger</td>
-                <td style="padding: var(--space-xs);"><code>popovertarget="id"</code>, <code>style="anchor-name: --name"</code></td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);">Popup</td>
-                <td style="padding: var(--space-xs);"><code>popover</code>, <code>style="position-anchor: --name"</code></td>
-              </tr>
-            </tbody>
-          </table>
+            <section class="flex:stack">
+              <h3 class="text:md">Positioning</h3>
+              <div class="card gla p:sm flex:cluster gap:md" style="resize: horizontal; overflow: auto; min-width: 300px;">
+                <button class="btn:sec" popovertarget="menu-below" style="anchor-name: --btn-below">Below Left</button>
+                <div id="menu-below" class="popup:menu" popover style="position-anchor: --btn-below; top: anchor(bottom); left: anchor(left);">
+                  <button class="popup-item">Item 1</button>
+                  <button class="popup-item">Item 2</button>
+                </div>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Trigger --&gt;
+                <button class="btn:sec" popovertarget="menu-above" style="anchor-name: --btn-above">Above Left</button>
+                <div id="menu-above" class="popup:menu" popover style="position-anchor: --btn-above; bottom: anchor(top); left: anchor(left);">
+                  <button class="popup-item">Item 1</button>
+                  <button class="popup-item">Item 2</button>
+                </div>
+
+                <button class="btn:sec" popovertarget="menu-right" style="anchor-name: --btn-right">Below Right</button>
+                <div id="menu-right" class="popup:menu" popover style="position-anchor: --btn-right; top: anchor(bottom); right: anchor(right);">
+                  <button class="popup-item">Item 1</button>
+                  <button class="popup-item">Item 2</button>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm" style="--flank-size: 280px;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Classes</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>popup</code></td>
+                  <td style="padding: var(--space-xs);">Base container</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>popup:menu</code></td>
+                  <td style="padding: var(--space-xs);">Menu variant</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>popup-item</code></td>
+                  <td style="padding: var(--space-xs);">Menu item</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Attributes</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Element</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);">Trigger</td>
+                  <td style="padding: var(--space-xs);"><code>popovertarget</code>, <code>anchor-name</code></td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);">Popup</td>
+                  <td style="padding: var(--space-xs);"><code>popover</code>, <code>position-anchor</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
+
+        <hr>
+
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Trigger --&gt;
 &lt;button popovertarget="my-menu" style="anchor-name: --my-btn"&gt;
   Open Menu
 &lt;/button&gt;
@@ -155,7 +162,7 @@
   &lt;button class="popup-item"&gt;Settings&lt;/button&gt;
   &lt;button class="popup-item"&gt;Logout&lt;/button&gt;
 &lt;/div&gt;</code></pre>
-        </section>
+        </article>
 
       </article>
     </main>

@@ -41,126 +41,115 @@
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
     <div id="nav-drawer"></div>
 
-    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+<main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
         
-        <header class="flex:stack gap:xs">
+        <header class="flex:stack">
           <h1 class="text:lg">Chips</h1>
-          <p class="text:sm">Non-interactive labels for categorization and status display.</p>
+          <p class="text:sm" style="color: var(--text-muted);">Non-interactive labels for categorization and status.</p>
         </header>
 
         <hr>
 
-        <!-- Base -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Base</h3>
-          <p class="text:sm">Default chip with primary tint.</p>
-          <div class="flex:cluster gap:sm">
-            <span class="chip">Default</span>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- Variants -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Variants</h3>
-          <p class="text:sm">Status variants using <code>chip:variant</code> pattern.</p>
-          <div class="flex:cluster gap:sm">
-            <span class="chip:inf">Info</span>
-            <span class="chip:suc">Success</span>
-            <span class="chip:wrn">Warning</span>
-            <span class="chip:dgr">Danger</span>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- Removable -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Removable</h3>
-          <p class="text:sm">Add <code>.close</code> span for dismissible chips.</p>
-          <div class="flex:cluster gap:sm">
-            <span class="chip">Default <span class="close">×</span></span>
-            <span class="chip:inf">Info <span class="close">×</span></span>
-            <span class="chip:suc">Success <span class="close">×</span></span>
-            <span class="chip:wrn">Warning <span class="close">×</span></span>
-            <span class="chip:dgr">Danger <span class="close">×</span></span>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- API Reference -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">API Reference</h3>
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
           
-          <h4 class="text:sm">Selectors</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Class</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>chip</code></td>
-                <td style="padding: var(--space-xs);">Base chip, primary tint</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>chip:inf</code></td>
-                <td style="padding: var(--space-xs);">Info (blue)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>chip:suc</code></td>
-                <td style="padding: var(--space-xs);">Success (green)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>chip:wrn</code></td>
-                <td style="padding: var(--space-xs);">Warning (yellow)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>chip:dgr</code></td>
-                <td style="padding: var(--space-xs);">Danger (red)</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Base</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <span class="chip">Default</span>
+              </div>
+            </section>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Modifiers</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>-sm</code></td>
-                <td style="padding: var(--space-xs);">Small size (append to variant)</td>
-              </tr>
-            </tbody>
-          </table>
+            <section class="flex:stack">
+              <h3 class="text:md">Variants</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <span class="chip:inf">Info</span>
+                <span class="chip:suc">Success</span>
+                <span class="chip:wrn">Warning</span>
+                <span class="chip:dgr">Danger</span>
+              </div>
+            </section>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Inner Elements</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Class</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>.close</code></td>
-                <td style="padding: var(--space-xs);">Dismissible close button</td>
-              </tr>
-            </tbody>
-          </table>
+            <section class="flex:stack">
+              <h3 class="text:md">Removable</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <span class="chip">Default <span class="close">×</span></span>
+                <span class="chip:inf">Info <span class="close">×</span></span>
+                <span class="chip:suc">Success <span class="close">×</span></span>
+                <span class="chip:wrn">Warning <span class="close">×</span></span>
+                <span class="chip:dgr">Danger <span class="close">×</span></span>
+              </div>
+            </section>
+          </article>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm" style="--flank-size: 280px;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Classes</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip</code></td>
+                  <td style="padding: var(--space-xs);">Base chip</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:inf</code></td>
+                  <td style="padding: var(--space-xs);">Info (blue)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:suc</code></td>
+                  <td style="padding: var(--space-xs);">Success (green)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:wrn</code></td>
+                  <td style="padding: var(--space-xs);">Warning (yellow)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:dgr</code></td>
+                  <td style="padding: var(--space-xs);">Danger (red)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Modifiers</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>-sm</code></td>
+                  <td style="padding: var(--space-xs);">Small size</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>.close</code></td>
+                  <td style="padding: var(--space-xs);">Close button</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
+
+        <hr>
+
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
 &lt;span class="chip"&gt;Default&lt;/span&gt;
 
 &lt;!-- Variant --&gt;
@@ -171,7 +160,7 @@
 
 &lt;!-- Removable --&gt;
 &lt;span class="chip:dgr"&gt;Error &lt;span class="close"&gt;×&lt;/span&gt;&lt;/span&gt;</code></pre>
-        </section>
+        </article>
 
       </article>
     </main>

@@ -41,99 +41,104 @@
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
     <div id="nav-drawer"></div>
 
-    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+<main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
         
-        <header class="flex:stack gap:xs">
+        <header class="flex:stack">
           <h1 class="text:lg">Dialogs & Drawers</h1>
-          <p class="text:sm">Modal dialogs and slide-out drawer panels.</p>
+          <p class="text:sm" style="color: var(--text-muted);">Modal dialogs and slide-out drawer panels.</p>
         </header>
 
         <hr>
 
-        <!-- Centered Dialog -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Centered Dialog</h3>
-          <p class="text:sm">Native <code>&lt;dialog&gt;</code> with <code>.showModal()</code> for focus trapping and backdrop.</p>
-          <div class="flex:cluster gap:sm">
-            <button class="pri" data-on:click="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- Drawers -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Drawers</h3>
-          <p class="text:sm">Slide-out panels using <code>drawer:direction</code> classes.</p>
-          <div class="flex:cluster gap:sm">
-            <button class="out" data-on:click="document.getElementById('drawer-left').showModal()">Left</button>
-            <button class="out" data-on:click="document.getElementById('drawer-right').showModal()">Right</button>
-            <button class="out" data-on:click="document.getElementById('drawer-top').showModal()">Top</button>
-            <button class="out" data-on:click="document.getElementById('drawer-bottom').showModal()">Bottom</button>
-          </div>
-        </section>
-
-        <hr>
-
-        <!-- API Reference -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">API Reference</h3>
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
           
-          <h4 class="text:sm">Dialog</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Element</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>&lt;dialog&gt;</code></td>
-                <td style="padding: var(--space-xs);">Native dialog element, styled automatically</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>::backdrop</code></td>
-                <td style="padding: var(--space-xs);">50% opacity dark overlay (no blur)</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Centered Dialog</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="btn:pri" data-on:click="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+              </div>
+            </section>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Drawer Classes</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Class</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>drawer:left</code></td>
-                <td style="padding: var(--space-xs);">Slides in from left</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>drawer:right</code></td>
-                <td style="padding: var(--space-xs);">Slides in from right</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>drawer:top</code></td>
-                <td style="padding: var(--space-xs);">Slides in from top</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>drawer:bottom</code></td>
-                <td style="padding: var(--space-xs);">Slides in from bottom</td>
-              </tr>
-            </tbody>
-          </table>
+            <section class="flex:stack">
+              <h3 class="text:md">Drawers</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="btn:sec out" data-on:click="document.getElementById('drawer-left').showModal()">Left</button>
+                <button class="btn:sec out" data-on:click="document.getElementById('drawer-right').showModal()">Right</button>
+                <button class="btn:sec out" data-on:click="document.getElementById('drawer-top').showModal()">Top</button>
+                <button class="btn:sec out" data-on:click="document.getElementById('drawer-bottom').showModal()">Bottom</button>
+              </div>
+            </section>
+          </article>
 
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog --&gt;
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm" style="--flank-size: 280px;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Dialog</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Element</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>&lt;dialog&gt;</code></td>
+                  <td style="padding: var(--space-xs);">Native dialog</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>::backdrop</code></td>
+                  <td style="padding: var(--space-xs);">50% dark overlay</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Drawers</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>drawer:left</code></td>
+                  <td style="padding: var(--space-xs);">From left</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>drawer:right</code></td>
+                  <td style="padding: var(--space-xs);">From right</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>drawer:top</code></td>
+                  <td style="padding: var(--space-xs);">From top</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>drawer:bottom</code></td>
+                  <td style="padding: var(--space-xs);">From bottom</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
+
+        <hr>
+
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog --&gt;
 &lt;dialog id="my-dialog"&gt;
   &lt;div class="card flex:stack gap:sm p:md"&gt;
     &lt;h2&gt;Dialog Title&lt;/h2&gt;
-    &lt;p&gt;Dialog content here.&lt;/p&gt;
+    &lt;p&gt;Content here.&lt;/p&gt;
     &lt;button data-on:click="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
 &lt;/dialog&gt;
@@ -150,7 +155,7 @@
 &lt;button data-on:click="document.getElementById('my-dialog').showModal()"&gt;
   Open Dialog
 &lt;/button&gt;</code></pre>
-        </section>
+        </article>
 
       </article>
     </main>

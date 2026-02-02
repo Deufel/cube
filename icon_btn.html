@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="css/4_utility.css">
   <link rel="stylesheet" href="css/5_block.css">
   <link rel="stylesheet" href="css/6_exception.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
 </head>
 <body class="fullscreen scroll-no"
       data-signals-prst_mode="'system'"
@@ -38,144 +41,155 @@
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
     <div id="nav-drawer"></div>
 
-    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+<main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
         
-        <header class="flex:stack gap:xs">
+        <header class="flex:stack">
           <h1 class="text:lg">Icon Button</h1>
           <p class="text:sm" style="color: var(--text-muted);">Square buttons for icon-only actions.</p>
         </header>
 
-        <!-- Base -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Base</h3>
-          <p class="text:sm">Default icon button with <code>icon-btn</code>.</p>
-          <div class="flex:cluster gap:sm align:center">
-<button class="icon-btn" aria-label="Home">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            </button>
-            <button class="icon-btn" aria-label="Ban">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
-            </button>
-            <button class="icon-btn" aria-label="Lock">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </button>
-          </div>
-        </section>
+        <hr>
 
-        <!-- Mute Variant -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Mute Variant</h3>
-          <p class="text:sm">Subtle color using <code>icon-btn:mute</code>.</p>
-          <div class="flex:cluster gap:sm align:center">
-<button class="icon-btn:mute" aria-label="Home">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            </button>
-            <button class="icon-btn:mute" aria-label="Ban">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
-            </button>
-            <button class="icon-btn:mute" aria-label="Lock">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </button>
-          </div>
-        </section>
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
+          
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Base</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="icon-btn" aria-label="Home">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Ban">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
+                </button>
+                <button class="icon-btn" aria-label="Lock">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </button>
+              </div>
+            </section>
 
-        <!-- Sizes -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Sizes</h3>
-          <p class="text:sm">Append <code>-sm</code> to any variant for smaller size.</p>
-          <div class="flex:cluster gap:sm align:center">
-<button class="icon-btn" aria-label="Default">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            </button>
-            <button class="icon-btn:mute-sm" aria-label="Small mute">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            </button>
-          </div>
-        </section>
+            <section class="flex:stack">
+              <h3 class="text:md">Mute Variant</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="icon-btn:mute" aria-label="Home">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+                <button class="icon-btn:mute" aria-label="Ban">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
+                </button>
+                <button class="icon-btn:mute" aria-label="Lock">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </button>
+              </div>
+            </section>
 
-        <!-- States -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">States</h3>
-          <p class="text:sm">Disabled state.</p>
-<button class="icon-btn" disabled aria-label="Disabled">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
-            </button>
-            <button class="icon-btn:mute" disabled aria-label="Disabled mute">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </button>
-            </button>
-          </div>
-        </section>
+            <section class="flex:stack">
+              <h3 class="text:md">Sizes</h3>
+              <div class="card gla p:sm flex:cluster gap:sm align:center" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="icon-btn" aria-label="Default">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+                <button class="icon-btn:mute-sm" aria-label="Small">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+              </div>
+            </section>
+
+            <section class="flex:stack">
+              <h3 class="text:md">States</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <button class="icon-btn" disabled aria-label="Disabled">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
+                </button>
+                <button class="icon-btn:mute" disabled aria-label="Disabled mute">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </button>
+              </div>
+            </section>
+          </article>
+
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm" style="--flank-size: 280px;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Classes</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn</code></td>
+                  <td style="padding: var(--space-xs);">Base icon button</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:mute</code></td>
+                  <td style="padding: var(--space-xs);">Muted variant</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Modifiers</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>-sm</code></td>
+                  <td style="padding: var(--space-xs);">Small size</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">States</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Attribute</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>disabled</code></td>
+                  <td style="padding: var(--space-xs);">Disabled state</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
 
         <hr>
 
-        <!-- API Reference -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">API Reference</h3>
-          
-          <h4 class="text:sm">Selectors</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Class</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>icon-btn</code></td>
-                <td style="padding: var(--space-xs);">Base icon button</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>icon-btn:mute</code></td>
-                <td style="padding: var(--space-xs);">Muted color variant</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Modifiers</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>-sm</code></td>
-                <td style="padding: var(--space-xs);">Small size (append to variant)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">States</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Attribute</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>disabled</code></td>
-                <td style="padding: var(--space-xs);">Disabled state</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
-&lt;button class="icon-btn" aria-label="Menu"&gt;...&lt;/button&gt;
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
+&lt;button class="icon-btn" aria-label="Menu"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;
 
 &lt;!-- Muted variant --&gt;
-&lt;button class="icon-btn:mute" aria-label="Settings"&gt;...&lt;/button&gt;
+&lt;button class="icon-btn:mute" aria-label="Settings"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;
 
 &lt;!-- Muted + Small --&gt;
-&lt;button class="icon-btn:mute-sm" aria-label="Close"&gt;...&lt;/button&gt;</code></pre>
-        </section>
+&lt;button class="icon-btn:mute-sm" aria-label="Close"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+        </article>
 
       </article>
     </main>
