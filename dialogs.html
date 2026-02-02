@@ -42,74 +42,33 @@
         
         <header class="flex:stack gap:xs">
           <h1 class="text:lg">Dialogs & Drawers</h1>
-          <p class="text:sm">Modal overlays for focused content and slide-out panels.</p>
+          <p class="text:sm">Modal dialogs and slide-out drawer panels.</p>
         </header>
 
         <hr>
 
-        <!-- Dialog -->
+        <!-- Centered Dialog -->
         <section class="flex:stack gap:sm">
-          <h3 class="text:md">Dialog</h3>
-          <p class="text:sm">Centered modal with darkened backdrop. Uses native <code>&lt;dialog&gt;</code> element.</p>
+          <h3 class="text:md">Centered Dialog</h3>
+          <p class="text:sm">Native <code>&lt;dialog&gt;</code> with <code>.showModal()</code> for focus trapping and backdrop.</p>
           <div class="flex:cluster gap:sm">
-            <button class="pri" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+            <button class="pri" data-on:click="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
           </div>
         </section>
-
-        <dialog id="demo-dialog" class="p:md flex:stack gap:sm" style="min-width: 300px;">
-          <h3 class="text:md">Dialog Title</h3>
-          <p class="text:sm">This is a centered dialog with a simple darkened backdrop (no blur) and shadow.</p>
-          <div class="flex:cluster gap:sm justify:end">
-            <button class="gho" onclick="document.getElementById('demo-dialog').close()">Cancel</button>
-            <button class="pri" onclick="document.getElementById('demo-dialog').close()">Confirm</button>
-          </div>
-        </dialog>
 
         <hr>
 
-        <!-- Left Drawer -->
+        <!-- Drawers -->
         <section class="flex:stack gap:sm">
-          <h3 class="text:md">Left Drawer</h3>
-          <p class="text:sm">Slide-out panel from the left edge. Uses <code>drawer:left</code> class.</p>
+          <h3 class="text:md">Drawers</h3>
+          <p class="text:sm">Slide-out panels using <code>drawer:direction</code> classes.</p>
           <div class="flex:cluster gap:sm">
-            <button class="pri" popovertarget="demo-drawer-left">Open Left Drawer</button>
+            <button class="out" data-on:click="document.getElementById('drawer-left').showModal()">Left</button>
+            <button class="out" data-on:click="document.getElementById('drawer-right').showModal()">Right</button>
+            <button class="out" data-on:click="document.getElementById('drawer-top').showModal()">Top</button>
+            <button class="out" data-on:click="document.getElementById('drawer-bottom').showModal()">Bottom</button>
           </div>
         </section>
-
-        <dialog id="demo-drawer-left" class="drawer:left" popover="manual">
-          <div class="drawer-content flex:stack gap:sm p:md">
-            <div class="flex:split">
-              <h3 class="text:md">Left Drawer</h3>
-              <button class="icon-btn:gho" popovertarget="demo-drawer-left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              </button>
-            </div>
-            <p class="text:sm">This drawer slides in from the left.</p>
-          </div>
-        </dialog>
-
-        <hr>
-
-        <!-- Right Drawer -->
-        <section class="flex:stack gap:sm">
-          <h3 class="text:md">Right Drawer</h3>
-          <p class="text:sm">Slide-out panel from the right edge. Uses <code>drawer:right</code> class.</p>
-          <div class="flex:cluster gap:sm">
-            <button class="pri" popovertarget="demo-drawer-right">Open Right Drawer</button>
-          </div>
-        </section>
-
-        <dialog id="demo-drawer-right" class="drawer:right" popover="manual">
-          <div class="drawer-content flex:stack gap:sm p:md">
-            <div class="flex:split">
-              <h3 class="text:md">Right Drawer</h3>
-              <button class="icon-btn:gho" popovertarget="demo-drawer-right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-              </button>
-            </div>
-            <p class="text:sm">This drawer slides in from the right.</p>
-          </div>
-        </dialog>
 
         <hr>
 
@@ -128,7 +87,11 @@
             <tbody>
               <tr style="border-bottom: 1px solid var(--surface-border);">
                 <td style="padding: var(--space-xs);"><code>&lt;dialog&gt;</code></td>
-                <td style="padding: var(--space-xs);">Native dialog element, auto-styled with shadow and backdrop</td>
+                <td style="padding: var(--space-xs);">Native dialog element, styled automatically</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>::backdrop</code></td>
+                <td style="padding: var(--space-xs);">50% opacity dark overlay (no blur)</td>
               </tr>
             </tbody>
           </table>
@@ -144,54 +107,45 @@
             <tbody>
               <tr style="border-bottom: 1px solid var(--surface-border);">
                 <td style="padding: var(--space-xs);"><code>drawer:left</code></td>
-                <td style="padding: var(--space-xs);">Slides in from left edge</td>
+                <td style="padding: var(--space-xs);">Slides in from left</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--surface-border);">
                 <td style="padding: var(--space-xs);"><code>drawer:right</code></td>
-                <td style="padding: var(--space-xs);">Slides in from right edge</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4 class="text:sm" style="margin-top: var(--space-sm);">JavaScript API</h4>
-          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <th style="text-align: left; padding: var(--space-xs);">Method</th>
-                <th style="text-align: left; padding: var(--space-xs);">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>.showModal()</code></td>
-                <td style="padding: var(--space-xs);">Open dialog with backdrop</td>
+                <td style="padding: var(--space-xs);">Slides in from right</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--surface-border);">
-                <td style="padding: var(--space-xs);"><code>.close()</code></td>
-                <td style="padding: var(--space-xs);">Close dialog</td>
+                <td style="padding: var(--space-xs);"><code>drawer:top</code></td>
+                <td style="padding: var(--space-xs);">Slides in from top</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>drawer:bottom</code></td>
+                <td style="padding: var(--space-xs);">Slides in from bottom</td>
               </tr>
             </tbody>
           </table>
 
           <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
-          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Dialog --&gt;
-&lt;button onclick="document.getElementById('my-dialog').showModal()"&gt;Open&lt;/button&gt;
-
-&lt;dialog id="my-dialog" class="p:md"&gt;
-  &lt;h3&gt;Title&lt;/h3&gt;
-  &lt;p&gt;Content here...&lt;/p&gt;
-  &lt;button onclick="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog --&gt;
+&lt;dialog id="my-dialog"&gt;
+  &lt;div class="card flex:stack gap:sm p:md"&gt;
+    &lt;h2&gt;Dialog Title&lt;/h2&gt;
+    &lt;p&gt;Dialog content here.&lt;/p&gt;
+    &lt;button data-on:click="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
 &lt;/dialog&gt;
 
-&lt;!-- Drawer (using popover) --&gt;
-&lt;button popovertarget="my-drawer"&gt;Open Drawer&lt;/button&gt;
-
-&lt;dialog id="my-drawer" class="drawer:left" popover="manual"&gt;
-  &lt;div class="drawer-content p:md"&gt;
-    &lt;h3&gt;Drawer Title&lt;/h3&gt;
-    &lt;button popovertarget="my-drawer"&gt;Close&lt;/button&gt;
+&lt;!-- Drawer --&gt;
+&lt;dialog id="my-drawer" class="drawer:left"&gt;
+  &lt;div class="card gla flex:stack gap:sm p:md"&gt;
+    &lt;h2&gt;Drawer Title&lt;/h2&gt;
+    &lt;button data-on:click="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
-&lt;/dialog&gt;</code></pre>
+&lt;/dialog&gt;
+
+&lt;!-- Open with Datastar --&gt;
+&lt;button data-on:click="document.getElementById('my-dialog').showModal()"&gt;
+  Open Dialog
+&lt;/button&gt;</code></pre>
         </section>
 
       </article>
@@ -201,5 +155,62 @@
     <div id="footer" data-init="@get('./partials/footer.html')"></div>
 
   </div>
+
+  <!-- Centered Dialog -->
+  <dialog id="demo-dialog">
+    <div class="card flex:stack gap:sm p:md" style="min-width: 300px;">
+      <h2 class="text:md">Dialog Title</h2>
+      <p class="text:sm">This is a centered modal dialog with focus trapping and backdrop click to close.</p>
+      <div class="flex:cluster gap:sm justify:end">
+        <button class="gho" data-on:click="this.closest('dialog').close()">Cancel</button>
+        <button class="pri" data-on:click="this.closest('dialog').close()">Confirm</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Left Drawer -->
+  <dialog id="drawer-left" class="drawer:left">
+    <div class="card gla flex:stack gap:sm p:md" style="height: 100%;">
+      <div class="flex:split">
+        <h2 class="text:md">Left Drawer</h2>
+        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+      </div>
+      <p class="text:sm">Slides in from the left edge.</p>
+    </div>
+  </dialog>
+
+  <!-- Right Drawer -->
+  <dialog id="drawer-right" class="drawer:right">
+    <div class="card gla flex:stack gap:sm p:md" style="height: 100%;">
+      <div class="flex:split">
+        <h2 class="text:md">Right Drawer</h2>
+        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+      </div>
+      <p class="text:sm">Slides in from the right edge.</p>
+    </div>
+  </dialog>
+
+  <!-- Top Drawer -->
+  <dialog id="drawer-top" class="drawer:top">
+    <div class="card gla flex:stack gap:sm p:md" style="width: 100%;">
+      <div class="flex:split">
+        <h2 class="text:md">Top Drawer</h2>
+        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+      </div>
+      <p class="text:sm">Slides in from the top edge.</p>
+    </div>
+  </dialog>
+
+  <!-- Bottom Drawer -->
+  <dialog id="drawer-bottom" class="drawer:bottom">
+    <div class="card gla flex:stack gap:sm p:md" style="width: 100%;">
+      <div class="flex:split">
+        <h2 class="text:md">Bottom Drawer</h2>
+        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+      </div>
+      <p class="text:sm">Slides in from the bottom edge.</p>
+    </div>
+  </dialog>
+
 </body>
 </html>
