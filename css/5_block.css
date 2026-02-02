@@ -25,11 +25,23 @@
     }
   }
 
+
+  /* === DIALOG === */
+  dialog {
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-5);
+    
+    &::backdrop {
+      background: rgb(0 0 0 / 0.5);
+    }
+  }
+
   /* === DRAWER === */
   [class*="drawer:"] {
     position: fixed;
     background: var(--surface-card, white);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-5);
     overflow: hidden;
     
     /* Reset dialog/popover defaults */
@@ -479,4 +491,3 @@
     &:active { transform: scale(0.95); }
   }
 }
-

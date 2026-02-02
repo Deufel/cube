@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? false : $prst_mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialogs & Drawers - Cube CSS</title>
+  
+  <script type="module">
+    try {
+      await import('./js/datastar-pro.js');
+      console.log('Loaded local datastar-pro.js');
+    } catch {
+      await import('https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js');
+      console.log('Loaded CDN datastar');
+    }
+  </script>
+
+  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <link rel="stylesheet" href="css/0_reset.css">
+  <link rel="stylesheet" href="css/1_props.css">
+  <link rel="stylesheet" data-attr:href="$prst_theme" href="css/2_theme-default.css">
+  <link rel="stylesheet" href="css/3_composition.css">
+  <link rel="stylesheet" href="css/4_utility.css">
+  <link rel="stylesheet" href="css/5_block.css">
+  <link rel="stylesheet" href="css/6_exception.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+</head>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
+  data-signals:prst_mode="'system'">
+    
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+        
+        <header class="flex:stack gap:xs">
+          <h1 class="text:lg">Dialogs & Drawers</h1>
+          <p class="text:sm">Modal overlays for focused content and slide-out panels.</p>
+        </header>
+
+        <hr>
+
+        <!-- Dialog -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Dialog</h3>
+          <p class="text:sm">Centered modal with darkened backdrop. Uses native <code>&lt;dialog&gt;</code> element.</p>
+          <div class="flex:cluster gap:sm">
+            <button class="pri" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+          </div>
+        </section>
+
+        <dialog id="demo-dialog" class="p:md flex:stack gap:sm" style="min-width: 300px;">
+          <h3 class="text:md">Dialog Title</h3>
+          <p class="text:sm">This is a centered dialog with a simple darkened backdrop (no blur) and shadow.</p>
+          <div class="flex:cluster gap:sm justify:end">
+            <button class="gho" onclick="document.getElementById('demo-dialog').close()">Cancel</button>
+            <button class="pri" onclick="document.getElementById('demo-dialog').close()">Confirm</button>
+          </div>
+        </dialog>
+
+        <hr>
+
+        <!-- Left Drawer -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Left Drawer</h3>
+          <p class="text:sm">Slide-out panel from the left edge. Uses <code>drawer:left</code> class.</p>
+          <div class="flex:cluster gap:sm">
+            <button class="pri" popovertarget="demo-drawer-left">Open Left Drawer</button>
+          </div>
+        </section>
+
+        <dialog id="demo-drawer-left" class="drawer:left" popover="manual">
+          <div class="drawer-content flex:stack gap:sm p:md">
+            <div class="flex:split">
+              <h3 class="text:md">Left Drawer</h3>
+              <button class="icon-btn:gho" popovertarget="demo-drawer-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </div>
+            <p class="text:sm">This drawer slides in from the left.</p>
+          </div>
+        </dialog>
+
+        <hr>
+
+        <!-- Right Drawer -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">Right Drawer</h3>
+          <p class="text:sm">Slide-out panel from the right edge. Uses <code>drawer:right</code> class.</p>
+          <div class="flex:cluster gap:sm">
+            <button class="pri" popovertarget="demo-drawer-right">Open Right Drawer</button>
+          </div>
+        </section>
+
+        <dialog id="demo-drawer-right" class="drawer:right" popover="manual">
+          <div class="drawer-content flex:stack gap:sm p:md">
+            <div class="flex:split">
+              <h3 class="text:md">Right Drawer</h3>
+              <button class="icon-btn:gho" popovertarget="demo-drawer-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </div>
+            <p class="text:sm">This drawer slides in from the right.</p>
+          </div>
+        </dialog>
+
+        <hr>
+
+        <!-- API Reference -->
+        <section class="flex:stack gap:sm">
+          <h3 class="text:md">API Reference</h3>
+          
+          <h4 class="text:sm">Dialog</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Element</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>&lt;dialog&gt;</code></td>
+                <td style="padding: var(--space-xs);">Native dialog element, auto-styled with shadow and backdrop</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Drawer Classes</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>drawer:left</code></td>
+                <td style="padding: var(--space-xs);">Slides in from left edge</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>drawer:right</code></td>
+                <td style="padding: var(--space-xs);">Slides in from right edge</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">JavaScript API</h4>
+          <table class="text:sm" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <th style="text-align: left; padding: var(--space-xs);">Method</th>
+                <th style="text-align: left; padding: var(--space-xs);">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>.showModal()</code></td>
+                <td style="padding: var(--space-xs);">Open dialog with backdrop</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--surface-border);">
+                <td style="padding: var(--space-xs);"><code>.close()</code></td>
+                <td style="padding: var(--space-xs);">Close dialog</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Dialog --&gt;
+&lt;button onclick="document.getElementById('my-dialog').showModal()"&gt;Open&lt;/button&gt;
+
+&lt;dialog id="my-dialog" class="p:md"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content here...&lt;/p&gt;
+  &lt;button onclick="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;!-- Drawer (using popover) --&gt;
+&lt;button popovertarget="my-drawer"&gt;Open Drawer&lt;/button&gt;
+
+&lt;dialog id="my-drawer" class="drawer:left" popover="manual"&gt;
+  &lt;div class="drawer-content p:md"&gt;
+    &lt;h3&gt;Drawer Title&lt;/h3&gt;
+    &lt;button popovertarget="my-drawer"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+        </section>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+
+  </div>
+</body>
+</html>

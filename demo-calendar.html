@@ -13,7 +13,14 @@
     }
   </script>
 
-  <style>@layer reset, props, theme, composition, utility, block, exception;</style>
+  <style>
+    @layer reset, props, theme, composition, utility, block, exception;
+    
+    /* Calendar day selection */
+    .cal-day { cursor: pointer; transition: background 0.15s; }
+    .cal-day:hover { background: color-mix(in oklch, var(--color-pri), transparent 90%); }
+    .cal-day.selected { background: color-mix(in oklch, var(--color-pri), transparent 80%); }
+  </style>
   <link rel="stylesheet" href="./css/0_reset.css">
   <link rel="stylesheet" href="./css/1_props.css">
   <link rel="stylesheet" data-attr:href="$prst_theme" href="./css/2_theme-default.css">
@@ -27,7 +34,7 @@
   data-signals:prst_theme="'./css/2_theme-default.css'"
   data-signals:prst_mode="'system'"
   data-signals:view="'month'"
-  data-signals:selectedDate="'2026-01-25'">
+  data-signals:selectedDate="25">
 
   <div class="grid:hero" style="grid-template-rows: auto 1fr; grid-template-columns: 280px 1fr;">
     
@@ -160,68 +167,68 @@
         <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border); color: var(--text-muted);"></div>
         <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border); color: var(--text-muted);"></div>
         <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border); color: var(--text-muted);"></div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 1" data-class:selected="$selectedDate === 1">
           <span>1</span>
           <div class="chip:suc-sm" style="font-size: 0.6rem;">🎉 New Year</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">2</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border);">3</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 2" data-class:selected="$selectedDate === 2">2</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border);" data-on:click="$selectedDate = 3" data-class:selected="$selectedDate === 3">3</div>
 
         <!-- Week 2 -->
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">4</div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 4" data-class:selected="$selectedDate === 4">4</div>
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 5" data-class:selected="$selectedDate === 5">
           <span>5</span>
           <div class="chip:pri-sm" style="font-size: 0.6rem;">Team Sync</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">6</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">7</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">8</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">9</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border);">10</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 6" data-class:selected="$selectedDate === 6">6</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 7" data-class:selected="$selectedDate === 7">7</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 8" data-class:selected="$selectedDate === 8">8</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 9" data-class:selected="$selectedDate === 9">9</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border);" data-on:click="$selectedDate = 10" data-class:selected="$selectedDate === 10">10</div>
 
         <!-- Week 3 -->
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">11</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">12</div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 11" data-class:selected="$selectedDate === 11">11</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 12" data-class:selected="$selectedDate === 12">12</div>
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 13" data-class:selected="$selectedDate === 13">
           <span>13</span>
           <div class="chip:wrn-sm" style="font-size: 0.6rem;">Deadline</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">14</div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 14" data-class:selected="$selectedDate === 14">14</div>
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 15" data-class:selected="$selectedDate === 15">
           <span>15</span>
           <div class="chip:pri-sm" style="font-size: 0.6rem;">Review</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">16</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border);">17</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 16" data-class:selected="$selectedDate === 16">16</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border);" data-on:click="$selectedDate = 17" data-class:selected="$selectedDate === 17">17</div>
 
         <!-- Week 4 -->
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">18</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">19</div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 18" data-class:selected="$selectedDate === 18">18</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 19" data-class:selected="$selectedDate === 19">19</div>
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 20" data-class:selected="$selectedDate === 20">
           <span>20</span>
           <div class="chip:sec-sm" style="font-size: 0.6rem;">Launch 🚀</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">21</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">22</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">23</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border);">24</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 21" data-class:selected="$selectedDate === 21">21</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 22" data-class:selected="$selectedDate === 22">22</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 23" data-class:selected="$selectedDate === 23">23</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border);" data-on:click="$selectedDate = 24" data-class:selected="$selectedDate === 24">24</div>
 
         <!-- Week 5 (current) -->
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border); background: color-mix(in oklch, var(--color-pri), transparent 95%);">
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 25" data-class:selected="$selectedDate === 25">
           <span style="background: var(--color-pri); color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-weight: 600;">25</span>
           <div class="chip:pri-sm" style="font-size: 0.6rem;">Standup</div>
           <div class="chip:sec-sm" style="font-size: 0.6rem;">Review</div>
           <div class="chip:wrn-sm" style="font-size: 0.6rem;">Client</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">26</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">27</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">28</div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">29</div>
-        <div class="p:xs flex:stack gap:xs" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);">
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 26" data-class:selected="$selectedDate === 26">26</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 27" data-class:selected="$selectedDate === 27">27</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 28" data-class:selected="$selectedDate === 28">28</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 29" data-class:selected="$selectedDate === 29">29</div>
+        <div class="p:xs flex:stack gap:xs cal-day" style="border-bottom: 1px solid var(--surface-border); border-right: 1px solid var(--surface-border);" data-on:click="$selectedDate = 30" data-class:selected="$selectedDate === 30">
           <span>30</span>
           <div class="chip:dgr-sm" style="font-size: 0.6rem;">Due!</div>
         </div>
-        <div class="p:xs" style="border-bottom: 1px solid var(--surface-border);">31</div>
+        <div class="p:xs cal-day" style="border-bottom: 1px solid var(--surface-border);" data-on:click="$selectedDate = 31" data-class:selected="$selectedDate === 31">31</div>
       </div>
     </main>
 
