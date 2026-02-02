@@ -212,6 +212,7 @@
     :is([class~="tabs"], [class*="tabs:"]) {
       height: var(--btn-height-md);
       box-sizing: border-box;
+      align-items: center;
       
       &.err { border-color: var(--color-err); }
       &.suc { border-color: var(--color-suc); }
