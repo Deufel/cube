@@ -210,6 +210,7 @@
     
     /* Tabs inside form fields - match input height */
     :is([class~="tabs"], [class*="tabs:"]) {
+      width: 100%;
       height: var(--btn-height-md);
       box-sizing: border-box;
       align-items: center;
