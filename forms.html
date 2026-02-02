@@ -145,8 +145,8 @@
             <label class="field:w2">
               Type
               <div class="tabs">
-                <button type="button" class="tab on">Sampling</button>
-                <button type="button" class="tab">Special</button>
+                <button type="button" class="tab on" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Sampling</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Special</button>
               </div>
             </label>
             <label class="field:w2">
@@ -157,19 +157,19 @@
             <label class="field">
               Visibility
               <div class="tabs">
-                <button type="button" class="tab on">Draft</button>
-                <button type="button" class="tab">Internal</button>
-                <button type="button" class="tab">Supplier</button>
-                <button type="button" class="tab">Public</button>
+                <button type="button" class="tab on" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Draft</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Internal</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Supplier</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Public</button>
               </div>
             </label>
             
             <label class="field">
               Status <span class="wrn">Required</span>
               <div class="tabs wrn">
-                <button type="button" class="tab">Pending</button>
-                <button type="button" class="tab">Active</button>
-                <button type="button" class="tab">Complete</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Pending</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Active</button>
+                <button type="button" class="tab" data-on:click="el.parentElement.querySelector('.on')?.classList.remove('on'); el.classList.add('on')">Complete</button>
               </div>
             </label>
           </form>

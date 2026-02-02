@@ -212,6 +212,7 @@
     :is([class~="tabs"], [class*="tabs:"]) {
       width: 100%;
       height: var(--btn-height-md);
+      padding-block: 0;
       box-sizing: border-box;
       align-items: center;
       
@@ -219,6 +220,12 @@
       &.suc { border-color: var(--color-suc); }
       &.wrn { border-color: var(--color-wrn); }
       &.inf { border-color: var(--color-inf); }
+      
+      /* Tab buttons fill available space */
+      > :is([class~="tab"], [class*="tab:"]) {
+        flex: 1;
+        justify-content: center;
+      }
     }
   }
 
