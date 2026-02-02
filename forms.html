@@ -136,6 +136,64 @@
         </div>
       </section>
 
+      <!-- Tabs in Forms -->
+      <section class="flex:stack gap:sm">
+        <h3 class="text:md">Tabs in Forms</h3>
+        <p class="text:sm">Tabs can be used inside forms with the <code>field:w*</code> classes. They auto-match input height and support validation states.</p>
+        <div class="card gla" style="resize: horizontal; overflow: auto; min-width: 250px; max-width: 100%;">
+          <form class="form">
+            <label class="field:w2">
+              Type
+              <div class="tabs">
+                <button type="button" class="tab on">Sampling</button>
+                <button type="button" class="tab">Special</button>
+              </div>
+            </label>
+            <label class="field:w2">
+              Title
+              <input type="text" placeholder="Event name..." />
+            </label>
+            
+            <label class="field">
+              Visibility
+              <div class="tabs">
+                <button type="button" class="tab on">Draft</button>
+                <button type="button" class="tab">Internal</button>
+                <button type="button" class="tab">Supplier</button>
+                <button type="button" class="tab">Public</button>
+              </div>
+            </label>
+            
+            <label class="field">
+              Status <span class="wrn">Required</span>
+              <div class="tabs wrn">
+                <button type="button" class="tab">Pending</button>
+                <button type="button" class="tab">Active</button>
+                <button type="button" class="tab">Complete</button>
+              </div>
+            </label>
+          </form>
+        </div>
+        
+        <h4 class="text:sm" style="margin-top: var(--space-sm);">Usage</h4>
+        <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;label class="field:w2"&gt;
+  Type
+  &lt;div class="tabs"&gt;
+    &lt;button type="button" class="tab on"&gt;Option A&lt;/button&gt;
+    &lt;button type="button" class="tab"&gt;Option B&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/label&gt;
+
+&lt;!-- With validation state --&gt;
+&lt;label class="field"&gt;
+  Status &lt;span class="wrn"&gt;Required&lt;/span&gt;
+  &lt;div class="tabs wrn"&gt;
+    &lt;button type="button" class="tab"&gt;Pending&lt;/button&gt;
+    &lt;button type="button" class="tab"&gt;Active&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/label&gt;</code></pre>
+      </section>
+
       <!-- Form Tips -->
       <section class="flex:stack gap:sm">
         <h3 class="text:md">Form Tips</h3>
