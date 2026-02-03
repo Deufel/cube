@@ -6,8 +6,9 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-<div class="vh" data-init="@get('./partials/head.html')"></div>
-<body class="fullscreen scroll-no"
+<div class="vh" 
+  data-init="@get('./partials/head.html'); @get('./partials/header.html'); @get('./partials/nav.html'); @get('./partials/aside.html'); @get('./partials/footer.html')"></div>
+<body id="body" class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
   data-signals:prst_theme="'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
   data-signals:prst_mode="'system'"
@@ -16,29 +17,29 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
- <div class="grid:hero gap:xs"> 
-    <!-- Header with hamburger (mobile) -->
-    <div id="header" data-init="@get('./partials/header.html')"></div>
-    <div id="nav" data-init="@get('./partials/nav.html')"></div>
-    <div id="nav-drawer"></div>
-    <main id="readme-content" style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
-      <p>Loading README...</p>
-    </main>
-    <script>
-      fetch('../README.md')
-        .then(res => res.text())
-        .then(md => {
-          document.getElementById('readme-content').innerHTML = marked.parse(md);
-          Prism.highlightAll();
-        })
-        .catch(err => {
-          document.getElementById('readme-content').innerHTML = '<p>Failed to load README.md</p>';
-        });
-    </script>
+    <div class="grid:hero gap:xs"> 
+      <header id="header" data-init="@get('./partials/header.html')"></header>
+      <nav id="nav"></nav>
+      <dialog id="nav-drawer"></dialog>
 
-    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+      <main id="main" style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
+        <p>Loading README...</p>
+      </main>
 
-    <div id="footer" data-init="@get('./partials/footer.html')"></div>
-  </div>
-</body>
+      <script>
+        fetch('https://github.com/Deufel/cube/raw/refs/heads/master/README.md')
+          .then(res => res.text())
+          .then(md => {
+            document.getElementById('main').innerHTML = marked.parse(md);
+            Prism.highlightAll();
+          })
+          .catch(err => {
+            document.getElementById('main').innerHTML = '<p>Failed to load README.md</p>';
+          });
+      </script>
+
+      <dialog id="aside-drawer"></dialog>
+      <dialog id="footer">      </dialog>
+    </div>
+  </body>
 </html>
