@@ -59,17 +59,17 @@
             <section class="flex:stack">
               <h3 class="text:md">Centered Dialog</h3>
               <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <button class="btn:pri" data-on:click="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+                <button class="btn:pri" data-on:click="$demoDialog.showModal()">Open Dialog</button>
               </div>
             </section>
 
             <section class="flex:stack">
               <h3 class="text:md">Drawers</h3>
               <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <button class="btn:sec out" data-on:click="document.getElementById('drawer-left').showModal()">Left</button>
-                <button class="btn:sec out" data-on:click="document.getElementById('drawer-right').showModal()">Right</button>
-                <button class="btn:sec out" data-on:click="document.getElementById('drawer-top').showModal()">Top</button>
-                <button class="btn:sec out" data-on:click="document.getElementById('drawer-bottom').showModal()">Bottom</button>
+                <button class="btn:sec out" data-on:click="$drawerLeft.showModal()">Left</button>
+                <button class="btn:sec out" data-on:click="$drawerRight.showModal()">Right</button>
+                <button class="btn:sec out" data-on:click="$drawerTop.showModal()">Top</button>
+                <button class="btn:sec out" data-on:click="$drawerBottom.showModal()">Bottom</button>
               </div>
             </section>
           </article>
@@ -134,27 +134,29 @@
         <!-- Usage (full width) -->
         <article class="flex:stack gap:xs">
           <h3 class="text:md">Usage</h3>
-<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog --&gt;
-&lt;dialog id="my-dialog"&gt;
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog with click-outside-to-close --&gt;
+&lt;!-- Use kebab-case in data-ref (auto-converts to camelCase signal) --&gt;
+&lt;dialog data-ref:my-dialog
+        data-on:click="evt.target === el &amp;&amp; el.close()"&gt;
   &lt;div class="card flex:stack gap:sm p:md"&gt;
     &lt;h2&gt;Dialog Title&lt;/h2&gt;
     &lt;p&gt;Content here.&lt;/p&gt;
-    &lt;button data-on:click="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+    &lt;button data-on:click="el.closest('dialog').close()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
 &lt;/dialog&gt;
 
 &lt;!-- Drawer --&gt;
-&lt;dialog id="my-drawer" class="drawer:left"&gt;
-  &lt;div class="card gla flex:stack gap:sm p:md"&gt;
+&lt;dialog data-ref:my-drawer class="drawer:left"
+        data-on:click="evt.target === el &amp;&amp; el.close()"&gt;
+  &lt;div class="flex:stack gap:sm p:md"&gt;
     &lt;h2&gt;Drawer Title&lt;/h2&gt;
-    &lt;button data-on:click="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+    &lt;button data-on:click="el.closest('dialog').close()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
 &lt;/dialog&gt;
 
-&lt;!-- Open with Datastar --&gt;
-&lt;button data-on:click="document.getElementById('my-dialog').showModal()"&gt;
-  Open Dialog
-&lt;/button&gt;</code></pre>
+&lt;!-- Open with Datastar (signals are camelCase) --&gt;
+&lt;button data-on:click="$myDialog.showModal()"&gt;Open Dialog&lt;/button&gt;
+&lt;button data-on:click="$myDrawer.showModal()"&gt;Open Drawer&lt;/button&gt;</code></pre>
         </article>
 
       </article>
@@ -166,56 +168,56 @@
   </div>
 
   <!-- Centered Dialog -->
-  <dialog id="demo-dialog">
+  <dialog data-ref:demo-dialog data-on:click="evt.target === el && el.close()">
     <div class="card flex:stack gap:sm p:md" style="min-width: 300px;">
       <h2 class="text:md">Dialog Title</h2>
       <p class="text:sm">This is a centered modal dialog with focus trapping and backdrop click to close.</p>
       <div class="flex:cluster gap:sm justify:end">
-        <button class="gho" data-on:click="this.closest('dialog').close()">Cancel</button>
-        <button class="pri" data-on:click="this.closest('dialog').close()">Confirm</button>
+        <button class="gho" data-on:click="el.closest('dialog').close()">Cancel</button>
+        <button class="pri" data-on:click="el.closest('dialog').close()">Confirm</button>
       </div>
     </div>
   </dialog>
 
   <!-- Left Drawer -->
-  <dialog id="drawer-left" class="drawer:left">
-    <div class="card gla flex:stack gap:sm p:md" style="height: 100%;">
+  <dialog data-ref:drawer-left class="drawer:left" data-on:click="evt.target === el && el.close()">
+    <div class="flex:stack gap:sm p:md" style="height: 100%;">
       <div class="flex:split">
         <h2 class="text:md">Left Drawer</h2>
-        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+        <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
       <p class="text:sm">Slides in from the left edge.</p>
     </div>
   </dialog>
 
   <!-- Right Drawer -->
-  <dialog id="drawer-right" class="drawer:right">
-    <div class="card gla flex:stack gap:sm p:md" style="height: 100%;">
+  <dialog data-ref:drawer-right class="drawer:right" data-on:click="evt.target === el && el.close()">
+    <div class="flex:stack gap:sm p:md" style="height: 100%;">
       <div class="flex:split">
         <h2 class="text:md">Right Drawer</h2>
-        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+        <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
       <p class="text:sm">Slides in from the right edge.</p>
     </div>
   </dialog>
 
   <!-- Top Drawer -->
-  <dialog id="drawer-top" class="drawer:top">
-    <div class="card gla flex:stack gap:sm p:md" style="width: 100%;">
+  <dialog data-ref:drawer-top class="drawer:top" data-on:click="evt.target === el && el.close()">
+    <div class="flex:stack gap:sm p:md" style="width: 100%;">
       <div class="flex:split">
         <h2 class="text:md">Top Drawer</h2>
-        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+        <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
       <p class="text:sm">Slides in from the top edge.</p>
     </div>
   </dialog>
 
   <!-- Bottom Drawer -->
-  <dialog id="drawer-bottom" class="drawer:bottom">
-    <div class="card gla flex:stack gap:sm p:md" style="width: 100%;">
+  <dialog data-ref:drawer-bottom class="drawer:bottom" data-on:click="evt.target === el && el.close()">
+    <div class="flex:stack gap:sm p:md" style="width: 100%;">
       <div class="flex:split">
         <h2 class="text:md">Bottom Drawer</h2>
-        <button class="icon-btn gho sm" data-on:click="this.closest('dialog').close()">✕</button>
+        <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
       <p class="text:sm">Slides in from the bottom edge.</p>
     </div>

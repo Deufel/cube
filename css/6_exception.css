@@ -12,6 +12,7 @@
     max-width: var(--drawer-maxwidth);
     height: 100vh;
     transform: translateX(-100%);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
   }
   
   [class*="drawer:left"][open],
@@ -36,6 +37,7 @@
     max-width: var(--drawer-maxwidth);
     height: 100vh;
     transform: translateX(100%);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
   
   [class*="drawer:right"][open],
@@ -57,9 +59,11 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: var(--drawer-height);
-    max-height: var(--drawer-maxheight);
+    height: max-content;
+    max-height: 90vh;
+    overflow-y: auto;
     transform: translateY(-100%);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
   }
   
   [class*="drawer:top"][open],
@@ -81,9 +85,11 @@
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: var(--drawer-height);
-    max-height: var(--drawer-maxheight);
+    height: max-content;
+    max-height: 90vh;
+    overflow-y: auto;
     transform: translateY(100%);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
   }
   
   [class*="drawer:bottom"][open],

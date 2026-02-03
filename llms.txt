@@ -110,9 +110,40 @@ Validation states (`.err`, `.suc`, `.wrn`, `.inf`) can be applied to the tabs co
 - Base: `popup`, `popup:menu`
 - Items: `.popup-item`
 
-### Drawers
+### Dialogs & Drawers
 - Directions: `drawer:left`, `drawer:right`, `drawer:top`, `drawer:bottom`
-- Use with `<dialog popover="manual">`
+- Top/bottom drawers: auto-size to content (`height: max-content`), max 90vh, scrollable
+- Left/right drawers: fixed height 100vh with configurable width
+- Corner rounding: only inner edges (e.g., left drawer rounds top-right & bottom-right)
+
+**Datastar Integration:**
+
+Use `data-ref` with kebab-case (auto-converts to camelCase signal):
+
+```html
+<!-- Define dialog with ref and click-outside-to-close -->
+<dialog data-ref:my-dialog
+        data-on:click="evt.target === el && el.close()">
+  <div class="card flex:stack gap:sm p:md">
+    <h2>Dialog Title</h2>
+    <button data-on:click="el.closest('dialog').close()">Close</button>
+  </div>
+</dialog>
+
+<!-- Drawer example -->
+<dialog data-ref:my-drawer class="drawer:left"
+        data-on:click="evt.target === el && el.close()">
+  <div class="flex:stack gap:sm p:md">
+    <button data-on:click="el.closest('dialog').close()">Close</button>
+  </div>
+</dialog>
+
+<!-- Open using camelCase signal -->
+<button data-on:click="$myDialog.showModal()">Open Dialog</button>
+<button data-on:click="$myDrawer.showModal()">Open Drawer</button>
+```
+
+**Important:** HTML attributes are case-insensitive, so use kebab-case in `data-ref:my-drawer` which Datastar converts to `$myDrawer`. Using `data-ref:myDrawer` directly won't work.
 
 ### Forms
 - Container: `.form` (4-column grid)
