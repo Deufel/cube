@@ -1,42 +1,167 @@
 <!DOCTYPE html>
 <html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode">
 <head id="head">
-  <title>CUBE CSS</title>
+  <title>Cards - Cube CSS</title>
   <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
 </head>
-<body id="body" class="fullscreen scroll-no">
-  <!-- data-persist="{include: /^prst_/}" -->
-  <!-- data-signals:prst_theme="'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'" -->
-  <!-- data-signals:prst_mode="'system'" -->
-  <!-- data-signals:prst_width="'width-md'" -->
-  <!-- data-class:width-sm="$prst_width === 'width-sm'" -->
-  <!-- data-class:width-md="$prst_width === 'width-md'" -->
-  <!-- data-class:width-lg="$prst_width === 'width-lg'"> -->
+<body>
+<div class="vh" data-init="@get('./partials/head.html')"></div>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
+  data-signals:prst_mode="'system'"
+      data-signals:prst_width="'width-md'"
+      data-class:width-sm="$prst_width === 'width-sm'"
+      data-class:width-md="$prst_width === 'width-md'"
+      data-class:width-lg="$prst_width === 'width-lg'">
     
-    <div class="grid:hero gap:xs"> 
-      <header id="header" data-init="@get('./partials/header.html')"></header>
-      <nav id="nav"></nav>
-      <dialog id="nav-drawer"></dialog>
+  <div class="grid:hero gap:xs">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
 
-      <main id="main" style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
-        <p>Loading README...</p>
-      </main>
+<main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
+        
+        <header class="flex:stack">
+          <h1 class="text:lg">Cards</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Container with padding, border, and shadow variants.</p>
+        </header>
 
-      <!-- <script> -->
-      <!--   fetch('https://github.com/Deufel/cube/raw/refs/heads/master/README.md') -->
-      <!--     .then(res => res.text()) -->
-      <!--     .then(md => { -->
-      <!--       document.getElementById('main').innerHTML = marked.parse(md); -->
-      <!--       Prism.highlightAll(); -->
-      <!--     }) -->
-      <!--     .catch(err => { -->
-      <!--       document.getElementById('main').innerHTML = '<p>Failed to load README.md</p>'; -->
-      <!--     }); -->
-      <!-- </script> -->
+        <hr>
 
-      <dialog id="aside-drawer"></dialog>
-      <dialog id="footer">      </dialog>
-    </div>
-    <p class="vh" data-init="@get('./partials/head.html'); @get('./partials/header.html'); @get('./partials/nav.html'); @get('./partials/aside.html'); @get('./partials/footer.html')">
-  </body>
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
+          
+          <!-- Demos -->
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Variants</h3>
+              <div class="card gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="grid:auto-fit gap:sm" style="--grid-min: 150px;">
+                  <div class="card">
+                    <h3>Default</h3>
+                    <p>Subtle primary tint.</p>
+                  </div>
+                  <div class="card pri">
+                    <h3>Primary</h3>
+                    <p>Stronger primary tint.</p>
+                  </div>
+                  <div class="card sec">
+                    <h3>Secondary</h3>
+                    <p>Secondary color tint.</p>
+                  </div>
+                  <div class="card gla">
+                    <h3>Glass</h3>
+                    <p>Frosted glass blur.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="flex:stack">
+              <h3 class="text:md">Alert Cards</h3>
+              <div class="card gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px; max-width: 400px;">
+                <div class="card:alert">
+                  <h3>Information</h3>
+                  <p>This is an informational alert.</p>
+                  <button class="btn:pri-sm out">OK</button>
+                </div>
+                <div class="card:alert">
+                  <h3>Confirm Action</h3>
+                  <p>Are you sure you want to proceed?</p>
+                  <div class="flex:cluster gap:xs">
+                    <button class="btn:sec-sm out">Cancel</button>
+                    <button class="btn:pri-sm out">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm" style="--flank-size: 280px;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Classes</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>.card</code></td>
+                  <td style="padding: var(--space-xs);">Base container</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>.card:alert</code></td>
+                  <td style="padding: var(--space-xs);">Alert variant</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Modifiers</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Class</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>pri</code></td>
+                  <td style="padding: var(--space-xs);">Primary tint</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>sec</code></td>
+                  <td style="padding: var(--space-xs);">Secondary tint</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>gla</code></td>
+                  <td style="padding: var(--space-xs);">Glass effect</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div>
+
+        <hr>
+
+        <!-- Usage (full width) -->
+        <article class="flex:stack gap:xs">
+          <h3 class="text:md">Usage</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Basic card --&gt;
+&lt;div class="card"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Card variants --&gt;
+&lt;div class="card pri"&gt;...&lt;/div&gt;
+&lt;div class="card sec"&gt;...&lt;/div&gt;
+&lt;div class="card gla"&gt;...&lt;/div&gt;
+
+&lt;!-- Alert with actions --&gt;
+&lt;div class="card:alert"&gt;
+  &lt;h3&gt;Alert Title&lt;/h3&gt;
+  &lt;p&gt;Alert message&lt;/p&gt;
+  &lt;div class="flex:cluster gap:xs"&gt;
+    &lt;button class="btn:sec-sm out"&gt;Cancel&lt;/button&gt;
+    &lt;button class="btn:pri-sm out"&gt;Confirm&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </article>
+
+      </article>
+    </main>
+
+    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+  </div>
+</body>
 </html>
