@@ -30,7 +30,12 @@
   dialog {
     border: none;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-5);
+    box-shadow: var(--shadow-dialog);
+    
+    [data-mode="dark"] & {
+      box-shadow: none;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.1));
+    }
     
     &::backdrop {
       background: rgb(0 0 0 / 0.5);
@@ -41,7 +46,7 @@
   [class*="drawer:"] {
     position: fixed;
     background: var(--surface-card, white);
-    box-shadow: var(--shadow-5);
+    box-shadow: var(--shadow-dialog);
     overflow: hidden;
     
     /* Reset dialog/popover defaults */
@@ -411,7 +416,7 @@
     background: var(--surface-card);
     border-radius: var(--radius-md);
     border: 1px solid var(--surface-border);
-    box-shadow: var(--shadow-3);
+    box-shadow: var(--shadow-popup);
     
     transition: 
       display 0.2s allow-discrete, 
