@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode">
+<head id="head">
+  <title>Colors - Cube CSS</title>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
+  <style>
+    .swatch { flex: 1; height: 12px; }
+    .scale { display: flex; gap: 1px; border-radius: var(--radius-xs); overflow: hidden; }
+  </style>
+</head>
+<body>
+<div class="vh" data-init="@get('./partials/head.html')"></div>
+<body class="fullscreen scroll-no"
+  data-persist="{include: /^prst_/}"
+  data-signals:prst_theme="'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
+  data-signals:prst_mode="'system'"
+  data-signals:prst_width="'width-md'"
+  data-class:width-sm="$prst_width === 'width-sm'"
+  data-class:width-md="$prst_width === 'width-md'"
+  data-class:width-lg="$prst_width === 'width-lg'">
+
+  <div class="grid:hero">
+    <div id="header" data-init="@get('./partials/header.html')"></div>
+    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+    <div id="nav-drawer"></div>
+
+    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+      <article class="flex:stack gap:md p:sm">
+        
+        <header class="flex:stack">
+          <h1 class="text:lg">Colors</h1>
+          <p class="text:sm" style="color: var(--text-muted);">Color primitives from <code>1_props.css</code>. Raw OKLCH scales (0-9) that themes map to semantic tokens.</p>
+        </header>
+
+        <hr>
+
+        <!-- Flank layout: Demos (fills) | API (sidebar) -->
+        <div class="flex:flank-end gap:sm">
+          
+          <!-- Color Scales -->
+          <article class="flex:stack gap:sm">
+            <!-- Theme Palette -->
+            <section class="flex:stack gap:xs">
+              <h3 class="text:md">Theme Palette</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Primary and secondary colors defined by each theme.</p>
+              <div class="card gla p:sm">
+                <div class="flex:cluster gap:sm">
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-pri);"></div>
+                    <code class="text:xs">--color-pri</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-sec);"></div>
+                    <code class="text:xs">--color-sec</code>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Status Colors -->
+            <section class="flex:stack gap:xs">
+              <h3 class="text:md">Status Colors</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Semantic colors for feedback states.</p>
+              <div class="card gla p:sm">
+                <div class="flex:cluster gap:sm">
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-inf);"></div>
+                    <code class="text:xs">--color-inf</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-suc);"></div>
+                    <code class="text:xs">--color-suc</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-wrn);"></div>
+                    <code class="text:xs">--color-wrn</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-err);"></div>
+                    <code class="text:xs">--color-err</code>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Raw Scales -->
+            <section class="flex:stack gap:xs">
+              <h3 class="text:md">Raw Scales</h3>
+              <p class="text:xs" style="color: var(--text-muted);">OKLCH primitives (0-9). Use <code>--{color}-{n}</code> syntax.</p>
+              
+              <div class="card gla p:sm">
+                <div class="flex:stack gap:xs">
+                  <div class="flex:split align:center"><code class="text:xs">gry</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--gry-0);"></div><div class="swatch" style="background: var(--gry-1);"></div><div class="swatch" style="background: var(--gry-2);"></div><div class="swatch" style="background: var(--gry-3);"></div><div class="swatch" style="background: var(--gry-4);"></div><div class="swatch" style="background: var(--gry-5);"></div><div class="swatch" style="background: var(--gry-6);"></div><div class="swatch" style="background: var(--gry-7);"></div><div class="swatch" style="background: var(--gry-8);"></div><div class="swatch" style="background: var(--gry-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">red</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--red-0);"></div><div class="swatch" style="background: var(--red-1);"></div><div class="swatch" style="background: var(--red-2);"></div><div class="swatch" style="background: var(--red-3);"></div><div class="swatch" style="background: var(--red-4);"></div><div class="swatch" style="background: var(--red-5);"></div><div class="swatch" style="background: var(--red-6);"></div><div class="swatch" style="background: var(--red-7);"></div><div class="swatch" style="background: var(--red-8);"></div><div class="swatch" style="background: var(--red-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">pnk</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--pnk-0);"></div><div class="swatch" style="background: var(--pnk-1);"></div><div class="swatch" style="background: var(--pnk-2);"></div><div class="swatch" style="background: var(--pnk-3);"></div><div class="swatch" style="background: var(--pnk-4);"></div><div class="swatch" style="background: var(--pnk-5);"></div><div class="swatch" style="background: var(--pnk-6);"></div><div class="swatch" style="background: var(--pnk-7);"></div><div class="swatch" style="background: var(--pnk-8);"></div><div class="swatch" style="background: var(--pnk-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">grp</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--grp-0);"></div><div class="swatch" style="background: var(--grp-1);"></div><div class="swatch" style="background: var(--grp-2);"></div><div class="swatch" style="background: var(--grp-3);"></div><div class="swatch" style="background: var(--grp-4);"></div><div class="swatch" style="background: var(--grp-5);"></div><div class="swatch" style="background: var(--grp-6);"></div><div class="swatch" style="background: var(--grp-7);"></div><div class="swatch" style="background: var(--grp-8);"></div><div class="swatch" style="background: var(--grp-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">vio</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--vio-0);"></div><div class="swatch" style="background: var(--vio-1);"></div><div class="swatch" style="background: var(--vio-2);"></div><div class="swatch" style="background: var(--vio-3);"></div><div class="swatch" style="background: var(--vio-4);"></div><div class="swatch" style="background: var(--vio-5);"></div><div class="swatch" style="background: var(--vio-6);"></div><div class="swatch" style="background: var(--vio-7);"></div><div class="swatch" style="background: var(--vio-8);"></div><div class="swatch" style="background: var(--vio-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">ind</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--ind-0);"></div><div class="swatch" style="background: var(--ind-1);"></div><div class="swatch" style="background: var(--ind-2);"></div><div class="swatch" style="background: var(--ind-3);"></div><div class="swatch" style="background: var(--ind-4);"></div><div class="swatch" style="background: var(--ind-5);"></div><div class="swatch" style="background: var(--ind-6);"></div><div class="swatch" style="background: var(--ind-7);"></div><div class="swatch" style="background: var(--ind-8);"></div><div class="swatch" style="background: var(--ind-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">blu</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--blu-0);"></div><div class="swatch" style="background: var(--blu-1);"></div><div class="swatch" style="background: var(--blu-2);"></div><div class="swatch" style="background: var(--blu-3);"></div><div class="swatch" style="background: var(--blu-4);"></div><div class="swatch" style="background: var(--blu-5);"></div><div class="swatch" style="background: var(--blu-6);"></div><div class="swatch" style="background: var(--blu-7);"></div><div class="swatch" style="background: var(--blu-8);"></div><div class="swatch" style="background: var(--blu-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">cyn</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--cyn-0);"></div><div class="swatch" style="background: var(--cyn-1);"></div><div class="swatch" style="background: var(--cyn-2);"></div><div class="swatch" style="background: var(--cyn-3);"></div><div class="swatch" style="background: var(--cyn-4);"></div><div class="swatch" style="background: var(--cyn-5);"></div><div class="swatch" style="background: var(--cyn-6);"></div><div class="swatch" style="background: var(--cyn-7);"></div><div class="swatch" style="background: var(--cyn-8);"></div><div class="swatch" style="background: var(--cyn-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">tel</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--tel-0);"></div><div class="swatch" style="background: var(--tel-1);"></div><div class="swatch" style="background: var(--tel-2);"></div><div class="swatch" style="background: var(--tel-3);"></div><div class="swatch" style="background: var(--tel-4);"></div><div class="swatch" style="background: var(--tel-5);"></div><div class="swatch" style="background: var(--tel-6);"></div><div class="swatch" style="background: var(--tel-7);"></div><div class="swatch" style="background: var(--tel-8);"></div><div class="swatch" style="background: var(--tel-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">grn</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--grn-0);"></div><div class="swatch" style="background: var(--grn-1);"></div><div class="swatch" style="background: var(--grn-2);"></div><div class="swatch" style="background: var(--grn-3);"></div><div class="swatch" style="background: var(--grn-4);"></div><div class="swatch" style="background: var(--grn-5);"></div><div class="swatch" style="background: var(--grn-6);"></div><div class="swatch" style="background: var(--grn-7);"></div><div class="swatch" style="background: var(--grn-8);"></div><div class="swatch" style="background: var(--grn-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">lim</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--lim-0);"></div><div class="swatch" style="background: var(--lim-1);"></div><div class="swatch" style="background: var(--lim-2);"></div><div class="swatch" style="background: var(--lim-3);"></div><div class="swatch" style="background: var(--lim-4);"></div><div class="swatch" style="background: var(--lim-5);"></div><div class="swatch" style="background: var(--lim-6);"></div><div class="swatch" style="background: var(--lim-7);"></div><div class="swatch" style="background: var(--lim-8);"></div><div class="swatch" style="background: var(--lim-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">yel</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--yel-0);"></div><div class="swatch" style="background: var(--yel-1);"></div><div class="swatch" style="background: var(--yel-2);"></div><div class="swatch" style="background: var(--yel-3);"></div><div class="swatch" style="background: var(--yel-4);"></div><div class="swatch" style="background: var(--yel-5);"></div><div class="swatch" style="background: var(--yel-6);"></div><div class="swatch" style="background: var(--yel-7);"></div><div class="swatch" style="background: var(--yel-8);"></div><div class="swatch" style="background: var(--yel-9);"></div></div></div>
+                  <div class="flex:split align:center"><code class="text:xs">org</code><div class="scale" style="width: 200px;"><div class="swatch" style="background: var(--org-0);"></div><div class="swatch" style="background: var(--org-1);"></div><div class="swatch" style="background: var(--org-2);"></div><div class="swatch" style="background: var(--org-3);"></div><div class="swatch" style="background: var(--org-4);"></div><div class="swatch" style="background: var(--org-5);"></div><div class="swatch" style="background: var(--org-6);"></div><div class="swatch" style="background: var(--org-7);"></div><div class="swatch" style="background: var(--org-8);"></div><div class="swatch" style="background: var(--org-9);"></div></div></div>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <!-- API Reference (sidebar) -->
+          <article class="card sec flex:stack gap:sm p:sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
+            <h3 class="text:md">API Reference</h3>
+            
+            <h4 class="text:sm">Primitives</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Token</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--{color}-{0-9}</code></td>
+                  <td style="padding: var(--space-xs);">Raw OKLCH scale</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4 class="text:sm">Available Scales</h4>
+            <p class="text:xs" style="color: var(--text-muted);">gry, red, pnk, grp, vio, ind, blu, cyn, tel, grn, lim, yel, org</p>
+
+            <h4 class="text:sm">Semantic (Theme)</h4>
+            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <th style="text-align: left; padding: var(--space-xs);">Token</th>
+                  <th style="text-align: left; padding: var(--space-xs);">Usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-pri</code></td>
+                  <td style="padding: var(--space-xs);">Primary accent</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-sec</code></td>
+                  <td style="padding: var(--space-xs);">Secondary accent</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-suc</code></td>
+                  <td style="padding: var(--space-xs);">Success</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-wrn</code></td>
+                  <td style="padding: var(--space-xs);">Warning</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-err</code></td>
+                  <td style="padding: var(--space-xs);">Error</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>--color-inf</code></td>
+                  <td style="padding: var(--space-xs);">Info</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+        </div><!-- end flex:flank-end -->
+
+        <hr>
+
+        <!-- Light/Dark Mode -->
+        <section class="flex:stack gap:sm">
+          <h2 class="text:md">Light/Dark Mode</h2>
+          <p class="text:sm" style="color: var(--text-muted);">Mode is set via <code>data-mode</code> attribute on <code>&lt;html&gt;</code>. Datastar resolves system preference automatically.</p>
+          
+          <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Datastar expression resolves system preference --&gt;
+&lt;html data-attr:data-mode="$prst_mode === 'system' 
+  ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') 
+  : $prst_mode"&gt;
+
+&lt;!-- CSS targets the attribute --&gt;
+[data-mode="dark"] {
+  --shadow-color: white;
+  /* dark mode overrides */
+}</code></pre>
+        </section>
+
+      </article>
+    </main>
+
+    <div id="aside" data-init="@get('./partials/aside.html')"></div>
+    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+  </div>
+
+</body>
+</html>
