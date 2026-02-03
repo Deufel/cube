@@ -77,10 +77,7 @@
     background: color-mix(in oklch, var(--_surface-base), var(--gry-3) 20%);
   }
 
-
-  /* === Color Utils  === */
-  .swatch { flex: 1; height: 12px; }
-  .scale { display: flex; gap: 1px; border-radius: var(--radius-xs); overflow: hidden; }
+  :is(.vh) {inline-size: 0; block-size: 0; overflow: hidden;}
   
   /* === RESPONSIVE VISIBILITY === */
   @media (width > 768px) { .mobile { display: none !important; } }
