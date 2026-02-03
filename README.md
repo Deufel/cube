@@ -1,9 +1,12 @@
 # CUBE CSS Design System
 
-A minimal CSS design system inspired by [CUBE CSS](https://cube.fyi), implemented with CSS Layers.
+*un-released software not intended for public consumption; a personal project*
+
+An attempt at a minimal CSS design system inspired by ideas from [CUBE CSS](https://cube.fyi), [OpenPropsUI](https://open-props-ui.netlify.app/), [OpenPros](https://open-props.style/) implemented with CSS Layers.
 
 ## Philosophy
 
+- **Datastar Required** - Learn [Datastar](https://data-star.dev/guide/the_tao_of_datastar/) It may look like a lot of things are missing from this style sheet but that is because with Ddatastar you just don't need a lot of things. 
 - **Layered cascade** — Uses `@layer` for specificity control, eliminating the need for BEM naming or `!important`
 - **Static props, semantic themes** — Raw tokens (`--size-1`, `--size-2`, `--blu-5`) live in props layer; themes map them to semantic names (`--space-sm`, `--color-pri`). Swap one theme file to restyle everything.
 - **Exceptions use classes, not `data-*`** — Reserves `data-*` attributes for Datastar integration
