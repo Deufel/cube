@@ -1,0 +1,71 @@
+<dialog id="aside">
+<!-- <dialog id="aside" class="drawer:right" popover="manual"> -->
+  <div class="drawer-content flex:stack gap:md">
+    <div class="drawer-header">
+      <h3>Settings</h3>
+      <button class="close-btn" popovertarget="aside-drawer">Close</button>
+    </div>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Theme</h3>
+      <div class="tabs:pri-sm full">
+        <button 
+          data-class:tab:active="$prst_theme === 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
+          data-class:tab="$prst_theme !== 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
+          data-on:click="$prst_theme = 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'">Evergreen</button>
+        <button 
+          data-class:tab:active="$prst_theme === 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-sahara.css'"
+          data-class:tab="$prst_theme !== 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-sahara.css'"
+          data-on:click="$prst_theme = 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-sahara.css'">Sahara</button>
+        <button 
+          data-class:tab:active="$prst_theme === 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-cyber.css'"
+          data-class:tab="$prst_theme !== 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-cyber.css'"
+          data-on:click="$prst_theme = 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-cyber.css'">Cyber</button>
+        <button 
+          data-class:tab:active="$prst_theme === 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-tokyo.css'"
+          data-class:tab="$prst_theme !== 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-tokyo.css'"
+          data-on:click="$prst_theme = 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-tokyo.css'">Tokyo</button>
+        <button 
+          data-class:tab:active="$prst_theme === 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-garden.css'"
+          data-class:tab="$prst_theme !== 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-garden.css'"
+          data-on:click="$prst_theme = 'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-garden.css'">Garden</button>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Mode</h3>
+      <div class="tabs:pri-sm full">
+        <button 
+          data-class:tab:active="$prst_mode === 'light'"
+          data-class:tab="$prst_mode !== 'light'"
+          data-on:click="$prst_mode = 'light'">Light</button>
+        <button 
+          data-class:tab:active="$prst_mode === 'system'"
+          data-class:tab="$prst_mode !== 'system'"
+          data-on:click="$prst_mode = 'system'">System</button>
+        <button 
+          data-class:tab:active="$prst_mode === 'dark'"
+          data-class:tab="$prst_mode !== 'dark'"
+          data-on:click="$prst_mode = 'dark'">Dark</button>
+      </div>
+    </section>
+
+    <section class="flex:stack gap:sm">
+      <h3 class="text:sm">Width</h3>
+      <div class="tabs:pri-sm full">
+        <button 
+          data-class:tab:active="$prst_width === 'width-sm'"
+          data-class:tab="$prst_width !== 'width-sm'"
+          data-on:click="$prst_width = 'width-sm'">Small</button>
+        <button 
+          data-class:tab:active="$prst_width === 'width-md'"
+          data-class:tab="$prst_width !== 'width-md'"
+          data-on:click="$prst_width = 'width-md'">Medium</button>
+        <button 
+          data-class:tab:active="$prst_width === 'width-lg'"
+          data-class:tab="$prst_width !== 'width-lg'"
+          data-on:click="$prst_width = 'width-lg'">Large</button>
+      </div>
+    </section>
+  </div>
+</dialog>
