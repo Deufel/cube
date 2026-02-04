@@ -96,9 +96,11 @@
     --btn-height-md: 2.375rem;
     --btn-height-lg: 2.875rem;
 
-    /* === GLASS === */
-    --glass-bg: var(--glass-bg-1);
-    --glass-border: var(--glass-border-1);
+    /* === GLASS === crisp minimal */
+    --glass-bg: var(--glass-bg-2);
+    --glass-border: var(--glass-border-2);
+    --glass-blur: var(--glass-blur-1);
+    --glass-shadow: var(--glass-shadow-3);
     --blur-sm: var(--size-px-2);
     --blur-md: var(--size-px-3);
   }

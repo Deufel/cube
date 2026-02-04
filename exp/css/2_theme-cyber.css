@@ -95,9 +95,11 @@
     --btn-height-md: 2.375rem;
     --btn-height-lg: 2.875rem;
 
-        /* === GLASS === */
+        /* === GLASS === subtle + strong blur for neon glow effect */
     --glass-bg: var(--glass-bg-1);
-    --glass-border: var(--glass-border-1);
+    --glass-border: var(--glass-border-2);
+    --glass-blur: var(--glass-blur-3);
+    --glass-shadow: var(--glass-shadow-1);
     --blur-sm: var(--size-px-2);
     --blur-md: var(--size-px-3);
   }

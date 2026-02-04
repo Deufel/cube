@@ -67,7 +67,13 @@
     --org-0: oklch(0.97 0.048 55); --org-1: oklch(0.94 0.090 55); --org-2: oklch(0.89 0.135 53); --org-3: oklch(0.84 0.170 51); --org-4: oklch(0.78 0.195 49); --org-5: oklch(0.72 0.210 47); --org-6: oklch(0.67 0.215 45); --org-7: oklch(0.62 0.210 43); --org-8: oklch(0.56 0.200 41); --org-9: oklch(0.50 0.185 39);
     --size-000: -.5rem; --size-00: -.25rem; --size-1: .25rem; --size-2: .5rem; --size-3: 1rem; --size-4: 1.25rem; --size-5: 1.5rem; --size-6: 1.75rem; --size-7: 2rem; --size-8: 3rem; --size-9: 4rem;
     --size-px-1: 4px; --size-px-2: 8px; --size-px-3: 16px; --size-px-4: 20px; --size-px-5: 24px; --size-px-6: 28px; --size-px-7: 32px; --size-px-8: 40px; --size-px-9: 48px; --size-px-10: 64px; --size-px-11: 80px;
-    --glass-bg-1: rgba(255, 255, 255, 0.1); --glass-border-1: rgba(255, 255, 255, 0.2);
+    /* Glass - 1=subtle, 2=medium, 3=strong */
+    --glass-bg-1: rgba(255, 255, 255, 0.1); --glass-bg-2: rgba(255, 255, 255, 0.5); --glass-bg-3: rgba(255, 255, 255, 0.8);
+    --glass-border-1: rgba(255, 255, 255, 0.1); --glass-border-2: rgba(255, 255, 255, 0.3); --glass-border-3: rgba(255, 255, 255, 0.5);
+    --glass-blur-1: 4px; --glass-blur-2: 8px; --glass-blur-3: 12px;
+    --glass-shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.03), inset 0 1px 0 0 rgb(255 255 255 / 0.03);
+    --glass-shadow-2: 0 1px 2px 0 rgb(0 0 0 / 0.05), inset 0 1px 0 0 rgb(255 255 255 / 0.1);
+    --glass-shadow-3: 0 1px 2px 0 rgb(0 0 0 / 0.08), inset 0 1px 0 0 rgb(255 255 255 / 0.2);
     --content-1: 25ch; --content-2: 45ch; --content-3: 75ch;
     --border-size-1: 1px; --border-size-2: 2px; --border-size-3: 5px;
     --radius-1: 2px; --radius-2: 5px; --radius-3: 1rem; --radius-4: 2rem; --radius-5: 4rem;
