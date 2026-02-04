@@ -656,7 +656,7 @@
   }
 
   /* Compact mode - stack vertically */
-  @container (width <= 4rem) {
+  @container (width <= 5rem) {
     & a {
       flex-direction: column;
       align-items: center;
