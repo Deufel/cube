@@ -74,6 +74,19 @@
     --glass-shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.03), inset 0 1px 0 0 rgb(255 255 255 / 0.03);
     --glass-shadow-2: 0 1px 2px 0 rgb(0 0 0 / 0.05), inset 0 1px 0 0 rgb(255 255 255 / 0.1);
     --glass-shadow-3: 0 1px 2px 0 rgb(0 0 0 / 0.08), inset 0 1px 0 0 rgb(255 255 255 / 0.2);
+    
+    /* Glass dark mode - tinted with primary */
+    &[data-mode="dark"] {
+      --glass-bg-1: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 5%, rgba(255, 255, 255, 0.05));
+      --glass-bg-2: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 10%, rgba(255, 255, 255, 0.1));
+      --glass-bg-3: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 15%, rgba(255, 255, 255, 0.15));
+      --glass-border-1: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 20%, rgba(255, 255, 255, 0.1));
+      --glass-border-2: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 25%, rgba(255, 255, 255, 0.15));
+      --glass-border-3: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 30%, rgba(255, 255, 255, 0.2));
+      --glass-shadow-1: 0 0 8px color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)), transparent 85%);
+      --glass-shadow-2: 0 0 12px color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)), transparent 75%);
+      --glass-shadow-3: 0 0 16px color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)), transparent 65%);
+    }
     --content-1: 25ch; --content-2: 45ch; --content-3: 75ch;
     --border-size-1: 1px; --border-size-2: 2px; --border-size-3: 5px;
     --radius-1: 2px; --radius-2: 5px; --radius-3: 1rem; --radius-4: 2rem; --radius-5: 4rem;
