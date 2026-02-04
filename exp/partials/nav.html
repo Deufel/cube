@@ -4,15 +4,15 @@
   data-ref:nav-drawer
   data-on:click="evt.target === el && el.close()"
 >
-  <div data-style:width="!$prst_page.nav_drawer && $prst_page.nav_compact ? '4rem' : ''">
+  <div data-style:width="!$prst_page.nav_drawer && $prst_page.nav_compact ? '4rem' : '14rem'">
     <header>
-      <h3>Navigation</h3>
-    </header>
-    <nav>
       <a href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
         Readme
       </a>
+      <hr>
+    </header>
+    <nav>
       <a href="colors.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>
         Colors
@@ -74,6 +74,27 @@
         <small>wip</small>
       </a>
     </nav>
-    <footer></footer>
+    <footer>
+      <hr>
+      <button class="icon-btn" 
+        data-show="$prst_page.nav_drawer" 
+        data-on:click="$prst_page.nav_drawer = false; el.closest('dialog').close()" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>
+      </button>
+      <div class="flex:split">
+        <button class="icon-btn" data-show="!$prst_page.nav_drawer" data-on:click="$prst_page.nav_compact = !$prst_page.nav_compact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="transition: transform 0.3s ease;"
+            data-style:transform="$prst_page.nav_compact ? 'rotate(180deg)' : ''">
+            <path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/>
+          </svg>
+        </button>
+        <button class="icon-btn" 
+          data-show="!$prst_page.nav_drawer  && !$prst_page.nav_compact"
+          data-on:click="$prst_page.nav_drawer = true" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-left-icon lucide-square-arrow-out-up-left"><path d="M13 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"/><path d="m3 3 9 9"/><path d="M3 9V3h6"/></svg>
+        </button>
+      </div>
+    </footer>
   </div>
 </dialog>

@@ -1,0 +1,10 @@
+@layer important{
+
+  /* === VISUALLY HIDDEN === */
+  :is(.vh) {inline-size: 0; block-size: 0; overflow: hidden;}
+  
+  /* === RESPONSIVE VISIBILITY === */
+  @media (width > 768px) { .mobile { display: none !important; } }
+  @media (width <= 768px) { .desktop { display: none !important; } }
+
+}
