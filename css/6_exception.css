@@ -364,18 +364,10 @@
       );
     }
     &.gla {
-      background: light-dark(
-        color-mix(in oklch, white, transparent 20%),
-        color-mix(in oklch, var(--gry-8), transparent 40%)
-      );
-      backdrop-filter: blur(12px);
-      border-color: light-dark(
-        color-mix(in oklch, white, transparent 50%),
-        color-mix(in oklch, var(--gry-6), transparent 70%)
-      );
-      box-shadow:
-        0 1px 2px 0 rgb(0 0 0 / 0.05),
-        inset 0 1px 0 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.05));
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      border-color: var(--glass-border);
+      box-shadow: var(--glass-shadow);
     }
   }
 

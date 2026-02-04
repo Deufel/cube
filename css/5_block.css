@@ -45,8 +45,10 @@
   /* === DRAWER === */
   [class*="drawer:"] {
     position: fixed;
-    background: var(--surface-card, white);
-    box-shadow: var(--shadow-dialog);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     overflow: hidden;
     
     [data-mode="dark"] & {
