@@ -1,0 +1,111 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    font-family: var(--font-humanist);
+    letter-spacing: 0;
+
+    /* === SHADOW (warm natural tint) === */
+    --shadow-out-md: var(--shadow-2);
+    --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(45 58 50 / 0.12), 0 4px 12px -4px rgb(45 58 50 / 0.08);
+    --shadow-card: light-dark(
+      0 1px 3px 0 rgb(45 58 50 / 0.08),
+      0 2px 8px 0 rgb(0 0 0 / 0.35)
+    );
+    --shadow-card-hover: light-dark(
+      0 2px 6px 0 rgb(45 58 50 / 0.12),
+      0 4px 16px 0 rgb(0 0 0 / 0.45)
+    );
+
+    /* === SPACING === */
+    --space-xs: var(--size-1);
+    --space-sm: var(--size-2);
+    --space-md: var(--size-3);
+    --space-lg: var(--size-5);
+    --space-xl: var(--size-7);
+
+    /* === RADII (softer, organic) === */
+    --rad-sm: var(--radius-2);
+    --rad-md: var(--radius-3);
+    --rad-lg: var(--radius-4);
+    --rad-pill: var(--radius-round);
+
+    /* === TYPOGRAPHY === */
+    --text-xs: var(--font-size-0);
+    --text-sm: var(--font-size-1);
+    --text-md: var(--font-size-2);
+    --text-lg: var(--font-size-3);
+    --text-xl: var(--font-size-5);
+    --text-xxl: var(--font-size-7);
+
+    /* === BASE COLORS === */
+    /* Cream / Deep Forest */
+    --color-bg: light-dark(#f5f2eb, #1a2a1f);
+    --color-fg: light-dark(#2d3a32, #e8e4db);
+
+    /* Surface layers */
+    --color-surf-1: light-dark(#fffdf8, #1f3026);
+    --color-surf-2: light-dark(#f5f2eb, #243a2c);
+    --color-surf-3: light-dark(#e8e4db, #2a4533);
+
+    /* Muted/subtle text */
+    --color-muted: light-dark(#6b7a6f, #9aaa9d);
+
+    /* Borders */
+    --color-bord: light-dark(#d4d0c7, #3a4a3f);
+    --color-bord-strong: light-dark(#b8b4ab, #4a5a4f);
+
+    /* === SEMANTIC COLORS === */
+
+    /* Primary - Forest Green */
+    --color-pri: light-dark(#3d5a47, #7a9a7d);
+    --color-pri-hover: light-dark(#4a6a54, #8aaa8d);
+    --color-pri-active: light-dark(#2d4a37, #6a8a6d);
+    --color-pri-fg: light-dark(#ffffff, #1a2a1f);
+    --color-pri-subtle: light-dark(#e8f0ea, #2a3a2f);
+
+    /* Secondary - Sage */
+    --color-sec: light-dark(#6b8a6f, #4a6a50);
+    --color-sec-hover: light-dark(#7a9a7f, #5a7a60);
+    --color-sec-active: light-dark(#5b7a5f, #3a5a40);
+    --color-sec-fg: light-dark(#ffffff, #e8e4db);
+    --color-sec-subtle: light-dark(#ecf2ed, #2a3a2c);
+
+    /* Accent - Warm Amber */
+    --color-acc: light-dark(#8b6b4a, #c9a86c);
+    --color-acc-hover: light-dark(#9b7b5a, #d9b87c);
+    --color-acc-active: light-dark(#7b5b3a, #b9985c);
+    --color-acc-fg: light-dark(#ffffff, #1a2a1f);
+    --color-acc-subtle: light-dark(#f5f0e8, #3a3228);
+
+    /* Danger - Muted Rust */
+    --color-dgr: light-dark(#8a4a4a, #c47a7a);
+    --color-dgr-hover: light-dark(#9a5a5a, #d48a8a);
+    --color-dgr-active: light-dark(#7a3a3a, #b46a6a);
+    --color-dgr-fg: light-dark(#ffffff, #1a2a1f);
+    --color-dgr-subtle: light-dark(#f5eaea, #3a2828);
+
+    /* Success - Fresh Leaf */
+    --color-suc: light-dark(#4a7a4a, #6aaa6a);
+    --color-suc-hover: light-dark(#5a8a5a, #7aba7a);
+    --color-suc-active: light-dark(#3a6a3a, #5a9a5a);
+    --color-suc-fg: light-dark(#ffffff, #1a2a1f);
+    --color-suc-subtle: light-dark(#eaf5ea, #283a28);
+
+    /* Info - Soft Sky */
+    --color-inf: light-dark(#5a7a8a, #8aaaba);
+    --color-inf-hover: light-dark(#6a8a9a, #9abaca);
+    --color-inf-active: light-dark(#4a6a7a, #7a9aaa);
+    --color-inf-fg: light-dark(#ffffff, #1a2a1f);
+    --color-inf-subtle: light-dark(#eaf0f5, #28323a);
+
+    /* === FOCUS === */
+    --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-pri);
+
+    /* === TRANSITIONS === */
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --trans-fast: 120ms var(--ease-out);
+    --trans-med: 200ms var(--ease-out);
+  }
+}

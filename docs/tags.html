@@ -8,7 +8,8 @@
 <div class="vh" data-init="@get('./partials/head.html')"></div>
 <body class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
-  data-signals:prst_theme="'https://cdn.jsdelivr.net/gh/deufel/cube@master/css/2_theme-default.css'"
+  data-signals="{prst_page: {nav_drawer: false, nav_compact: false}}"
+  data-signals:prst_theme="'./css/2_theme-default.css'"
   data-signals:prst_mode="'system'"
   data-signals:prst_width="'width-md'"
   data-class:width-sm="$prst_width === 'width-sm'"
@@ -18,7 +19,6 @@
   <div class="grid:hero gap:xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
-    <div id="nav-drawer"></div>
 
     <main class="scroll-y card" style="grid-area: 2/2/3/3;">
       <article class="flex:stack gap:lg p:md" style="max-width: 800px;">

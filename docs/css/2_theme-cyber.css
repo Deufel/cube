@@ -1,0 +1,109 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    font-family: var(--font-monospace-code);
+    letter-spacing: 0.02em;
+
+    /* === SHADOW === */
+    --shadow-out-md: var(--shadow-2);
+    --shadow-in-md: var(--inner-shadow-2);
+    --shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.15), 0 4px 12px -4px rgb(0 0 0 / 0.1);
+    --shadow-card: light-dark(
+      0 1px 3px 0 rgb(0 0 0 / 0.08),
+      0 0 20px -8px rgb(0 255 200 / 0.15)
+    );
+    --shadow-card-hover: light-dark(
+      0 2px 8px 0 rgb(0 0 0 / 0.12),
+      0 0 30px -5px rgb(255 230 0 / 0.2)
+    );
+
+    /* === SPACING === */
+    --space-xs: var(--size-1);
+    --space-sm: var(--size-2);
+    --space-md: var(--size-3);
+    --space-lg: var(--size-4);
+    --space-xl: var(--size-5);
+
+    /* === LAYOUT === */
+    --grid-gap: var(--space-sm);
+
+    /* === RADIUS (sharp edges) === */
+    --radius-sm: 0;
+    --radius-md: var(--radius-1);
+    --radius-lg: var(--radius-2);
+    --radius-btn: var(--radius-1);
+    --radius-card: var(--radius-2);
+
+    /* === BORDERS === */
+    --border-subtle: light-dark(var(--gry-3), var(--gry-7));
+    --border-muted: light-dark(var(--gry-4), var(--gry-6));
+
+    /* === SURFACES === */
+    --surface-1: light-dark(var(--gry-2), #151815);
+    --surface-2: light-dark(var(--gry-1), #1a1d1a);
+    --surface-3: light-dark(white, #252a25);
+    --surface-border: light-dark(var(--gry-3), #2f352f);
+    --surface-hover: light-dark(var(--gry-2), #2f352f);
+    --_surface-base: var(--surface-1);
+
+    /* === LEGACY SURFACES === */
+    --surface-page: light-dark(var(--gry-1), #1a1d1a);
+    --surface-card: light-dark(white, #252a25);
+    --surface-raised: light-dark(var(--gry-0), #2f352f);
+    --surface-inset: light-dark(var(--gry-2), #151815);
+    --surface-input: light-dark(white, #1e221e);
+    --surface-btn: light-dark(var(--gry-2), #2f352f);
+
+    /* === COLORS (Cyberpunk: neon yellow primary, teal secondary) === */
+    --color-pri: var(--yel-4);
+    --color-pri-text: var(--gry-9);
+
+    --color-sec: light-dark(var(--red-6), var(--red-5));
+    --color-sec-text: white;
+
+    --color-wrn: light-dark(var(--yel-5), var(--yel-5));
+    --color-wrn-text: var(--gry-9);
+
+    --color-dgr: light-dark(var(--red-6), var(--red-5));
+    --color-dgr-text: white;
+
+    --color-inf: light-dark(var(--blu-6), var(--cyn-5));
+    --color-inf-text: light-dark(white, var(--gry-9));
+
+    /* === FEEDBACK COLORS === */
+    --color-suc: light-dark(var(--grn-6), var(--grn-5));
+    --color-err: var(--color-dgr);
+
+    /* === HR === */
+    --color-hr: light-dark(
+      color-mix(in oklch, var(--color-pri), var(--gry-4) 70%),
+      color-mix(in oklch, var(--color-pri), var(--gry-6) 70%)
+    );
+
+    /* === TEXT === */
+    --text-color: light-dark(var(--gry-9), var(--gry-2));
+    --text-muted: light-dark(var(--gry-6), var(--gry-5));
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-md: 0.9375rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.375rem;
+
+    /* === BUTTON === */
+    --btn-height-sm: 1.875rem;
+    --btn-height-md: 2.375rem;
+    --btn-height-lg: 2.875rem;
+
+        /* === GLASS === subtle + strong blur for neon glow effect */
+    --glass-bg: var(--glass-bg-1);
+    --glass-border: var(--glass-border-2);
+    --glass-blur: var(--glass-blur-3);
+    --glass-shadow: var(--glass-shadow-1);
+    --blur-sm: var(--size-px-2);
+    --blur-md: var(--size-px-3);
+  }
+
+  [data-mode="light"] { color-scheme: light; }
+  [data-mode="dark"] { color-scheme: dark; }
+}
