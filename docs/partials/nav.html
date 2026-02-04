@@ -1,5 +1,5 @@
 <dialog id="nav"
-  data-class="{'drawer:left': $prst_page.nav_drawer}"
+  data-class="{'drawer:left': $prst_page.nav_drawer, 'card sec': !$prst_page.nav_drawer}"
   data-style:display="!$prst_page.nav_drawer ? 'contents' : ''"
   data-ref:nav-drawer
   data-on:click="evt.target === el && el.close()"
