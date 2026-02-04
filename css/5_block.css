@@ -71,6 +71,115 @@
       opacity 0.3s,
       transform 0.3s,
       overlay 0.3s allow-discrete;
+
+    /* === DIRECTION VARIANTS === */
+    
+    /* Left */
+    &[class*=":left"] {
+      top: 0;
+      left: 0;
+      width: fit-content;
+      max-width: 75%;
+      height: 100vh;
+      transform: translateX(-100%);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+      &[open], &:popover-open {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Right */
+    &[class*=":right"] {
+      top: 0;
+      right: 0;
+      width: fit-content;
+      max-width: 75%;
+      height: 100vh;
+      transform: translateX(100%);
+      border-radius: var(--radius-md) 0 0 var(--radius-md);
+
+      &[open], &:popover-open {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Top */
+    &[class*=":top"] {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: max-content;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(-100%);
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+
+      &[open], &:popover-open {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bottom */
+    &[class*=":bottom"] {
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: max-content;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+
+      &[open], &:popover-open {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Backdrop (dialog only) */
+    &::backdrop {
+      background: var(--drawer-backdrop);
+      transition: 
+        opacity 0.3s, 
+        overlay 0.3s allow-discrete, 
+        display 0.3s allow-discrete;
+      opacity: 0;
+    }
+
+    &[open]::backdrop {
+      opacity: 1;
+    }
+  }
+
+  /* @starting-style for drawer animations */
+  @starting-style {
+    [class*="drawer:"][class*=":left"][open],
+    [class*="drawer:"][class*=":left"]:popover-open {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    [class*="drawer:"][class*=":right"][open],
+    [class*="drawer:"][class*=":right"]:popover-open {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    [class*="drawer:"][class*=":top"][open],
+    [class*="drawer:"][class*=":top"]:popover-open {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    [class*="drawer:"][class*=":bottom"][open],
+    [class*="drawer:"][class*=":bottom"]:popover-open {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    dialog[class*="drawer:"][open]::backdrop {
+      opacity: 0;
+    }
   }
 
   .drawer-content {
