@@ -92,39 +92,6 @@
     margin: 0;
   }
 
-  /* === NAV ITEM === */
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-btn);
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background: var(--surface-hover, rgba(0, 0, 0, 0.05));
-    }
-
-    /* Tag pushed to the right */
-    & :is([class~="chip"], [class*="chip:"]) {
-      margin-inline-start: auto;
-    }
-  }
-
-  .nav-icon {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-item :is([class~="chip"], [class*="chip:"]) {
-    margin-inline-start: auto;
-  }
-
   /* === INLINE CONTROLS (shared base) === */
   button, [class~="btn"], [class*="btn:"], [class~="chip"], [class*="chip:"], [class~="badge"], [class*="badge:"], kbd {
     text-box: trim-both cap alphabetic;
@@ -153,17 +120,6 @@
     border-radius: 999px;
     background: var(--color-inf);
     color: var(--color-inf-text, white);
-  }
-
-  /* Narrow variant */
-  .narrow .nav-item {
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--space-3xs);
-    padding: var(--space-sm);
-    font-size: var(--text-xs);
-
-    & :is([class~="chip"], [class*="chip:"]) { display: none; }
   }
 
   /* === TOOLTIP === */
@@ -531,12 +487,13 @@
   }
 
 
-/* Main Layout structures */
+/* === ID="nav" LOCALITY OF BEHAVIOR PREFERENCE FOR COMPLEX PIECE OF UI === */
 #nav {
   & > div {
     container-type: inline-size;
     display: flex;
     flex-direction: column;
+    min-height: 0;
     height: 100%;
   }
 
@@ -575,13 +532,13 @@
   }
 
   /* Badge via data attribute */
-  & a[data-badge]::after {
+  & a[data-uibadge]::after {
     content: attr(data-badge);
     position: absolute;
     top: 0;
     left: calc(var(--space-sm) + 16px);
     font-size: var(--text-xs);
-    background: var(--color-inf);
+    background: var(--color-dgr);
     color: white;
     border-radius: 999px;
     padding: 0 0.4em;
@@ -589,14 +546,18 @@
     text-align: center;
   }
 
-  /* Compact mode */
-  @container (max-width: 4rem) {
+  /* Compact mode - stack vertically */
+  @container (width <= 4rem) {
     & a {
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       padding: var(--space-sm);
+      gap: var(--space-2xs);
+      font-size: var(--text-xs);
+      text-align: center;
     }
 
-    & a > :not(svg) {
+    & small {
       display: none;
     }
   }
