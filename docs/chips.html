@@ -14,7 +14,7 @@
   data-signals:prst_width="'width-md'"
   data-class:width-sm="$prst_width === 'width-sm'"
   data-class:width-md="$prst_width === 'width-md'"
-  data-class:width-lg="$prst_width === 'width-lg'"
+  data-class:width-lg="$prst_width === 'width-lg'">
     
   <div class="grid:hero gap:xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
@@ -43,7 +43,15 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Variants</h3>
+              <h3 class="text:md">Theme Colors</h3>
+              <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <span class="chip:pri">Primary</span>
+                <span class="chip:sec">Secondary</span>
+              </div>
+            </section>
+
+            <section class="flex:stack">
+              <h3 class="text:md">Status Colors</h3>
               <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <span class="chip:inf">Info</span>
                 <span class="chip:suc">Success</span>
@@ -80,6 +88,14 @@
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>chip</code></td>
                   <td style="padding: var(--space-xs);">Base chip</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:pri</code></td>
+                  <td style="padding: var(--space-xs);">Primary (theme)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>chip:sec</code></td>
+                  <td style="padding: var(--space-xs);">Secondary (theme)</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>chip:inf</code></td>
