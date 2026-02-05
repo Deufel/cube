@@ -48,6 +48,11 @@
     --ratio-square: 1;
     --ratio-landscape: 1.3333333333333333;
     --ratio-portrait: 0.75;
+    
+    /* Width scales (character-based) */
+    --width-ch-40: 40ch;
+    --width-ch-60: 60ch;
+    --width-ch-80: 80ch;
     --ratio-widescreen: 1.7777777777777777;
     --ratio-ultra-wide: 3.6;
     --ratio-cinema: 2.3333333333333335;

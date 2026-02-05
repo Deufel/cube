@@ -91,68 +91,7 @@
     }
   }
 
-  /* === CARD VARIANTS === */
-  .card {
-    &.pri {
-      --_surface-base: light-dark(
-        color-mix(in oklch, var(--color-pri), var(--gry-0) 94%),
-        color-mix(in oklch, var(--color-pri), var(--gry-9) 92%)
-      );
-      background: var(--_surface-base);
-      border-color: light-dark(
-        color-mix(in oklch, var(--color-pri), transparent 85%),
-        color-mix(in oklch, var(--color-pri), transparent 80%)
-      );
-    }
-    &.sec {
-      --_surface-base: light-dark(
-        color-mix(in oklch, var(--color-sec), var(--gry-0) 94%),
-        color-mix(in oklch, var(--color-sec), var(--gry-9) 92%)
-      );
-      background: var(--_surface-base);
-      border-color: light-dark(
-        color-mix(in oklch, var(--color-sec), transparent 85%),
-        color-mix(in oklch, var(--color-sec), transparent 80%)
-      );
-    }
-    &.gla {
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      border-color: var(--glass-border);
-      box-shadow: var(--glass-shadow);
-    }
-  }
 
-  /* === CARD ALERT VARIANTS === */
-  [class*="card:alert"] {
-    &.inf { 
-      background: light-dark(color-mix(in oklch, var(--color-inf), var(--gry-0) 95%), color-mix(in oklch, var(--color-inf), var(--gry-9) 95%));
-      border-color: var(--color-inf); 
-      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-inf), transparent 80%); 
-    }
-    &.suc { 
-      background: light-dark(color-mix(in oklch, var(--color-suc), var(--gry-0) 95%), color-mix(in oklch, var(--color-suc), var(--gry-9) 95%));
-      border-color: var(--color-suc); 
-      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-suc), transparent 80%); 
-    }
-    &.wrn { 
-      background: light-dark(color-mix(in oklch, var(--color-wrn), var(--gry-0) 95%), color-mix(in oklch, var(--color-wrn), var(--gry-9) 95%));
-      border-color: var(--color-wrn); 
-      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-wrn), transparent 80%); 
-    }
-    &.dgr { 
-      background: light-dark(color-mix(in oklch, var(--color-dgr), var(--gry-0) 95%), color-mix(in oklch, var(--color-dgr), var(--gry-9) 95%));
-      border-color: var(--color-dgr); 
-      box-shadow: 0 0 0 2px color-mix(in oklch, var(--color-dgr), transparent 80%); 
-    }
-    &.res {
-      resize: horizontal;
-      overflow: auto;
-      border: 1px dashed var(--gry-6);
-      min-width: 250px;
-      max-width: 100%;
-    }
-  }
 
   /* === INPUT VALIDATION STATES === */
   input:is([type="text"], [type="email"], [type="password"], [type="search"], [type="tel"], [type="url"], [type="number"]),

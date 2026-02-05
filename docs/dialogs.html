@@ -110,9 +110,35 @@
 
         <hr>
 
-        <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
-          <h3 class="text:md">Usage</h3>
+        <!-- Structure + Usage -->
+        <div class="flex:flank-start align:start gap:sm">
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Structure</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">/* Dialog base */
+dialog {
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dialog);
+  
+  &amp;::backdrop { }
+}
+
+/* Drawer */
+[class*="drawer:"] {
+  /* Base styles + transitions */
+  
+  /* Direction variants */
+  &amp;[class*=":left"] { }
+  &amp;[class*=":right"] { }
+  &amp;[class*=":top"] { }
+  &amp;[class*=":bottom"] { }
+  
+  &amp;::backdrop { }
+}</code></pre>
+          </article>
+
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog with click-outside-to-close --&gt;
 &lt;!-- Use kebab-case in data-ref (auto-converts to camelCase signal) --&gt;
 &lt;dialog data-ref:my-dialog
@@ -136,7 +162,8 @@
 &lt;!-- Open with Datastar (signals are camelCase) --&gt;
 &lt;button data-on:click="$myDialog.showModal()"&gt;Open Dialog&lt;/button&gt;
 &lt;button data-on:click="$myDrawer.showModal()"&gt;Open Drawer&lt;/button&gt;</code></pre>
-        </article>
+          </article>
+        </div>
 
       </article>
     </main>

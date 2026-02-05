@@ -704,38 +704,94 @@
   }
 
   /* === CARD === */
-  .card {
+/* === CARD === */
+  [class~="card"], [class*="card:"] {
     padding: var(--space-sm);
     border-radius: var(--radius-card);
     background: var(--surface-card);
     color: var(--text-color);
-    border: 1px solid var(--surface-border,
-      color-mix(in oklch, var(--color-pri), transparent 88%)
-    );
+    border: 1px solid var(--surface-border, light-dark(
+      color-mix(in oklch, var(--gry-3), transparent 60%),
+      color-mix(in oklch, var(--gry-7), transparent 60%)
+    ));
     box-shadow: var(--shadow-card);
 
     & h3 { margin: 0 0 var(--space-xs) 0; font-size: var(--text-md); font-weight: 600; }
     & p { margin-block: 0; }
-  }
+    & footer { margin-block-start: var(--space-sm); }
 
-  /* === CARD ALERT === */
-[class*="card:alert"] {
-    padding: var(--space-sm);
-    border-radius: var(--radius-card);
-    background: light-dark(
-      color-mix(in oklch, var(--color-inf), var(--gry-0) 95%),
-      color-mix(in oklch, var(--color-inf), var(--gry-9) 95%)
-    );
-    color: var(--text-color);
-    border: 1px solid var(--color-inf);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-sm);
+    /* Sizes */
+    &[class*="-sm"] { max-width: var(--card-width-sm); }
+    &[class*="-md"] { max-width: var(--card-width-md); }
+    &[class*="-lg"] { max-width: var(--card-width-lg); }
 
-    & h3 { margin: 0; font-size: var(--text-md); font-weight: 600; flex: 1 1 100%; }
-    & p { margin-block: 0; flex: 1 1 100%; }
-    & > :last-child:not(h3):not(p) { margin-inline-start: auto; }
+    /* Variant: primary */
+    &[class*=":pri"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-pri), var(--gry-0) 94%),
+        color-mix(in oklch, var(--color-pri), var(--gry-9) 92%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--color-pri), transparent 85%),
+        color-mix(in oklch, var(--color-pri), transparent 80%)
+      );
+    }
+
+    /* Variant: secondary */
+    &[class*=":sec"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-sec), var(--gry-0) 94%),
+        color-mix(in oklch, var(--color-sec), var(--gry-9) 92%)
+      );
+      border-color: light-dark(
+        color-mix(in oklch, var(--color-sec), transparent 85%),
+        color-mix(in oklch, var(--color-sec), transparent 80%)
+      );
+    }
+
+    /* Variant: glass */
+    &[class*=":gla"] {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      border-color: var(--glass-border);
+      box-shadow: none;
+    }
+
+    /* Variant: info */
+    &[class*=":inf"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-inf), var(--gry-0) 95%),
+        color-mix(in oklch, var(--color-inf), var(--gry-9) 95%)
+      );
+      border-color: var(--color-inf);
+    }
+
+    /* Variant: success */
+    &[class*=":suc"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-suc), var(--gry-0) 95%),
+        color-mix(in oklch, var(--color-suc), var(--gry-9) 95%)
+      );
+      border-color: var(--color-suc);
+    }
+
+    /* Variant: warning */
+    &[class*=":wrn"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-wrn), var(--gry-0) 95%),
+        color-mix(in oklch, var(--color-wrn), var(--gry-9) 95%)
+      );
+      border-color: var(--color-wrn);
+    }
+
+    /* Variant: danger */
+    &[class*=":dgr"] {
+      background: light-dark(
+        color-mix(in oklch, var(--color-dgr), var(--gry-0) 95%),
+        color-mix(in oklch, var(--color-dgr), var(--gry-9) 95%)
+      );
+      border-color: var(--color-dgr);
+    }
   }
 
   /* === ICON BUTTON === */
