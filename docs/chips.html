@@ -141,9 +141,31 @@
 
         <hr>
 
-        <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
-          <h3 class="text:md">Usage</h3>
+        <!-- Structure + Usage -->
+        <div class="flex:flank-start align:start gap:sm">
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Structure</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="chip"], [class*="chip:"] {
+  /* Base styles */
+  
+  /* Close button */
+  &amp; .close { }
+  
+  /* Size: small */
+  &amp;[class*="-sm"] { }
+  
+  /* Variants */
+  &amp;[class*=":pri"] { }
+  &amp;[class*=":sec"] { }
+  &amp;[class*=":inf"] { }
+  &amp;[class*=":suc"] { }
+  &amp;[class*=":wrn"] { }
+  &amp;[class*=":dgr"] { }
+}</code></pre>
+          </article>
+
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
 &lt;span class="chip"&gt;Default&lt;/span&gt;
 
@@ -155,7 +177,8 @@
 
 &lt;!-- Removable --&gt;
 &lt;span class="chip:dgr"&gt;Error &lt;span class="close"&gt;×&lt;/span&gt;&lt;/span&gt;</code></pre>
-        </article>
+          </article>
+        </div>
 
       </article>
     </main>

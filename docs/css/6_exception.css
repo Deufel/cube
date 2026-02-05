@@ -1,16 +1,4 @@
 @layer exception {
-  /* === SHADOW MODIFIER === */
-  .shadow { box-shadow: var(--shadow-md); }
-
-  /* === CHIP SIZE === */
-  [class$="-sm"], [class*="-sm "] {
-    &:is([class*="chip:"]) {
-      height: var(--size-4);
-      padding-inline: var(--space-xs);
-      font-size: var(--text-xxs, 0.65rem);
-    }
-  }
-
   /* === ICON BUTTON SIZE === */
   /* === ICON BUTTON VARIANTS === */
   [class~="icon-btn:mute"], [class*="icon-btn:mute-"] {

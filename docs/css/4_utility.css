@@ -83,4 +83,6 @@
   @media (width > 768px) { .mobile { display: none !important; } }
   @media (width <= 768px) { .desktop { display: none !important; } }
 
+  /* === SHADOW === */
+  .shadow { box-shadow: var(--shadow-md); }
 }
