@@ -5,6 +5,81 @@
     font-family: var(--font-humanist);
     letter-spacing: -0.01em;
 
+    /* === COLORS (earthy: terracotta primary, olive secondary) === */
+    --color-brand: oklch(55% 0.12 40); /* warm terracotta */
+    
+    --color-pri: light-dark(
+      color-mix(in oklch, var(--org-6), var(--gry-6) 20%),
+      color-mix(in oklch, var(--org-5), var(--gry-5) 15%)
+    );
+    --color-sec: light-dark(
+      color-mix(in oklch, var(--grn-7), var(--yel-7) 30%),
+      color-mix(in oklch, var(--grn-6), var(--yel-6) 25%)
+    );
+    --color-pri-text: white;
+    --color-sec-text: white;
+
+    --color-inf: light-dark(
+      color-mix(in oklch, var(--blu-6), var(--gry-6) 25%),
+      color-mix(in oklch, var(--blu-5), var(--gry-5) 20%)
+    );
+    --color-suc: light-dark(
+      color-mix(in oklch, var(--grn-6), var(--yel-6) 20%),
+      color-mix(in oklch, var(--grn-5), var(--yel-5) 15%)
+    );
+    --color-wrn: light-dark(
+      color-mix(in oklch, var(--yel-5), var(--org-5) 30%),
+      color-mix(in oklch, var(--yel-5), var(--org-5) 25%)
+    );
+    --color-dgr: light-dark(
+      color-mix(in oklch, var(--red-6), var(--org-6) 20%),
+      color-mix(in oklch, var(--red-5), var(--org-5) 15%)
+    );
+    --color-err: var(--color-dgr);
+
+    /* === SURFACES (warm off-whites / warm dark browns) === */
+    --surface-bak: light-dark(#f7f3ee, #1c1915);
+    --surface-def: light-dark(#fffcf7, #262219);
+    --surface-pri: light-dark(
+      color-mix(in oklch, var(--color-pri), #fffcf7 88%),
+      color-mix(in oklch, var(--color-pri), #262219 85%)
+    );
+    --surface-sec: light-dark(
+      color-mix(in oklch, var(--color-sec), #fffcf7 88%),
+      color-mix(in oklch, var(--color-sec), #262219 85%)
+    );
+    --surface-gla: var(--glass-bg-2);
+
+    /* Status surfaces */
+    --surface-inf: light-dark(
+      color-mix(in oklch, var(--color-inf), #fffcf7 93%),
+      color-mix(in oklch, var(--color-inf), #262219 90%)
+    );
+    --surface-suc: light-dark(
+      color-mix(in oklch, var(--color-suc), #fffcf7 93%),
+      color-mix(in oklch, var(--color-suc), #262219 90%)
+    );
+    --surface-wrn: light-dark(
+      color-mix(in oklch, var(--color-wrn), #fffcf7 93%),
+      color-mix(in oklch, var(--color-wrn), #262219 90%)
+    );
+    --surface-dgr: light-dark(
+      color-mix(in oklch, var(--color-dgr), #fffcf7 93%),
+      color-mix(in oklch, var(--color-dgr), #262219 90%)
+    );
+
+    /* Component surfaces */
+    --surface-inp: light-dark(#fffdf9, #22201b);
+    --surface-border: light-dark(#e0d6c8, #3d3830);
+    --surface-hover: light-dark(#ebe5db, #302b24);
+
+    /* Surface utility system base */
+    --_surface-base: var(--surface-def);
+
+    /* DEPRECATED - will be removed */
+    --surface-raised: light-dark(#faf6f0, #302b24);
+    --surface-inset: light-dark(#efe9e0, #1a1714);
+
     /* === SHADOW (warm tinted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
@@ -33,65 +108,26 @@
     --radius-md: var(--radius-3);
     --radius-lg: var(--radius-4);
     --radius-btn: var(--radius-2);
-    --radius-card: var(--radius-3);
+    --radius-card: var(--radius-4);
 
     /* === BORDERS === */
     --border-subtle: light-dark(#e8e0d5, #3d3830);
     --border-muted: light-dark(#d9cfc2, #4a433a);
 
-    /* === SURFACES (warm off-whites / warm dark browns) === */
-    --surface-1: light-dark(#efe9e0, #1a1714);
-    --surface-2: light-dark(#f7f3ee, #1c1915);
-    --surface-3: light-dark(#fffcf7, #262219);
-    --surface-border: light-dark(#e0d6c8, #3d3830);
-    --surface-hover: light-dark(#ebe5db, #302b24);
-    --_surface-base: var(--surface-1);
-
-    /* === LEGACY SURFACES === */
-    --surface-page: light-dark(#f7f3ee, #1c1915);
-    --surface-card: light-dark(#fffcf7, #262219);
-    --surface-raised: light-dark(#faf6f0, #302b24);
-    --surface-inset: light-dark(#efe9e0, #1a1714);
-    --surface-input: light-dark(#fffdf9, #22201b);
-    --surface-btn: light-dark(#ebe5db, #3a342c);
-
-    /* === COLORS (earthy: terracotta primary, olive secondary) === */
-    --color-pri: light-dark(
-      color-mix(in oklch, var(--org-6), var(--gry-6) 20%),
-      color-mix(in oklch, var(--org-5), var(--gry-5) 15%)
+    /* === CARD === */
+    --card-padding: var(--space-sm);
+    --card-border-radius: var(--radius-4);
+    --card-border-size: 1px;
+    --card-border: light-dark(#e0d6c8, #3d3830);
+    --card-pri-border: light-dark(
+      color-mix(in oklch, var(--color-pri), transparent 70%),
+      color-mix(in oklch, var(--color-pri), transparent 60%)
     );
-    --color-pri-text: white;
-
-    --color-sec: light-dark(
-      color-mix(in oklch, var(--grn-7), var(--yel-7) 30%),
-      color-mix(in oklch, var(--grn-6), var(--yel-6) 25%)
+    --card-sec-border: light-dark(
+      color-mix(in oklch, var(--color-sec), transparent 70%),
+      color-mix(in oklch, var(--color-sec), transparent 60%)
     );
-    --color-sec-text: white;
-
-    --color-wrn: light-dark(
-      color-mix(in oklch, var(--yel-5), var(--org-5) 30%),
-      color-mix(in oklch, var(--yel-5), var(--org-5) 25%)
-    );
-    --color-wrn-text: var(--gry-9);
-
-    --color-dgr: light-dark(
-      color-mix(in oklch, var(--red-6), var(--org-6) 20%),
-      color-mix(in oklch, var(--red-5), var(--org-5) 15%)
-    );
-    --color-dgr-text: white;
-
-    --color-inf: light-dark(
-      color-mix(in oklch, var(--blu-6), var(--gry-6) 25%),
-      color-mix(in oklch, var(--blu-5), var(--gry-5) 20%)
-    );
-    --color-inf-text: white;
-
-    /* === FEEDBACK COLORS === */
-    --color-suc: light-dark(
-      color-mix(in oklch, var(--grn-6), var(--yel-6) 20%),
-      color-mix(in oklch, var(--grn-5), var(--yel-5) 15%)
-    );
-    --color-err: var(--color-dgr);
+    --card-gla-border: var(--glass-border-1);
 
     /* === HR === */
     --color-hr: light-dark(

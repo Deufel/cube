@@ -5,6 +5,63 @@
     font-family: var(--font-monospace-code);
     letter-spacing: 0.02em;
 
+    /* === COLORS (Cyberpunk: neon yellow primary, red secondary) === */
+    --color-brand: oklch(75% 0.15 90); /* electric yellow */
+    
+    --color-pri: var(--yel-4);
+    --color-sec: light-dark(var(--red-6), var(--red-5));
+    --color-pri-text: var(--gry-9);
+    --color-sec-text: white;
+
+    --color-inf: light-dark(var(--blu-6), var(--cyn-5));
+    --color-suc: light-dark(var(--grn-6), var(--grn-5));
+    --color-wrn: light-dark(var(--yel-5), var(--yel-5));
+    --color-dgr: light-dark(var(--red-6), var(--red-5));
+    --color-err: var(--color-dgr);
+
+    /* === SURFACES === */
+    --surface-bak: light-dark(var(--gry-1), #1a1d1a);
+    --surface-def: light-dark(white, #252a25);
+    --surface-pri: light-dark(
+      color-mix(in oklch, var(--color-pri), white 85%),
+      color-mix(in oklch, var(--color-pri), #252a25 92%)
+    );
+    --surface-sec: light-dark(
+      color-mix(in oklch, var(--color-sec), white 90%),
+      color-mix(in oklch, var(--color-sec), #252a25 88%)
+    );
+    --surface-gla: var(--glass-bg-1);
+
+    /* Status surfaces */
+    --surface-inf: light-dark(
+      color-mix(in oklch, var(--color-inf), white 93%),
+      color-mix(in oklch, var(--color-inf), #252a25 90%)
+    );
+    --surface-suc: light-dark(
+      color-mix(in oklch, var(--color-suc), white 93%),
+      color-mix(in oklch, var(--color-suc), #252a25 90%)
+    );
+    --surface-wrn: light-dark(
+      color-mix(in oklch, var(--color-wrn), white 93%),
+      color-mix(in oklch, var(--color-wrn), #252a25 90%)
+    );
+    --surface-dgr: light-dark(
+      color-mix(in oklch, var(--color-dgr), white 93%),
+      color-mix(in oklch, var(--color-dgr), #252a25 90%)
+    );
+
+    /* Component surfaces */
+    --surface-inp: light-dark(white, #1e221e);
+    --surface-border: light-dark(var(--gry-3), #2f352f);
+    --surface-hover: light-dark(var(--gry-2), #2f352f);
+
+    /* Surface utility system base */
+    --_surface-base: var(--surface-def);
+
+    /* DEPRECATED - will be removed */
+    --surface-raised: light-dark(var(--gry-0), #2f352f);
+    --surface-inset: light-dark(var(--gry-2), #151815);
+
     /* === SHADOW === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
@@ -33,47 +90,20 @@
     --radius-md: var(--radius-1);
     --radius-lg: var(--radius-2);
     --radius-btn: var(--radius-1);
-    --radius-card: var(--radius-2);
+    --radius-card: var(--radius-1);
 
     /* === BORDERS === */
     --border-subtle: light-dark(var(--gry-3), var(--gry-7));
     --border-muted: light-dark(var(--gry-4), var(--gry-6));
 
-    /* === SURFACES === */
-    --surface-1: light-dark(var(--gry-2), #151815);
-    --surface-2: light-dark(var(--gry-1), #1a1d1a);
-    --surface-3: light-dark(white, #252a25);
-    --surface-border: light-dark(var(--gry-3), #2f352f);
-    --surface-hover: light-dark(var(--gry-2), #2f352f);
-    --_surface-base: var(--surface-1);
-
-    /* === LEGACY SURFACES === */
-    --surface-page: light-dark(var(--gry-1), #1a1d1a);
-    --surface-card: light-dark(white, #252a25);
-    --surface-raised: light-dark(var(--gry-0), #2f352f);
-    --surface-inset: light-dark(var(--gry-2), #151815);
-    --surface-input: light-dark(white, #1e221e);
-    --surface-btn: light-dark(var(--gry-2), #2f352f);
-
-    /* === COLORS (Cyberpunk: neon yellow primary, teal secondary) === */
-    --color-pri: var(--yel-4);
-    --color-pri-text: var(--gry-9);
-
-    --color-sec: light-dark(var(--red-6), var(--red-5));
-    --color-sec-text: white;
-
-    --color-wrn: light-dark(var(--yel-5), var(--yel-5));
-    --color-wrn-text: var(--gry-9);
-
-    --color-dgr: light-dark(var(--red-6), var(--red-5));
-    --color-dgr-text: white;
-
-    --color-inf: light-dark(var(--blu-6), var(--cyn-5));
-    --color-inf-text: light-dark(white, var(--gry-9));
-
-    /* === FEEDBACK COLORS === */
-    --color-suc: light-dark(var(--grn-6), var(--grn-5));
-    --color-err: var(--color-dgr);
+    /* === CARD === */
+    --card-padding: var(--space-md);
+    --card-border-radius: var(--radius-1);
+    --card-border-size: 1px;
+    --card-border: light-dark(var(--gry-3), #2f352f);
+    --card-pri-border: var(--color-pri);
+    --card-sec-border: var(--color-sec);
+    --card-gla-border: var(--glass-border-2);
 
     /* === HR === */
     --color-hr: light-dark(

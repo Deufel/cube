@@ -7,8 +7,8 @@
     min-height: 100svh; max-height: 100svh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background: var(--surface-page, var(--gry-1));
-    color: var(--text-color, var(--gry-9));
+    background: var(--surface-bak);
+    color: var(--text-color);
   }
   body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin-block-end: 0; }
   h1, h2, h3, h4, h5, h6 { text-wrap: balance; margin: 0; }

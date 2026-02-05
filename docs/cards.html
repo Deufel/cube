@@ -63,44 +63,23 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Status Colors</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px; max-width: 400px;">
-                <div class="card:inf">
-                  <h3>Information</h3>
-                  <p>This is an informational card.</p>
+              <h3 class="text:md">With Content</h3>
+              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 300px; max-width: 500px;">
+                <div class="card">
+                  <h3>Card Title</h3>
+                  <p>Cards are versatile containers with padding, borders, and optional shadows. Use them for grouping related content.</p>
+                  <footer>
+                    <button class="btn:pri">Action</button>
+                  </footer>
                 </div>
-                <div class="card:suc">
-                  <h3>Success</h3>
-                  <p>Operation completed successfully.</p>
-                </div>
-                <div class="card:wrn">
-                  <h3>Warning</h3>
-                  <p>Please review before proceeding.</p>
-                </div>
-                <div class="card:dgr">
-                  <h3>Danger</h3>
-                  <p>This action cannot be undone.</p>
+                <div class="card:pri">
+                  <h3>Featured Content</h3>
+                  <p>Primary variant draws attention to important content.</p>
                 </div>
               </div>
             </section>
 
-            <section class="flex:stack">
-              <h3 class="text:md">Sizes</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto;">
-                <div class="card:pri-sm">
-                  <h3>Small (40ch)</h3>
-                  <p>Constrained width card.</p>
-                </div>
-                <div class="card:sec-md">
-                  <h3>Medium (60ch)</h3>
-                  <p>Medium width card for moderate content.</p>
-                </div>
-                <div class="card:gla-lg">
-                  <h3>Large (80ch)</h3>
-                  <p>Wide card for longer form content and detailed information.</p>
-                </div>
-              </div>
-            </section>
+
           </article>
 
           <!-- API Reference (sidebar) -->
@@ -130,35 +109,7 @@
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>card:gla</code></td>
-                  <td style="padding: var(--space-xs);">Glass (no shadow)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>card:inf</code></td>
-                  <td style="padding: var(--space-xs);">Info (blue)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>card:suc</code></td>
-                  <td style="padding: var(--space-xs);">Success (green)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>card:wrn</code></td>
-                  <td style="padding: var(--space-xs);">Warning (yellow)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>card:dgr</code></td>
-                  <td style="padding: var(--space-xs);">Danger (red)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>-sm</code></td>
-                  <td style="padding: var(--space-xs);">Small (40ch)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>-md</code></td>
-                  <td style="padding: var(--space-xs);">Medium (60ch)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>-lg</code></td>
-                  <td style="padding: var(--space-xs);">Large (80ch)</td>
+                  <td style="padding: var(--space-xs);">Glass effect</td>
                 </tr>
               </tbody>
             </table>
@@ -196,36 +147,43 @@
           <article class="flex:stack gap:xs">
             <h3 class="text:md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="card"], [class*="card:"] {
-  /* Base styles */
-  
-  /* Sizes */
-  &amp;[class*="-sm"] { max-width: var(--card-width-sm); }
-  &amp;[class*="-md"] { max-width: var(--card-width-md); }
-  &amp;[class*="-lg"] { max-width: var(--card-width-lg); }
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  border: var(--card-border-size) solid var(--card-border);
+  background: var(--surface-def);
   
   /* Variants */
-  &amp;[class*=":pri"] { }
-  &amp;[class*=":sec"] { }
-  &amp;[class*=":gla"] { /* no shadow */ }
-  &amp;[class*=":inf"] { }
-  &amp;[class*=":suc"] { }
-  &amp;[class*=":wrn"] { }
-  &amp;[class*=":dgr"] { }
+  &amp;[class*=":pri"] {
+    background: var(--surface-pri);
+    border-color: var(--card-pri-border);
+  }
+  &amp;[class*=":sec"] {
+    background: var(--surface-sec);
+    border-color: var(--card-sec-border);
+  }
+  &amp;[class*=":gla"] {
+    background: var(--surface-gla);
+    border-color: var(--card-gla-border);
+    backdrop-filter: blur(var(--glass-blur-2));
+  }
 }</code></pre>
 
             <h3 class="text:md">Usage</h3>
-<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Default --&gt;
 &lt;div class="card"&gt;
   &lt;h3&gt;Title&lt;/h3&gt;
-  &lt;section&gt;Content&lt;/section&gt;
-  &lt;footer&gt;&lt;button&gt;Action&lt;/button&gt;&lt;/footer&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+  &lt;footer&gt;&lt;button class="btn:pri"&gt;Action&lt;/button&gt;&lt;/footer&gt;
 &lt;/div&gt;
 
-&lt;!-- Variant + Size --&gt;
-&lt;div class="card:pri-sm"&gt;...&lt;/div&gt;
+&lt;!-- Primary variant --&gt;
+&lt;div class="card:pri"&gt;
+  &lt;h3&gt;Featured&lt;/h3&gt;
+  &lt;p&gt;Important content&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;!-- Status color --&gt;
-&lt;div class="card:wrn"&gt;⚠️ Warning&lt;/div&gt;</code></pre>
+&lt;!-- Glass effect --&gt;
+&lt;div class="card:gla"&gt;Frosted glass&lt;/div&gt;</code></pre>
           </article>
         </div>
 

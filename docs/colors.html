@@ -38,7 +38,7 @@
             <section class="flex:stack gap:xs">
               <h3 class="text:md">Theme Palette</h3>
               <p class="text:xs" style="color: var(--text-muted);">Primary and secondary colors defined by each theme.</p>
-              <div class="card gla p:sm">
+              <div class="card:gla p:sm">
                 <div class="flex:cluster gap:sm">
                   <div class="flex:stack gap:xs align:center">
                     <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-pri);"></div>
@@ -56,7 +56,7 @@
             <section class="flex:stack gap:xs">
               <h3 class="text:md">Status Colors</h3>
               <p class="text:xs" style="color: var(--text-muted);">Semantic colors for feedback states.</p>
-              <div class="card gla p:sm">
+              <div class="card:gla p:sm">
                 <div class="flex:cluster gap:sm">
                   <div class="flex:stack gap:xs align:center">
                     <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-inf);"></div>
@@ -78,12 +78,102 @@
               </div>
             </section>
 
+            <!-- Surface Colors -->
+            <section class="flex:stack gap:xs">
+              <h3 class="text:md">Surface Colors</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Background surfaces with light-dark variants.</p>
+              <div class="card:gla p:sm">
+                <div class="flex:stack gap:sm">
+                  <div class="flex:cluster gap:sm">
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-bak); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-bak</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-def); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-def</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-pri); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-pri</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-sec); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-sec</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-gla); border: 1px solid var(--surface-border); backdrop-filter: blur(8px);"></div>
+                      <code class="text:xs">--surface-gla</code>
+                    </div>
+                  </div>
+                  <div class="flex:cluster gap:sm">
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-inf); border: 1px solid var(--color-inf);"></div>
+                      <code class="text:xs">--surface-inf</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-suc); border: 1px solid var(--color-suc);"></div>
+                      <code class="text:xs">--surface-suc</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-wrn); border: 1px solid var(--color-wrn);"></div>
+                      <code class="text:xs">--surface-wrn</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-dgr); border: 1px solid var(--color-dgr);"></div>
+                      <code class="text:xs">--surface-dgr</code>
+                    </div>
+                  </div>
+                  <div class="flex:cluster gap:sm">
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-inp); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-inp</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-hover); border: 1px solid var(--surface-border);"></div>
+                      <code class="text:xs">--surface-hover</code>
+                    </div>
+                    <div class="flex:stack gap:xs align:center">
+                      <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--surface-border);"></div>
+                      <code class="text:xs">--surface-border</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Text Colors -->
+            <section class="flex:stack gap:xs">
+              <h3 class="text:md">Text Colors</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Typography color tokens.</p>
+              <div class="card:gla p:sm">
+                <div class="flex:cluster gap:sm">
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--text-color); border: 1px solid var(--surface-border);"></div>
+                    <code class="text:xs">--text-color</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--text-muted); border: 1px solid var(--surface-border);"></div>
+                    <code class="text:xs">--text-muted</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-pri-text); border: 1px solid var(--surface-border);"></div>
+                    <code class="text:xs">--color-pri-text</code>
+                  </div>
+                  <div class="flex:stack gap:xs align:center">
+                    <div style="width:48px; height:48px; border-radius: var(--radius-sm); background: var(--color-sec-text); border: 1px solid var(--surface-border);"></div>
+                    <code class="text:xs">--color-sec-text</code>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <!-- Raw Scales -->
             <section class="flex:stack gap:xs">
               <h3 class="text:md">Raw Scales</h3>
               <p class="text:xs" style="color: var(--text-muted);">OKLCH primitives (0-9). Use <code>--{color}-{n}</code> syntax.</p>
               
-              <div class="card gla p:sm">
+              <div class="card:gla p:sm">
                 <div class="flex:stack gap:xs">
                   <div class="flex:split align:center"><code class="text:xs">gry</code><div class="flex:cluster gap:0" style="width: 200px;"><div style="flex:1; height:20px; background: var(--gry-0);"></div><div style="flex:1; height:20px; background: var(--gry-1);"></div><div style="flex:1; height:20px; background: var(--gry-2);"></div><div style="flex:1; height:20px; background: var(--gry-3);"></div><div style="flex:1; height:20px; background: var(--gry-4);"></div><div style="flex:1; height:20px; background: var(--gry-5);"></div><div style="flex:1; height:20px; background: var(--gry-6);"></div><div style="flex:1; height:20px; background: var(--gry-7);"></div><div style="flex:1; height:20px; background: var(--gry-8);"></div><div style="flex:1; height:20px; background: var(--gry-9);"></div></div></div>
                   <div class="flex:split align:center"><code class="text:xs">red</code><div class="flex:cluster gap:0" style="width: 200px;"><div style="flex:1; height:20px; background: var(--red-0);"></div><div style="flex:1; height:20px; background: var(--red-1);"></div><div style="flex:1; height:20px; background: var(--red-2);"></div><div style="flex:1; height:20px; background: var(--red-3);"></div><div style="flex:1; height:20px; background: var(--red-4);"></div><div style="flex:1; height:20px; background: var(--red-5);"></div><div style="flex:1; height:20px; background: var(--red-6);"></div><div style="flex:1; height:20px; background: var(--red-7);"></div><div style="flex:1; height:20px; background: var(--red-8);"></div><div style="flex:1; height:20px; background: var(--red-9);"></div></div></div>
@@ -104,7 +194,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card sec flex:stack gap:sm p:sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
+          <article class="card:sec flex:stack gap:sm p:sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
             <h3 class="text:md">API Reference</h3>
             
             <h4 class="text:sm">Primitives</h4>

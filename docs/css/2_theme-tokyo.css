@@ -5,6 +5,63 @@
     font-family: var(--font-mono);
     letter-spacing: -0.02em;
 
+    /* === COLORS (neon: magenta primary, cyan secondary) === */
+    --color-brand: oklch(60% 0.2 330); /* neon magenta */
+    
+    --color-pri: light-dark(var(--pnk-6), var(--pnk-5));
+    --color-sec: light-dark(var(--cyn-6), var(--cyn-4));
+    --color-pri-text: white;
+    --color-sec-text: light-dark(white, var(--gry-9));
+
+    --color-inf: light-dark(var(--blu-6), var(--blu-4));
+    --color-suc: light-dark(var(--grn-6), var(--grn-4));
+    --color-wrn: light-dark(var(--yel-5), var(--yel-4));
+    --color-dgr: light-dark(var(--red-6), var(--red-5));
+    --color-err: var(--color-dgr);
+
+    /* === SURFACES (high contrast blacks) === */
+    --surface-bak: light-dark(var(--gry-1), #0a0a0f);
+    --surface-def: light-dark(white, #12121a);
+    --surface-pri: light-dark(
+      color-mix(in oklch, var(--color-pri), white 92%),
+      color-mix(in oklch, var(--color-pri), #12121a 85%)
+    );
+    --surface-sec: light-dark(
+      color-mix(in oklch, var(--color-sec), white 92%),
+      color-mix(in oklch, var(--color-sec), #12121a 85%)
+    );
+    --surface-gla: var(--glass-bg-2);
+
+    /* Status surfaces */
+    --surface-inf: light-dark(
+      color-mix(in oklch, var(--color-inf), white 95%),
+      color-mix(in oklch, var(--color-inf), #12121a 90%)
+    );
+    --surface-suc: light-dark(
+      color-mix(in oklch, var(--color-suc), white 95%),
+      color-mix(in oklch, var(--color-suc), #12121a 90%)
+    );
+    --surface-wrn: light-dark(
+      color-mix(in oklch, var(--color-wrn), white 95%),
+      color-mix(in oklch, var(--color-wrn), #12121a 90%)
+    );
+    --surface-dgr: light-dark(
+      color-mix(in oklch, var(--color-dgr), white 95%),
+      color-mix(in oklch, var(--color-dgr), #12121a 90%)
+    );
+
+    /* Component surfaces */
+    --surface-inp: light-dark(white, #0e0e14);
+    --surface-border: light-dark(var(--gry-3), #252542);
+    --surface-hover: light-dark(var(--gry-2), #1a1a28);
+
+    /* Surface utility system base */
+    --_surface-base: var(--surface-def);
+
+    /* DEPRECATED - will be removed */
+    --surface-raised: light-dark(var(--gry-0), #1a1a28);
+    --surface-inset: light-dark(var(--gry-2), #08080c);
+
     /* === SHADOW (cool/neon tinted) === */
     --shadow-out-md: var(--shadow-2);
     --shadow-in-md: var(--inner-shadow-2);
@@ -33,48 +90,21 @@
     --radius-md: var(--radius-1);
     --radius-lg: var(--radius-2);
     --radius-btn: var(--radius-1);
-    --radius-card: var(--radius-1);
+    --radius-card: 0;
     --radius-round: var(--radius-2);
 
     /* === BORDERS === */
     --border-subtle: light-dark(var(--gry-2), #1a1a2e);
     --border-muted: light-dark(var(--gry-3), #252542);
 
-    /* === SURFACES (high contrast blacks) === */
-    --surface-1: light-dark(var(--gry-2), #08080c);
-    --surface-2: light-dark(var(--gry-1), #0a0a0f);
-    --surface-3: light-dark(white, #12121a);
-    --surface-border: light-dark(var(--gry-3), #252542);
-    --surface-hover: light-dark(var(--gry-2), #1a1a28);
-    --_surface-base: var(--surface-1);
-
-    /* === LEGACY SURFACES === */
-    --surface-page: light-dark(var(--gry-1), #0a0a0f);
-    --surface-card: light-dark(white, #12121a);
-    --surface-raised: light-dark(var(--gry-0), #1a1a28);
-    --surface-inset: light-dark(var(--gry-2), #08080c);
-    --surface-input: light-dark(white, #0e0e14);
-    --surface-btn: light-dark(var(--gry-2), #1e1e2e);
-
-    /* === COLORS (neon: magenta primary, cyan secondary) === */
-    --color-pri: light-dark(var(--pnk-6), var(--pnk-5));
-    --color-pri-text: white;
-
-    --color-sec: light-dark(var(--cyn-6), var(--cyn-4));
-    --color-sec-text: light-dark(white, var(--gry-9));
-
-    --color-wrn: light-dark(var(--yel-5), var(--yel-4));
-    --color-wrn-text: var(--gry-9);
-
-    --color-dgr: light-dark(var(--red-6), var(--red-5));
-    --color-dgr-text: white;
-
-    --color-inf: light-dark(var(--blu-6), var(--blu-4));
-    --color-inf-text: white;
-
-    /* === FEEDBACK COLORS === */
-    --color-suc: light-dark(var(--grn-6), var(--grn-4));
-    --color-err: var(--color-dgr);
+    /* === CARD === */
+    --card-padding: var(--space-md);
+    --card-border-radius: 0;
+    --card-border-size: 2px;
+    --card-border: light-dark(var(--gry-3), #252542);
+    --card-pri-border: var(--color-pri);
+    --card-sec-border: var(--color-sec);
+    --card-gla-border: var(--glass-border-2);
 
     /* === HR === */
     --color-hr: light-dark(
