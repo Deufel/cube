@@ -476,23 +476,20 @@
     border: 1px solid var(--border-color, rgba(0,0,0,0.1));
   }
 
-  /* === CHIP === */
+/* === CHIP === */
   [class~="chip"], [class*="chip:"] {
     height: var(--size-5);
     padding-inline: var(--space-sm);
     font-size: var(--text-xs);
     border-radius: var(--radius-round);
-    background: light-dark(
-      color-mix(in oklch, var(--color-pri), var(--gry-0) 92%),
-      color-mix(in oklch, var(--color-pri), var(--gry-8) 90%)
-    );
-    color: light-dark(var(--gry-7), var(--gry-2));
+    background: var(--surface-pri);
+    color: color-mix(in oklch, var(--text-color), var(--surface-pri) 6%);
     border: 1px solid light-dark(
-      color-mix(in oklch, var(--color-pri), transparent 80%),
-      color-mix(in oklch, var(--color-pri), transparent 70%)
+      color-mix(in oklch, var(--color-pri), transparent 60%),
+      color-mix(in oklch, var(--color-pri), transparent 50%)
     );
 
-    /* Modifiers: add, sub, rem */
+    /* Modifiers */
     &.add, &.sub, &.rem { cursor: pointer; }
 
     &.add::before {
@@ -512,115 +509,74 @@
         content: "\00d7";
         margin-inline-start: var(--space-xxs);
         opacity: 0.6;
-        transition: opacity 0.15s ease;
       }
       @media (hover: hover) {
         &:hover::after { opacity: 1; }
       }
     }
 
-    /* Size: small */
+    /* Size */
     &[class*="-sm"] {
       height: var(--size-4);
       padding-inline: var(--space-xs);
       font-size: var(--text-xxs, 0.65rem);
     }
 
-    /* Primary */
+    /* Variants using theme surfaces */
     &[class*=":pri"] {
-      background: light-dark(
-        color-mix(in oklch, var(--color-pri), var(--gry-0) 85%),
-        color-mix(in oklch, var(--color-pri), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--color-pri), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-pri), var(--gry-1) 20%)
-      );
+      background: var(--surface-pri);
+      color: color-mix(in oklch, var(--text-color), var(--surface-pri) 6%);
       border-color: light-dark(
         color-mix(in oklch, var(--color-pri), transparent 60%),
         color-mix(in oklch, var(--color-pri), transparent 50%)
       );
     }
 
-    /* Secondary */
     &[class*=":sec"] {
-      background: light-dark(
-        color-mix(in oklch, var(--color-sec), var(--gry-0) 85%),
-        color-mix(in oklch, var(--color-sec), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--color-sec), var(--gry-9) 30%),
-        color-mix(in oklch, var(--color-sec), var(--gry-1) 20%)
-      );
+      background: var(--surface-sec);
+      color: color-mix(in oklch, var(--text-color), var(--surface-sec) 6%);
       border-color: light-dark(
         color-mix(in oklch, var(--color-sec), transparent 60%),
         color-mix(in oklch, var(--color-sec), transparent 50%)
       );
     }
 
-    /* Info (blue) */
     &[class*=":inf"] {
-      background: light-dark(
-        color-mix(in oklch, var(--blu-5), var(--gry-0) 85%),
-        color-mix(in oklch, var(--blu-7), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--blu-7), var(--gry-9) 30%),
-        color-mix(in oklch, var(--blu-3), var(--gry-1) 20%)
-      );
+      background: var(--surface-inf);
+      color: color-mix(in oklch, var(--text-color), var(--surface-inf) 6%);
       border-color: light-dark(
-        color-mix(in oklch, var(--blu-5), transparent 60%),
-        color-mix(in oklch, var(--blu-6), transparent 50%)
+        color-mix(in oklch, var(--color-inf), transparent 60%),
+        color-mix(in oklch, var(--color-inf), transparent 50%)
       );
     }
 
-    /* Success (green) */
     &[class*=":suc"] {
-      background: light-dark(
-        color-mix(in oklch, var(--grn-5), var(--gry-0) 85%),
-        color-mix(in oklch, var(--grn-7), var(--gry-8) 80%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--grn-8), var(--gry-9) 30%),
-        color-mix(in oklch, var(--grn-3), var(--gry-1) 20%)
-      );
+      background: var(--surface-suc);
+      color: color-mix(in oklch, var(--text-color), var(--surface-suc) 6%);
       border-color: light-dark(
-        color-mix(in oklch, var(--grn-5), transparent 60%),
-        color-mix(in oklch, var(--grn-6), transparent 50%)
+        color-mix(in oklch, var(--color-suc), transparent 60%),
+        color-mix(in oklch, var(--color-suc), transparent 50%)
       );
     }
 
-    /* Warning (yellow) */
     &[class*=":wrn"] {
-      background: light-dark(
-        color-mix(in oklch, var(--yel-7), var(--gry-0) 70%),
-        color-mix(in oklch, var(--yel-7), var(--gry-8) 65%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--yel-9), var(--gry-9) 40%),
-        color-mix(in oklch, var(--yel-2), var(--gry-1) 30%)
-      );
+      background: var(--surface-wrn);
+      color: color-mix(in oklch, var(--text-color), var(--surface-wrn) 6%);
       border-color: light-dark(
-        color-mix(in oklch, var(--yel-5), transparent 50%),
-        color-mix(in oklch, var(--yel-6), transparent 40%)
+        color-mix(in oklch, var(--color-wrn), transparent 60%),
+        color-mix(in oklch, var(--color-wrn), transparent 50%)
       );
     }
 
-    /* Danger (red) */
     &[class*=":dgr"] {
-      background: light-dark(
-        color-mix(in oklch, var(--red-7), var(--gry-0) 70%),
-        color-mix(in oklch, var(--red-7), var(--gry-8) 65%)
-      );
-      color: light-dark(
-        color-mix(in oklch, var(--red-7), var(--gry-9) 30%),
-        color-mix(in oklch, var(--red-3), var(--gry-1) 20%)
-      );
+      background: var(--surface-dgr);
+      color: color-mix(in oklch, var(--text-color), var(--surface-dgr) 6%);
       border-color: light-dark(
-        color-mix(in oklch, var(--red-5), transparent 60%),
-        color-mix(in oklch, var(--red-6), transparent 50%)
+        color-mix(in oklch, var(--color-dgr), transparent 60%),
+        color-mix(in oklch, var(--color-dgr), transparent 50%)
       );
     }
+  }
   }
 
   /* === TABS === */
