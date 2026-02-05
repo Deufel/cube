@@ -61,13 +61,15 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Removable</h3>
+              <h3 class="text:md">Modifiers</h3>
               <div class="card gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <span class="chip">Default <span class="close">×</span></span>
-                <span class="chip:inf">Info <span class="close">×</span></span>
-                <span class="chip:suc">Success <span class="close">×</span></span>
-                <span class="chip:wrn">Warning <span class="close">×</span></span>
-                <span class="chip:dgr">Danger <span class="close">×</span></span>
+                <span class="chip add">Add</span>
+                <span class="chip:inf add">Add Info</span>
+                <span class="chip sub">Sub</span>
+                <span class="chip:wrn sub">Sub Warning</span>
+                <span class="chip rem">Remove</span>
+                <span class="chip:dgr rem">Remove Danger</span>
+                <span class="chip:suc-sm rem">Small Rem</span>
               </div>
             </section>
           </article>
@@ -130,8 +132,16 @@
                   <td style="padding: var(--space-xs);">Small size</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>.close</code></td>
-                  <td style="padding: var(--space-xs);">Close button</td>
+                  <td style="padding: var(--space-xs);"><code>add</code></td>
+                  <td style="padding: var(--space-xs);">+ prefix</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>sub</code></td>
+                  <td style="padding: var(--space-xs);">- prefix</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>rem</code></td>
+                  <td style="padding: var(--space-xs);">× suffix (clickable)</td>
                 </tr>
               </tbody>
             </table>
@@ -148,10 +158,12 @@
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="chip"], [class*="chip:"] {
   /* Base styles */
   
-  /* Close button */
-  &amp; .close { }
+  /* Modifiers */
+  &amp;.add::before { content: "+"; }
+  &amp;.sub::before { content: "-"; }
+  &amp;.rem::after { content: "\00d7"; }
   
-  /* Size: small */
+  /* Size */
   &amp;[class*="-sm"] { }
   
   /* Variants */
@@ -175,8 +187,10 @@
 &lt;!-- Variant + Size --&gt;
 &lt;span class="chip:suc-sm"&gt;Small Success&lt;/span&gt;
 
-&lt;!-- Removable --&gt;
-&lt;span class="chip:dgr"&gt;Error &lt;span class="close"&gt;×&lt;/span&gt;&lt;/span&gt;</code></pre>
+&lt;!-- Modifiers --&gt;
+&lt;span class="chip:inf add"&gt;Add&lt;/span&gt;
+&lt;span class="chip:wrn sub"&gt;Sub&lt;/span&gt;
+&lt;span class="chip:dgr rem"&gt;Remove&lt;/span&gt;</code></pre>
           </article>
         </div>
 

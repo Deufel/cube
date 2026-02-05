@@ -477,24 +477,30 @@
       color-mix(in oklch, var(--color-pri), transparent 70%)
     );
 
-    & .close {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1rem;
-      height: 1rem;
-      margin-inline-end: calc(var(--space-xs) * -1);
-      font-size: 0.875rem;
-      border-radius: var(--radius-round);
-      cursor: pointer;
-      opacity: 0.6;
-      transition: opacity 0.15s ease, background 0.15s ease;
+    /* Modifiers: add, sub, rem */
+    &.add, &.sub, &.rem { cursor: pointer; }
 
+    &.add::before {
+      content: "+";
+      margin-inline-end: var(--space-xxs);
+      font-weight: bold;
+    }
+
+    &.sub::before {
+      content: "-";
+      margin-inline-end: var(--space-xxs);
+      font-weight: bold;
+    }
+
+    &.rem {
+      &::after {
+        content: "\00d7";
+        margin-inline-start: var(--space-xxs);
+        opacity: 0.6;
+        transition: opacity 0.15s ease;
+      }
       @media (hover: hover) {
-        &:hover {
-          opacity: 1;
-          background: color-mix(in oklch, currentColor, transparent 85%);
-        }
+        &:hover::after { opacity: 1; }
       }
     }
 
