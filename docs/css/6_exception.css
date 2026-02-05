@@ -2,63 +2,12 @@
   /* === SHADOW MODIFIER === */
   .shadow { box-shadow: var(--shadow-md); }
 
-  /* === BUTTON VARIANTS === */
-  [class~="btn:pri"], [class*="btn:pri-"] {
-    --_btn-color: var(--color-pri);
-    background: var(--_btn-color);
-    color: var(--color-pri-text);
-    border: 1.5px solid light-dark(
-      color-mix(in oklch, var(--_btn-color), black 15%),
-      color-mix(in oklch, var(--_btn-color), white 20%)
-    );
-  }
-  [class~="btn:sec"], [class*="btn:sec-"] {
-    --_btn-color: var(--color-sec);
-    background: var(--_btn-color);
-    color: var(--color-sec-text);
-    border: 1.5px solid light-dark(
-      color-mix(in oklch, var(--_btn-color), black 15%),
-      color-mix(in oklch, var(--_btn-color), white 20%)
-    );
-  }
-  [class~="btn:wrn"], [class*="btn:wrn-"] {
-    --_btn-color: var(--color-wrn);
-    background: var(--_btn-color);
-    color: var(--color-wrn-text);
-    border: 1.5px solid light-dark(
-      color-mix(in oklch, var(--_btn-color), black 15%),
-      color-mix(in oklch, var(--_btn-color), white 20%)
-    );
-  }
-  [class~="btn:dgr"], [class*="btn:dgr-"] {
-    --_btn-color: var(--color-dgr);
-    background: var(--_btn-color);
-    color: var(--color-dgr-text);
-    border: 1.5px solid light-dark(
-      color-mix(in oklch, var(--_btn-color), black 15%),
-      color-mix(in oklch, var(--_btn-color), white 20%)
-    );
-  }
-
-
-  /* === BUTTON SIZES === */
+  /* === CHIP SIZE === */
   [class$="-sm"], [class*="-sm "] {
-    &:is([class*="btn:"]) {
-      height: var(--btn-height-sm);
-      padding-inline: var(--space-sm);
-      font-size: var(--text-sm);
-    }
     &:is([class*="chip:"]) {
       height: var(--size-4);
       padding-inline: var(--space-xs);
       font-size: var(--text-xxs, 0.65rem);
-    }
-  }
-  [class$="-lg"], [class*="-lg "] {
-    &:is([class*="btn:"]) {
-      height: var(--btn-height-lg);
-      padding-inline: var(--space-lg);
-      font-size: var(--text-lg);
     }
   }
 
@@ -76,15 +25,10 @@
     }
   }
 
-  /* === OUT MODIFIER (works on any colored element) === */
-  [class~="out"] {
-    background: color-mix(in oklch, var(--_btn-color, currentColor), transparent 92%);
-    color: var(--_btn-color, currentColor);
-    border: 1.5px solid currentColor;
-  }
+  
 
-  /* === BUTTON STATES === */
-  :is(button, [class~="btn"], [class*="btn:"], [class~="icon-btn"], [class*="icon-btn:"]) {
+  /* === ICON BUTTON STATES === */
+  :is([class~="icon-btn"], [class*="icon-btn:"]) {
     &[aria-busy="true"] { opacity: 0.7; cursor: wait; }
     &:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
   }
