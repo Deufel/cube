@@ -6,7 +6,7 @@
 >
   <div 
     data-class="{'card sec': !$prst_page.nav_drawer}"
-    data-style:width="$prst_page.nav_compact ? '5rem' : '14rem'">
+    data-style:width="$prst_page.nav_compact ? '6rem' : '16rem'">
     <header>
       <a href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -81,13 +81,13 @@
       <div class="flex:split">
         <button class="icon-btn:mute-sm" data-on:click="$prst_page.nav_drawer = !$prst_page.nav_drawer; $prst_page.nav_drawer || el.closest('dialog').close()">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-left-close-icon lucide-panel-left-close"
-            style="transition: transform 0.2s ease;" data-style:transform="$prst_page.nav_drawer ? 'scaleX(-1)' : ''">
+            data-style:transform="$prst_page.nav_drawer ? 'scaleX(-1)' : ''">
             <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/>
           </svg>
         </button >
 
         <button class="icon-btn:mute-sm" data-on:click="$prst_page.nav_compact = !$prst_page.nav_compact">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left-icon lucide-chevrons-left" style="transition: transform 0.3s ease;" data-style:transform="$prst_page.nav_compact ? 'rotate(180deg)' : ''" ><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left-icon lucide-chevrons-left"  data-style:transform="$prst_page.nav_compact ? 'rotate(180deg)' : ''" ><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg> 
         </button>
       </div>
     </footer>
