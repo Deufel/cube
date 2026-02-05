@@ -804,7 +804,7 @@
   }
 
   /* Badge via data attribute */
-  & a[data-uibadge]::after {
+  & a[data-ui-badge]::after {
     content: attr(data-badge);
     position: absolute;
     top: 0;
@@ -819,7 +819,7 @@
   }
 
   /* Compact mode - stack vertically */
-  @container (width <= 5rem) {
+  @container (width <= 6rem) {
     & a {
       flex-direction: column;
       align-items: center;
