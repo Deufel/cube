@@ -97,6 +97,12 @@
     --border-subtle: light-dark(var(--gry-2), #1a1a2e);
     --border-muted: light-dark(var(--gry-3), #252542);
 
+    /* === INTERACTION STATES === */
+    --hover-outline-width: 1px;
+    --hover-outline-color-mix: 85%;
+    --active-outline-color-mix: 70%;
+    --active-bg-darken: 20%;
+
     /* === CARD === */
     --card-padding: var(--space-md);
     --card-border-radius: 0;

@@ -29,7 +29,6 @@
 
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
-    :focus { transition: outline-offset .25s ease; }
-    :focus:not(:active) { outline-offset: 5px; }
+    
   }
 }

@@ -128,6 +128,12 @@
     --btn-height-md: 2.375rem;
     --btn-height-lg: 2.875rem;
     
+    /* === INTERACTION STATES === */
+    --hover-outline-width: 2px;
+    --hover-outline-color-mix: 85%;
+    --active-outline-color-mix: 70%;
+    --active-bg-darken: 20%;
+
     /* === CARD === */
     --card-padding: var(--space-sm);
     --card-border-radius: var(--radius-3);

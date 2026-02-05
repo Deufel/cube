@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outline Hover Experiment</title>
+
+<script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
+
+<style>@layer reset, props, theme;</style>
+<link rel="stylesheet" href="./css/0_reset.css">
+<link rel="stylesheet" href="./css/1_props.css">
+<link rel="stylesheet" href="./css/2_theme-default.css">
+
+<style>
+  /* Theme variables for generalized hover */
+  :root {
+    --hover-outline-width: 2px;
+    --hover-outline-color-mix: 85%;
+    --active-outline-color-mix: 70%;
+    --active-bg-darken: 20%;
+  }
+
+  /* Test button with outline hover */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Primary variant */
+  .btn-outline.pri {
+    background: var(--color-pri);
+    color: white;
+  }
+
+  @media (hover: hover) {
+    .btn-outline.pri:hover {
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-pri), transparent calc(100% - var(--hover-outline-color-mix)));
+      outline-offset: 2px;
+    }
+  }
+
+  .btn-outline.pri:focus-visible {
+    outline: var(--hover-outline-width) solid 
+      color-mix(in oklch, var(--color-pri), transparent calc(100% - var(--hover-outline-color-mix)));
+    outline-offset: 2px;
+  }
+
+  /* Mobile: Enhanced tap feedback */
+  @media (hover: none) {
+    .btn-outline.pri:active {
+background: color-mix(in oklch, var(--color-pri), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-pri), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+      transform: scale(0.98);
+    }
+  }
+
+  /* Desktop: Standard active */
+  @media (hover: hover) {
+    .btn-outline.pri:active {
+background: color-mix(in oklch, var(--color-pri), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-pri), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+    }
+  }
+
+  /* Secondary variant */
+  .btn-outline.sec {
+    background: var(--color-sec);
+    color: white;
+  }
+
+  @media (hover: hover) {
+    .btn-outline.sec:hover {
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-sec), transparent calc(100% - var(--hover-outline-color-mix)));
+      outline-offset: 2px;
+    }
+  }
+
+  .btn-outline.sec:focus-visible {
+    outline: var(--hover-outline-width) solid 
+      color-mix(in oklch, var(--color-sec), transparent calc(100% - var(--hover-outline-color-mix)));
+    outline-offset: 2px;
+  }
+
+  @media (hover: none) {
+    .btn-outline.sec:active {
+background: color-mix(in oklch, var(--color-sec), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-sec), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+      transform: scale(0.98);
+    }
+  }
+
+  @media (hover: hover) {
+    .btn-outline.sec:active {
+background: color-mix(in oklch, var(--color-sec), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-sec), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+    }
+  }
+
+  /* Warning variant */
+  .btn-outline.wrn {
+    background: var(--color-wrn);
+    color: var(--gry-9);
+  }
+
+  @media (hover: hover) {
+    .btn-outline.wrn:hover {
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-wrn), transparent calc(100% - var(--hover-outline-color-mix)));
+      outline-offset: 2px;
+    }
+  }
+
+  .btn-outline.wrn:focus-visible {
+    outline: var(--hover-outline-width) solid 
+      color-mix(in oklch, var(--color-wrn), transparent calc(100% - var(--hover-outline-color-mix)));
+    outline-offset: 2px;
+  }
+
+  @media (hover: none) {
+    .btn-outline.wrn:active {
+background: color-mix(in oklch, var(--color-wrn), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-wrn), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+      transform: scale(0.98);
+    }
+  }
+
+  @media (hover: hover) {
+    .btn-outline.wrn:active {
+background: color-mix(in oklch, var(--color-wrn), black var(--active-bg-darken));
+      outline: var(--hover-outline-width) solid 
+        color-mix(in oklch, var(--color-wrn), black var(--active-outline-color-mix));
+      outline-offset: -2px;
+    }
+  }
+</style>
+</head>
+<body style="padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-lg);">
+
+<h1>Outline Hover Experiment</h1>
+
+
+
+<section style="display: flex; flex-direction: column; gap: var(--space-sm);">
+  <h2>Outline + Glow Effect</h2>
+  <p>Hover shows colored outline + glow. Active darkens the outline.</p>
+  
+  <div style="display: flex; gap: var(--space-sm);">
+    <button class="btn-outline pri">Primary</button>
+    <button class="btn-outline sec">Secondary</button>
+    <button class="btn-outline wrn">Warning</button>
+  </div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: var(--space-sm);">
+  <h2>Theme Variables</h2>
+  <pre style="background: var(--surface-def); padding: var(--space-sm); border-radius: var(--radius-sm);"><code>--hover-outline-width: 2px;
+--hover-outline-color-mix: 85%;
+--active-outline-color-mix: 70%;</code></pre>
+</section>
+
+</body>
+</html>
