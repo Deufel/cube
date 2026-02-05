@@ -62,7 +62,7 @@
     border: 0;
     padding: 0;
     max-width: none;
-    max-height: none;
+    max-height: 100svh;
     
     /* Transitions */
     opacity: 0;
@@ -823,6 +823,11 @@
 
 /* === ID="nav" LOCALITY OF BEHAVIOR PREFERENCE FOR COMPLEX PIECE OF UI === */
 #nav {
+  /* Padding when drawer mode (no card class) */
+  &[class*="drawer"] > div {
+    padding: var(--space-sm);
+  }
+
   & > div {
     container-type: inline-size;
     display: flex;
@@ -863,6 +868,26 @@
 
   & small {
     margin-inline-start: auto;
+    /* Style like chip:sec-sm */
+    height: var(--size-4);
+    padding-inline: var(--space-xs);
+    font-size: var(--text-xxs, 0.65rem);
+    border-radius: var(--radius-round);
+    background: light-dark(
+      color-mix(in oklch, var(--color-sec), var(--gry-0) 92%),
+      color-mix(in oklch, var(--color-sec), var(--gry-8) 90%)
+    );
+    color: light-dark(
+      color-mix(in oklch, var(--color-sec), var(--gry-9) 30%),
+      color-mix(in oklch, var(--color-sec), var(--gry-1) 20%)
+    );
+    border: 1px solid light-dark(
+      color-mix(in oklch, var(--color-sec), transparent 60%),
+      color-mix(in oklch, var(--color-sec), transparent 50%)
+    );
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Badge via data attribute */
