@@ -82,7 +82,6 @@
       </a>
     </nav>
     <footer>
-      <hr>
       <div class="flex:split">
         <button class="icon-btn:mute-sm" data-on:click="$prst_page.nav_drawer = !$prst_page.nav_drawer; $prst_page.nav_drawer || el.closest('dialog').close()">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-left-close-icon lucide-panel-left-close"
@@ -94,6 +93,10 @@
         <button class="icon-btn:mute-sm" data-on:click="$prst_page.nav_compact = !$prst_page.nav_compact">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left-icon lucide-chevrons-left"  data-style:transform="$prst_page.nav_compact ? 'rotate(180deg)' : ''" ><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg> 
         </button>
+      </div>
+      <hr>
+      <div class="flex:cluster justify:center">
+        <span class="chip:sec-sm"> V 0.1.0 </span>
       </div>
     </footer>
   </div>
