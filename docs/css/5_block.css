@@ -726,16 +726,44 @@
     color: var(--text-color);
     transition: all 0.2s ease;
 
-    & svg { width: var(--size-px-5); height: var(--size-px-5); flex-shrink: 0; }
+    & svg { 
+      width: var(--size-px-5); 
+      height: var(--size-px-5); 
+      flex-shrink: 0; 
+    }
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-pri);
-        background: color-mix(in oklch, var(--color-pri), transparent 95%);
+        outline: var(--hover-outline-width) solid var(--_icon-btn-color, currentColor);
+        outline-offset: 2px;
       }
     }
 
-    &:active { transform: scale(0.95); }
+    &:focus-visible {
+      outline: var(--hover-outline-width) solid var(--_icon-btn-color, currentColor);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      outline: calc(var(--hover-outline-width) * 2) solid var(--_icon-btn-color, currentColor);
+      outline-offset: 2px;
+    }
+
+    /* Variant: mute */
+    &[class*=":mute"] {
+      --_icon-btn-color: var(--text-muted);
+      color: var(--text-muted);
+    }
+
+    /* Size: small */
+    &[class*="-sm"] {
+      width: var(--size-px-7);
+      & svg { width: var(--size-px-4); height: var(--size-px-4); }
+    }
+
+    /* States */
+    &[aria-busy="true"] { opacity: 0.7; cursor: wait; }
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
   }
 
 

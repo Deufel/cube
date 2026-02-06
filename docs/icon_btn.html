@@ -151,24 +151,43 @@
 
         <hr>
 
-        <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
-          <h3 class="text:md">Usage</h3>
+        <!-- Structure + Usage -->
+        <div class="flex:flank-start align:start gap:sm">
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Structure</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="icon-btn"], [class*="icon-btn:"] {
+  /* Base styles */
+  
+  /* Variant */
+  &amp;[class*=":mute"] { }
+  
+  /* Size */
+  &amp;[class*="-sm"] { }
+  
+  /* States */
+  &amp;[aria-busy="true"] { }
+  &amp;:disabled { }
+}</code></pre>
+          </article>
+
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
 &lt;button class="icon-btn" aria-label="Menu"&gt;
   &lt;svg&gt;...&lt;/svg&gt;
 &lt;/button&gt;
 
-&lt;!-- Muted variant --&gt;
+&lt;!-- Variant --&gt;
 &lt;button class="icon-btn:mute" aria-label="Settings"&gt;
   &lt;svg&gt;...&lt;/svg&gt;
 &lt;/button&gt;
 
-&lt;!-- Muted + Small --&gt;
+&lt;!-- Variant + Size --&gt;
 &lt;button class="icon-btn:mute-sm" aria-label="Close"&gt;
   &lt;svg&gt;...&lt;/svg&gt;
 &lt;/button&gt;</code></pre>
-        </article>
+          </article>
+        </div>
 
       </article>
     </main>
