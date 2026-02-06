@@ -31,22 +31,33 @@
 <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class=" flex:flank-end gap:sm">
+        <div class="flex:flank-end gap:sm">
           
           <!-- Demos -->
-          <article class=" flex:stack gap:sm">
+          <article class="flex:stack gap:sm">
+            <section class="flex:stack">
+              <h3 class="text:md">Base</h3>
+              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="tabs" data-init="$demo1='tab1'">
+                  <button data-class:active="$demo1=='tab1'" data-on:click="$demo1='tab1'">Home</button>
+                  <button data-class:active="$demo1=='tab2'" data-on:click="$demo1='tab2'">Profile</button>
+                  <button data-class:active="$demo1=='tab3'" data-on:click="$demo1='tab3'">Settings</button>
+                </div>
+              </div>
+            </section>
+
             <section class="flex:stack">
               <h3 class="text:md">Variants</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo2='tab1'">
-                  <button class="tab" data-class:tab:active="$demo2=='tab1'" data-on:click="$demo2='tab1'">Tab1</button>
-                  <button class="tab" data-class:tab:active="$demo2=='tab2'" data-on:click="$demo2='tab2'">Tab2</button>
-                  <button class="tab" data-class:tab:active="$demo2=='tab3'" data-on:click="$demo2='tab3'">Tab3</button>
+                  <button data-class:active="$demo2=='tab1'" data-on:click="$demo2='tab1'">Tab1</button>
+                  <button data-class:active="$demo2=='tab2'" data-on:click="$demo2='tab2'">Tab2</button>
+                  <button data-class:active="$demo2=='tab3'" data-on:click="$demo2='tab3'">Tab3</button>
                 </div>
                 <div class="tabs:sec" data-init="$demo3='tab1'">
-                  <button class="tab" data-class:tab:active="$demo3=='tab1'" data-on:click="$demo3='tab1'">Tab1</button>
-                  <button class="tab" data-class:tab:active="$demo3=='tab2'" data-on:click="$demo3='tab2'">Tab2</button>
-                  <button class="tab" data-class:tab:active="$demo3=='tab3'" data-on:click="$demo3='tab3'">Tab3</button>
+                  <button data-class:active="$demo3=='tab1'" data-on:click="$demo3='tab1'">Tab1</button>
+                  <button data-class:active="$demo3=='tab2'" data-on:click="$demo3='tab2'">Tab2</button>
+                  <button data-class:active="$demo3=='tab3'" data-on:click="$demo3='tab3'">Tab3</button>
                 </div>
               </div>
             </section>
@@ -55,14 +66,14 @@
               <h3 class="text:md">Sizes</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo4='tab1'">
-                  <button class="tab" data-class:tab:active="$demo4=='tab1'" data-on:click="$demo4='tab1'">Default</button>
-                  <button class="tab" data-class:tab:active="$demo4=='tab2'" data-on:click="$demo4='tab2'">Tab2</button>
-                  <button class="tab" data-class:tab:active="$demo4=='tab3'" data-on:click="$demo4='tab3'">Tab3</button>
+                  <button data-class:active="$demo4=='tab1'" data-on:click="$demo4='tab1'">Default</button>
+                  <button data-class:active="$demo4=='tab2'" data-on:click="$demo4='tab2'">Tab2</button>
+                  <button data-class:active="$demo4=='tab3'" data-on:click="$demo4='tab3'">Tab3</button>
                 </div>
                 <div class="tabs:pri-sm" data-init="$demo5='tab1'">
-                  <button class="tab" data-class:tab:active="$demo5=='tab1'" data-on:click="$demo5='tab1'">Small</button>
-                  <button class="tab" data-class:tab:active="$demo5=='tab2'" data-on:click="$demo5='tab2'">Tab2</button>
-                  <button class="tab" data-class:tab:active="$demo5=='tab3'" data-on:click="$demo5='tab3'">Tab3</button>
+                  <button data-class:active="$demo5=='tab1'" data-on:click="$demo5='tab1'">Small</button>
+                  <button data-class:active="$demo5=='tab2'" data-on:click="$demo5='tab2'">Tab2</button>
+                  <button data-class:active="$demo5=='tab3'" data-on:click="$demo5='tab3'">Tab3</button>
                 </div>
               </div>
             </section>
@@ -71,9 +82,9 @@
               <h3 class="text:md">Full Width</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto;">
                 <div class="tabs:pri full" data-init="$demo6='tab1'">
-                  <button class="tab" data-class:tab:active="$demo6=='tab1'" data-on:click="$demo6='tab1'">Tab1</button>
-                  <button class="tab" data-class:tab:active="$demo6=='tab2'" data-on:click="$demo6='tab2'">Tab2</button>
-                  <button class="tab" data-class:tab:active="$demo6=='tab3'" data-on:click="$demo6='tab3'">Tab3</button>
+                  <button data-class:active="$demo6=='tab1'" data-on:click="$demo6='tab1'">Tab1</button>
+                  <button data-class:active="$demo6=='tab2'" data-on:click="$demo6='tab2'">Tab2</button>
+                  <button data-class:active="$demo6=='tab3'" data-on:click="$demo6='tab3'">Tab3</button>
                 </div>
               </div>
             </section>
@@ -104,6 +115,7 @@
             </table>
 
             <h4 class="text:sm">Tab Items</h4>
+            <p class="text:xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">Direct <code>&lt;button&gt;</code> children are styled automatically</p>
             <table class="text:xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
@@ -113,11 +125,7 @@
               </thead>
               <tbody>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>tab</code></td>
-                  <td style="padding: var(--space-xs);">Base tab</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--surface-border);">
-                  <td style="padding: var(--space-xs);"><code>tab:active</code></td>
+                  <td style="padding: var(--space-xs);"><code>active</code></td>
                   <td style="padding: var(--space-xs);">Active state</td>
                 </tr>
               </tbody>
@@ -148,25 +156,51 @@
 
         <hr>
 
-        <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
-          <h3 class="text:md">Usage</h3>
+        <!-- Structure + Usage -->
+        <div class="flex:flank-end align:start gap:sm">
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Structure</h3>
+<pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="tabs"], [class*="tabs:"] {
+  /* Container styles */
+  
+  /* Variants */
+  &amp;[class*=":pri"] { }
+  &amp;[class*=":sec"] { }
+  
+  /* Size */
+  &amp;[class*="-sm"] { }
+  
+  /* Modifier */
+  &amp;.full { }
+  
+  /* Direct button children */
+  & > button {
+    /* Tab styles */
+    
+    &amp;.active { /* Active state */ }
+  }
+}</code></pre>
+          </article>
+
+          <article class="flex:stack gap:xs">
+            <h3 class="text:md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Primary tabs with Datastar signals --&gt;
 &lt;div class="tabs:pri" data-init="$mytab='first'"&gt;
-  &lt;button class="tab" 
-    data-class:tab:active="$mytab=='first'" 
+  &lt;button data-class:active="$mytab=='first'" 
     data-on:click="$mytab='first'"&gt;First&lt;/button&gt;
-  &lt;button class="tab" 
-    data-class:tab:active="$mytab=='second'" 
+  &lt;button data-class:active="$mytab=='second'" 
     data-on:click="$mytab='second'"&gt;Second&lt;/button&gt;
 &lt;/div&gt;
 
 &lt;!-- Full width secondary tabs --&gt;
 &lt;div class="tabs:sec full" data-init="$status='active'"&gt;
-  &lt;button class="tab" data-class:tab:active="$status=='active'" data-on:click="$status='active'"&gt;Active&lt;/button&gt;
-  &lt;button class="tab" data-class:tab:active="$status=='archived'" data-on:click="$status='archived'"&gt;Archived&lt;/button&gt;
+  &lt;button data-class:active="$status=='active'" 
+    data-on:click="$status='active'"&gt;Active&lt;/button&gt;
+  &lt;button data-class:active="$status=='archived'" 
+    data-on:click="$status='archived'"&gt;Archived&lt;/button&gt;
 &lt;/div&gt;</code></pre>
-        </article>
+          </article>
+        </div>
 
       </article>
     </main>

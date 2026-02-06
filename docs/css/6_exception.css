@@ -30,37 +30,7 @@
     padding: var(--space-xs);
   }
 
-  /* === TABS VARIANTS === */
-  [class~="tabs:pri"], [class*="tabs:pri-"] {
-    --_tabs-color: var(--color-pri);
-  }
-  [class~="tabs:sec"], [class*="tabs:sec-"] {
-    --_tabs-color: var(--color-sec);
-  }
 
-  /* === TABS SIZES === */
-  [class$="-sm"], [class*="-sm "] {
-    &:is([class*="tabs:"]) {
-      padding: 3px;
-      gap: 2px;
-      & [class~="tab"], & [class*="tab:"] {
-        padding: 0.2rem var(--space-sm);
-        font-size: var(--text-xs);
-      }
-    }
-  }
-
-  /* === TABS FULL WIDTH (standalone modifier) === */
-  [class~="full"]:is([class~="tabs"], [class*="tabs:"]) {
-    display: flex;
-    width: 100%;
-    & [class~="tab"], & [class*="tab:"] {
-      flex: 1;
-      text-align: center;
-    }
-  }
-
-  
 
   /* === TAG SIZES === */
   [class$="-sm"], [class*="-sm "] {
