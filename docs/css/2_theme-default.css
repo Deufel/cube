@@ -8,16 +8,16 @@
     /* === COLORS === */
     --color-brand: oklch(50% 0.1 180); /* placeholder for client branding */
     
-    --color-pri: oklch(45% 0.08 160);
-    --color-sec: oklch(55% 0.05 220);
-    --color-pri-text: light-dark(oklch(35% 0.08 160), oklch(75% 0.08 160));
-    --color-sec-text: light-dark(oklch(45% 0.05 220), oklch(70% 0.05 220));
+--color-pri: oklch(60% 0.10 60);
+    --color-sec: oklch(70% 0.02 240);
+    --color-pri-text: white;
+    --color-sec-text: var(--text-color);
 
-    --color-inf: light-dark(var(--blu-5), var(--blu-6));
-    --color-suc: light-dark(var(--grn-5), var(--grn-6));
-    --color-wrn: light-dark(var(--yel-6), var(--yel-5));
-    --color-dgr: light-dark(var(--red-6), var(--red-5));
-    --color-err: light-dark(var(--red-6), var(--red-5));
+    --color-inf: oklch(55% 0.10 230);
+    --color-suc: oklch(50% 0.12 150);
+    --color-wrn: oklch(75% 0.15 90);
+    --color-dgr: oklch(50% 0.12 25);
+    --color-err: oklch(50% 0.12 25);
 
     --color-muted-pri: light-dark(
       color-mix(in oklch, var(--color-pri), var(--gry-5) 50%),
@@ -31,32 +31,32 @@
     /* === SURFACES === */
     --surface-bak: light-dark(#f0f3f0, #1a1d1a);
     --surface-def: light-dark(#f8faf8, #262926);
-    --surface-pri: light-dark(
-      color-mix(in oklch, var(--color-pri), var(--gry-0) 94%),
-      color-mix(in oklch, var(--color-pri), var(--gry-9) 92%)
+--surface-pri: light-dark(
+      color-mix(in oklch, var(--color-pri), white 93%),
+      color-mix(in oklch, var(--color-pri), var(--surface-bak) 90%)
     );
     --surface-sec: light-dark(
-      color-mix(in oklch, var(--color-sec), var(--gry-0) 94%),
-      color-mix(in oklch, var(--color-sec), var(--gry-9) 92%)
+      color-mix(in oklch, var(--color-sec), white 93%),
+      color-mix(in oklch, var(--color-sec), var(--surface-bak) 90%)
     );
     --surface-gla: var(--glass-bg-2);
 
     /* Status surfaces */
     --surface-inf: light-dark(
-      color-mix(in oklch, var(--color-inf), var(--gry-0) 95%),
-      color-mix(in oklch, var(--color-inf), var(--gry-9) 95%)
+      color-mix(in oklch, var(--color-inf), white 93%),
+      color-mix(in oklch, var(--color-inf), var(--surface-bak) 90%)
     );
     --surface-suc: light-dark(
-      color-mix(in oklch, var(--color-suc), var(--gry-0) 95%),
-      color-mix(in oklch, var(--color-suc), var(--gry-9) 95%)
+      color-mix(in oklch, var(--color-suc), white 93%),
+      color-mix(in oklch, var(--color-suc), var(--surface-bak) 90%)
     );
     --surface-wrn: light-dark(
-      color-mix(in oklch, var(--color-wrn), var(--gry-0) 95%),
-      color-mix(in oklch, var(--color-wrn), var(--gry-9) 95%)
+      color-mix(in oklch, var(--color-wrn), white 93%),
+      color-mix(in oklch, var(--color-wrn), var(--surface-bak) 90%)
     );
     --surface-dgr: light-dark(
-      color-mix(in oklch, var(--color-dgr), var(--gry-0) 95%),
-      color-mix(in oklch, var(--color-dgr), var(--gry-9) 95%)
+      color-mix(in oklch, var(--color-dgr), white 93%),
+      color-mix(in oklch, var(--color-dgr), var(--surface-bak) 90%)
     );
 
     /* Component surfaces */
