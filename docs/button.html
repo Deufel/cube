@@ -37,20 +37,26 @@
           <article class="flex:stack gap:sm">
             <section class="flex:stack">
               <h3 class="text:md">Variants</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Default is outlined secondary style</p>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
                 <button class="btn">Default</button>
                 <button class="btn:pri">Primary</button>
                 <button class="btn:sec">Secondary</button>
+                <button class="btn:inf">Info</button>
+                <button class="btn:suc">Success</button>
                 <button class="btn:wrn">Warning</button>
                 <button class="btn:dgr">Danger</button>
               </div>
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Outline</h3>
+              <h3 class="text:md">Outline Variants</h3>
+              <p class="text:xs" style="color: var(--text-muted);">Add 'out' modifier for outlined style</p>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
                 <button class="btn:pri out">Primary</button>
                 <button class="btn:sec out">Secondary</button>
+                <button class="btn:inf out">Info</button>
+                <button class="btn:suc out">Success</button>
                 <button class="btn:wrn out">Warning</button>
                 <button class="btn:dgr out">Danger</button>
               </div>
@@ -110,7 +116,7 @@
               <tbody>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>btn</code></td>
-                  <td style="padding: var(--space-xs);">Base button</td>
+                  <td style="padding: var(--space-xs);">Base (outlined secondary)</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>btn:pri</code></td>
@@ -119,6 +125,14 @@
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>btn:sec</code></td>
                   <td style="padding: var(--space-xs);">Secondary</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>btn:inf</code></td>
+                  <td style="padding: var(--space-xs);">Info</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>btn:suc</code></td>
+                  <td style="padding: var(--space-xs);">Success</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>btn:wrn</code></td>

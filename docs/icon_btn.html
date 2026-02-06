@@ -51,15 +51,27 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Mute Variant</h3>
+              <h3 class="text:md">Color Variants</h3>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
-                <button class="icon-btn:mute" aria-label="Home">
+                <button class="icon-btn:pri" aria-label="Primary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
                 </button>
-                <button class="icon-btn:mute" aria-label="Ban">
+                <button class="icon-btn:sec" aria-label="Secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+                <button class="icon-btn:inf" aria-label="Info">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                </button>
+                <button class="icon-btn:suc" aria-label="Success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                </button>
+                <button class="icon-btn:wrn" aria-label="Warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                </button>
+                <button class="icon-btn:dgr" aria-label="Danger">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
                 </button>
-                <button class="icon-btn:mute" aria-label="Lock">
+                <button class="icon-btn:mute" aria-label="Muted">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </button>
               </div>
@@ -108,8 +120,32 @@
                   <td style="padding: var(--space-xs);">Base icon button</td>
                 </tr>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:pri</code></td>
+                  <td style="padding: var(--space-xs);">Primary</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:sec</code></td>
+                  <td style="padding: var(--space-xs);">Secondary</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:inf</code></td>
+                  <td style="padding: var(--space-xs);">Info</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:suc</code></td>
+                  <td style="padding: var(--space-xs);">Success</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:wrn</code></td>
+                  <td style="padding: var(--space-xs);">Warning</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
+                  <td style="padding: var(--space-xs);"><code>icon-btn:dgr</code></td>
+                  <td style="padding: var(--space-xs);">Danger</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--surface-border);">
                   <td style="padding: var(--space-xs);"><code>icon-btn:mute</code></td>
-                  <td style="padding: var(--space-xs);">Muted variant</td>
+                  <td style="padding: var(--space-xs);">Muted</td>
                 </tr>
               </tbody>
             </table>

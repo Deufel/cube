@@ -254,13 +254,15 @@
 
   /* === BUTTON === */
   [class~="btn"], [class*="btn:"] {
+    --_btn-color: var(--color-sec);
     cursor: pointer;
     height: var(--btn-height-md);
     padding-inline: var(--space-md);
     font-size: var(--text-md);
     border-radius: var(--radius-btn);
-    background: var(--surface-btn, var(--gry-2));
-    color: var(--text-color);
+    background: color-mix(in oklch, var(--_btn-color), transparent 92%);
+    color: var(--_btn-color);
+    border: 1.5px solid currentColor;
 
     @media (hover: hover) {
       &:hover {
@@ -326,6 +328,25 @@
         color-mix(in oklch, var(--_btn-color), white 20%)
       );
     }
+    &[class*=":inf"] {
+      --_btn-color: var(--color-inf);
+      background: var(--_btn-color);
+      color: color-mix(in oklch, var(--text-color), var(--color-inf) 6%);
+      border: 1.5px solid light-dark(
+        color-mix(in oklch, var(--_btn-color), black 15%),
+        color-mix(in oklch, var(--_btn-color), white 20%)
+      );
+    }
+    &[class*=":suc"] {
+      --_btn-color: var(--color-suc);
+      background: var(--_btn-color);
+      color: color-mix(in oklch, var(--text-color), var(--color-suc) 6%);
+      border: 1.5px solid light-dark(
+        color-mix(in oklch, var(--_btn-color), black 15%),
+        color-mix(in oklch, var(--_btn-color), white 20%)
+      );
+    }
+
     &[class*=":wrn"] {
       --_btn-color: var(--color-wrn);
       background: var(--_btn-color);
@@ -724,7 +745,7 @@
     cursor: pointer;
     background: transparent;
     color: var(--text-color);
-    transition: all 0.2s ease;
+
 
     & svg { 
       width: var(--size-px-5); 
@@ -754,6 +775,33 @@
       --_icon-btn-color: var(--text-muted);
       color: var(--text-muted);
     }
+
+    /* Color variants */
+    &[class*=":pri"] {
+      --_icon-btn-color: var(--color-pri);
+      color: var(--color-pri);
+    }
+    &[class*=":sec"] {
+      --_icon-btn-color: var(--color-sec);
+      color: var(--color-sec);
+    }
+    &[class*=":inf"] {
+      --_icon-btn-color: var(--color-inf);
+      color: var(--color-inf);
+    }
+    &[class*=":suc"] {
+      --_icon-btn-color: var(--color-suc);
+      color: var(--color-suc);
+    }
+    &[class*=":wrn"] {
+      --_icon-btn-color: var(--color-wrn);
+      color: var(--color-wrn);
+    }
+    &[class*=":dgr"] {
+      --_icon-btn-color: var(--color-dgr);
+      color: var(--color-dgr);
+    }
+
 
     /* Size: small */
     &[class*="-sm"] {
