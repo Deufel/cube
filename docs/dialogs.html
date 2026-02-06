@@ -24,8 +24,8 @@
       <article class="flex:stack gap:md p:sm">
         
         <header class="flex:stack">
-          <h1 class="text:lg">Dialogs & Drawers</h1>
-          <p class="text:sm" style="color: var(--text-muted);">Modal dialogs and slide-out drawer panels.</p>
+          <h1 class="text-lg">Dialogs & Drawers</h1>
+          <p class="text-sm" style="color: var(--text-muted);">Modal dialogs and slide-out drawer panels.</p>
         </header>
 
         <hr>
@@ -36,14 +36,14 @@
           <!-- Demos -->
           <article class="flex:stack gap:sm">
             <section class="flex:stack">
-              <h3 class="text:md">Centered Dialog</h3>
+              <h3 class="text-md">Centered Dialog</h3>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <button class="btn:pri" data-on:click="$demoDialog.showModal()">Open Dialog</button>
               </div>
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Drawers</h3>
+              <h3 class="text-md">Drawers</h3>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <button class="btn:sec out" data-on:click="$drawerLeft.showModal()">Left</button>
                 <button class="btn:sec out" data-on:click="$drawerRight.showModal()">Right</button>
@@ -55,10 +55,10 @@
 
           <!-- API Reference (sidebar) -->
           <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
-            <h3 class="text:md">API Reference</h3>
+            <h3 class="text-md">API Reference</h3>
             
-            <h4 class="text:sm">Dialog</h4>
-            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+            <h4 class="text-sm">Dialog</h4>
+            <table class="text-xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="text-align: left; padding: var(--space-xs);">Element</th>
@@ -77,8 +77,8 @@
               </tbody>
             </table>
 
-            <h4 class="text:sm">Drawers</h4>
-            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+            <h4 class="text-sm">Drawers</h4>
+            <table class="text-xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="text-align: left; padding: var(--space-xs);">Class</th>
@@ -113,7 +113,7 @@
         <!-- Structure + Usage -->
         <div class="flex:flank-start align:start gap:sm">
           <article class="flex:stack gap:xs">
-            <h3 class="text:md">Structure</h3>
+            <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">/* Dialog base */
 dialog {
   border: none;
@@ -138,7 +138,7 @@ dialog {
           </article>
 
           <article class="flex:stack gap:xs">
-            <h3 class="text:md">Usage</h3>
+            <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog with click-outside-to-close --&gt;
 &lt;!-- Use kebab-case in data-ref (auto-converts to camelCase signal) --&gt;
 &lt;dialog data-ref:my-dialog
@@ -176,8 +176,8 @@ dialog {
   <!-- Centered Dialog -->
   <dialog data-ref:demo-dialog data-on:click="evt.target === el && el.close()">
     <div class="card flex:stack gap:sm" style="min-width: 300px;">
-      <h2 class="text:md">Dialog Title</h2>
-      <p class="text:sm">This is a centered modal dialog with focus trapping and backdrop click to close.</p>
+      <h2 class="text-md">Dialog Title</h2>
+      <p class="text-sm">This is a centered modal dialog with focus trapping and backdrop click to close.</p>
       <div class="flex:cluster gap:sm justify:end">
         <button class="gho" data-on:click="el.closest('dialog').close()">Cancel</button>
         <button class="pri" data-on:click="el.closest('dialog').close()">Confirm</button>
@@ -189,10 +189,10 @@ dialog {
   <dialog data-ref:drawer-left class="drawer:left" data-on:click="evt.target === el && el.close()">
     <div class="flex:stack gap:sm p:md" style="height: 100%;">
       <div class="flex:split">
-        <h2 class="text:md">Left Drawer</h2>
+        <h2 class="text-md">Left Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
-      <p class="text:sm">Slides in from the left edge.</p>
+      <p class="text-sm">Slides in from the left edge.</p>
     </div>
   </dialog>
 
@@ -200,10 +200,10 @@ dialog {
   <dialog data-ref:drawer-right class="drawer:right" data-on:click="evt.target === el && el.close()">
     <div class="flex:stack gap:sm p:md" style="height: 100%;">
       <div class="flex:split">
-        <h2 class="text:md">Right Drawer</h2>
+        <h2 class="text-md">Right Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
-      <p class="text:sm">Slides in from the right edge.</p>
+      <p class="text-sm">Slides in from the right edge.</p>
     </div>
   </dialog>
 
@@ -211,10 +211,10 @@ dialog {
   <dialog data-ref:drawer-top class="drawer:top" data-on:click="evt.target === el && el.close()">
     <div class="flex:stack gap:sm p:md" style="width: 100%;">
       <div class="flex:split">
-        <h2 class="text:md">Top Drawer</h2>
+        <h2 class="text-md">Top Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
-      <p class="text:sm">Slides in from the top edge.</p>
+      <p class="text-sm">Slides in from the top edge.</p>
     </div>
   </dialog>
 
@@ -222,10 +222,10 @@ dialog {
   <dialog data-ref:drawer-bottom class="drawer:bottom" data-on:click="evt.target === el && el.close()">
     <div class="flex:stack gap:sm p:md" style="width: 100%;">
       <div class="flex:split">
-        <h2 class="text:md">Bottom Drawer</h2>
+        <h2 class="text-md">Bottom Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
       </div>
-      <p class="text:sm">Slides in from the bottom edge.</p>
+      <p class="text-sm">Slides in from the bottom edge.</p>
     </div>
   </dialog>
 

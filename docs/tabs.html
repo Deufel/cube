@@ -29,8 +29,8 @@
       <article class="flex:stack gap:md p:sm">
         
         <header class="flex:stack ">
-          <h1 class="text:lg">Tabs</h1>
-          <p class="text:sm" style="color: var(--text-muted);">Pill-shaped tab container with active state.</p>
+          <h1 class="text-lg">Tabs</h1>
+          <p class="text-sm" style="color: var(--text-muted);">Pill-shaped tab container with active state.</p>
         </header>
 
 <hr>
@@ -41,7 +41,7 @@
           <!-- Demos -->
           <article class="flex:stack gap:sm">
             <section class="flex:stack">
-              <h3 class="text:md">Base</h3>
+              <h3 class="text-md">Base</h3>
               <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs" data-init="$demo1='tab1'">
                   <button data-class:active="$demo1=='tab1'" data-on:click="$demo1='tab1'">Home</button>
@@ -52,7 +52,7 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Variants</h3>
+              <h3 class="text-md">Variants</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo2='tab1'">
                   <button data-class:active="$demo2=='tab1'" data-on:click="$demo2='tab1'">Tab1</button>
@@ -68,7 +68,7 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Sizes</h3>
+              <h3 class="text-md">Sizes</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo4='tab1'">
                   <button data-class:active="$demo4=='tab1'" data-on:click="$demo4='tab1'">Default</button>
@@ -84,7 +84,7 @@
             </section>
 
             <section class="flex:stack">
-              <h3 class="text:md">Full Width</h3>
+              <h3 class="text-md">Full Width</h3>
               <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto;">
                 <div class="tabs:pri full" data-init="$demo6='tab1'">
                   <button data-class:active="$demo6=='tab1'" data-on:click="$demo6='tab1'">Tab1</button>
@@ -97,10 +97,10 @@
 
           <!-- API Reference (sidebar) -->
           <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
-            <h3 class="text:md">API Reference</h3>
+            <h3 class="text-md">API Reference</h3>
             
-            <h4 class="text:sm">Container</h4>
-            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+            <h4 class="text-sm">Container</h4>
+            <table class="text-xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="text-align: left; padding: var(--space-xs);">Class</th>
@@ -119,9 +119,9 @@
               </tbody>
             </table>
 
-            <h4 class="text:sm">Tab Items</h4>
-            <p class="text:xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">Direct <code>&lt;button&gt;</code> children are styled automatically</p>
-            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+            <h4 class="text-sm">Tab Items</h4>
+            <p class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">Direct <code>&lt;button&gt;</code> children are styled automatically</p>
+            <table class="text-xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="text-align: left; padding: var(--space-xs);">Class</th>
@@ -136,8 +136,8 @@
               </tbody>
             </table>
 
-            <h4 class="text:sm">Modifiers</h4>
-            <table class="text:xs" style="border-collapse: collapse; width: 100%;">
+            <h4 class="text-sm">Modifiers</h4>
+            <table class="text-xs" style="border-collapse: collapse; width: 100%;">
               <thead>
                 <tr style="border-bottom: 1px solid var(--surface-border);">
                   <th style="text-align: left; padding: var(--space-xs);">Modifier</th>
@@ -164,7 +164,7 @@
         <!-- Structure + Usage -->
         <div class="flex:flank-start align:start gap:sm">
           <article class="flex:stack gap:xs">
-            <h3 class="text:md">Structure</h3>
+            <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="tabs"], [class*="tabs:"] {
   /* Container styles */
   
@@ -188,7 +188,7 @@
           </article>
 
           <article class="flex:stack gap:xs">
-            <h3 class="text:md">Usage</h3>
+            <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Primary tabs with Datastar signals --&gt;
 &lt;div class="tabs:pri" data-init="$mytab='first'"&gt;
   &lt;button data-class:active="$mytab=='first'" 

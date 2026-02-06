@@ -44,12 +44,28 @@
   [class*="m:lg"] { margin: var(--space-lg); }
   [class*="m:xl"] { margin: var(--space-xl); }
 
-  /* === TEXT SIZE === */
-  [class*="text:xs"] { font-size: var(--text-xs); }
-  [class*="text:sm"] { font-size: var(--text-sm); }
-  [class*="text:md"] { font-size: var(--text-md); }
-  [class*="text:lg"] { font-size: var(--text-lg); }
-  [class*="text:xl"] { font-size: var(--text-xl); }
+  /* === TEXT === */
+  [class~="text"], [class*="text:"], [class*="text-"] {
+    /* Base - default color, medium size */
+    color: var(--text);
+    font-size: var(--text-md);
+    
+    /* Variants - colors */
+    &[class*=":pri"] { color: var(--color-pri); }
+    &[class*=":sec"] { color: var(--color-sec); }
+    &[class*=":inf"] { color: var(--color-inf); }
+    &[class*=":suc"] { color: var(--color-suc); }
+    &[class*=":wrn"] { color: var(--color-wrn); }
+    &[class*=":dgr"] { color: var(--color-dgr); }
+    &[class*=":mut"] { color: var(--text-muted); }
+    
+    /* Size modifiers */
+    &[class*="-xs"] { font-size: var(--text-xs); }
+    &[class*="-sm"] { font-size: var(--text-sm); }
+    &[class*="-md"] { font-size: var(--text-md); }
+    &[class*="-lg"] { font-size: var(--text-lg); }
+    &[class*="-xl"] { font-size: var(--text-xl); }
+  }
 
   /* === SCROLL UTILITIES === */
   [class*="scroll-y"]  { overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-y: none; }
