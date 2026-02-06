@@ -969,5 +969,22 @@
   }
 }
 
+
+/* === ID="aside" LOCALITY OF BEHAVIOR FOR SETTINGS PANEL === */
+#aside {
+  /* Padding when drawer mode (no card class) */
+  &[class*="drawer"] > div {
+    padding: var(--space-md);
+  }
+
+  & > div {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+  }
+}
+
   
 }

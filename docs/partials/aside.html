@@ -1,68 +1,79 @@
-<dialog id="aside-drawer" class="drawer:right" popover="manual">
-  <div class="drawer-content flex:stack gap:md p:md">
-    <div class="drawer-header">
-      <h3>Settings</h3>
-      <button class="close-btn" popovertarget="aside-drawer">Close</button>
-    </div>
+<dialog id="aside"
+  data-class="{'drawer:right': $prst_page.aside_drawer}"
+  data-style:display="!$prst_page.aside_drawer ? 'contents' : ''"
+  data-ref:aside-drawer
+  data-on:click="evt.target === el && el.close()"
+>
+  <div 
+    data-class="{'card sec': !$prst_page.aside_drawer}"
+    data-style:width="$prst_page.aside_compact ? '10rem' : '16rem'">
+    <header>
+      <h3 class="text:md">Settings</h3>
+    </header>
 
-    <div class="form">
+    <aside class="flex:stack gap:md">
       <div class="field">
         <label>Theme</label>
         <div class="tabs:pri-sm full">
           <button 
-            data-class:tab:active="$prst_theme === './css/2_theme-default.css'"
-            data-class:tab="$prst_theme !== './css/2_theme-default.css'"
-            data-on:click="$prst_theme = './css/2_theme-default.css'">Evergreen</button>
+            data-class:active="$prst_theme === 'default'"
+            data-on:click="$prst_theme = 'default'">Default</button>
           <button 
-            data-class:tab:active="$prst_theme === './css/2_theme-sahara.css'"
-            data-class:tab="$prst_theme !== './css/2_theme-sahara.css'"
-            data-on:click="$prst_theme = './css/2_theme-sahara.css'">Sahara</button>
+            data-class:active="$prst_theme === 'sahara'"
+            data-on:click="$prst_theme = 'sahara'">Sahara</button>
           <button 
-            data-class:tab:active="$prst_theme === './css/2_theme-cyber.css'"
-            data-class:tab="$prst_theme !== './css/2_theme-cyber.css'"
-            data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
+            data-class:active="$prst_theme === 'cyber'"
+            data-on:click="$prst_theme = 'cyber'">Cyber</button>
           <button 
-            data-class:tab:active="$prst_theme === './css/2_theme-tokyo.css'"
-            data-class:tab="$prst_theme !== './css/2_theme-tokyo.css'"
-            data-on:click="$prst_theme = './css/2_theme-tokyo.css'">Tokyo</button>
+            data-class:active="$prst_theme === 'tokyo'"
+            data-on:click="$prst_theme = 'tokyo'">Tokyo</button>
         </div>
       </div>
 
       <div class="field">
         <label>Mode</label>
         <div class="tabs:pri-sm full">
-          <button 
-            data-class:tab:active="$prst_mode === 'light'"
-            data-class:tab="$prst_mode !== 'light'"
-            data-on:click="$prst_mode = 'light'">Light</button>
-          <button 
-            data-class:tab:active="$prst_mode === 'system'"
-            data-class:tab="$prst_mode !== 'system'"
-            data-on:click="$prst_mode = 'system'">System</button>
-          <button 
-            data-class:tab:active="$prst_mode === 'dark'"
-            data-class:tab="$prst_mode !== 'dark'"
-            data-on:click="$prst_mode = 'dark'">Dark</button>
+          <button data-class:active="$prst_mode === 'light'" data-on:click="$prst_mode = 'light'">Light</button>
+          <button data-class:active="$prst_mode === 'system'" data-on:click="$prst_mode = 'system'">System</button>
+          <button data-class:active="$prst_mode === 'dark'" data-on:click="$prst_mode = 'dark'">Dark</button>
         </div>
       </div>
 
       <div class="field">
         <label>Width</label>
         <div class="tabs:pri-sm full">
-          <button 
-            data-class:tab:active="$prst_width === 'width-sm'"
-            data-class:tab="$prst_width !== 'width-sm'"
-            data-on:click="$prst_width = 'width-sm'">Small</button>
-          <button 
-            data-class:tab:active="$prst_width === 'width-md'"
-            data-class:tab="$prst_width !== 'width-md'"
-            data-on:click="$prst_width = 'width-md'">Medium</button>
-          <button 
-            data-class:tab:active="$prst_width === 'width-lg'"
-            data-class:tab="$prst_width !== 'width-lg'"
-            data-on:click="$prst_width = 'width-lg'">Large</button>
+          <button data-class:active="$prst_width === 'width-sm'" data-on:click="$prst_width = 'width-sm'">Small</button>
+          <button data-class:active="$prst_width === 'width-md'" data-on:click="$prst_width = 'width-md'">Medium</button>
+          <button data-class:active="$prst_width === 'width-lg'" data-on:click="$prst_width = 'width-lg'">Large</button>
         </div>
       </div>
-    </div>
+    </aside>
+
+    <footer class="flex:cluster gap:xs">
+      <button 
+        class="btn:sec-sm out"
+        data-show="$prst_page.aside_compact"
+        data-on:click="$prst_page.aside_compact = false">
+        Wide
+      </button>
+      <button 
+        class="btn:sec-sm out"
+        data-show="!$prst_page.aside_compact"
+        data-on:click="$prst_page.aside_compact = true">
+        Compact
+      </button>
+      <button 
+        class="btn:sec-sm out"
+        data-show="$prst_page.aside_drawer"
+        data-on:click="$prst_page.aside_drawer = false">
+        In-Grid
+      </button>
+      <button 
+        class="btn:sec-sm out"
+        data-show="!$prst_page.aside_drawer"
+        data-on:click="$prst_page.aside_drawer = true">
+        Drawer
+      </button>
+    </footer>
   </div>
 </dialog>
