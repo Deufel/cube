@@ -19,30 +19,72 @@
   [class*="justify:around"] { justify-content: space-around; }
   [class*="justify:evenly"] { justify-content: space-evenly; }
 
-  /* === GAP === */
-  [class*="gap:xs"] { gap: var(--space-xs); }
-  [class*="gap:sm"] { gap: var(--space-sm); }
-  [class*="gap:md"] { gap: var(--space-md); }
-  [class*="gap:lg"] { gap: var(--space-lg); }
-  [class*="gap:xl"] { gap: var(--space-xl); }
-
-  /* === WRAP === */
-  [class*="wrap"]   {display: flex; flex-wrap: wrap; }
-  [class*="nowrap"] {display: flex; flex-wrap: nowrap; }
-
-  /* === PADDING === */
-  [class*="p:xs"] { padding: var(--space-xs); }
-  [class*="p:sm"] { padding: var(--space-sm); }
-  [class*="p:md"] { padding: var(--space-md); }
-  [class*="p:lg"] { padding: var(--space-lg); }
-  [class*="p:xl"] { padding: var(--space-xl); }
-
-  /* === MARGIN === */
-  [class*="m:xs"] { margin: var(--space-xs); }
-  [class*="m:sm"] { margin: var(--space-sm); }
-  [class*="m:md"] { margin: var(--space-md); }
-  [class*="m:lg"] { margin: var(--space-lg); }
-  [class*="m:xl"] { margin: var(--space-xl); }
+  /* === SPACING UTILITIES === */
+  [class*="p"], [class*="m"], [class*="g"] {
+    /* Internal size variables (scoped to each utility type) */
+    &[class*="p"][class*="-xs"] { --_p-size: var(--space-xs); }
+    &[class*="p"][class*="-sm"] { --_p-size: var(--space-sm); }
+    &[class*="p"][class*="-md"] { --_p-size: var(--space-md); }
+    &[class*="p"][class*="-lg"] { --_p-size: var(--space-lg); }
+    &[class*="p"][class*="-xl"] { --_p-size: var(--space-xl); }
+    
+    &[class*="m"][class*="-xs"] { --_m-size: var(--space-xs); }
+    &[class*="m"][class*="-sm"] { --_m-size: var(--space-sm); }
+    &[class*="m"][class*="-md"] { --_m-size: var(--space-md); }
+    &[class*="m"][class*="-lg"] { --_m-size: var(--space-lg); }
+    &[class*="m"][class*="-xl"] { --_m-size: var(--space-xl); }
+    
+    &[class*="g"][class*="-xs"] { --_g-size: var(--space-xs); }
+    &[class*="g"][class*="-sm"] { --_g-size: var(--space-sm); }
+    &[class*="g"][class*="-md"] { --_g-size: var(--space-md); }
+    &[class*="g"][class*="-lg"] { --_g-size: var(--space-lg); }
+    &[class*="g"][class*="-xl"] { --_g-size: var(--space-xl); }
+    
+    /* === PADDING === */
+    &[class*="p-"] { padding: var(--_p-size); }
+    &[class*="p:top-"] { padding-block-start: var(--_p-size); }
+    &[class*="p:bot-"] { padding-block-end: var(--_p-size); }
+    &[class*="p:lef-"] { padding-inline-start: var(--_p-size); }
+    &[class*="p:rig-"] { padding-inline-end: var(--_p-size); }
+    &[class*="p:inl-"] { padding-inline: var(--_p-size); }
+    &[class*="p:blk-"] { padding-block: var(--_p-size); }
+    
+    /* === MARGIN === */
+    &[class*="m-"] { margin: var(--_m-size); }
+    &[class*="m:top-"] { margin-block-start: var(--_m-size); }
+    &[class*="m:bot-"] { margin-block-end: var(--_m-size); }
+    &[class*="m:lef-"] { margin-inline-start: var(--_m-size); }
+    &[class*="m:rig-"] { margin-inline-end: var(--_m-size); }
+    &[class*="m:inl-"] { margin-inline: var(--_m-size); }
+    &[class*="m:blk-"] { margin-block: var(--_m-size); }
+    
+    /* === GAP === */
+    &[class*="g-"] { gap: var(--_g-size); }
+    
+    /* === SIBLING MODIFIER === */
+    &[class~="sib"] {
+      padding: 0;
+      margin: 0;
+      
+      & + & {
+        &[class*="p-"] { padding: var(--_p-size); }
+        &[class*="p:top-"] { padding-block-start: var(--_p-size); }
+        &[class*="p:bot-"] { padding-block-end: var(--_p-size); }
+        &[class*="p:lef-"] { padding-inline-start: var(--_p-size); }
+        &[class*="p:rig-"] { padding-inline-end: var(--_p-size); }
+        &[class*="p:inl-"] { padding-inline: var(--_p-size); }
+        &[class*="p:blk-"] { padding-block: var(--_p-size); }
+        
+        &[class*="m-"] { margin: var(--_m-size); }
+        &[class*="m:top-"] { margin-block-start: var(--_m-size); }
+        &[class*="m:bot-"] { margin-block-end: var(--_m-size); }
+        &[class*="m:lef-"] { margin-inline-start: var(--_m-size); }
+        &[class*="m:rig-"] { margin-inline-end: var(--_m-size); }
+        &[class*="m:inl-"] { margin-inline: var(--_m-size); }
+        &[class*="m:blk-"] { margin-block: var(--_m-size); }
+      }
+    }
+  }
 
   /* === TEXT === */
   [class~="text"], [class*="text:"], [class*="text-"] {
