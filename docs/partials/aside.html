@@ -1,9 +1,9 @@
 <dialog id="aside"
-  data-signals="{prst_page: {aside_drawer: true, aside_compact: false}}"
   data-class="{'drawer:right': $prst_page.aside_drawer}"
   data-style:display="!$prst_page.aside_drawer ? 'contents' : ''"
   data-ref:aside-drawer
   data-on:click="evt.target === el && el.close()"
+  style="grid-area: 2/3/3/4"
 >
   <div 
     data-class="{'card sec': !$prst_page.aside_drawer}"
@@ -17,17 +17,17 @@
         <label>Theme</label>
         <div class="tabs:pri-sm full">
           <button 
-            data-class:active="$prst_theme === 'default'"
-            data-on:click="$prst_theme = 'default'">Default</button>
+            data-class:active="$prst_theme === './css/2_theme-default.css'"
+            data-on:click="$prst_theme = './css/2_theme-default.css'">Default</button>
           <button 
-            data-class:active="$prst_theme === 'sahara'"
-            data-on:click="$prst_theme = 'sahara'">Sahara</button>
+            data-class:active="$prst_theme === './css/2_theme-sahara.css'"
+            data-on:click="$prst_theme = './css/2_theme-sahara.css'">Sahara</button>
           <button 
-            data-class:active="$prst_theme === 'cyber'"
-            data-on:click="$prst_theme = 'cyber'">Cyber</button>
+            data-class:active="$prst_theme === './css/2_theme-cyber.css'"
+            data-on:click="$prst_theme = './css/2_theme-cyber.css'">Cyber</button>
           <button 
-            data-class:active="$prst_theme === 'tokyo'"
-            data-on:click="$prst_theme = 'tokyo'">Tokyo</button>
+            data-class:active="$prst_theme === './css/2_theme-tokyo.css'"
+            data-on:click="$prst_theme = './css/2_theme-tokyo.css'">Tokyo</button>
         </div>
       </div>
 

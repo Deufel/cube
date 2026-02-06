@@ -5,21 +5,27 @@
   <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.7/bundles/datastar.js"></script>
 </head>
 <body class="fullscreen scroll-no"
-  data-init="@get('./partials/head.html')"
   data-persist="{include: /^prst_/}"
-  data-signals="{prst_page: {nav_drawer: false, nav_compact: false}}"
-  data-signals:prst_theme="'./css/2_theme-default.css'"
-  data-signals:prst_mode="'system'"
-  data-signals:prst_width="'width-md'"
   data-class:width-sm="$prst_width === 'width-sm'"
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
+  
+  <div class="vh" data-init="@get('./partials/head.html')"></div>
+  
+  <div id="signals" class="vh" 
+    data-signals="{
+      prst_page: {nav_drawer: false, nav_compact: false, aside_drawer: true, aside_compact: false}
+    }"
+    data-signals:prst_theme="'./css/2_theme-default.css'"
+    data-signals:prst_mode="'system'"
+    data-signals:prst_width="'width-md'">
+  </div>
     
-  <div class="grid:hero gap:xs">
-    <div id="header" data-init="@get('./partials/header.html')"></div>
-    <div id="nav" data-init="@get('./partials/nav.html')"></div>
+  <main id="main" class="grid:hero gap:xs">
+    <header id="header" data-init="@get('./partials/header.html')"></header>
+    <dialog id="nav" data-init="@get('./partials/nav.html')"></dialog>
 
-    <main class="scroll-y card" style="grid-area: 2/2/3/3;">
+    <section id="content" class="scroll-y card" style="grid-area: 2/2/3/3;">
       <article class="flex:stack gap:md p:sm">
         
         <header class="flex:stack ">
@@ -202,11 +208,11 @@
         </div>
 
       </article>
-    </main>
+    </section>
 
-    <div id="aside-drawer" data-init="@get('./partials/aside.html')"></div>
-    <div id="footer" data-init="@get('./partials/footer.html')"></div>
+    <dialog id="aside" data-init="@get('./partials/aside.html')"></dialog>
+    <footer id="footer" data-init="@get('./partials/footer.html')"></footer>
 
-  </div>
+  </main>
 </body>
 </html>
