@@ -16,32 +16,32 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
-    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack gap:lg p:lg">
+    <main style="grid-area: 2/2/3/3;" class="scroll-y card flex:stack g-lg p-lg">
       <h2 class="text-xl" style="font-weight: 600;">Component Showcase</h2>
       
-      <section class="flex:stack gap:sm">
+      <section class="flex:stack g-sm">
         <h3 class="text-md">Tags</h3>
-        <div class="flex:cluster gap:sm">
+        <div class="flex:cluster g-sm">
           <span class="chip">Default</span>
           <span class="chip:inf">Info</span>
           <span class="chip:suc">Success</span>
           <span class="chip:wrn">Warning</span>
           <span class="chip:dgr">Danger</span>
         </div>
-        <div class="flex:cluster gap:sm">
+        <div class="flex:cluster g-sm">
           <span class="chip">Removable <span class="close">×</span></span>
           <span class="tag inf">Info <span class="close">×</span></span>
           <span class="tag suc">Done <span class="close">×</span></span>
         </div>
       </section>
 
-      <section class="flex:stack gap:sm">
+      <section class="flex:stack g-sm">
         <h3 class="text-md">Cards</h3>
-        <div class="flex:cluster gap:sm">
+        <div class="flex:cluster g-sm">
           <div class="card" style="width: 140px;">
             <p class="text-sm">Default</p>
           </div>
@@ -57,7 +57,7 @@
         </div>
 
         <h3 class="text-md">Alert Cards</h3>
-        <div class="flex:stack gap:sm" style="max-width: 400px;">
+        <div class="flex:stack g-sm" style="max-width: 400px;">
           <div class="card:alert inf">
             <p class="text-sm"><strong>Info:</strong> This is an informational message.</p>
           </div>

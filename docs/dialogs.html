@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Dialogs & Drawers</h1>
@@ -31,20 +31,20 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Centered Dialog</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <button class="btn:pri" data-on:click="$demoDialog.showModal()">Open Dialog</button>
               </div>
             </section>
 
             <section class="flex:stack">
               <h3 class="text-md">Drawers</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <button class="btn:sec out" data-on:click="$drawerLeft.showModal()">Left</button>
                 <button class="btn:sec out" data-on:click="$drawerRight.showModal()">Right</button>
                 <button class="btn:sec out" data-on:click="$drawerTop.showModal()">Top</button>
@@ -54,7 +54,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Dialog</h4>
@@ -111,8 +111,8 @@
         <hr>
 
         <!-- Structure + Usage -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">/* Dialog base */
 dialog {
@@ -137,13 +137,13 @@ dialog {
 }</code></pre>
           </article>
 
-          <article class="flex:stack gap:xs">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Centered Dialog with click-outside-to-close --&gt;
 &lt;!-- Use kebab-case in data-ref (auto-converts to camelCase signal) --&gt;
 &lt;dialog data-ref:my-dialog
         data-on:click="evt.target === el &amp;&amp; el.close()"&gt;
-  &lt;div class="card flex:stack gap:sm p:md"&gt;
+  &lt;div class="card flex:stack g-sm p-md"&gt;
     &lt;h2&gt;Dialog Title&lt;/h2&gt;
     &lt;p&gt;Content here.&lt;/p&gt;
     &lt;button data-on:click="el.closest('dialog').close()"&gt;Close&lt;/button&gt;
@@ -153,7 +153,7 @@ dialog {
 &lt;!-- Drawer --&gt;
 &lt;dialog data-ref:my-drawer class="drawer:left"
         data-on:click="evt.target === el &amp;&amp; el.close()"&gt;
-  &lt;div class="flex:stack gap:sm p:md"&gt;
+  &lt;div class="flex:stack g-sm p-md"&gt;
     &lt;h2&gt;Drawer Title&lt;/h2&gt;
     &lt;button data-on:click="el.closest('dialog').close()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
@@ -175,10 +175,10 @@ dialog {
 
   <!-- Centered Dialog -->
   <dialog data-ref:demo-dialog data-on:click="evt.target === el && el.close()">
-    <div class="card flex:stack gap:sm" style="min-width: 300px;">
+    <div class="card flex:stack g-sm" style="min-width: 300px;">
       <h2 class="text-md">Dialog Title</h2>
       <p class="text-sm">This is a centered modal dialog with focus trapping and backdrop click to close.</p>
-      <div class="flex:cluster gap:sm justify:end">
+      <div class="flex:cluster g-sm justify:end">
         <button class="gho" data-on:click="el.closest('dialog').close()">Cancel</button>
         <button class="pri" data-on:click="el.closest('dialog').close()">Confirm</button>
       </div>
@@ -187,7 +187,7 @@ dialog {
 
   <!-- Left Drawer -->
   <dialog data-ref:drawer-left class="drawer:left" data-on:click="evt.target === el && el.close()">
-    <div class="flex:stack gap:sm p:md" style="height: 100%;">
+    <div class="flex:stack g-sm p-md" style="height: 100%;">
       <div class="flex:split">
         <h2 class="text-md">Left Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
@@ -198,7 +198,7 @@ dialog {
 
   <!-- Right Drawer -->
   <dialog data-ref:drawer-right class="drawer:right" data-on:click="evt.target === el && el.close()">
-    <div class="flex:stack gap:sm p:md" style="height: 100%;">
+    <div class="flex:stack g-sm p-md" style="height: 100%;">
       <div class="flex:split">
         <h2 class="text-md">Right Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
@@ -209,7 +209,7 @@ dialog {
 
   <!-- Top Drawer -->
   <dialog data-ref:drawer-top class="drawer:top" data-on:click="evt.target === el && el.close()">
-    <div class="flex:stack gap:sm p:md" style="width: 100%;">
+    <div class="flex:stack g-sm p-md" style="width: 100%;">
       <div class="flex:split">
         <h2 class="text-md">Top Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>
@@ -220,7 +220,7 @@ dialog {
 
   <!-- Bottom Drawer -->
   <dialog data-ref:drawer-bottom class="drawer:bottom" data-on:click="evt.target === el && el.close()">
-    <div class="flex:stack gap:sm p:md" style="width: 100%;">
+    <div class="flex:stack g-sm p-md" style="width: 100%;">
       <div class="flex:split">
         <h2 class="text-md">Bottom Drawer</h2>
         <button class="icon-btn gho sm" data-on:click="el.closest('dialog').close()">✕</button>

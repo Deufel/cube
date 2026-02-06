@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Badge</h1>
@@ -31,13 +31,13 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm align:start">
+        <div class="flex:flank-end g-sm align:start">
           
           <!-- Demos -->
-          <article class="flex:stack gap:md">
+          <article class="flex:stack g-md">
             <section class="flex:stack">
               <h3 class="text-md">Base</h3>
-              <div class="card:gla p:sm flex:cluster gap:lg" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-lg" style="resize: horizontal; overflow: auto;">
                 <button class="icon-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
                   <span class="badge">3</span>
@@ -51,7 +51,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Variants</h3>
-              <div class="card:gla p:sm flex:cluster gap:lg" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-lg" style="resize: horizontal; overflow: auto;">
                 <button class="icon-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
                   <span class="badge:suc">1</span>
@@ -73,7 +73,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Dot Indicator</h3>
-              <div class="card:gla p:sm flex:cluster gap:lg" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-lg" style="resize: horizontal; overflow: auto;">
                 <button class="icon-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
                   <span class="badge:suc dot"></span>
@@ -96,7 +96,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Classes</h4>
@@ -153,8 +153,8 @@
         <hr>
 
         <!-- Structure + Usage -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">/* Parent auto-gets relative positioning */
 :has(> [class~="badge"], > [class*="badge:"]) {
@@ -174,7 +174,7 @@
 }</code></pre>
           </article>
 
-          <article class="flex:stack gap:xs">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Parent auto-gets position: relative via :has() --&gt;
 &lt;div&gt;

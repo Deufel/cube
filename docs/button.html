@@ -16,12 +16,12 @@
       data-class:width-md="$prst_width === 'width-md'"
       data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Button</h1>
@@ -31,14 +31,14 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end align:start gap:sm">
+        <div class="flex:flank-end align:start g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Variants</h3>
               <p class="text-xs" style="color: var(--text-muted);">Default is outlined secondary style</p>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto;">
                 <button class="btn">Default</button>
                 <button class="btn:pri">Primary</button>
                 <button class="btn:sec">Secondary</button>
@@ -52,7 +52,7 @@
             <section class="flex:stack">
               <h3 class="text-md">Outline Variants</h3>
               <p class="text-xs" style="color: var(--text-muted);">Add 'out' modifier for outlined style</p>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto;">
                 <button class="btn:pri out">Primary</button>
                 <button class="btn:sec out">Secondary</button>
                 <button class="btn:inf out">Info</button>
@@ -64,13 +64,13 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Sizes</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto;">
-                <div class="flex:cluster gap:sm align:center">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto;">
+                <div class="flex:cluster g-sm align:center">
                   <button class="btn:pri-sm">Small</button>
                   <button class="btn:pri">Default</button>
                   <button class="btn:pri-lg">Large</button>
                 </div>
-                <div class="flex:cluster gap:sm align:center">
+                <div class="flex:cluster g-sm align:center">
                   <button class="btn:sec-sm out">Small</button>
                   <button class="btn:sec out">Default</button>
                   <button class="btn:sec-lg out">Large</button>
@@ -80,7 +80,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">States</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto;">
                 <button class="btn:pri" disabled>Disabled</button>
                 <button class="btn:pri" aria-busy="true">Loading...</button>
               </div>
@@ -88,7 +88,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">With Icons</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;>
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto;>
                 <button class="btn:pri">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   Continue
@@ -102,7 +102,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Classes</h4>
@@ -195,8 +195,8 @@
         <hr>
 
         <!-- Structure + Usage -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="btn"], [class*="btn:"] {
   /* Base styles */
@@ -220,7 +220,7 @@
 }</code></pre>
           </article>
 
-          <article class="flex:stack gap:xs">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
 &lt;button class="btn"&gt;Default&lt;/button&gt;

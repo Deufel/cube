@@ -21,7 +21,7 @@
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
     <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Layout Compositions</h1>
@@ -31,15 +31,15 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             
             <!-- Flex Primitives -->
             <section class="flex:stack">
               <h3 class="text-md">Flex Primitives</h3>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
                 <div class="flex:stack" style="--demo-gap: 12px; gap: var(--demo-gap);">
                   
                   <div><code>flex:cluster</code> — wraps horizontally</div>
@@ -103,7 +103,7 @@
             <!-- Grid Primitives -->
             <section class="flex:stack">
               <h3 class="text-md">Grid Primitives</h3>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 280px;">
                 <div class="flex:stack" style="gap: 12px;">
                   
                   <div><code>grid:lcr</code> — left/center/right (center stays centered)</div>
@@ -157,7 +157,7 @@
             <!-- Frame -->
             <section class="flex:stack">
               <h3 class="text-md">Frame (Aspect Ratio)</h3>
-              <div class="card:gla p:sm flex:cluster" style="resize: horizontal; overflow: auto; min-width: 280px; gap: 12px;">
+              <div class="card:gla p-sm flex:cluster" style="resize: horizontal; overflow: auto; min-width: 280px; gap: 12px;">
                 
                 <div class="flex:stack" style="width: 100px;">
                   <code>frame</code>
@@ -180,7 +180,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm p:sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
+          <article class="card:sec flex:stack g-sm p-sm" style="flex-basis: 280px; flex-shrink: 0; align-self: flex-start;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Flex</h4>
@@ -317,7 +317,7 @@
         <hr>
 
         <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
+        <article class="flex:stack g-xs">
           <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Sidebar layout --&gt;
 &lt;div class="flex:flank-start"&gt;

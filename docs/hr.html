@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'"
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Dividers</h1>
@@ -31,13 +31,13 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Basic</h3>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <p>Content above</p>
                 <hr>
                 <p>Content below</p>
@@ -46,7 +46,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">With Text</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <button class="btn:pri" style="width: 100%;">Sign in with Email</button>
                 <div class="divider:text">
                   <hr><span>OR</span><hr>
@@ -57,7 +57,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Vertical</h3>
-              <div class="card:gla p:sm flex:cluster gap:lg align:stretch" style="resize: horizontal; overflow: auto; min-width: 200px; height: 100px;">
+              <div class="card:gla p-sm flex:cluster g-lg align:stretch" style="resize: horizontal; overflow: auto; min-width: 200px; height: 100px;">
                 <div class="flex:stack justify:center">
                   <h4>Section A</h4>
                   <p class="text-sm">Left</p>
@@ -72,7 +72,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">In Menu</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 150px; max-width: 200px;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto; min-width: 150px; max-width: 200px;">
                 <a href="#" class="nav-item">Profile</a>
                 <a href="#" class="nav-item">Settings</a>
                 <hr>
@@ -83,7 +83,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Elements</h4>
@@ -144,7 +144,7 @@
         <hr>
 
         <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
+        <article class="flex:stack g-xs">
           <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Basic horizontal rule --&gt;
 &lt;hr&gt;

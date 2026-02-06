@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Chips</h1>
@@ -31,20 +31,20 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end align:start gap:sm">
+        <div class="flex:flank-end align:start g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Base</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <span class="chip">Default</span>
               </div>
             </section>
 
             <section class="flex:stack">
               <h3 class="text-md">Theme Colors</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <span class="chip:pri">Primary</span>
                 <span class="chip:sec">Secondary</span>
               </div>
@@ -52,7 +52,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Status Colors</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <span class="chip:inf">Info</span>
                 <span class="chip:suc">Success</span>
                 <span class="chip:wrn">Warning</span>
@@ -62,7 +62,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Modifiers</h3>
-              <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:cluster g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <span class="chip add">Add</span>
                 <span class="chip:inf add">Add Info</span>
                 <span class="chip sub">Sub</span>
@@ -75,7 +75,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Classes</h4>
@@ -152,8 +152,8 @@
         <hr>
 
         <!-- Structure + Usage -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="chip"], [class*="chip:"] {
   /* Base styles */
@@ -176,7 +176,7 @@
 }</code></pre>
           </article>
 
-          <article class="flex:stack gap:xs">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Base --&gt;
 &lt;span class="chip"&gt;Default&lt;/span&gt;

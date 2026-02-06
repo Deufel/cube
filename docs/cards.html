@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Cards</h1>
@@ -34,14 +34,14 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Variants</h3>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <div class="grid:auto-fit gap:sm" style="--grid-min: 150px;">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="grid:auto-fit g-sm" style="--grid-min: 150px;">
                   <div class="card">
                     <h3>Default</h3>
                     <p>Subtle primary tint.</p>
@@ -64,7 +64,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">With Content</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 300px; max-width: 500px;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto; min-width: 300px; max-width: 500px;">
                 <div class="card">
                   <h3>Card Title</h3>
                   <p>Cards are versatile containers with padding, borders, and optional shadows. Use them for grouping related content.</p>
@@ -83,7 +83,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Classes</h4>
@@ -143,8 +143,8 @@
 
         <hr>
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="card"], [class*="card:"] {
   padding: var(--card-padding);

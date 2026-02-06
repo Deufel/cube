@@ -16,12 +16,12 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
 <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack">
           <h1 class="text-lg">Surface</h1>
@@ -31,21 +31,21 @@
         <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Basic Usage</h3>
               <p class="text-xs" style="color: var(--text-muted);">Surfaces inside a colored card inherit and lighten the card's hue.</p>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <div class="card:pri p:md">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="card:pri p-md">
                   <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.pri</div>
-                  <div class="flex:cluster gap:sm">
-                    <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                  <div class="flex:cluster g-sm">
+                    <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                       <span class="text-sm">surface (leaf)</span>
                     </div>
-                    <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                    <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                       <span class="text-sm">surface (leaf)</span>
                     </div>
                   </div>
@@ -56,12 +56,12 @@
             <section class="flex:stack">
               <h3 class="text-md">Nested Surfaces</h3>
               <p class="text-xs" style="color: var(--text-muted);">Nesting automatically darkens parent surfaces while keeping leaves lightest.</p>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <div class="card:pri p:md">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="card:pri p-md">
                   <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.pri (sets --_surface-base)</div>
-                  <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                  <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                     <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (parent) — darker</div>
-                    <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                    <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                       <span class="text-sm">surface (leaf) — lightest</span>
                     </div>
                   </div>
@@ -72,14 +72,14 @@
             <section class="flex:stack">
               <h3 class="text-md">Three Levels Deep</h3>
               <p class="text-xs" style="color: var(--text-muted);">Maximum supported depth: grandparent → parent → leaf.</p>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <div class="card:sec p:md">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="card:sec p-md">
                   <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-sm);">card.sec</div>
-                  <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                  <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                     <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (grandparent) — darkest</div>
-                    <div class="surface shadow p:sm" style="border-radius: var(--radius-sm); margin-top: var(--space-xs);">
+                    <div class="surface shadow p-sm" style="border-radius: var(--radius-sm); margin-top: var(--space-xs);">
                       <div class="text-xs" style="color: var(--text-muted); margin-bottom: var(--space-xs);">surface (parent) — mid</div>
-                      <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">
+                      <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">
                         <span class="text-sm">surface (leaf) — lightest</span>
                       </div>
                     </div>
@@ -91,21 +91,21 @@
             <section class="flex:stack">
               <h3 class="text-md">Shadow Modifier</h3>
               <p class="text-xs" style="color: var(--text-muted);">Add <code>.shadow</code> for elevation depth cues.</p>
-              <div class="card:gla p:sm flex:cluster gap:md" style="resize: horizontal; overflow: auto; min-width: 200px;">
-                <div class="card:pri p:md">
+              <div class="card:gla p-sm flex:cluster g-md" style="resize: horizontal; overflow: auto; min-width: 200px;">
+                <div class="card:pri p-md">
                   <div class="text-xs" style="margin-bottom: var(--space-xs);">Without shadow</div>
-                  <div class="surface p:sm" style="border-radius: var(--radius-sm);">surface</div>
+                  <div class="surface p-sm" style="border-radius: var(--radius-sm);">surface</div>
                 </div>
-                <div class="card:pri p:md">
+                <div class="card:pri p-md">
                   <div class="text-xs" style="margin-bottom: var(--space-xs);">With shadow</div>
-                  <div class="surface shadow p:sm" style="border-radius: var(--radius-sm);">surface shadow</div>
+                  <div class="surface shadow p-sm" style="border-radius: var(--radius-sm);">surface shadow</div>
                 </div>
               </div>
             </section>
           </article>
 
           <!-- API Reference (sidebar) -->
-          <aside class="card:sec flex:stack gap:sm p:sm" style="flex-basis: 280px;">
+          <aside class="card:sec flex:stack g-sm p-sm" style="flex-basis: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Theme Tokens</h4>
@@ -162,7 +162,7 @@
         <hr>
 
         <!-- Usage (full width) -->
-        <article class="flex:stack gap:xs">
+        <article class="flex:stack g-xs">
           <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Card sets the surface base --&gt;
 &lt;div class="card:pri"&gt;

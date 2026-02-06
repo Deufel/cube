@@ -21,12 +21,12 @@
     data-signals:prst_width="'width-md'">
   </div>
     
-  <main id="main" class="grid:hero gap:xs">
+  <main id="main" class="grid:hero g-xs">
     <header id="header" data-init="@get('./partials/header.html')"></header>
     <dialog id="nav" data-init="@get('./partials/nav.html')"></dialog>
 
     <section id="content" class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:md p:sm">
+      <article class="flex:stack g-md p-sm">
         
         <header class="flex:stack ">
           <h1 class="text-lg">Tabs</h1>
@@ -36,13 +36,13 @@
 <hr>
 
         <!-- Flank layout: Demos (fills) | API (sidebar) -->
-        <div class="flex:flank-end gap:sm">
+        <div class="flex:flank-end g-sm">
           
           <!-- Demos -->
-          <article class="flex:stack gap:sm">
+          <article class="flex:stack g-sm">
             <section class="flex:stack">
               <h3 class="text-md">Base</h3>
-              <div class="card:gla p:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs" data-init="$demo1='tab1'">
                   <button data-class:active="$demo1=='tab1'" data-on:click="$demo1='tab1'">Home</button>
                   <button data-class:active="$demo1=='tab2'" data-on:click="$demo1='tab2'">Profile</button>
@@ -53,7 +53,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Variants</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo2='tab1'">
                   <button data-class:active="$demo2=='tab1'" data-on:click="$demo2='tab1'">Tab1</button>
                   <button data-class:active="$demo2=='tab2'" data-on:click="$demo2='tab2'">Tab2</button>
@@ -69,7 +69,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Sizes</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto; min-width: 200px;">
                 <div class="tabs:pri" data-init="$demo4='tab1'">
                   <button data-class:active="$demo4=='tab1'" data-on:click="$demo4='tab1'">Default</button>
                   <button data-class:active="$demo4=='tab2'" data-on:click="$demo4='tab2'">Tab2</button>
@@ -85,7 +85,7 @@
 
             <section class="flex:stack">
               <h3 class="text-md">Full Width</h3>
-              <div class="card:gla p:sm flex:stack gap:sm" style="resize: horizontal; overflow: auto;">
+              <div class="card:gla p-sm flex:stack g-sm" style="resize: horizontal; overflow: auto;">
                 <div class="tabs:pri full" data-init="$demo6='tab1'">
                   <button data-class:active="$demo6=='tab1'" data-on:click="$demo6='tab1'">Tab1</button>
                   <button data-class:active="$demo6=='tab2'" data-on:click="$demo6='tab2'">Tab2</button>
@@ -96,7 +96,7 @@
           </article>
 
           <!-- API Reference (sidebar) -->
-          <article class="card:sec flex:stack gap:sm" style="--flank-size: 280px;">
+          <article class="card:sec flex:stack g-sm" style="--flank-size: 280px;">
             <h3 class="text-md">API Reference</h3>
             
             <h4 class="text-sm">Container</h4>
@@ -162,8 +162,8 @@
         <hr>
 
         <!-- Structure + Usage -->
-        <div class="flex:flank-start align:start gap:sm">
-          <article class="flex:stack gap:xs">
+        <div class="flex:flank-start align:start g-sm">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Structure</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="tabs"], [class*="tabs:"] {
   /* Container styles */
@@ -187,7 +187,7 @@
 }</code></pre>
           </article>
 
-          <article class="flex:stack gap:xs">
+          <article class="flex:stack g-xs">
             <h3 class="text-md">Usage</h3>
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-html">&lt;!-- Primary tabs with Datastar signals --&gt;
 &lt;div class="tabs:pri" data-init="$mytab='first'"&gt;

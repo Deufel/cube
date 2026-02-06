@@ -16,14 +16,14 @@
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'">
     
-  <div class="grid:hero gap:xs">
+  <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
 
     <main class="scroll-y card" style="grid-area: 2/2/3/3;">
-      <article class="flex:stack gap:lg p:md" style="max-width: 800px;">
+      <article class="flex:stack g-lg p-md" style="max-width: 800px;">
         
-        <header class="flex:stack gap:xs">
+        <header class="flex:stack g-xs">
           <h1 class="text-lg">Tags</h1>
           <p class="text-sm">Non-interactive labels for categorization and status display.</p>
         </header>
@@ -31,10 +31,10 @@
         <hr>
 
         <!-- Base -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack g-sm">
           <h3 class="text-md">Base</h3>
           <p class="text-sm">Default tag with primary tint.</p>
-          <div class="flex:cluster gap:sm">
+          <div class="flex:cluster g-sm">
             <span class="tag">Default</span>
           </div>
         </section>
@@ -42,10 +42,10 @@
         <hr>
 
         <!-- Variants -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack g-sm">
           <h3 class="text-md">Variants</h3>
           <p class="text-sm">Status variants using <code>tag:variant</code> pattern.</p>
-          <div class="flex:cluster gap:sm">
+          <div class="flex:cluster g-sm">
             <span class="tag:inf">Info</span>
             <span class="tag:suc">Success</span>
             <span class="tag:wrn">Warning</span>
@@ -56,10 +56,10 @@
         <hr>
 
         <!-- Removable -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack g-sm">
           <h3 class="text-md">Removable</h3>
           <p class="text-sm">Add <code>.close</code> span for dismissible tags.</p>
-          <div class="flex:cluster gap:sm">
+          <div class="flex:cluster g-sm">
             <span class="tag">Default <span class="close">×</span></span>
             <span class="tag:inf">Info <span class="close">×</span></span>
             <span class="tag:suc">Success <span class="close">×</span></span>
@@ -71,7 +71,7 @@
         <hr>
 
         <!-- API Reference -->
-        <section class="flex:stack gap:sm">
+        <section class="flex:stack g-sm">
           <h3 class="text-md">API Reference</h3>
           
           <h4 class="text-sm">Selectors</h4>
