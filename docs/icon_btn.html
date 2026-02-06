@@ -91,6 +91,18 @@
 
             <section class="flex:stack">
               <h3 class="text:md">States</h3>
+              <div class="card:gla p:sm flex:cluster gap:sm align:center" style="resize: horizontal; overflow: auto;">
+                <button class="icon-btn" aria-busy="true" aria-label="Loading">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                </button>
+                <button class="icon-btn" disabled aria-label="Disabled">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </button>
+              </div>
+            </section>
+
+            <section class="flex:stack">
+              <h3 class="text:md">States</h3>
               <div class="card:gla p:sm flex:cluster gap:sm" style="resize: horizontal; overflow: auto;">
                 <button class="icon-btn" disabled aria-label="Disabled">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.929 4.929 19.07 19.071"/><circle cx="12" cy="12" r="10"/></svg>
@@ -194,7 +206,13 @@
 <pre class="card" style="font-size: var(--text-xs); overflow-x: auto;"><code class="language-css">[class~="icon-btn"], [class*="icon-btn:"] {
   /* Base styles */
   
-  /* Variant */
+  /* Color variants */
+  &amp;[class*=":pri"] { }
+  &amp;[class*=":sec"] { }
+  &amp;[class*=":inf"] { }
+  &amp;[class*=":suc"] { }
+  &amp;[class*=":wrn"] { }
+  &amp;[class*=":dgr"] { }
   &amp;[class*=":mute"] { }
   
   /* Size */

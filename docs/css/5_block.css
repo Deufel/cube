@@ -295,7 +295,7 @@
 
     /* States */
     &[aria-busy="true"] { opacity: 0.7; cursor: wait; }
-    &:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
 
     /* Sizes */
     &[class*="-sm"] {
