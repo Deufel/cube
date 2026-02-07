@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode">
+<html id="html" lang="en">
 <head id="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +26,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
 </head>
-<body>
-<div class="vh" data-init="@get('./partials/head.html')"></div>
 <body class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
   data-signals="{prst_page: {nav_drawer: false, nav_compact: false}}"
@@ -37,7 +35,8 @@
   data-class:width-sm="$prst_width === 'width-sm'"
   data-class:width-md="$prst_width === 'width-md'"
   data-class:width-lg="$prst_width === 'width-lg'"
-    
+  data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode"
+ >  
   <div class="grid:hero g-xs">
     <div id="header" data-init="@get('./partials/header.html')"></div>
     <div id="nav" data-init="@get('./partials/nav.html')"></div>
