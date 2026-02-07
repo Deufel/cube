@@ -1,6 +1,13 @@
 <dialog id="nav"
   data-class="{'drawer:left': $prst_page.nav_drawer}"
   data-style:display="!$prst_page.nav_drawer ? 'contents' : ''"
+  data-style:grid-area="`
+  ${1+!$prst_page.header_drawer} / 
+  1 /
+  ${3+$prst_page.footer_drawer}/
+  2
+  `"
+
   data-ref:nav-drawer
   data-on:click="evt.target === el && el.close()"
 >

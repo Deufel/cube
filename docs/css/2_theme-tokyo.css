@@ -141,8 +141,8 @@
     --blur-md: var(--size-px-3);
   }
 
-  [data-mode="light"] { color-scheme: light; }
-  [data-mode="dark"] { 
+  body[data-mode="light"] { color-scheme: light; }
+  body[data-mode="dark"] { 
     color-scheme: dark;
     --glass-bg-1: rgba(0, 0, 0, 0.4);
     --glass-bg-2: rgba(0, 0, 0, 0.6);

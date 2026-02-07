@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html id="html" lang="en" data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode">
+<html id="html" lang="en" >
 <head id="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,9 +29,10 @@
 </head>
 <body class="fullscreen scroll-no"
   data-persist="{include: /^prst_/}"
-  data-attr:class="'fullscreen scroll-no ' + $prst_width">
+  data-attr:class="'fullscreen scroll-no ' + $prst_width"
+  data-attr:data-mode="$prst_mode === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : $prst_mode"
+  >
   
-  <div class="vh" data-init="@get('./partials/head.html')"></div>
   <div id="signals" data-init="@get('./partials/signals.html');"></div>
     
   <main id="main" class="grid:hero g-xs">

@@ -6,7 +6,7 @@
 
 
     /* Dark mode shadows (neon glow using primary color) */
-    &[data-mode="dark"] {
+    &body[data-mode="dark"] {
         --highlight-color: hsl(0 0%, 100% / 20%);
         --shadow-color: var(--color-pri, oklch(60% 0.15 160));
         --shadow-sm: 
@@ -81,7 +81,7 @@
     --glass-shadow-3: 0 1px 2px 0 rgb(0 0 0 / 0.08), inset 0 1px 0 0 rgb(255 255 255 / 0.2);
     
     /* Glass dark mode - tinted with primary */
-    &[data-mode="dark"] {
+    &body[data-mode="dark"] {
       --glass-bg-1: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 5%, rgba(255, 255, 255, 0.05));
       --glass-bg-2: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 10%, rgba(255, 255, 255, 0.1));
       --glass-bg-3: color-mix(in oklch, var(--color-pri, oklch(60% 0.1 200)) 15%, rgba(255, 255, 255, 0.15));
